@@ -14,6 +14,6 @@
 ?>
 
 <div class="swiper--nav">
-	<div class="swiper-button-next"><?php get_template_part( 'components/svg/arrow-right' ); ?></div>
-	<div class="swiper-button-prev"><?php get_template_part( 'components/svg/arrow-left' ); ?></div>
+	<div class="swiper-button-next"><i class="fal fa-long-arrow-right"></i></div>
+	<div class="swiper-button-prev"><i class="fal fa-long-arrow-left"></i></div>
 </div>

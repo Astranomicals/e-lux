@@ -1,0 +1,51 @@
+.block--ba_homepage {
+  position: relative;
+  padding: 208px 0 242px;
+  text-align: right;
+  color: $white;
+
+  .image--holder {
+    @include absolute_cover;
+
+    img {
+      @include absolute_cover;
+      object-fit: cover;
+    }
+  }
+
+  h2 {
+    color: $white;
+    font-size: 5.55rem;
+    font-weight: normal;
+    line-height: 1.2em;
+    margin-bottom: 20px;
+
+    strong {
+      display: inline-block;
+      font-family: $allura;
+      font-size: 16.666rem;
+      list-style: 1.25em;
+      color: rgba($white, 0.29);
+      font-weight: normal;
+      position: relative;
+      width: 207px;
+      margin-left: -70px;
+      top: 60px;
+    }
+  }
+
+  h4 {
+    font-weight: normal;
+    font-size: 2rem;
+    line-height: 1.33em;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: $white;
+    margin-bottom: 64px;
+  }
+
+  .btn--secondary {
+    display: inline-flex;
+    padding: 0 32px;
+  }
+}

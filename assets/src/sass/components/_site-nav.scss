@@ -1,9 +1,152 @@
 .site-nav {
-	
-	.sub-menu {display:none;}
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  z-index: 99;
+  transition: all 0.4s ease-in-out;
 
-	// offset if WP admin bar is present
-	.admin-bar & {top:46px;
-		@media (min-width: 783px) {top:32px;}
-	}
+  .menu {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    list-style: none;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+
+    > li {
+      position: relative;
+      > a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 162px;
+        padding: 0 1.1vw;
+        color: $white;
+        text-align: center;
+        transition: all 0.4s ease-in-out;
+      }
+
+      &:hover {
+        > .sub-menu {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          position: absolute;
+          background: $slate;
+          top: 100%;
+          left: 0;
+          display: block;
+          width: 250px;
+
+          > li {
+            position: relative;
+            a {
+              color: $white;
+              padding: 8px 15px;
+              display: block;
+
+              &:hover {
+                background: $gray;
+              }
+            }
+            &:hover {
+              > .sub-menu {
+                position: absolute;
+                display: block;
+                background: $slate;
+                top: 0;
+                left: 100%;
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                width: 250px;
+
+                > li {
+                  position: relative;
+                  a {
+                    color: $white;
+                    padding: 8px 15px;
+                    display: block;
+
+                    &:hover {
+                      color: $gray;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .call {
+    font-size: 2rem;
+    line-height: 1.33em;
+    font-family: $playfair;
+    color: $white;
+    letter-spacing: 0;
+    position: relative;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 70px;
+      height: 3px;
+      background: $white;
+      position: absolute;
+      top: 100%;
+      left: calc(50% + 32px);
+      transform: translateX(-50%);
+    }
+
+    i {
+      height: 47px;
+      width: 47px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: $white;
+      background: $gray;
+      margin-right: 18px;
+      font-size: 16px;
+      border-radius: 100em;
+      transform: rotateY(180deg);
+    }
+  }
+
+  button {
+    display: none;
+  }
+
+  .sub-menu {
+    display: none;
+  }
+
+  // offset if WP admin bar is present
+  .admin-bar & {
+    top: 46px;
+    @media (min-width: 783px) {
+      top: 32px;
+    }
+  }
+
+  &.sticky {
+    background: $slate;
+    .menu {
+      > li {
+        > a {
+          height: 90px;
+        }
+      }
+    }
+  }
 }

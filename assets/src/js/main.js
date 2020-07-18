@@ -25,8 +25,20 @@
           this.mobileMenu();
           this.siteNavSticky();
           this.galleryBuilder();
-          this.swiperSetup();
-        },
+					this.swiperSetup();
+					this.homepageProcedure();
+				},
+				homepageProcedure: function(){
+					$('[data-toggle="Body"]').addClass('active');
+					$('.procedure-btn').on('click', function(){
+						var $active_toggle = $(this).attr('data-toggle');
+						$active_toggle = '[data-toggle="'+$active_toggle+'"]';
+						$('.procedure-btn').removeClass('active');
+						$('.top--procedure').removeClass('active');
+						console.log($active_toggle);
+						$($active_toggle).addClass('active');
+					});
+				},
         siteNavSticky: function() {
           $cache.window.scroll(function() {
             if ($cache.window.scrollTop() > 0) {
@@ -227,6 +239,18 @@
               nextEl: ".swiper-button-next",
               prevEl: ".swiper-button-prev"
             }
+          });
+					
+					var testimonial_block = new Swiper(".testimonial-container", {
+            slidesPerView: 1,
+            loop: true,
+            navigation: {
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev"
+						},
+						pagination: {
+							el: '.swiper-pagination',
+						},
           });
         }
       }

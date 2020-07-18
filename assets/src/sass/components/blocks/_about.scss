@@ -1,0 +1,53 @@
+.block--about {
+  position: relative;
+  padding-top: 140px;
+  text-align: center;
+  z-index: 0;
+  background: url(/wp-content/uploads/2020/07/white-wood-table.jpg) no-repeat
+    center / cover;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 165px;
+    background: $gold;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, -50%);
+  }
+
+  .left--image {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    box-shadow: 0px 25px 60px rgba(37, 55, 70, 0.29);
+
+    img {
+      height: 480px;
+      width: auto;
+    }
+  }
+  .right--image {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    box-shadow: 0px 25px 60px rgba(37, 55, 70, 0.29);
+
+    img {
+      height: 480px;
+      width: auto;
+    }
+  }
+
+  .spacer {
+    margin: 45px auto 40px;
+  }
+
+  p {
+    &:last-child {
+      margin-bottom: 74px;
+    }
+  }
+}

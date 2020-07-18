@@ -1,6 +1,6 @@
 <?php
 /**
- * Display Hero Block
+ * Display Homepage Block
  *
  * @category   Components
  * @package    WordPress
@@ -11,18 +11,19 @@
  * @since      1.0.0
  */
 
-$content = get_sub_field( 'content' );
-$image   = get_sub_field( 'background_image' );
+$content          = get_sub_field( 'content' );
+$background_image = get_sub_field( 'background_image' );
 ?>
-<?php if ( ! empty( $image ) ) : ?>
+
+<?php if ( ! empty( $background_image ) ) : ?>
 	<div class="image--holder">
-		<img src="<?php echo esc_url( $image['sizes']['hero_thumb'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" />
+		<img src="<?php echo esc_url( $background_image['sizes']['hero_thumb'] ); ?>" alt="<?php echo esc_attr( $background_image['alt'] ); ?>" />
 	</div>
 <?php endif; ?>
 
 <div class="container">
 	<div class="row">
-		<div class="col-xxl-5 col-xl-7 col-lg-8">
+		<div class="col-xl-5">
 			<?php echo $content; ?>
 		</div>
 	</div>

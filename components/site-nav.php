@@ -28,7 +28,6 @@
 	?>
 
 	<?php get_template_part( 'components/call' ); ?>
-	<?php get_template_part( 'components/social-icons' ); ?>
 	<button data-toggle="menu">
 		<span></span>
 		<span></span>

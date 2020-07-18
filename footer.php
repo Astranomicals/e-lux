@@ -21,6 +21,55 @@
 	$phone_url    = get_field( 'business_phone_url', 'option' );
 ?>
 
+<?php if ( is_front_page() ) : ?>
+<section class="block block__testimonial">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<h5>Testimonials</h5>
+				<h2>Words From Our Clients</h2>
+				<div class="spacer"><img src="/wp-content/uploads/2020/07/diamond-spacer.png" alt="" width="103" height="23" class="aligncenter size-full wp-image-308"></div>
+				<?php
+					$args       = array(
+						'post_type'      => 'testimonial',
+						'posts_per_page' => 6,
+					);
+					$test_query = new WP_Query( $args );
+
+					if ( $test_query->have_posts() ) :
+						?>
+						<div class="swiper-container testimonial-container">
+							<div class="swiper-wrapper">
+							<?php while ( $test_query->have_posts() ) : ?>
+								<?php $test_query->the_post(); ?>
+								<div class="swiper-slide">
+									<?php the_content(); ?>
+								</div>
+							<?php endwhile; ?>
+						</div>
+						<div class="swiper-pagination"></div>
+						<?php get_template_part( 'components/swiper-nav' ); ?>
+						</div>
+						<?php
+					endif;
+					?>
+			</div>
+		</div>
+		<div class="row justify-content-center newsletter--area">
+			<div class="col-10">
+					<div class="newsletter--box">
+						<h3>Join the EPS Community</h3>
+						<div class="content--area">
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Turpis eu tellus sit mauris. Sagittis, morbi libero, posuere gravida purus fames risus. Praesent lacus fames donec mi ornare cum iaculis praesent.</p>
+							<?php echo do_shortcode( '[gravityforms id="1" title="false" description="false" ajax="true"]' ); ?>
+						</div>
+					</div>
+			</div>
+		</div>
+	</div>
+</section>
+<?php endif; ?>
+
 <footer class="footer bg-light">
 	<?php get_template_part( 'components/social-icons' ); ?>
 	<?php if ( $phone_url && $phone ) : ?>

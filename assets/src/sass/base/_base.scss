@@ -1,19 +1,33 @@
 html {
-    background: white;
+  background: white;
+  font-size: 16px;
+
+  @include mq(xl) {
+    font-size: 18px;
+  }
+}
+
+body {
+  font-size: 1rem;
+  font-family: $source;
+  line-height: 1.666em;
+  letter-spacing: 0.03em;
+  color: $slate;
+  font-weight: normal;
 }
 
 *:last-child {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 a {
-    &:hover {
-        text-decoration: none;
-    }
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 .site-wrap {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 // Remove subpixel-antialiased default but keep for retina resolutions.
@@ -21,23 +35,62 @@ a {
 *,
 *:after,
 *:before {
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    @media only screen and (-webkit-min-device-pixel-ratio: 1.25), only screen and (min-device-pixel-ratio: 1.25), only screen and (min-resolution: 200dpi), only screen and (min-resolution: 1.25dppx) {
-        -webkit-font-smoothing: subpixel-antialiased;
-    }
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  @media only screen and (-webkit-min-device-pixel-ratio: 1.25),
+    only screen and (min-device-pixel-ratio: 1.25),
+    only screen and (min-resolution: 200dpi),
+    only screen and (min-resolution: 1.25dppx) {
+    -webkit-font-smoothing: subpixel-antialiased;
+  }
 }
 
 // Remove text-shadow in selection highlight:
 // https://twitter.com/miketaylr/status/12228805301
 ::-moz-selection {
-    background: $selection-highlight-background;
-    color: $selection-highlight-color;
-    text-shadow: none;
+  background: $selection-highlight-background;
+  color: $selection-highlight-color;
+  text-shadow: none;
 }
 
 ::selection {
-    background: $selection-highlight-background;
-    color: $selection-highlight-color;
-    text-shadow: none;
+  background: $selection-highlight-background;
+  color: $selection-highlight-color;
+  text-shadow: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: $playfair;
+}
+
+h2 {
+  font-size: 3.05rem;
+  line-height: 1.32em;
+  text-transform: uppercase;
+  color: $off-black;
+  font-weight: normal;
+}
+
+h3 {
+  font-size: 1.44rem;
+  line-height: 1.34em;
+  color: $off-black;
+}
+
+h5 {
+  color: $brown;
+  text-transform: uppercase;
+  margin-bottom: 35px;
+  letter-spacing: 0.15em;
+  line-height: 1.27em;
+  font-weight: 600;
+  font-family: $source;
+}
+
+p {
+  margin-bottom: 30px;
 }
