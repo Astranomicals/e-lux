@@ -3,7 +3,11 @@
   left: 0;
   top: 0;
   width: 100%;
-  background: transparent;
+  background: linear-gradient(
+    180deg,
+    rgba(37, 55, 70, 0.45) 0%,
+    rgba(37, 55, 70, 0) 100%
+  );
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -106,6 +110,13 @@
       top: 100%;
       left: calc(50% + 32px);
       transform: translateX(-50%);
+      transition: all 0.4s ease-in-out;
+    }
+
+    &:hover {
+      &::after {
+        width: 150px;
+      }
     }
 
     i {

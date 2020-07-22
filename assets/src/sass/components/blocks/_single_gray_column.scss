@@ -1,0 +1,14 @@
+.block--single_gray_column {
+  background: #f6f8fb;
+  padding: 345px 0 130px;
+  color: $off-black;
+
+  a {
+    color: $black;
+    font-weight: bold;
+
+    &:hover {
+      color: $gray;
+    }
+  }
+}

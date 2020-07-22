@@ -1,0 +1,14 @@
+.block--single_slate_column {
+  padding: 130px 0;
+  text-align: center;
+  color: $white;
+  background: linear-gradient(180deg, #768692 0%, #5d6b76 100%);
+
+  .spacer {
+    margin: 45px 0;
+  }
+
+  h2 {
+    color: $white;
+  }
+}

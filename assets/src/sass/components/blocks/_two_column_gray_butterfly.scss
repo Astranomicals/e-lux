@@ -1,0 +1,23 @@
+.block--two_column_gray_butterfly {
+  padding: 130px 0;
+  background: linear-gradient(180deg, #eeeff0 0%, #e1e5e9 100%);
+  position: relative;
+
+  &::before {
+    content: url(/wp-content/uploads/2020/07/Butterfly-Icon-2.png);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+  }
+
+  h2 {
+    margin-bottom: 30px;
+  }
+
+  .left--shade {
+    &::before {
+      background: $white;
+    }
+  }
+}

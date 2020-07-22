@@ -16,7 +16,8 @@ add_image_size( 'featured_thumb', 535, 402, true );
 add_image_size( 'parent_thumb', 715, 715, true );
 add_image_size( 'background_thumb', 1430, 569, true );
 add_image_size( 'hero_thumb', 1920, 1080, true );
-add_image_size( 'page_header_thumb', 1920, 548, true );
+add_image_size( 'page_header_thumb', 1920, 940, true );
+add_image_size( 'page_header_left_thumb', 960, 940, true );
 add_image_size( 'blog_row_thumb', 370, 223, true );
 add_image_size( 'post_large', 1430, 796, true );
 

@@ -28,7 +28,7 @@
 			<div class="col-12">
 				<h5>Testimonials</h5>
 				<h2>Words From Our Clients</h2>
-				<div class="spacer"><img src="/wp-content/uploads/2020/07/diamond-spacer.png" alt="" width="103" height="23" class="aligncenter size-full wp-image-308"></div>
+				<?php get_template_part('components/spacer'); ?>
 				<?php
 					$args       = array(
 						'post_type'      => 'testimonial',
@@ -70,19 +70,71 @@
 </section>
 <?php endif; ?>
 
-<footer class="footer bg-light">
-	<?php get_template_part( 'components/social-icons' ); ?>
-	<?php if ( $phone_url && $phone ) : ?>
-	<p><a href="tel:+1-<?php echo esc_attr( $phone_url ); ?>"><?php echo esc_attr( $phone ); ?></a></p>
-	<?php endif; ?>
+<section class="block block__schedule">
+	<div class="image--holder">
+		<?php $schedule_image = get_field( 'schedule_image', 'options' ); ?>
+		<img src="<?php echo $schedule_image['sizes']['hero_thumb']; ?>" />
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-xl-5">
+				<h3><strong class="fancy">Schedule</strong> A Consultation</h3>
+			</div>
+			<div class="col-xl-7"></div>
+		</div>
+		<div class="row">
+			<div class="col-xl-5 offset-xl-1">
+				<?php echo do_shortcode( '[gravityforms id="2" title="false" description="false" ajax="true"]' ); ?>
+			</div>
+		</div>
+	</div>
+</section>
 
-	<?php if ( $address_link && $address && $address2 ) : ?>
-	<p><a href="<?php echo esc_attr( $address_link ); ?>" target="_blank">
-			<?php echo esc_attr( $address ); ?><br />
-			<?php echo esc_attr( $address2 ); ?></a></p>
-	<?php endif; ?>
-
-	<p>&copy; <?php echo esc_attr( gmdate( 'Y' ) ); ?> <?php echo esc_attr( $copyright ) ?: esc_attr( get_bloginfo() ); ?> | <a href="/privacy-policy/">Privacy Policy</a> & <a href="/terms-of-use/">Terms of Use</a> | Digital Marketing By <a href="https://www.incrediblemarketing.com/" target="_blank"><?php get_template_part( 'components/svg/incredible-marketing' ); ?>Incredible Marketing</a></p>
+<footer class="block block--map">
+	<div class="image--holder">
+		<?php $footer_image = get_field( 'footer_image', 'options' ); ?>
+		<img src="<?php echo $footer_image['sizes']['hero_thumb']; ?>" />
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="contact--info">
+					<div class="contact--left">
+						<h4>Contact Us</h4>
+						<div class="contact--left-bottom">
+							<div class="phone--area">
+								<h5>Phone Number</h5>
+								<?php if ( $phone_url && $phone ) : ?>
+									<p><a href="tel:<?php echo esc_attr( $phone_url ); ?>"><?php echo esc_attr( $phone ); ?></a></p>
+								<?php endif; ?>
+							</div>
+							<div class="text--area">
+								<h5>Text EPS</h5>
+								<p><a href="sms:<?php echo get_field( 'business_text', 'options' ); ?>"><?php echo get_field( 'business_text', 'options' ); ?></a></p>
+							</div>
+						</div>
+					</div>
+					<div class="contact--right">
+						<?php if ( $address_link && $address && $address2 ) : ?>
+							<p><i class="fas fa-map-marker-alt"></i> 
+								<?php echo esc_attr( $address ); ?><br />
+								<?php echo esc_attr( $address2 ); ?></p>
+							<p class="directions"><a href="<?php echo esc_attr( $address_link ); ?>" target="_blank">Get Directions <span class="line"></span></a></p>
+						<?php endif; ?>
+						<?php get_template_part( 'components/social-icons' ); ?>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container copyright">
+		<div class="row">
+			<div class="col-12 copyright--flex">
+				<p>Copyright &copy; <?php echo esc_attr( gmdate( 'Y' ) ); ?> <?php echo esc_attr( $copyright ) ?: esc_attr( get_bloginfo() ); ?>. All Rights Reserved | <a href="/privacy-policy/">Privacy Policy</a> | <a href="/terms-of-use/">Terms of Service</a> | <a href="/sitemap/">Sitemap</a></p> 
+				<p>Designed By <a href="https://www.incrediblemarketing.com/" target="_blank"><?php get_template_part( 'components/svg/incredible-marketing' ); ?>Incredible Marketing</a></p>
+			</div>
+		</div>
+	</div>
 </footer>
 
 </div><!-- end of .site-wrap -->

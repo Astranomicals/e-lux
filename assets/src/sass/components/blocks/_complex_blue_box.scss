@@ -1,0 +1,29 @@
+.block--complex_blue_box {
+  padding: 130px 0;
+  background: linear-gradient(180deg, #1b2934 0%, #253646 100%);
+  color: $white;
+
+  .top--content {
+    text-align: center;
+  }
+
+  h5 {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.27em;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: $washed_blue;
+    margin-bottom: 35px;
+  }
+
+  h2 {
+    color: $white;
+    margin-bottom: 45px;
+  }
+
+  .spacer {
+    margin: 45px auto 40px;
+  }
+}

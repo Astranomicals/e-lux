@@ -1,0 +1,106 @@
+.block--page_header {
+  position: relative;
+  z-index: 1;
+
+  .image--holder {
+    @include absolute_cover;
+    overflow: hidden;
+
+    &::after {
+      @include pseudo_cover;
+      background: rgba(37, 55, 70, 0.6);
+      backdrop-filter: blur(40px);
+    }
+  }
+
+  .image--holder--top {
+    position: relative;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .box--white {
+    background: $white;
+    top: 162px;
+    position: absolute;
+    width: 100%;
+    height: auto;
+    right: 0;
+    box-shadow: 0px 25px 60px rgba(37, 55, 70, 0.11);
+
+    .box--gray {
+      padding: 130px 108px;
+      position: relative;
+      width: calc(100% - 97px);
+      background: $washed_blue;
+      color: $white;
+      left: -122px;
+
+      h4 {
+        font-family: $allura;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 10rem;
+        line-height: 1.25em;
+        color: $white;
+        opacity: 0.2;
+        margin-bottom: -70px;
+      }
+
+      h1 {
+        font-size: 3.61rem;
+        line-height: 1.23em;
+        text-transform: uppercase;
+        padding-right: 35px;
+        padding-left: 35px;
+      }
+    }
+
+    .box--bottom {
+      padding: 75px 143px;
+
+      hr {
+        border-top: 1px solid $gray;
+        height: 0;
+        width: calc(100% + 219px);
+        margin: 30px 0 30px 23px;
+        position: relative;
+        &::before {
+          content: url(/wp-content/uploads/2020/07/diamond-3.png);
+          position: absolute;
+          top: 50%;
+          left: -21px;
+          transform: translateY(-50%);
+        }
+      }
+
+      ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        color: $off-black;
+
+        li {
+          position: relative;
+          padding-left: 25px;
+          margin-bottom: 5px;
+
+          &::before {
+            content: "";
+            display: block;
+            width: 8.5px;
+            height: 8.5px;
+            background: $gold;
+            position: absolute;
+            left: 4px;
+            top: 11px;
+            transform: rotate(45deg);
+          }
+        }
+      }
+    }
+  }
+}

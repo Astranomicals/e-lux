@@ -1,0 +1,62 @@
+.block--ba_section {
+  padding: 128px 0 174px;
+  background: linear-gradient(180deg, #768692 0%, #5d6b76 100%);
+  text-align: center;
+  color: $white;
+
+  .image--holder {
+    @include absolute_cover;
+
+    img {
+      position: absolute;
+      bottom: 0;
+      left: 365px;
+    }
+
+    &::before {
+      content: url(/wp-content/uploads/2020/07/Butterfly-Icon.png);
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 100%;
+    }
+  }
+
+  h2 {
+    color: $white;
+    font-size: 3.61rem;
+    font-weight: normal;
+    line-height: 1.23em;
+    margin-bottom: 30px;
+
+    strong {
+      display: inline-block;
+      font-family: $allura;
+      font-size: 12.22rem;
+      list-style: 1.25em;
+      color: rgba($white, 0.29);
+      font-weight: normal;
+      position: relative;
+      width: 207px;
+      margin-left: -80px;
+      margin-right: -90px;
+      top: 30px;
+    }
+  }
+
+  h5 {
+    font-family: $playfair;
+    font-weight: normal;
+    font-size: 2rem;
+    line-height: 1.33em;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: $white;
+    margin-bottom: 51px;
+  }
+
+  .btn--primary {
+    margin: 0 auto;
+    width: 183px;
+  }
+}

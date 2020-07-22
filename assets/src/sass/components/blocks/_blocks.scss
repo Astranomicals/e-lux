@@ -6,6 +6,7 @@
   padding: 140px 0 0;
   text-align: center;
   background: linear-gradient(180deg, #ffffff 0%, #e1e5e9 100%);
+  z-index: 1;
 
   h5 {
     margin-bottom: 35px;
@@ -145,6 +146,25 @@
             }
           }
         }
+      }
+    }
+
+    .btn-primary {
+      width: 55px;
+      height: 55px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $white;
+      border-radius: 0;
+      background: $blue;
+
+      span {
+        display: none;
+      }
+
+      &:hover {
+        background: $slate;
       }
     }
   }
