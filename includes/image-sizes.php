@@ -30,14 +30,15 @@ function im_image_sizes( $sizes ) {
 	return array_merge(
 		$sizes,
 		array(
-			'blog_preview_thumb' => __( 'Blog Preview Thumbnail' ),
-			'featured_thumb'     => __( 'Featured Thumbnail' ),
-			'parent_thumb'       => __( 'Parent Thumbnail' ),
-			'background_thumb'   => __( 'Background Thumbnail' ),
-			'hero_thumb'         => __( 'Hero Thumbnail' ),
-			'page_header_thumb'  => __( 'Page Header Thumbnail' ),
-			'blog_row_thumb'     => __( 'Blog Row Thumbnail' ),
-			'post_large'         => __( 'Post Large' ),
+			'blog_preview_thumb'     => __( 'Blog Preview Thumbnail' ),
+			'featured_thumb'         => __( 'Featured Thumbnail' ),
+			'parent_thumb'           => __( 'Parent Thumbnail' ),
+			'background_thumb'       => __( 'Background Thumbnail' ),
+			'hero_thumb'             => __( 'Hero Thumbnail' ),
+			'page_header_thumb'      => __( 'Page Header Thumbnail' ),
+			'page_header_left_thumb' => __( 'Page Header Left Thumbnail' ),
+			'blog_row_thumb'         => __( 'Blog Row Thumbnail' ),
+			'post_large'             => __( 'Post Large' ),
 		)
 	);
 }
