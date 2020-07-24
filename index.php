@@ -12,22 +12,27 @@
  */
 
 get_header(); ?>
-
-<div class="row justify-content-center">
-	<div class="col-12 col-lg-7">
-		<?php if ( have_posts() ) : ?>
-			<?php while ( have_posts() ) : ?>
-				<?php the_post(); ?>
-				<?php get_template_part( 'components/post-preview' ); ?>
-			<?php endwhile; ?> 
-			<?php get_template_part( 'components/navigation-loop' ); ?>
-		<?php else : ?>
-			<?php get_template_part( 'components/post-not-found' ); ?>
-		<?php endif; ?>
+<section class="block block--full_width_page_header">
+	<?php get_template_part( 'components/blocks/full_width_page_header' ); ?>
+</section>
+<section class="block block--blog-page">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-12 col-xl-8">
+				<?php if ( have_posts() ) : ?>
+					<?php while ( have_posts() ) : ?>
+						<?php the_post(); ?>
+						<?php get_template_part( 'components/post-preview' ); ?>
+					<?php endwhile; ?> 
+					<?php get_template_part( 'components/navigation-loop' ); ?>
+				<?php else : ?>
+					<?php get_template_part( 'components/post-not-found' ); ?>
+				<?php endif; ?>
+			</div>
+			<div class="col-xl-4">
+				<?php get_sidebar( 'blog' ); ?>
+			</div>
+		</div>
 	</div>
-	<div class="col-lg-3">
-		<?php get_sidebar( 'blog' ); ?>
-	</div>
-</div>
-
+</section>
 <?php get_footer(); ?>

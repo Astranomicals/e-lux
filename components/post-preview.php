@@ -22,12 +22,11 @@
 			<?php im_the_placeholder_image( 'blog_preview_thumb' ); ?>
 		</a>
 	<?php endif; ?>
-	<h2><a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php printf( 'Permanent Link to %s', the_title_attribute( 'echo=0' ) ); ?>"><?php the_title(); ?></a></h2>
-	<div class="box__date">
-		<span class="number"><?php echo get_the_date( 'd' ); ?></span>
-		<span class="month"><?php echo get_the_date( 'M' ); ?></span>
-		<span class="year"><?php echo get_the_date( 'Y' ); ?></span>
+	<div class="content--area">
+		<h2><a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php printf( 'Permanent Link to %s', the_title_attribute( 'echo=0' ) ); ?>"><?php the_title(); ?></a></h2>
+		<hr/>
+		<?php echo get_the_excerpt(); ?>
+		<a class="read-more" href="<?php the_permalink(); ?>" rel="bookmark" title="<?php printf( 'Permanent Link to %s', the_title_attribute( 'echo=0' ) ); ?>">Read Full Article</a>
 	</div>
-	<a class="btn btn-primary" href="<?php the_permalink(); ?>" rel="bookmark" title="<?php printf( 'Permanent Link to %s', the_title_attribute( 'echo=0' ) ); ?>">Read More <i class="fal fa-long-arrow-right"></i></a>
 </article>
 

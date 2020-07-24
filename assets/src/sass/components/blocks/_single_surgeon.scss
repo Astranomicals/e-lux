@@ -1,3 +1,225 @@
-.block-single_surgeon {
-  
+.block--single_surgeon {
+  position: relative;
+  z-index: 0;
+  background: #f6f8fb;
+  padding-bottom: 130px;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 540px;
+    background: linear-gradient(180deg, #1b2934 0%, #253646 100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+  .image--holder {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+
+    img {
+      position: relative;
+      left: -30px;
+    }
+  }
+
+  .white--box {
+    margin-top: 160px;
+    padding: 75px 143px 130px 130px;
+    width: calc(100% + 150px);
+    position: relative;
+    left: -120px;
+    background: $white;
+    box-shadow: 0px 25px 60px rgba(37, 55, 70, 0.11);
+
+    h4 {
+      font-family: $allura;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 10rem;
+      line-height: 1.25em;
+      color: $gray;
+      margin-bottom: -80px;
+    }
+    h1 {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 3.61rem;
+      line-height: 1.23em;
+      color: $blue;
+      margin: 0;
+      text-transform: uppercase;
+      padding-left: 35px;
+    }
+  }
+
+  .right--content {
+    padding-top: 75px;
+    padding-left: 143px;
+
+    h2 {
+      font-size: 2rem;
+      line-height: 1.33em;
+      color: $blue;
+      letter-spacing: 0;
+    }
+
+    hr {
+      border-top: 1px solid $gray;
+      height: 0;
+      width: calc(100% + 239px);
+      margin: 40px 0 40px 23px;
+      position: relative;
+      &::before {
+        content: url(/wp-content/uploads/2020/07/diamond-3.png);
+        position: absolute;
+        top: 50%;
+        left: -21px;
+        transform: translateY(-50%);
+      }
+    }
+
+    h3 {
+      font-size: 1.44rem;
+      line-height: 1.34em;
+      color: $blue;
+      letter-spacing: 0;
+      margin-bottom: 30px;
+    }
+
+    h4 {
+      font-family: $source;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 1rem;
+      line-height: 1.27em;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: $brown;
+      margin-bottom: 25px;
+    }
+
+    ul {
+      padding: 0;
+      margin: 0 0 40px;
+      list-style: none;
+      color: $off-black;
+
+      li {
+        position: relative;
+        padding-left: 25px;
+        margin-bottom: 5px;
+
+        &::before {
+          content: "";
+          display: block;
+          width: 8.5px;
+          height: 8.5px;
+          background: $gold;
+          position: absolute;
+          left: 4px;
+          top: 11px;
+          transform: rotate(45deg);
+        }
+      }
+    }
+  }
+
+  .center--content {
+    hr {
+      margin: 70px 0;
+    }
+
+    .embed-responsive {
+      margin-bottom: 70px;
+    }
+
+    h3 {
+      font-size: 1.44rem;
+      line-height: 1.35em;
+      margin-bottom: 30px;
+    }
+  }
+}
+
+.block--common-procedures {
+  padding: 130px 0 184px;
+  position: relative;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: url(/wp-content/uploads/2020/07/butterfly-vector.png);
+    background-position: -142px -63px;
+    background-repeat: no-repeat;
+    opacity: 0.1;
+  }
+
+  h2 {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 5.55rem;
+    line-height: 1.1em;
+    text-align: right;
+    text-transform: uppercase;
+    color: $blue;
+  }
+
+  .procedure--links {
+    margin-top: 110px;
+
+    h3 {
+      font-size: 2rem;
+      line-height: 1.33em;
+      text-transform: uppercase;
+      color: $blue;
+      margin-bottom: 40px;
+    }
+
+    ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      padding-right: 10px;
+
+      li {
+        padding: 5px 0 14px;
+        border-bottom: 1px solid #ced9e3;
+        font-family: $source;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 26px;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        color: $grayer;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        a {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: $grayer;
+          border-radius: 4px;
+          color: $white;
+          width: 35px;
+          height: 35px;
+        }
+      }
+    }
+  }
 }

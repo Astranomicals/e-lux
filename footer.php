@@ -28,7 +28,7 @@
 			<div class="col-12">
 				<h5>Testimonials</h5>
 				<h2>Words From Our Clients</h2>
-				<?php get_template_part('components/spacer'); ?>
+				<?php get_template_part( 'components/spacer' ); ?>
 				<?php
 					$args       = array(
 						'post_type'      => 'testimonial',
@@ -70,25 +70,27 @@
 </section>
 <?php endif; ?>
 
-<section class="block block__schedule">
-	<div class="image--holder">
-		<?php $schedule_image = get_field( 'schedule_image', 'options' ); ?>
-		<img src="<?php echo $schedule_image['sizes']['hero_thumb']; ?>" />
-	</div>
-	<div class="container">
-		<div class="row">
-			<div class="col-xl-5">
-				<h3><strong class="fancy">Schedule</strong> A Consultation</h3>
-			</div>
-			<div class="col-xl-7"></div>
+<?php if ( ! is_page( 23 ) ) : ?>
+	<section class="block block__schedule">
+		<div class="image--holder">
+			<?php $schedule_image = get_field( 'schedule_image', 'options' ); ?>
+			<img src="<?php echo $schedule_image['sizes']['hero_thumb']; ?>" />
 		</div>
-		<div class="row">
-			<div class="col-xl-5 offset-xl-1">
-				<?php echo do_shortcode( '[gravityforms id="2" title="false" description="false" ajax="true"]' ); ?>
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-5">
+					<h3><strong class="fancy">Schedule</strong> A Consultation</h3>
+				</div>
+				<div class="col-xl-7"></div>
+			</div>
+			<div class="row">
+				<div class="col-xl-5 offset-xl-1">
+					<?php echo do_shortcode( '[gravityforms id="2" title="false" description="false" ajax="true"]' ); ?>
+				</div>
 			</div>
 		</div>
-	</div>
-</section>
+	</section>
+<?php endif; ?>
 
 <footer class="block block--map">
 	<div class="image--holder">

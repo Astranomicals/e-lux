@@ -14,6 +14,15 @@
 $top_title   = get_sub_field( 'title' );
 $large_title = get_sub_field( 'large_title' );
 $image       = get_sub_field( 'background_image' );
+if ( is_home() ) {
+	$top_title   = 'Be Informed';
+	$large_title = 'Our Blog';
+	$image       = get_field( 'blog_header_image', 'options' );
+}
+if(is_single()){
+	$large_title = get_the_title();
+	$image = get_field('header_image', 'options');
+}
 ?>
 <?php if ( ! empty( $image ) ) : ?>
 	<div class="image--holder">

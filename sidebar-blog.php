@@ -14,6 +14,8 @@
 ?>
 <aside class="sidebar sidebar-blog">
 	<?php if ( is_active_sidebar( 'sidebar_blog' ) ) : ?>
-		<?php dynamic_sidebar( 'sidebar_blog' ); ?>
+		<div class="inner--sidebar">
+			<?php dynamic_sidebar( 'sidebar_blog' ); ?>
+		</div>
 	<?php endif; ?>
 </aside>
