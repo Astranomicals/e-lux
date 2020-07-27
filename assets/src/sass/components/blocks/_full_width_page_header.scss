@@ -1,24 +1,32 @@
 .block--full_width_page_header {
   position: relative;
   height: 770px;
-  max-height: 90vh;
+  max-height: 100vh;
   z-index: 1;
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
 
+  @include mq(md) {
+    max-height: 90vh;
+  }
+
   &::before {
     content: "";
     display: block;
     width: 1px;
-    height: 165px;
+    height: 85px;
     background: $gold;
     position: absolute;
     left: 50%;
     bottom: 0;
     transform: translate(-50%, 50%);
     z-index: 9;
+
+    @include mq(lg) {
+      height: 165px;
+    }
   }
 
   .image--holder {
@@ -51,21 +59,43 @@
     font-family: $allura;
     font-style: normal;
     font-weight: normal;
-    font-size: 10rem;
+    font-size: 4rem;
     line-height: 1.25em;
     color: $gray;
-    margin-bottom: -80px;
+    margin-bottom: -30px;
     text-transform: capitalize;
     letter-spacing: 0;
+
+    @include mq(md) {
+      font-size: 6rem;
+    }
+    @include mq(lg) {
+      margin-bottom: -60px;
+      font-size: 8rem;
+    }
+    @include mq(xl) {
+      margin-bottom: -60px;
+      font-size: 8rem;
+    }
+    @include mq(xxl) {
+      margin-bottom: -80px;
+      font-size: 10rem;
+    }
   }
   h1 {
     font-family: $playfair;
     font-style: normal;
     font-weight: normal;
-    font-size: 3.61rem;
+    font-size: 2.1rem;
     line-height: 1.23em;
     text-transform: uppercase;
     color: $white;
     margin-bottom: 0;
+    @include mq(md) {
+      font-size: 2.61rem;
+    }
+    @include mq(xxl) {
+      font-size: 3.61rem;
+    }
   }
 }

@@ -1,14 +1,27 @@
 .block--two_column_gray_butterfly {
-  padding: 130px 0;
   background: linear-gradient(180deg, #eeeff0 0%, #e1e5e9 100%);
   position: relative;
+  padding: 90px 0;
+
+  @include mq(lg) {
+    padding: 130px 0;
+  }
 
   &::before {
-    content: url(/wp-content/uploads/2020/07/Butterfly-Icon-2.png);
+    content: "";
+    background: url(/wp-content/uploads/2020/07/Butterfly-Icon-2.png);
     position: absolute;
     right: 0;
     bottom: 0;
     height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: right;
+    background-repeat: no-repeat;
+
+    @include mq(xl) {
+      background-size: contain;
+    }
   }
 
   h2 {
@@ -16,6 +29,17 @@
   }
 
   .left--shade {
+    margin-bottom: 35px;
+
+    @include mq(sm) {
+      margin-bottom: 45px;
+    }
+    @include mq(md) {
+      margin-bottom: 65px;
+    }
+    @include mq(lg) {
+      margin-bottom: 0;
+    }
     &::before {
       background: $white;
     }

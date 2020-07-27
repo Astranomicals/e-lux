@@ -24,12 +24,12 @@ get_header(); ?>
 		<section class="block block--contact-header">
 			<div class="container">
 				<div class="row">
-					<div class="col-xl-6">
+					<div class="col-xl-6 col-lg-6 col-md-6">
 						<div class="image--holder">
 							<?php echo get_the_post_thumbnail( $post->ID, 'featured_hero_thumb' ); ?>
 						</div>
 					</div>
-					<div class="col-xl-6">
+					<div class="col-xl-6 col-lg-6 col-md-6">
 						<div class="white--box">
 							<h1>Contact</h1>
 							<h2>Edina Plastic Surgery</h2>
@@ -55,10 +55,10 @@ get_header(); ?>
 					</div>
 				</div>
 				<div class="row block--form-area">
-					<div class="col-xl-4 offset-xl-1">
+					<div class="col-xl-4 offset-xl-1 col-md-6">
 						<?php the_content(); ?>
 					</div>
-					<div class="col-xl-6 offset-xl-1">
+					<div class="col-xl-6 offset-xl-1 col-md-6">
 						<?php echo do_shortcode( '[gravityforms id="3" title="false" description="false" ajax="true"]' ); ?>
 					</div>
 				</div>

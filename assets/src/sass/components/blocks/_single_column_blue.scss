@@ -1,10 +1,14 @@
 .block--single_column_blue {
   background: linear-gradient(180deg, #1b2934 0%, #253646 100%);
-  padding: 130px 0;
+  padding: 90px 0;
   color: $white;
   text-align: center;
   overflow: hidden;
   z-index: 0;
+
+  @include mq(lg) {
+    padding: 130px 0;
+  }
 
   &::before {
     content: "";

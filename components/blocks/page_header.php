@@ -22,14 +22,14 @@ $image   = get_sub_field( 'background_image' );
 
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-xxl-6 px-0">
+		<div class="col-md-6 px-0">
 			<?php if ( ! empty( $image ) ) : ?>
 				<div class="image--holder--top">
 					<img src="<?php echo esc_url( $image['sizes']['page_header_left_thumb'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" />
 				</div>
 			<?php endif; ?>
 		</div>
-		<div class="col-xxl-6 px-0">
+		<div class="col-md-6 px-0">
 			<div class="box--white">
 				<div class="box--gray">
 					<h4>Procedures</h4>

@@ -9,8 +9,16 @@
   .spacer-butterfly {
     display: flex;
     align-items: center;
-    padding: 0 123px;
+    padding: 0;
     margin: 83px 0;
+
+    @include mq(md) {
+      padding: 0 45px;
+    }
+
+    @include mq(lg) {
+      padding: 0 123px;
+    }
 
     &::before,
     &::after {
@@ -31,23 +39,46 @@
 
   .box--grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 40px;
+    grid-template-columns: 1fr;
+    grid-gap: 15px;
+
+    @include mq(md) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include mq(lg) {
+      grid-gap: 40px;
+    }
 
     .single--box {
       background: #f6f8fb;
-      padding: 50px;
+      padding: 35px;
+
+      @include mq(lg) {
+        padding: 50px;
+      }
 
       h3 {
         font-family: $playfair;
         font-style: normal;
         font-weight: normal;
-        font-size: 2rem;
+        font-size: 1.6rem;
         line-height: 1.33em;
         text-transform: uppercase;
         color: $off-black;
         margin-bottom: 30px;
+
+        @include mq(xl) {
+          font-size: 2rem;
+        }
       }
+    }
+  }
+
+  .right--shade {
+    margin-top: 35px;
+    @include mq(lg) {
+      margin-top: 0;
     }
   }
 }

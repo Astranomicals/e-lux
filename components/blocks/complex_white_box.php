@@ -20,10 +20,10 @@ $bottom_boxes  = get_sub_field( 'bottom_boxes' );
 
 <div class="container">
 	<div class="row">
-		<div class="col-xl-6 pr-4">
+		<div class="col-lg-6 pr-4">
 			<?php echo $left_content; ?>
 		</div>
-		<div class="col-xl-6 pl-4">
+		<div class="col-lg-6 pl-4">
 			<?php
 			if ( $right_toggle ) :
 				echo $right_content;

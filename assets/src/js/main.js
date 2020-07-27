@@ -243,7 +243,8 @@
 					
 					var testimonial_block = new Swiper(".testimonial-container", {
             slidesPerView: 1,
-            loop: true,
+						loop: true,
+						autoHeight: true,
             navigation: {
               nextEl: ".swiper-button-next",
               prevEl: ".swiper-button-prev"

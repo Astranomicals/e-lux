@@ -16,7 +16,7 @@ $content = get_sub_field( 'content_top' );
 
 <div class="container">
 	<div class="row justify-content-center">
-		<div class="col-xl-8 px-0">
+		<div class="col-xl-8 col-md-10 col-12 px-0">
 			<?php echo $content; ?>
 		</div>
 	</div>

@@ -16,6 +16,15 @@ $left_image  = get_sub_field( 'left_image' );
 $right_image = get_sub_field( 'right_image' );
 ?>
 
+
+<div class="container">
+	<div class="row justify-content-center">
+		<div class="col-xl-6 col-lg-8 col-md-10 col-12">
+			<?php echo $content; ?>
+		</div>
+	</div>
+</div>
+
 <?php if ( ! empty( $left_image ) ) : ?>
 	<div class="image--holder left--image">
 		<img src="<?php echo esc_url( $left_image['sizes']['large'] ); ?>" alt="<?php echo esc_attr( $left_image['alt'] ); ?>" />
@@ -26,11 +35,3 @@ $right_image = get_sub_field( 'right_image' );
 		<img src="<?php echo esc_url( $right_image['sizes']['large'] ); ?>" alt="<?php echo esc_attr( $right_image['alt'] ); ?>" />
 	</div>
 <?php endif; ?>
-
-<div class="container">
-	<div class="row justify-content-center">
-		<div class="col-xl-6">
-			<?php echo $content; ?>
-		</div>
-	</div>
-</div>

@@ -1,6 +1,10 @@
 .block--two_column_gray {
-  padding: 130px 0;
+  padding: 90px 0;
   background: linear-gradient(180deg, #eeeff0 0%, #e1e5e9 100%);
+
+  @include mq(lg) {
+    padding: 130px 0;
+  }
 
   h2 {
     margin-bottom: 30px;
@@ -11,19 +15,33 @@
     display: block;
 
     img {
-      position: absolute;
-      top: 0;
-      right: 0;
       box-shadow: 0px 25px 60px rgba(37, 55, 70, 0.29);
-      margin-right: 6vw;
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 35px;
+
+      @include mq(md) {
+        position: absolute;
+        max-width: unset;
+        top: 0;
+        right: 0;
+        box-shadow: 0px 25px 60px rgba(37, 55, 70, 0.29);
+        margin-right: 6vw;
+      }
     }
   }
 
   .hang--bottom {
     img {
-      position: absolute;
+      position: relative;
+      max-width: 100%;
+      height: auto;
       bottom: -130px;
-      margin-left: 3vw;
+
+      @include mq(md) {
+        margin-left: 3vw;
+        position: absolute;
+      }
     }
   }
   a:not(.btn) {

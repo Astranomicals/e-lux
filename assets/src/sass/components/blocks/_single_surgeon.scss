@@ -2,18 +2,37 @@
   position: relative;
   z-index: 0;
   background: #f6f8fb;
-  padding-bottom: 130px;
+  padding-top: 100px;
+  padding-bottom: 90px;
+
+  @include mq(md) {
+    padding-top: 140px;
+  }
+  @include mq(lg) {
+    padding-top: 0;
+    padding-bottom: 130px;
+  }
 
   &::before {
     content: "";
     display: block;
     width: 100%;
-    height: 540px;
+    height: 300px;
     background: linear-gradient(180deg, #1b2934 0%, #253646 100%);
     position: absolute;
     top: 0;
     left: 0;
     z-index: -1;
+
+    @include mq(md) {
+      height: 420px;
+    }
+    @include mq(xl) {
+      height: 480px;
+    }
+    @include mq(xxl) {
+      height: 540px;
+    }
   }
 
   .image--holder {
@@ -25,43 +44,93 @@
 
     img {
       position: relative;
-      left: -30px;
+      width: auto;
+      max-width: 100%;
+      height: auto;
+      max-height: 60vh;
+      margin: 0 auto;
+      display: block;
+
+      @include mq(lg) {
+        max-height: unset;
+        left: -30px;
+        width: calc(100% + 60px);
+      }
     }
   }
 
   .white--box {
-    margin-top: 160px;
-    padding: 75px 143px 130px 130px;
-    width: calc(100% + 150px);
+    padding: 25px 15px;
+    width: 100%;
     position: relative;
-    left: -120px;
     background: $white;
     box-shadow: 0px 25px 60px rgba(37, 55, 70, 0.11);
+    text-align: center;
+
+    @include mq(md) {
+      text-align: left;
+      padding: 35px 50px 45px;
+      width: calc(100% + 150px);
+      margin-top: 160px;
+      left: -120px;
+    }
+    @include mq(xl) {
+      padding: 7vh 7vw;
+    }
+
+    @include mq(xxl) {
+      margin-top: 160px;
+    }
 
     h4 {
       font-family: $allura;
       font-style: normal;
       font-weight: normal;
-      font-size: 10rem;
+      font-size: 4.4rem;
       line-height: 1.25em;
       color: $gray;
-      margin-bottom: -80px;
+      margin-bottom: -20px;
+
+      @include mq(lg) {
+        margin-bottom: -60px;
+        font-size: 6.4rem;
+      }
+
+      @include mq(xxl) {
+        margin-bottom: -80px;
+        font-size: 10rem;
+      }
     }
     h1 {
       font-style: normal;
       font-weight: normal;
-      font-size: 3.61rem;
+      font-size: 2rem;
       line-height: 1.23em;
       color: $blue;
       margin: 0;
       text-transform: uppercase;
-      padding-left: 35px;
+
+      @include mq(md) {
+        font-size: 2.5rem;
+        padding-left: 35px;
+      }
+
+      @include mq(lg) {
+        font-size: 3rem;
+      }
+
+      @include mq(xxl) {
+        font-size: 3.61rem;
+      }
     }
   }
 
   .right--content {
     padding-top: 75px;
-    padding-left: 143px;
+
+    @include mq(xl) {
+      padding-left: 143px;
+    }
 
     h2 {
       font-size: 2rem;
@@ -149,8 +218,12 @@
 }
 
 .block--common-procedures {
-  padding: 130px 0 184px;
+  padding: 90px 0;
   position: relative;
+
+  @include mq(xl) {
+    padding: 130px 0 184px;
+  }
 
   &::before {
     content: "";
@@ -169,22 +242,45 @@
   h2 {
     font-style: normal;
     font-weight: normal;
-    font-size: 5.55rem;
+    font-size: 2.5rem;
     line-height: 1.1em;
-    text-align: right;
+    text-align: center;
     text-transform: uppercase;
     color: $blue;
+
+    @include mq(md) {
+      text-align: right;
+      font-size: 3rem;
+    }
+    @include mq(xl) {
+      font-size: 4.55rem;
+    }
+    @include mq(xxl) {
+      font-size: 5.55rem;
+    }
   }
 
   .procedure--links {
-    margin-top: 110px;
+    margin-top: 35px;
+
+    @include mq(md) {
+      margin-top: 80px;
+    }
+    @include mq(lg) {
+      margin-top: 110px;
+    }
 
     h3 {
-      font-size: 2rem;
+      font-size: 1.6rem;
       line-height: 1.33em;
       text-transform: uppercase;
       color: $blue;
-      margin-bottom: 40px;
+      margin-bottom: 30px;
+
+      @include mq(lg) {
+        margin-bottom: 40px;
+        font-size: 2rem;
+      }
     }
 
     ul {
@@ -192,6 +288,11 @@
       margin: 0;
       list-style: none;
       padding-right: 10px;
+      margin-bottom: 30px !important;
+
+      @include mq(md) {
+        margin-bottom: 0px !important;
+      }
 
       li {
         padding: 5px 0 14px;

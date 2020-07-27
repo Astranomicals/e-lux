@@ -1,7 +1,11 @@
 .block--single_gray_column {
   background: #f6f8fb;
-  padding: 345px 0 130px;
+  padding: 90px 0;
   color: $off-black;
+
+  @include mq(md) {
+    padding: 345px 0 130px;
+  }
 
   a {
     color: $black;

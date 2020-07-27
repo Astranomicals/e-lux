@@ -11,13 +11,18 @@
  * @since      1.0.0
  */
 
-	$older_link = get_next_post_link( '%link', '%title <i class="far fa-angle-right"></i>' );
-	$newer_link = get_previous_post_link( '%link', '<i class="far fa-angle-left"></i> %title ' );
+	$older_link = get_next_post_link( '%link', '<i class="far fa-angle-right"></i>' );
+	$newer_link = get_previous_post_link( '%link', '<i class="far fa-angle-left"></i>' );
 ?>
 
 <?php if ( $older_link || $newer_link ) : ?>
 	<nav class="d-flex align-items-center navigation navigation-single">
-		<?php echo $newer_link; ?>
-		<?php echo $older_link; ?>
+		<div class="arrows">
+			<?php echo $newer_link; ?>
+			<?php echo $older_link; ?>
+		</div>
+		<div class="back--button">
+			<a href="/blog/" class="btn btn--secondary">Back To Blog</a>
+		</div>
 	</nav>
 <?php endif; ?>

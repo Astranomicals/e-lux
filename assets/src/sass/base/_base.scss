@@ -68,11 +68,18 @@ h5 {
 }
 
 h2 {
-  font-size: 3.05rem;
+  font-size: 1.5rem;
   line-height: 1.32em;
   text-transform: uppercase;
   color: $off-black;
   font-weight: normal;
+
+  @include mq(lg) {
+    font-size: 2.4rem;
+  }
+  @include mq(xxl) {
+    font-size: 3.05rem;
+  }
 }
 
 h3 {
@@ -84,13 +91,37 @@ h3 {
 h5 {
   color: $brown;
   text-transform: uppercase;
-  margin-bottom: 35px;
+  margin-bottom: 15px;
   letter-spacing: 0.15em;
   line-height: 1.27em;
   font-weight: 600;
   font-family: $source;
+
+  @include mq(md) {
+    margin-bottom: 35px;
+  }
 }
 
 p {
   margin-bottom: 30px;
+}
+
+.mobile-only {
+  max-width: 100%;
+  height: auto;
+
+  @include mq(md) {
+    display: none;
+  }
+}
+
+.pl-4 {
+  @include mq($until: lg) {
+    padding-left: 15px !important;
+  }
+}
+.pr-4 {
+  @include mq($until: lg) {
+    padding-right: 15px !important;
+  }
 }

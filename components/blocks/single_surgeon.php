@@ -17,12 +17,12 @@ $center_content = get_sub_field( 'center_content' );
 
 <div class="container">
 	<div class="row">
-		<div class="col-xl-6">
+		<div class="col-xl-6 col-lg-6 col-md-6">
 			<div class="image--holder">
 				<?php echo get_the_post_thumbnail( $post->ID, 'featured_hero_thumb' ); ?>
 			</div>
 		</div>
-		<div class="col-xl-6">
+		<div class="col-xl-6 col-lg-6 col-md-6">
 			<div class="white--box">
 					<h4>About</h4>
 					<h1><?php echo get_the_title(); ?></h1>
@@ -43,13 +43,13 @@ $center_content = get_sub_field( 'center_content' );
 <section class="block block--common-procedures">
 	<div class="container">
 		<div class="row">
-			<div class="col-xl-6">
+			<div class="col-lg-6 col-md-8 col-12">
 				<h2>Common Procedures</h2>
 			</div>
 			<div class="col-xl-6"></div>
 		</div>
 		<div class="row procedure--links">
-			<div class="col-xl-4">
+			<div class="col-md-4">
 				<h3>Body</h3>
 				<?php if ( have_rows( 'body' ) ) : ?>
 					<ul>
@@ -70,7 +70,7 @@ $center_content = get_sub_field( 'center_content' );
 					</ul>
 				<?php endif; ?>
 			</div>
-			<div class="col-xl-4">
+			<div class="col-md-4">
 				<h3>Breast</h3>
 				<?php if ( have_rows( 'breast' ) ) : ?>
 					<ul>
@@ -91,7 +91,7 @@ $center_content = get_sub_field( 'center_content' );
 					</ul>
 				<?php endif; ?>
 			</div>
-			<div class="col-xl-4">
+			<div class="col-md-4">
 				<h3>Face</h3>
 				<?php if ( have_rows( 'face' ) ) : ?>
 					<ul>

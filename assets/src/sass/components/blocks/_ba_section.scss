@@ -1,8 +1,12 @@
 .block--ba_section {
-  padding: 128px 0 174px;
+  padding: 90px 0;
   background: linear-gradient(180deg, #768692 0%, #5d6b76 100%);
   text-align: center;
   color: $white;
+
+  @include mq(md) {
+    padding: 128px 0 174px;
+  }
 
   .image--holder {
     @include absolute_cover;
@@ -10,7 +14,20 @@
     img {
       position: absolute;
       bottom: 0;
-      left: 365px;
+      left: 2vw;
+
+      @include mq($until: md) {
+        display: none;
+      }
+      @include mq(lg) {
+        left: 5vw;
+      }
+      @include mq(xl) {
+        left: 10vw;
+      }
+      @include mq(xxl) {
+        left: 19vw;
+      }
     }
 
     &::before {
@@ -19,40 +36,68 @@
       left: 0;
       bottom: 0;
       height: 100%;
+      opacity: 0.4;
+
+      @include mq(md) {
+        opacity: 1;
+      }
     }
   }
 
   h2 {
     color: $white;
-    font-size: 3.61rem;
+    font-size: 2rem;
     font-weight: normal;
     line-height: 1.23em;
     margin-bottom: 30px;
 
+    @include mq(md) {
+      font-size: 2.61rem;
+    }
+    @include mq(xl) {
+      font-size: 3.61rem;
+    }
+
     strong {
       display: inline-block;
       font-family: $allura;
-      font-size: 12.22rem;
+      font-size: 6.22rem;
       list-style: 1.25em;
       color: rgba($white, 0.29);
       font-weight: normal;
       position: relative;
       width: 207px;
-      margin-left: -80px;
-      margin-right: -90px;
-      top: 30px;
+      margin-left: -75px;
+      margin-right: -80px;
+      top: 15px;
+
+      @include mq(md) {
+        margin-left: -80px;
+        margin-right: -90px;
+        top: 30px;
+        font-size: 8.22rem;
+      }
+      @include mq(xl) {
+        font-size: 12.22rem;
+      }
     }
   }
 
   h5 {
     font-family: $playfair;
     font-weight: normal;
-    font-size: 2rem;
+    font-size: 1.5rem;
     line-height: 1.33em;
-    letter-spacing: 0.3em;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     color: $white;
-    margin-bottom: 51px;
+    margin-bottom: 25px;
+
+    @include mq(md) {
+      letter-spacing: 0.3em;
+      margin-bottom: 51px;
+      font-size: 2rem;
+    }
   }
 
   .btn--primary {

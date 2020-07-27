@@ -19,19 +19,19 @@ $right_content        = get_sub_field( 'right_content' );
 
 <div class="container">
 	<div class="row">
-		<div class="col-xl-6 pr-4">
+		<div class="col-lg-6 pr-4 left--content">
 			<?php echo $left_content; ?>
 		</div>
-		<div class="col-xl-6 pl-4">
+		<div class="col-lg-6 pl-4">
 				<?php echo $right_content; ?>
 		</div>
 		<div class="col-12">
 			<hr/>
 		</div>
-		<div class="col-xl-6 pr-4">
+		<div class="col-lg-6 pr-4 left--content">
 			<?php echo $bottom_left_content; ?>
 		</div>
-		<div class="col-xl-6 pl-4">
+		<div class="col-lg-6 pl-4">
 			<?php echo $bottom_right_content; ?>
 		</div>
 	</div>

@@ -23,13 +23,18 @@
         textarea {
           margin: 0;
           width: 100%;
-          padding: 25px 30px !important;
+          padding: 15px 20px !important;
           background: transparent;
-          font-size: 18px !important;
+          font-size: 16px !important;
           line-height: auto;
           font-weight: normal;
           border: none;
           color: $black;
+
+          @include mq(md) {
+            font-size: 18px !important;
+            padding: 25px 30px !important;
+          }
           &:focus {
             outline: none;
             background: $white;
@@ -50,13 +55,17 @@
             width: 100%;
             max-width: 100%;
             display: block;
-            color: $white;
+            color: $off-black;
             font-family: $source;
             font-style: normal;
             font-weight: 600;
             font-size: 18px;
             line-height: 30px;
             letter-spacing: 0.03em;
+
+            @include mq(md) {
+              color: $white;
+            }
           }
           label::after,
           label::after {

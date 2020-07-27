@@ -21,7 +21,7 @@ $ba_link          = get_sub_field( 'ba_link' );
 
 <div class="container">
 	<div class="row">
-		<div class="col-xl-5 offset-xl-6 px-0">
+		<div class="col-xxl-5 offset-xxl-6 col-xl-6 offset-xl-5 col-md-6 offset-md-6 px-0">
 			<h2>Before <strong>&</strong> After</h2>
 			<h5>Photo Gallery</h5>
 			<a href="<?php echo $ba_link; ?>" class="btn btn--primary">Enter Gallery</a>

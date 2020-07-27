@@ -17,10 +17,10 @@ $right_content = get_sub_field( 'content_right' );
 
 <div class="container">
 	<div class="row">
-		<div class="col-xl-6 pr-4">
+		<div class="col-md-6 pr-4 left--content">
 			<?php echo $left_content; ?>
 		</div>
-		<div class="col-xl-6 pl-4">
+		<div class="col-md-6 pl-4">
 			<?php echo $right_content; ?>
 		</div>
 	</div>

@@ -3,10 +3,14 @@
 }
 
 .block__testimonial {
-  padding: 140px 0 0;
+  padding: 90px 0 0;
   text-align: center;
   background: linear-gradient(180deg, #ffffff 0%, #e1e5e9 100%);
   z-index: 1;
+
+  @include mq(xl) {
+    padding: 140px 0 0;
+  }
 
   h5 {
     margin-bottom: 35px;
@@ -17,14 +21,26 @@
   }
 
   .spacer {
-    margin-bottom: 112px;
+    margin-bottom: 9vh;
+
+    @include mq(xxl) {
+      margin-bottom: 112px;
+    }
   }
 
   .testimonial-container {
     overflow: visible;
     .swiper-slide {
-      padding: 0 247px;
+      padding: 0 35px;
       opacity: 0;
+
+      @include mq(md) {
+        padding: 0 140px;
+      }
+
+      @include mq(xl) {
+        padding: 0 247px;
+      }
 
       &.swiper-slide-active {
         opacity: 1;
@@ -49,10 +65,21 @@
     }
   }
   .swiper--nav {
+    display: flex;
+    width: 150px;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    margin: 35px auto 0;
+
+    @include mq(md) {
+      display: flex;
+      width: 100%;
+      justify-content: unset;
+    }
     .swiper-button-next,
     .swiper-button-prev {
-      width: 67px;
-      height: 67px;
+      width: 45px;
+      height: 45px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -60,9 +87,24 @@
       box-shadow: 0px 25px 60px rgba(37, 55, 70, 0.11);
       border-radius: 7px;
       color: #768692;
-      font-size: 18px;
-      transform: translateY(-50%);
+      font-size: 15px;
+      top: 0;
       transition: all 0.4s ease-in-out;
+      position: relative;
+      margin-top: 0;
+
+      @include mq(md) {
+        top: 50%;
+        transform: translateY(-50%);
+        position: absolute;
+        font-size: 18px;
+        width: 67px;
+        height: 67px;
+      }
+
+      &:focus {
+        outline: none;
+      }
 
       &:hover {
         background: $blue !important;
@@ -75,15 +117,37 @@
 .newsletter--box {
   position: relative;
   background: $white url(/wp-content/uploads/2020/07/watermark-1.png) left /
-    contain no-repeat;
-  padding: 80px 103px;
+    cover no-repeat;
+  padding: 50px 20px 20px;
   display: grid;
-  grid-template-columns: 286px 1fr;
-  grid-gap: 124px;
-  margin-top: 140px;
+  grid-template-columns: 1fr;
+  grid-gap: 15px;
+  margin-top: 90px;
   z-index: 0;
   transform: translateY(25px);
   box-shadow: 0px 25px 60px rgba(37, 55, 70, 0.29);
+
+  @include mq(md) {
+    padding: 80px 50px;
+  }
+
+  @include mq(lg) {
+    grid-gap: 40px;
+    grid-template-columns: 180px 1fr;
+    background: $white url(/wp-content/uploads/2020/07/watermark-1.png) left /
+      contain no-repeat;
+  }
+
+  @include mq(xl) {
+    padding: 80px 103px;
+    grid-gap: 84px;
+    grid-template-columns: 200px 1fr;
+  }
+  @include mq(xxl) {
+    grid-template-columns: 286px 1fr;
+    grid-gap: 124px;
+    margin-top: 140px;
+  }
 
   &::before {
     content: url(/wp-content/uploads/2020/07/logo-triangle.png);
@@ -107,12 +171,20 @@
 
   h3 {
     font-weight: normal;
-    font-size: 2rem;
+    font-size: 1.6rem;
     line-height: 1.33em;
-    text-align: right;
+    text-align: center;
     color: $off-black;
     text-transform: uppercase;
     letter-spacing: 0;
+
+    @include mq(lg) {
+      text-align: right;
+    }
+
+    @include mq(xxl) {
+      font-size: 2rem;
+    }
   }
 
   .content--area {
@@ -122,13 +194,21 @@
   .gform_wrapper {
     form {
       display: grid;
-      grid-template-columns: 1fr 55px;
+      grid-template-columns: 1fr;
       grid-gap: 8px;
+
+      @include mq(md) {
+        grid-template-columns: 1fr 55px;
+      }
 
       .gform_fields {
         display: grid;
         grid-gap: 8px;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
+
+        @include mq(md) {
+          grid-template-columns: 1fr 1fr;
+        }
         li.gfield {
           margin: 0;
 
@@ -158,6 +238,10 @@
       color: $white;
       border-radius: 0;
       background: $blue;
+
+      @include mq($until: md) {
+        margin-left: auto;
+      }
 
       span {
         display: none;
@@ -198,11 +282,23 @@
       justify-content: center;
 
       .staff {
-        margin: 0 20px 90px;
+        margin: 0 2.5% 50px;
         display: block;
-        max-width: 330px;
+        max-width: 45%;
         position: relative;
         z-index: 0;
+
+        @include mq(md) {
+          margin: 0 10px 90px;
+          max-width: 220px;
+        }
+        @include mq(lg) {
+          max-width: 270px;
+        }
+        @include mq(xxl) {
+          margin: 0 20px 90px;
+          max-width: 330px;
+        }
 
         &::before {
           content: "";
@@ -225,12 +321,18 @@
           overflow: hidden;
           z-index: 0;
 
+          img {
+            width: 100%;
+            height: auto;
+          }
+
           &::before {
             content: "";
             display: block;
             width: 100%;
             height: 100%;
             background: url(/wp-content/uploads/2020/07/Rectangle-37.png);
+            background-size: cover;
             position: absolute;
             top: 100%;
             left: 0;
@@ -258,7 +360,7 @@
             width: 100%;
             font-style: normal;
             font-weight: 600;
-            font-size: 18px;
+            font-size: 16px;
             line-height: 23px;
             text-align: center;
             letter-spacing: 0.15em;
@@ -266,6 +368,10 @@
             color: $white;
             transition: all 0.4s ease-in-out;
             z-index: 3;
+
+            @include mq(md) {
+              font-size: 18px;
+            }
           }
         }
 
@@ -273,23 +379,31 @@
           font-family: $playfair;
           font-style: normal;
           font-weight: normal;
-          font-size: 2rem;
+          font-size: 1.4rem;
           line-height: 1.33em;
           text-transform: uppercase;
           color: $blue;
           margin-bottom: 10px;
+
+          @include mq(lg) {
+            font-size: 2rem;
+          }
         }
 
         h5 {
           font-family: $playfair;
           font-style: normal;
           font-weight: normal;
-          font-size: 1.44rem;
+          font-size: 1rem;
           line-height: 1.34em;
           color: $washed_blue;
           margin-bottom: 0;
           text-transform: capitalize;
           letter-spacing: 0;
+
+          @include mq(lg) {
+            font-size: 1.44rem;
+          }
         }
 
         &:hover {
@@ -323,12 +437,25 @@
     content: "";
     display: block;
     width: 100%;
-    height: 540px;
+    height: 300px;
     background: linear-gradient(180deg, #1b2934 0%, #253646 100%);
     z-index: -1;
     position: absolute;
     top: 0;
     left: 0;
+
+    @include mq(md) {
+      height: 320px;
+    }
+    @include mq(xl) {
+      height: 420px;
+    }
+    @include mq(xl) {
+      height: 480px;
+    }
+    @include mq(xxl) {
+      height: 540px;
+    }
   }
 
   &::after {
@@ -347,42 +474,117 @@
     z-index: -1;
   }
 
-  .white--box {
-    margin-top: 160px;
-    background: $white;
-    width: calc(100% + 150px);
-    left: -120px;
-    padding: 75px 108px 130px;
+  .image--holder {
     position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+
+    img {
+      position: relative;
+      width: auto;
+      max-width: 100%;
+      height: auto;
+      max-height: 60vh;
+      margin: 0 auto;
+      display: block;
+
+      @include mq(lg) {
+        max-height: unset;
+        left: -30px;
+        width: calc(100% + 60px);
+      }
+    }
+  }
+
+  .white--box {
+    padding: 25px 15px;
+    width: 100%;
+    position: relative;
+    background: $white;
     box-shadow: 0px 25px 60px rgba(37, 55, 70, 0.11);
+    text-align: center;
+
+    @include mq(md) {
+      text-align: left;
+      padding: 35px 50px 45px;
+      width: calc(100% + 250px);
+      margin-top: 160px;
+      left: -220px;
+    }
+    @include mq(lg) {
+      text-align: left;
+      padding: 35px 50px 45px;
+      width: calc(100% + 150px);
+      margin-top: 160px;
+      left: -120px;
+    }
+    @include mq(xl) {
+      padding: 7vh 7vw;
+    }
+
+    @include mq(xxl) {
+      margin-top: 160px;
+    }
 
     h1 {
-      font-size: 10rem;
       font-family: $allura;
-      color: $gray;
-      margin-bottom: -70px;
+      font-style: normal;
       font-weight: normal;
+      font-size: 4.4rem;
+      line-height: 1.25em;
+      color: $gray;
+      margin-bottom: -20px;
+
+      @include mq(lg) {
+        margin-bottom: -60px;
+        font-size: 6.4rem;
+      }
+
+      @include mq(xxl) {
+        margin-bottom: -80px;
+        font-size: 10rem;
+      }
     }
 
     h2 {
-      font-family: $playfair;
       font-style: normal;
       font-weight: normal;
-      font-size: 3.6111rem;
+      font-size: 2rem;
       line-height: 1.23em;
       color: $blue;
-      padding-left: 35px;
-      margin-bottom: 45px;
+      margin: 0;
+      text-transform: uppercase;
+      margin-bottom: 35px;
+
+      @include mq(md) {
+        font-size: 2.5rem;
+        padding-left: 35px;
+      }
+
+      @include mq(lg) {
+        margin-bottom: 45px;
+        font-size: 3rem;
+      }
+
+      @include mq(xxl) {
+        font-size: 3.61rem;
+      }
     }
 
     p {
       font-family: $playfair;
       font-style: normal;
       font-weight: normal;
-      font-size: 1.4rem;
+      font-size: 1rem;
       line-height: 1.25em;
       color: $blue;
       margin-bottom: 45px;
+
+      @include mq(md) {
+        font-size: 1.4rem;
+      }
 
       a {
         color: $blue;
@@ -445,7 +647,7 @@
         div.ginput_container_checkbox {
           li {
             label {
-              color: $blue;
+              color: $blue !important;
             }
           }
         }

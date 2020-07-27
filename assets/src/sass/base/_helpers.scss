@@ -158,6 +158,11 @@
     background: #f6f8fb;
     z-index: -1;
   }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
 }
 
 .left--shade {
@@ -175,5 +180,9 @@
     right: 40px;
     background: #f6f8fb;
     z-index: -1;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
   }
 }

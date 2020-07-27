@@ -23,7 +23,7 @@ $background_image = get_sub_field( 'background_image' );
 
 <div class="container">
 	<div class="row">
-		<div class="col-xl-5">
+		<div class="col-xxl-5 col-xl-6 col-lg-7 col-md-7">
 			<?php echo $content; ?>
 		</div>
 	</div>

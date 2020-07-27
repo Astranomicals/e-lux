@@ -56,7 +56,7 @@
 			</div>
 		</div>
 		<div class="row justify-content-center newsletter--area">
-			<div class="col-10">
+			<div class="col-md-10 col-12">
 					<div class="newsletter--box">
 						<h3>Join the EPS Community</h3>
 						<div class="content--area">
@@ -78,13 +78,13 @@
 		</div>
 		<div class="container">
 			<div class="row">
-				<div class="col-xl-5">
+				<div class="col-xl-5 col-md-6 col-12">
 					<h3><strong class="fancy">Schedule</strong> A Consultation</h3>
 				</div>
 				<div class="col-xl-7"></div>
 			</div>
 			<div class="row">
-				<div class="col-xl-5 offset-xl-1">
+				<div class="col-xl-5 offset-xl-1 col-md-6">
 					<?php echo do_shortcode( '[gravityforms id="2" title="false" description="false" ajax="true"]' ); ?>
 				</div>
 			</div>

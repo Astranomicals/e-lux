@@ -17,8 +17,22 @@ get_header(); ?>
 </section>
 <section class="block block--meta-info">
 	<div class="container">
-		<div class="col-xl-10">
-			<h6>Published on <?php echo get_the_date( 'F j, Y' ); ?></h6> | 
+		<div class="row justify-content-center">
+			<div class="col-xl-10">
+				<div class="meta--box">
+					<h6><strong>Published:</strong> <?php echo get_the_date( 'F j, Y' ); ?></h6> | <h6><strong>Category: </strong>
+					<?php
+					$categories = get_the_category();
+					$output     = array();
+					foreach ( $categories as $category ) {
+						$category_link = get_category_link( $category->ID );
+						$output[]      = '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '">' . esc_html( $category->name ) . '</a>';
+					}
+					echo implode( ', ', $output );
+					?>
+					</h6>
+				</div>
+			</div>
 		</div>
 	</div>
 </section>

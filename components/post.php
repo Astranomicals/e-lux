@@ -23,8 +23,6 @@
 					<?php endif; ?>
 				</div>
 			</div>
-		</div>
-	<div class="col-md-10 col-12">
 		<?php the_content(); ?>
 	</div> 
 </article>
