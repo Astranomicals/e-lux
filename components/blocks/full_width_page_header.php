@@ -23,6 +23,11 @@ if(is_single()){
 	$large_title = get_the_title();
 	$image = get_field('header_image', 'options');
 }
+if(is_post_type_archive('gallery')){
+	$top_title = "Gallery";
+	$large_title = single_term_title();
+	$image = get_field('gallery_header_image', 'options');
+}
 ?>
 <?php if ( ! empty( $image ) ) : ?>
 	<div class="image--holder">

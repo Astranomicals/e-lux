@@ -87,6 +87,9 @@
         }
         @include mq(xxl) {
           margin-bottom: -70px;
+          font-size: 8rem;
+        }
+        @include mq(xxxl) {
           font-size: 10rem;
         }
       }
@@ -101,7 +104,11 @@
           padding-left: 15px;
           font-size: 2.61rem;
         }
-        @include mq(xl) {
+        @include mq(xxl) {
+          padding-left: 25px;
+          font-size: 3rem;
+        }
+        @include mq(xxxl) {
           padding-left: 35px;
           font-size: 3.61rem;
         }
@@ -119,6 +126,11 @@
       }
       @include mq(xl) {
         padding: 75px 143px;
+      }
+
+      h2 {
+        font-size: 2rem;
+        margin-bottom: 30px;
       }
 
       hr {

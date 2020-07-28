@@ -69,6 +69,7 @@ require_once get_template_directory() . '/includes/shortcodes/child-pages.php';
 require_once get_template_directory() . '/includes/shortcodes/staff.php';
 require_once get_template_directory() . '/includes/shortcodes/spacer.php';
 require_once get_template_directory() . '/includes/shortcodes/team.php';
+require_once get_template_directory() . '/includes/shortcodes/testimonials.php';
 
 // PLUGINS
 // ==================================================.

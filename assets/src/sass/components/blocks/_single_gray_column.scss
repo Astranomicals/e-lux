@@ -7,12 +7,41 @@
     padding: 345px 0 130px;
   }
 
-  a {
+  a:not(.btn) {
     color: $black;
     font-weight: bold;
 
     &:hover {
       color: $gray;
+    }
+  }
+
+  h2 {
+    margin-bottom: 30px;
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    color: $off-black;
+
+    li {
+      position: relative;
+      padding-left: 25px;
+      margin-bottom: 5px;
+
+      &::before {
+        content: "";
+        display: block;
+        width: 8.5px;
+        height: 8.5px;
+        background: $gold;
+        position: absolute;
+        left: 4px;
+        top: 11px;
+        transform: rotate(45deg);
+      }
     }
   }
 }

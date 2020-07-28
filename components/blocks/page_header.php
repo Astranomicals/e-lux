@@ -32,7 +32,11 @@ $image   = get_sub_field( 'background_image' );
 		<div class="col-md-6 px-0">
 			<div class="box--white">
 				<div class="box--gray">
-					<h4>Procedures</h4>
+					<?php if(is_singular('procedure')) : ?>
+						<h4>Procedures</h4>
+					<?php else: ?>
+						
+					<?php endif; ?>
 					<h1><?php echo get_the_title(); ?></h1>
 				</div>
 				<div class="box--bottom">

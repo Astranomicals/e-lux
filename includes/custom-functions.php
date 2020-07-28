@@ -349,45 +349,43 @@ function my_change_sort_order( $query ) {
 };
 add_action( 'pre_get_posts', 'my_change_sort_order' );
 
-/**
- * Call to get gallery info (AJAX)
- */
-function get_gallery_info() {
-	global $wpdb;
+//AJAX calls for the gallery
+add_action('wp_ajax_get_gallery_info', 'get_gallery_info');
+add_action('wp_ajax_nopriv_get_gallery_info', 'get_gallery_info');
 
-	if ( wp_verify_nonce( sanitize_key( $_GET['taxid'] ) ) ) {
-		$taxid = $_GET['taxid'];
-	}
-	if ( 0 === $taxid ) {
-		$terms = get_terms( 'gallery_procedures' );
-		$taxid = wp_list_pluck( $terms, 'term_id' );
-	}
-	$args = array(
-		'post_type'      => 'gallery',
-		'tax_query'      => array(
-			array(
-				'taxonomy' => 'gallery_procedures',
-				'field'    => 'term_id',
-				'terms'    => $taxid,
-			),
-		),
-		'order'          => 'ASC',
-		'orderby'        => 'menu_title',
-		'posts_per_page' => -1,
-	);
+function get_gallery_info()
+{
+    global $wpdb;
+    global $gallerycount;
+    $gallerycount = 0;
 
-	$patients = new WP_Query( $args );
+    $taxid = $_GET['taxid'];
+    if ($taxid == 0) {
+        $terms = get_terms('related_procedure'); 
+        $taxid = wp_list_pluck($terms, 'term_id');
+    }
+    $args = array(
+        'post_type' => 'gallery',
+        'tax_query' => array(
+            array(
+                'taxonomy' => 'related_procedure',
+                'field'    => 'term_id',
+                'terms'    => $taxid
+            ),
+        ),
+        'order'     => 'ASC',
+        'orderby'   => 'menu_order',
+        'posts_per_page'    => -1
+    );
+    
+    $patients = new WP_Query($args);
 
-	ob_start();
-	while ( $patients->have_posts() ) :
-		$patients->the_post();
-		get_template_part( 'components/gallery-preview' );
-	endwhile;
+    ob_start();
+    while ($patients->have_posts()) : $patients->the_post();
+        get_template_part('components/gallery-preview');
+    endwhile;
 
-	echo esc_html( ob_get_clean() );
+    echo ob_get_clean();
 
-	wp_die();
+    wp_die(); // this is required to terminate immediately and return a proper response
 }
-
-add_action( 'wp_ajax_get_gallery_info', 'get_gallery_info' );
-add_action( 'wp_ajax_nopriv_get_gallery_info', 'get_gallery_info' );

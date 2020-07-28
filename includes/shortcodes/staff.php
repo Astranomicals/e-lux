@@ -27,16 +27,22 @@ function shortcode_staff() {
 	$staff   = new WP_Query( $args );
 	$content = '';
 	if ( $staff->have_posts() ) :
+		$content .= '<div class="staff--flex surgeons--flex">';
 		while ( $staff->have_posts() ) :
 			$staff->the_post();
-			$content .= '<div class="block__team-member">';
-			$content .= get_the_post_thumbnail( $post->ID, 'featured_thumb' );
-			$content .= '<h3>' . get_the_title() . '</h3>';
-			$content .= '<h5>' . get_sub_field( 'job_title' ) . '</h5>';
-			$content .= get_the_content();
-			$content .= '</div>';
+			$content                 .= '<div class="staff">';
+						$content     .= '<a href="' . get_the_permalink() . '">';
+						$content     .= '<div class="image--holder">';
+							$content .= get_the_post_thumbnail( $post->ID, 'large' );
+							$content .= '<p>View Profile</p>';
+						$content     .= '</div>';
+						$content     .= '<h3>' . get_the_title() . '</h3>';
+						$content     .= '<h5>' . get_field( 'team_position' ) . '</h5>';
+						$content     .= '</a>';
+				$content             .= '</div>';
 			endwhile;
 		wp_reset_postdata();
+		$content .= '</div>';
 		endif;
 
 	return $content;

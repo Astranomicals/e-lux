@@ -29,7 +29,7 @@ $bottom_boxes  = get_sub_field( 'bottom_boxes' );
 				echo $right_content;
 				else :
 					echo '<div class="image--holder right--shade">';
-						echo '<img src="' . $right_image['sizes']['large'] . '" />';
+						echo '<img src="' . $right_image['sizes']['page_header_left_thumb'] . '" />';
 					echo '</div>';
 				endif;
 				?>
