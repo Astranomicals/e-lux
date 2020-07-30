@@ -37,6 +37,7 @@ require_once get_template_directory() . '/includes/post-types/procedures.php';
 require_once get_template_directory() . '/includes/post-types/testimonials.php';
 require_once get_template_directory() . '/includes/post-types/staff.php';
 require_once get_template_directory() . '/includes/post-types/team-members.php';
+require_once get_template_directory() . '/includes/post-types/faqs.php';
 
 // MENUS
 // ==================================================.

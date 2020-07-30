@@ -62,7 +62,7 @@ $center_content = get_sub_field( 'center_content' );
 							<?php $name = get_sub_field( 'procedure_name' ); ?>
 							<li><?php echo $name; ?> <?php
 							if ( $link ) {
-								echo '<a href="' . $link . '"><i class="far fa-images"></i></a>';}
+								echo '<a href="/gallery/' . $link . '"><i class="far fa-images"></i></a>';}
 							?>
 							</li>
 						<?php endif; ?>
@@ -83,7 +83,7 @@ $center_content = get_sub_field( 'center_content' );
 							<?php $name = get_sub_field( 'procedure_name' ); ?>
 							<li><?php echo $name; ?> <?php
 							if ( $link ) {
-								echo '<a href="' . $link . '"><i class="far fa-images"></i></a>';}
+								echo '<a href="/gallery/' . $link . '"><i class="far fa-images"></i></a>';}
 							?>
 							</li>
 						<?php endif; ?>
@@ -104,7 +104,7 @@ $center_content = get_sub_field( 'center_content' );
 							<?php $name = get_sub_field( 'procedure_name' ); ?>
 							<li><?php echo $name; ?> <?php
 							if ( $link ) {
-								echo '<a href="' . $link . '"><i class="far fa-images"></i></a>';}
+								echo '<a href="/gallery/' . $link . '"><i class="far fa-images"></i></a>';}
 							?>
 							</li>
 						<?php endif; ?>

@@ -19,14 +19,19 @@ if ( is_home() ) {
 	$large_title = 'Our Blog';
 	$image       = get_field( 'blog_header_image', 'options' );
 }
-if(is_single()){
+if ( is_single() ) {
 	$large_title = get_the_title();
-	$image = get_field('header_image', 'options');
+	$image       = get_field( 'header_image', 'options' );
 }
-if(is_post_type_archive('gallery')){
-	$top_title = "Gallery";
+if ( is_post_type_archive( 'gallery' ) ) {
+	$top_title   = 'Gallery';
 	$large_title = single_term_title();
-	$image = get_field('gallery_header_image', 'options');
+	$image       = get_field( 'gallery_header_image', 'options' );
+}
+if ( is_post_type_archive( 'faq' ) ) {
+	$top_title   = 'Be Informed';
+	$large_title = 'Patient FAQs';
+	$image       = get_field( 'header_image', 'options' );
 }
 ?>
 <?php if ( ! empty( $image ) ) : ?>

@@ -24,6 +24,7 @@
           this.scrollMagic();
           this.mobileMenu();
           this.siteNavSticky();
+          this.faqBuilder();
           this.galleryBuilder();
 					this.swiperSetup();
 					this.homepageProcedure();
@@ -35,7 +36,6 @@
 						$active_toggle = '[data-toggle="'+$active_toggle+'"]';
 						$('.procedure-btn').removeClass('active');
 						$('.top--procedure').removeClass('active');
-						console.log($active_toggle);
 						$($active_toggle).addClass('active');
 					});
 				},
@@ -171,18 +171,20 @@
           loadmore();
           clickLoadmore();
           clickLightBox();
-          toggleNextGalleryItem();
 
           if ($("#archive-box").length > 0) {
-            var $tax_id = $("#archive-box").data("setProcedure");
-            $("#archive-box").remove();
+            var $p_id = $("#archive-box").data("setProcedure");
+						var $d_id = $("#archive-box").data("setDoctor");
+						console.log($p_id + " " + $d_id);
+						$("#archive-box").remove();
             $("#grid__gallery").fadeOut("slow", function() {
               $.ajax({
                 url: im.ajax_url,
                 type: "get",
                 data: {
                   action: "get_gallery_info",
-                  taxid: $tax_id
+                  taxid: $p_id,
+                  doctorid: $d_id
                 },
                 success: function(response) {
                   $("#grid__gallery")
@@ -193,22 +195,27 @@
                     });
                   clickLoadmore();
                   clickLightBox();
-                  toggleNextGalleryItem();
+									toggleGallery();
                 }
               });
             });
           }
-          $('select[data-toggle="categories"]').on("change", function() {
-            var $tax_id = $(this)
-              .find(":selected")
-              .data("setProcedure");
+          $('select[data-toggle="categories"], select[data-toggle="surgeons"]').on("change", function() {
+            var $tax_id = $('select[data-toggle="categories"]').find(":selected").data("setProcedure");
+						
+						var $doctor_id = $('select[data-toggle="surgeons"]').find(":selected").data("setDoctor");
+						
+						console.log($tax_id);
+						console.log($doctor_id);
+
             $("#grid__gallery").fadeOut("slow", function() {
               $.ajax({
                 url: im.ajax_url,
                 type: "get",
                 data: {
                   action: "get_gallery_info",
-                  taxid: $tax_id
+                  taxid: $tax_id,
+                  doctorid: $doctor_id
                 },
                 success: function(response) {
                   $("#grid__gallery")
@@ -219,11 +226,25 @@
                     });
                   clickLoadmore();
                   clickLightBox();
-                  toggleNextGalleryItem();
+									toggleGallery();
                 }
               });
             });
           });
+
+					function toggleGallery() {
+						$('.small__images').on('click', function(){
+							var $temp_first = $('.large__images .image--holder:first-of-type img').attr("src");
+							var $temp_last = $('.large__images .image--holder:last-of-type img').attr("src");
+							var $small_first = $(this).find('.image--holder:first-of-type img');
+							var $small_last = $(this).find('.image--holder:last-of-type img');
+							
+							$('.large__images .image--holder:first-of-type img').attr("src", $small_first.attr("src"));
+							$('.large__images .image--holder:last-of-type img').attr("src", $small_last.attr("src"));
+							$($small_first).attr("src", $temp_first);
+							$($small_last).attr("src", $temp_last);
+						});
+					}
 
           function loadmore() {
             $('button[data-toggle="load-more"]').fadeIn();
@@ -276,29 +297,67 @@
               }
             });
           }
+				},
+				faqBuilder: function() {
 
-          function toggleNextGalleryItem() {
-            $(".gallery__item .swiper-button-next").on("click", function() {
-              $(this)
-                .closest(".gallery__item")
-                .next(".gallery__item")
-                .find(".lightbox--patient")
-                .toggleClass("open-lightbox");
-              $(this)
-                .closest(".lightbox--patient")
-                .toggleClass("open-lightbox");
-            });
-            $(".gallery__item .swiper-button-prev").on("click", function() {
-              $(this)
-                .closest(".gallery__item")
-                .prev(".gallery__item")
-                .find(".lightbox--patient")
-                .toggleClass("open-lightbox");
-              $(this)
-                .closest(".lightbox--patient")
-                .toggleClass("open-lightbox");
+          if ($("#archive-box").length > 0) {
+						var $tax_id = $("#archive-box").data("setTopics");
+            $("#topics").fadeOut("slow", function() {
+              $.ajax({
+                url: im.ajax_url,
+                type: "get",
+                data: {
+                  action: "get_faq_info",
+                  taxid: $tax_id
+                },
+                success: function(response) {
+                  $("#topics")
+                    .empty()
+                    .append(response)
+										.fadeIn("slow");
+									faqExpand();
+									scrolling();
+                }
+              });
             });
           }
+          $('.topic-filter li').on("click", function() {
+						var $tax_id = $(this).data("setTopics");
+            $("#topics").fadeOut("slow", function() {
+              $.ajax({
+                url: im.ajax_url,
+                type: "get",
+                data: {
+                  action: "get_faq_info",
+                  taxid: $tax_id
+                },
+                success: function(response) {
+                  $("#topics")
+                    .empty()
+                    .append(response)
+										.fadeIn("slow");
+									faqExpand();
+									scrolling();
+                }
+              });
+            });
+					});
+
+					function scrolling() {
+						// Animate scroll to id
+						$cache.jsScrollTo.on("click", function(e) {
+							e.preventDefault();
+							var href = $(this).attr("href"),
+								scrollPoint = $(href).offset();
+							$("html, body").animate({ scrollTop: scrollPoint.top }, 300);
+						});
+					}
+					
+					function faqExpand(){
+						$('.faq--header').on('click', function(){
+							$(this).parent().toggleClass('active');
+						});
+					}
         },
         swiperSetup: function() {
           var gallery_block = new Swiper(".swiper__gallery", {
