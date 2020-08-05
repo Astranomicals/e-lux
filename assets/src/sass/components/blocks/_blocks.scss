@@ -437,7 +437,18 @@
       &.surgeons--flex {
         .staff {
           width: 45%;
-          max-width: 300px;
+          max-width: 235px;
+
+          &::before {
+            width: calc(100% + 22px);
+            height: calc(100% + 22px);
+            left: -11px;
+            top: -11px;
+          }
+
+          h3 {
+            font-size: 1.5rem;
+          }
         }
       }
     }
@@ -713,7 +724,8 @@
   }
 }
 
-.page-id-16 {
+.page-id-16,
+.page-id-20 {
   .block--single_gray_column {
     padding: 90px 0;
 

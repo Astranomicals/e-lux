@@ -60,7 +60,7 @@
 					<div class="newsletter--box">
 						<h3>Join the EPS Community</h3>
 						<div class="content--area">
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Turpis eu tellus sit mauris. Sagittis, morbi libero, posuere gravida purus fames risus. Praesent lacus fames donec mi ornare cum iaculis praesent.</p>
+							<p>For more than 40 years, Edina Plastic Surgery has been proud to earn the trust of people throughout Minneapolis and surrounding areas by providing world-class plastic surgery services. Patients who come to us gain a new sense of confidence and satisfaction. Call or contact us online for a free consultation to start your journey today.</p>
 							<?php echo do_shortcode( '[gravityforms id="1" title="false" description="false" ajax="true"]' ); ?>
 						</div>
 					</div>
