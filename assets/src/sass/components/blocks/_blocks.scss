@@ -254,6 +254,9 @@
   }
 }
 
+.postid-32,
+.postid-39,
+.postid-30,
 .page-id-3,
 .page-id-8,
 .page-id-11,
@@ -280,12 +283,14 @@
       }
     }
 
-    .staff--flex {
+    .staff--flex,
+    .children__grid {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
 
-      .staff {
+      .staff,
+      .child-page {
         margin: 0 2.5% 50px;
         display: block;
         max-width: 45%;
@@ -432,9 +437,16 @@
       &.surgeons--flex {
         .staff {
           width: 45%;
+          max-width: 300px;
         }
       }
     }
+  }
+}
+
+.single-staff {
+  .gform_wrapper ul.gform_fields li.gfield {
+    margin-bottom: 15px !important;
   }
 }
 
@@ -701,6 +713,19 @@
   }
 }
 
+.page-id-16 {
+  .block--single_gray_column {
+    padding: 90px 0;
+
+    @include mq(lg) {
+      padding: 130px 0;
+    }
+
+    h3 {
+      margin: 30px 0;
+    }
+  }
+}
 .block--gallery {
   padding: 90px 0;
   background: #e5e5e5;
@@ -842,10 +867,11 @@
 
         .image--holder {
           position: relative;
+          padding-bottom: 60px;
 
           &:first-of-type,
           &:last-of-type {
-            &::before {
+            &::after {
               font-family: $playfair;
               font-style: normal;
               font-weight: normal;
@@ -853,22 +879,28 @@
               line-height: 35px;
               text-align: center;
               color: $white;
-              padding: 13px 21px;
+              height: 60px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
               background: $washed_blue;
               position: absolute;
               bottom: 0;
               z-index: 1;
+              width: 100%;
+              text-align: center;
             }
           }
 
           &:first-of-type {
-            &::before {
+            &::after {
               left: 0;
               content: "Before";
+              border-right: 1px solid rgba($white, 0.1);
             }
           }
           &:last-of-type {
-            &::before {
+            &::after {
               right: 0;
               content: "After";
             }

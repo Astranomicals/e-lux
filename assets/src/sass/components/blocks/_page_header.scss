@@ -50,12 +50,12 @@
         text-align: left;
         padding: 55px;
         width: calc(100% + 160px);
-        left: -200px;
+        left: -100px;
       }
       @include mq(lg) {
         padding: 55px;
         width: 100%;
-        left: -200px;
+        left: -100px;
       }
       @include mq(xxl) {
         padding: 130px 108px;

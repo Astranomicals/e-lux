@@ -18,10 +18,12 @@
     background: $gold;
     position: absolute;
     left: 50%;
-    top: 0;
+    top: -25px;
     transform: translate(-50%, -50%);
+    animation: scrollDown 4s infinite ease-out;
 
     @include mq(md) {
+      top: -82.5px;
       height: 165px;
     }
   }

@@ -73,6 +73,18 @@
         }
       }
 
+      h2 {
+        font-size: 1.7rem;
+      }
+      a {
+        color: $off-black;
+        font-weight: bold;
+
+        &:hover {
+          color: $gray;
+        }
+      }
+
       img {
         max-height: 40vh;
         width: auto;

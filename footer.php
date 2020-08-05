@@ -143,5 +143,5 @@
 
 <?php wp_footer(); ?>
 </body>
-
+<script async type="application/javascript" id="zwivelWidgetSnippet" src="https://doctor.zwivel.com/group-widget/edina-plastic-surgery"></script>
 </html>

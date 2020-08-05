@@ -69,6 +69,7 @@ if ( ! $d ) {
 				<div id="grid__gallery" class="grid__gallery">
 					<div id="archive-box" data-set-procedure="<?php echo esc_attr( $p ); ?>" data-set-doctor="<?php echo esc_attr( $d ); ?>">Archive Box</div>
 			  </div>
+				<div class="empty-gallery" style="display:none;">There are no results for this specific gallery.</div>
 			  <button data-toggle="load-more" class="btn btn--tertiary btn--center">Load More</button>
 			</div>
 		</div>

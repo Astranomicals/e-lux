@@ -349,6 +349,19 @@ function my_change_sort_order( $query ) {
 };
 add_action( 'pre_get_posts', 'my_change_sort_order' );
 
+/**
+ * Change sort order (checking for category)
+ *
+ * @param array $query Query $args that will be changing.
+ */
+function my_change_cat_sort_order( $query ) {
+	if ( is_category() ) :
+		$query->set( 'order', 'DESC' );
+		$query->set( 'orderby', 'date' );
+	endif;
+};
+add_action( 'pre_get_posts', 'my_change_cat_sort_order' );
+
 // AJAX calls for the gallery
 add_action( 'wp_ajax_get_gallery_info', 'get_gallery_info' );
 add_action( 'wp_ajax_nopriv_get_gallery_info', 'get_gallery_info' );

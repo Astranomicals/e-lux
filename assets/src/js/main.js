@@ -28,6 +28,10 @@
           this.galleryBuilder();
 					this.swiperSetup();
 					this.homepageProcedure();
+					this.openNew();
+				},
+				openNew: function (){
+					$('.menu-item-6782 a').attr("target","_blank");
 				},
 				homepageProcedure: function(){
 					$('[data-toggle="Body"]').addClass('active');
@@ -175,6 +179,8 @@
           if ($("#archive-box").length > 0) {
             var $p_id = $("#archive-box").data("setProcedure");
 						var $d_id = $("#archive-box").data("setDoctor");
+						$('select[data-toggle="categories"] option[data-set-procedure="'+$p_id+'"]').attr('selected','selected');
+						$('select[data-toggle="surgeons"] option[data-set-doctor="'+$d_id+'"]').attr('selected','selected');
 						console.log($p_id + " " + $d_id);
 						$("#archive-box").remove();
             $("#grid__gallery").fadeOut("slow", function() {
@@ -191,7 +197,7 @@
                     .empty()
                     .append(response)
                     .fadeIn("slow", function() {
-                      loadmore();
+											loadmore();
                     });
                   clickLoadmore();
                   clickLightBox();
@@ -222,7 +228,7 @@
                     .empty()
                     .append(response)
                     .fadeIn("slow", function() {
-                      loadmore();
+											loadmore();
                     });
                   clickLoadmore();
                   clickLightBox();
@@ -247,13 +253,19 @@
 					}
 
           function loadmore() {
-            $('button[data-toggle="load-more"]').fadeIn();
-            $(".gallery__item")
-              .slice(10, 100)
-              .hide();
-            if ($(".gallery__item:hidden").length === 0) {
-              $('button[data-toggle="load-more"]').fadeOut("slow");
-            }
+						if($(".gallery__item").length === 0){
+							$('.empty-gallery').show();							
+							$('button[data-toggle="load-more"]').hide();
+						}else{
+							$('.empty-gallery').hide();							
+							$('button[data-toggle="load-more"]').fadeIn();
+							$(".gallery__item")
+								.slice(10, 100)
+								.hide();
+							if ($(".gallery__item:hidden").length === 0) {
+								$('button[data-toggle="load-more"]').fadeOut("slow");
+							}
+						}
           }
 
           function clickLoadmore() {

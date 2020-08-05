@@ -13,6 +13,7 @@
 
 $right_content  = get_sub_field( 'right_content' );
 $center_content = get_sub_field( 'center_content' );
+$video          = get_sub_field( 'video' );
 ?>
 
 <div class="container">
@@ -20,6 +21,10 @@ $center_content = get_sub_field( 'center_content' );
 		<div class="col-xl-6 col-lg-6 col-md-6">
 			<div class="image--holder">
 				<?php echo get_the_post_thumbnail( $post->ID, 'featured_hero_thumb' ); ?>
+			</div>
+
+			<div class="dr-video embed-responsive embed-responsive-16by9">
+			  <iframe class="embed-responsive-item" src="//www.youtube.com/embed/<?php echo $video; ?>?rel=0" allowfullscreen></iframe>
 			</div>
 		</div>
 		<div class="col-xl-6 col-lg-6 col-md-6">
@@ -60,10 +65,12 @@ $center_content = get_sub_field( 'center_content' );
 						<?php if ( get_row_layout() == 'single_procedure' ) : ?>
 							<?php $link = get_sub_field( 'ba_gallery' ); ?>
 							<?php $name = get_sub_field( 'procedure_name' ); ?>
-							<li><?php echo $name; ?> <?php
-							if ( $link ) {
-								echo '<a href="/gallery/' . $link . '"><i class="far fa-images"></i></a>';}
-							?>
+							<?php $page = get_sub_field( 'page' ); ?>
+							<li><a class="normal" href="<?php echo $page; ?>"><?php echo $name; ?></a> 
+													<?php
+													if ( $link ) {
+														echo '<a href="/gallery/' . $link . '"><i class="far fa-images"></i></a>';}
+													?>
 							</li>
 						<?php endif; ?>
 					<?php endwhile; ?>
@@ -81,10 +88,12 @@ $center_content = get_sub_field( 'center_content' );
 						<?php if ( get_row_layout() == 'single_procedure' ) : ?>
 							<?php $link = get_sub_field( 'ba_gallery' ); ?>
 							<?php $name = get_sub_field( 'procedure_name' ); ?>
-							<li><?php echo $name; ?> <?php
-							if ( $link ) {
-								echo '<a href="/gallery/' . $link . '"><i class="far fa-images"></i></a>';}
-							?>
+							<?php $page = get_sub_field( 'page' ); ?>
+							<li><a class="normal" href="<?php echo $page; ?>"><?php echo $name; ?></a> 
+													<?php
+													if ( $link ) {
+														echo '<a href="/gallery/' . $link . '"><i class="far fa-images"></i></a>';}
+													?>
 							</li>
 						<?php endif; ?>
 					<?php endwhile; ?>
@@ -102,10 +111,12 @@ $center_content = get_sub_field( 'center_content' );
 						<?php if ( get_row_layout() == 'single_procedure' ) : ?>
 							<?php $link = get_sub_field( 'ba_gallery' ); ?>
 							<?php $name = get_sub_field( 'procedure_name' ); ?>
-							<li><?php echo $name; ?> <?php
-							if ( $link ) {
-								echo '<a href="/gallery/' . $link . '"><i class="far fa-images"></i></a>';}
-							?>
+							<?php $page = get_sub_field( 'page' ); ?>
+							<li><a class="normal" href="<?php echo $page; ?>"><?php echo $name; ?></a> 
+													<?php
+													if ( $link ) {
+														echo '<a href="/gallery/' . $link . '"><i class="far fa-images"></i></a>';}
+													?>
 							</li>
 						<?php endif; ?>
 					<?php endwhile; ?>

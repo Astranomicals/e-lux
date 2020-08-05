@@ -33,6 +33,13 @@ if ( is_post_type_archive( 'faq' ) ) {
 	$large_title = 'Patient FAQs';
 	$image       = get_field( 'header_image', 'options' );
 }
+
+if ( is_category() ) {
+	$top_title   = 'Be Informed';
+	$large_title = get_the_archive_title();
+	$image       = get_field( 'blog_header_image', 'options' );
+}
+
 ?>
 <?php if ( ! empty( $image ) ) : ?>
 	<div class="image--holder">
