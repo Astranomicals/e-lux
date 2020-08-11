@@ -40,6 +40,7 @@ if ( ! $d ) {
 							array(
 								'taxonomy' => 'related_procedure',
 								'child_of' => 0,
+								'orderby'  => 'name',
 							)
 						);
 						?>

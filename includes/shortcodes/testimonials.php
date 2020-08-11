@@ -20,8 +20,8 @@ function shortcode_testimonials() {
 	$args = array(
 		'post_type'      => 'testimonial',
 		'posts_per_page' => -1,
-		'order'          => 'ASC',
-		'orderby'        => 'menu_order',
+		'orderby'        => 'date',
+		'order'          => 'DESC',
 	);
 
 	$testimonials = new WP_Query( $args );
@@ -32,7 +32,7 @@ function shortcode_testimonials() {
 			$content             .= '<div class="testimonial--block">';
 						$content .= get_the_content();
 				$content         .= '</div>';
-				$content .= '<div class="spacer"><img src="/wp-content/uploads/2020/07/diamond-spacer.png" alt="" width="103" height="23" class="aligncenter size-full wp-image-308"></div>';
+				$content         .= '<div class="spacer"><img src="/wp-content/uploads/2020/07/diamond-spacer.png" alt="" width="103" height="23" class="aligncenter size-full wp-image-308"></div>';
 			endwhile;
 		wp_reset_postdata();
 		endif;
