@@ -211,11 +211,7 @@
           }
           $('select[data-toggle="categories"], select[data-toggle="surgeons"]').on("change", function() {
             var $tax_id = $('select[data-toggle="categories"]').find(":selected").data("setProcedure");
-						
 						var $doctor_id = $('select[data-toggle="surgeons"]').find(":selected").data("setDoctor");
-						
-						console.log($tax_id);
-						console.log($doctor_id);
 
             $("#grid__gallery").fadeOut("slow", function() {
               $.ajax({
@@ -243,13 +239,15 @@
 
 					function toggleGallery() {
 						$('.small__images').on('click', function(){
-							var $temp_first = $('.large__images .image--holder:first-of-type img').attr("src");
-							var $temp_last = $('.large__images .image--holder:last-of-type img').attr("src");
+							var $large_first = $(this).parent().parent().find('.large__images');
+							var $large_last = $(this).parent().parent().find('.large__images');
+							var $temp_first = $large_first.find('.image--holder:first-of-type img').attr("src");
+							var $temp_last = $large_last.find('.image--holder:last-of-type img').attr("src");
 							var $small_first = $(this).find('.image--holder:first-of-type img');
 							var $small_last = $(this).find('.image--holder:last-of-type img');
 							
-							$('.large__images .image--holder:first-of-type img').attr("src", $small_first.attr("src"));
-							$('.large__images .image--holder:last-of-type img').attr("src", $small_last.attr("src"));
+							$large_first.find('.image--holder:first-of-type img').attr("src", $small_first.attr("src"));
+							$large_last.find('.image--holder:last-of-type img').attr("src", $small_last.attr("src"));
 							$($small_first).attr("src", $temp_first);
 							$($small_last).attr("src", $temp_last);
 						});
