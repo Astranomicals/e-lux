@@ -24,24 +24,8 @@
           this.scrollMagic();
           this.mobileMenu();
           this.siteNavSticky();
-          this.faqBuilder();
           this.galleryBuilder();
 					this.swiperSetup();
-					this.homepageProcedure();
-					this.openNew();
-				},
-				openNew: function (){
-					$('.menu-item-6782 a').attr("target","_blank");
-				},
-				homepageProcedure: function(){
-					$('[data-toggle="Body"]').addClass('active');
-					$('.procedure-btn').on('click', function(){
-						var $active_toggle = $(this).attr('data-toggle');
-						$active_toggle = '[data-toggle="'+$active_toggle+'"]';
-						$('.procedure-btn').removeClass('active');
-						$('.top--procedure').removeClass('active');
-						$($active_toggle).addClass('active');
-					});
 				},
         siteNavSticky: function() {
 					if ($cache.window.scrollTop() > 0) {
@@ -311,67 +295,6 @@
             });
           }
 				},
-				faqBuilder: function() {
-
-          if ($("#archive-box").length > 0) {
-						var $tax_id = $("#archive-box").data("setTopics");
-            $("#topics").fadeOut("slow", function() {
-              $.ajax({
-                url: im.ajax_url,
-                type: "get",
-                data: {
-                  action: "get_faq_info",
-                  taxid: $tax_id
-                },
-                success: function(response) {
-                  $("#topics")
-                    .empty()
-                    .append(response)
-										.fadeIn("slow");
-									faqExpand();
-									scrolling();
-                }
-              });
-            });
-          }
-          $('.topic-filter li').on("click", function() {
-						var $tax_id = $(this).data("setTopics");
-            $("#topics").fadeOut("slow", function() {
-              $.ajax({
-                url: im.ajax_url,
-                type: "get",
-                data: {
-                  action: "get_faq_info",
-                  taxid: $tax_id
-                },
-                success: function(response) {
-                  $("#topics")
-                    .empty()
-                    .append(response)
-										.fadeIn("slow");
-									faqExpand();
-									scrolling();
-                }
-              });
-            });
-					});
-
-					function scrolling() {
-						// Animate scroll to id
-						$cache.jsScrollTo.on("click", function(e) {
-							e.preventDefault();
-							var href = $(this).attr("href"),
-								scrollPoint = $(href).offset();
-							$("html, body").animate({ scrollTop: scrollPoint.top }, 300);
-						});
-					}
-					
-					function faqExpand(){
-						$('.faq--header').on('click', function(){
-							$(this).parent().toggleClass('active');
-						});
-					}
-        },
         swiperSetup: function() {
           var gallery_block = new Swiper(".swiper__gallery", {
             slidesPerView: 1,
@@ -380,19 +303,6 @@
               nextEl: ".swiper-button-next",
               prevEl: ".swiper-button-prev"
             }
-          });
-					
-					var testimonial_block = new Swiper(".testimonial-container", {
-            slidesPerView: 1,
-						loop: true,
-						autoHeight: true,
-            navigation: {
-              nextEl: ".swiper-button-next",
-              prevEl: ".swiper-button-prev"
-						},
-						pagination: {
-							el: '.swiper-pagination',
-						},
           });
         }
       }

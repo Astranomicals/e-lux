@@ -6,28 +6,12 @@
   left: -100%;
   opacity: 0;
   padding: 30px 15px;
-  background-attachment: unset;
   background: linear-gradient(180deg, #1b2934 0%, #253646 100%);
 
   @include mq(md) {
     padding: 60px 45px;
   }
 
-  &::before {
-    content: "";
-    display: block;
-    background: url(/wp-content/uploads/2020/07/butterfly.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: -13vw 50%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    z-index: -1;
-    opacity: 0.05;
-  }
   .logo {
     width: 240px;
     height: auto;

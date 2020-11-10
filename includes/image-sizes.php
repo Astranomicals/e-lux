@@ -12,15 +12,6 @@
  */
 
 add_image_size( 'blog_preview_thumb', 330, 186, true );
-add_image_size( 'featured_thumb', 535, 402, true );
-add_image_size( 'parent_thumb', 715, 715, true );
-add_image_size( 'background_thumb', 1430, 569, true );
-add_image_size( 'hero_thumb', 1920, 1080, true );
-add_image_size( 'page_header_thumb', 1920, 940, true );
-add_image_size( 'page_header_left_thumb', 960, 940, true );
-add_image_size( 'featured_hero_thumb', 740, 940, true );
-add_image_size( 'blog_row_thumb', 824, 465, true );
-add_image_size( 'post_large', 1430, 796, true );
 
 /**
  * Add Image Sizes to Array
@@ -31,16 +22,7 @@ function im_image_sizes( $sizes ) {
 	return array_merge(
 		$sizes,
 		array(
-			'blog_preview_thumb'     => __( 'Blog Preview Thumbnail' ),
-			'featured_thumb'         => __( 'Featured Thumbnail' ),
-			'parent_thumb'           => __( 'Parent Thumbnail' ),
-			'background_thumb'       => __( 'Background Thumbnail' ),
-			'hero_thumb'             => __( 'Hero Thumbnail' ),
-			'page_header_thumb'      => __( 'Page Header Thumbnail' ),
-			'page_header_left_thumb' => __( 'Page Header Left Thumbnail' ),
-			'blog_row_thumb'         => __( 'Blog Row Thumbnail' ),
-			'post_large'             => __( 'Post Large' ),
-			'featured_hero_thumb'    => __( 'Featured Hero Thumb' ),
+			'blog_preview_thumb' => __( 'Blog Preview Thumbnail' ),
 		)
 	);
 }
@@ -85,26 +67,6 @@ function im_get_all_image_sizes() {
 		'blog_preview_thumb' => array(
 			'width'  => 290,
 			'height' => 175,
-		),
-		'featured_thumb'     => array(
-			'width'  => 535,
-			'height' => 402,
-		),
-		'parent_thumb'       => array(
-			'width'  => 715,
-			'height' => 715,
-		),
-		'background_thumb'   => array(
-			'width'  => 1430,
-			'height' => 569,
-		),
-		'blog_row_thumb'     => array(
-			'width'  => 370,
-			'height' => 223,
-		),
-		'post_large'         => array(
-			'width'  => 1430,
-			'height' => 796,
 		),
 	);
 	return array_merge( $image_sizes, $_wp_additional_image_sizes );
