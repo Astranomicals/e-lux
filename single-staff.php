@@ -12,10 +12,7 @@
  */
 
 get_header(); ?>
-<section class="block block--full_width_page_header">
-	<?php get_template_part( 'components/blocks/full_width_page_header' ); ?>
-</section>
-<section class="block block--blog-single">
+<section class="block block--staff-single">
 	<div class="container">
 		<div class="row justify-content-center">
 			<div class="col-12 col-xl-8 col-lg-10">
@@ -25,7 +22,7 @@ get_header(); ?>
 						<div class="image--holder right--shade">
 							<?php echo get_the_post_thumbnail( $post->ID, 'featured_hero_thumb' ); ?>
 						</div>
-						<h3><?php echo get_field('team_position'); ?></h3>
+						<h3><?php echo get_field( 'team_position' ); ?></h3>
 						<?php the_content(); ?>
 					<?php endwhile; ?> 
 				<?php endif; ?>

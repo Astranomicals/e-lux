@@ -18,8 +18,6 @@
 				<div class="image__holder">
 					<?php if ( has_post_thumbnail() ) : ?>
 						<?php the_post_thumbnail( 'blog_row_thumb', array( 'class' => 'img-fluid' ) ); ?>
-					<?php else : ?>
-						<?php im_the_placeholder_image( 'blog_row_thumb', '' ); ?>
 					<?php endif; ?>
 				</div>
 			</div>

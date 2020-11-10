@@ -18,8 +18,6 @@ function im_register_styles() {
 	$theme         = wp_get_theme();
 	$theme_version = $theme->get( 'Version' );
 	wp_register_style( 'google-fonts', 'https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,400&display=swap', '', $theme_version, 'all' );
-	wp_register_style( 'google-fonts-2', 'https://fonts.googleapis.com/css2?family=Allura&display=swap', '', $theme_version, 'all' );
-	wp_register_style( 'google-fonts-3', 'https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap', '', $theme_version, 'all' );
 	wp_register_style( 'fontawesome', get_stylesheet_directory_uri() . '/assets/dist/plugins/fontawesome-pro/css/all.min.css', '', $theme_version, 'all' );
 	wp_register_style( 'swiper', get_template_directory_uri() . '/assets/dist/plugins/swiper/css/swiper.min.css', '', $theme_version, 'all' );
 	wp_register_style( 'main', get_template_directory_uri() . '/assets/dist/css/main.min.css', '', $theme_version, 'all' );
@@ -32,8 +30,6 @@ add_action( 'wp_enqueue_scripts', 'im_register_styles' );
  */
 function im_enqueue_styles() {
 	wp_enqueue_style( 'google-fonts' );
-	wp_enqueue_style( 'google-fonts-2' );
-	wp_enqueue_style( 'google-fonts-3' );
 	wp_enqueue_style( 'fontawesome' );
 	wp_enqueue_style( 'swiper' );
 	wp_enqueue_style( 'main' );

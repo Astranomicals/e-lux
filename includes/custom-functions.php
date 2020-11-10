@@ -315,26 +315,6 @@ function enqueue_slider_assets() {
 }
 
 /**
- * Move Page Admin Menu Item
- */
-function move_page_admin_menu_item() {
-	global $menu;
-
-	foreach ( $menu as $key => $value ) {
-		if ( 'edit.php?post_type=page' === $value[2] ) {
-			$oldkey = $key;
-		}
-	}
-
-	$newkey = 4; // use whatever index gets you the position you want.
-	// if this key is in use you will write over a menu item!
-	$menu[ $newkey ] = $menu[ $oldkey ];
-	$menu[ $oldkey ] = array();
-
-}
-add_action( 'admin_menu', 'move_page_admin_menu_item' );
-
-/**
  * Change sort order (checking for gallery)
  *
  * @param array $query Query $args that will be changing.
@@ -349,18 +329,6 @@ function my_change_sort_order( $query ) {
 };
 add_action( 'pre_get_posts', 'my_change_sort_order' );
 
-/**
- * Change sort order (checking for category)
- *
- * @param array $query Query $args that will be changing.
- */
-function my_change_cat_sort_order( $query ) {
-	if ( is_category() ) :
-		$query->set( 'order', 'DESC' );
-		$query->set( 'orderby', 'date' );
-	endif;
-};
-add_action( 'pre_get_posts', 'my_change_cat_sort_order' );
 
 // AJAX calls for the gallery
 add_action( 'wp_ajax_get_gallery_info', 'get_gallery_info' );
@@ -371,7 +339,7 @@ function get_gallery_info() {
 	global $gallerycount;
 	$gallerycount = 0;
 
-	$taxid = $_GET['taxid'];
+	$taxid    = $_GET['taxid'];
 	$doctorid = $_GET['doctorid'];
 
 	if ( $taxid == 0 ) {
@@ -379,7 +347,7 @@ function get_gallery_info() {
 		$taxid = wp_list_pluck( $terms, 'term_id' );
 	}
 	if ( $doctorid == 0 ) {
-		$terms_2 = get_terms( 'related_doctor' );
+		$terms_2  = get_terms( 'related_doctor' );
 		$doctorid = wp_list_pluck( $terms_2, 'term_id' );
 	}
 
@@ -387,11 +355,11 @@ function get_gallery_info() {
 		'post_type'      => 'gallery',
 		'tax_query'      => array(
 			'relation' => 'AND',
-     array(
-       'taxonomy' => 'related_doctor',
-       'field' => 'term_id',
-       'terms' => $doctorid
-     ),
+			array(
+				'taxonomy' => 'related_doctor',
+				'field'    => 'term_id',
+				'terms'    => $doctorid,
+			),
 			array(
 				'taxonomy' => 'related_procedure',
 				'field'    => 'term_id',
@@ -416,50 +384,3 @@ function get_gallery_info() {
 	wp_die(); // this is required to terminate immediately and return a proper response
 }
 
-
-// AJAX calls for the faq
-add_action( 'wp_ajax_get_faq_info', 'get_faq_info' );
-add_action( 'wp_ajax_nopriv_get_faq_info', 'get_faq_info' );
-
-function get_faq_info() {
-	global $wpdb;
-	global $faqcount;
-	$faqcount = 0;
-
-	$taxid = $_GET['taxid'];
-	if ( $taxid == 0 ) {
-		$terms = get_terms( 'topics' );
-		$taxid = wp_list_pluck( $terms, 'term_id' );
-	}
-	$args = array(
-		'post_type'      => 'faq',
-		'tax_query'      => array(
-			array(
-				'taxonomy' => 'topics',
-				'field'    => 'term_id',
-				'terms'    => $taxid,
-			),
-		),
-		'order'          => 'ASC',
-		'orderby'        => 'menu_order',
-		'posts_per_page' => -1,
-	);
-
-	$patients = new WP_Query( $args );
-	$content  = '';
-	if ( $patients->have_posts() ) :
-		while ( $patients->have_posts() ) :
-			$patients->the_post();
-				$content     .= '<article class="block--topic">';
-					$content .= '<div class="faq--header"><h3>Q. ' . get_the_title() . '</h3></div>';
-					$content .= '<div class="faq--bottom"><p>A. ' . get_the_content() . '</p></div>';
-					$content     .= '</article>';
-					$content .= '<a href="#faqs" class="js-scroll-to">Back to Top</a>';
-				$content .= '<div class="spacer"><img src="/wp-content/uploads/2020/07/diamond-spacer.png" alt="" width="103" height="23" class="aligncenter size-full wp-image-308"></div>';
-		endwhile;
-	endif;
-
-	echo $content;
-
-	wp_die(); // this is required to terminate immediately and return a proper response
-}
