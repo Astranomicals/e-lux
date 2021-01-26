@@ -26,6 +26,26 @@
           this.siteNavSticky();
           this.galleryBuilder();
 					this.swiperSetup();
+					this.popups();
+					this.openAnim();
+				},
+				openAnim: function(){
+          var openTween = new TimelineMax();
+          openTween.to(".site-nav .dermacare-logo", 1, { opacity: 1, top: 0 }, .5);
+          openTween.to(".site-nav #menu-left-menu-1", 1, { opacity: 1, left: 0 }, .5);
+          openTween.to(".site-nav #menu-right-menu-1", 1, { opacity: 1, right: 0 }, .5);
+          openTween.to(".site-nav .top--nav a", 0.5, { opacity: 1 }, 1);
+					openTween.to(".block--hero .content--square", 1.5, { opacity: 1, top: 0 }, 1);					
+				},
+				popups: function(){
+						$('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
+							disableOn: 700,
+							type: 'iframe',
+							mainClass: 'mfp-fade',
+							removalDelay: 160,
+							preloader: false,
+							fixedContentPos: false
+						});
 				},
         siteNavSticky: function() {
 					if ($cache.window.scrollTop() > 0) {
