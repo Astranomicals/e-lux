@@ -211,7 +211,7 @@
       display: block;
       width: 30px;
       height: 2px;
-      background: $white;
+      background: $primary;
     }
     @include mq(lg) {
       display: none;

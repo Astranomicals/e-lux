@@ -11,7 +11,7 @@
  * @since      1.0.0
  */
 
-add_image_size( 'blog_preview_thumb', 330, 186, true );
+add_image_size( 'blog_thumb', 330, 186, true );
 
 /**
  * Add Image Sizes to Array
@@ -22,7 +22,7 @@ function im_image_sizes( $sizes ) {
 	return array_merge(
 		$sizes,
 		array(
-			'blog_preview_thumb' => __( 'Blog Preview Thumbnail' ),
+			'blog_thumb' => __( 'Blog Preview Thumbnail' ),
 		)
 	);
 }
@@ -64,7 +64,7 @@ function im_the_placeholder_image( $size = full, $class = '', $bg_color = '25252
 function im_get_all_image_sizes() {
 	global $_wp_additional_image_sizes;
 	$image_sizes = array(
-		'blog_preview_thumb' => array(
+		'blog_thumb' => array(
 			'width'  => 290,
 			'height' => 175,
 		),

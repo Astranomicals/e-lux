@@ -6,7 +6,7 @@
   left: -100%;
   opacity: 0;
   padding: 30px 15px;
-  background: linear-gradient(180deg, #1b2934 0%, #253646 100%);
+  background: linear-gradient(180deg, $primary 0%, $secondary 100%);
 
   @include mq(md) {
     padding: 60px 45px;
@@ -17,12 +17,8 @@
     height: auto;
     margin: 0 auto 15px;
     display: flex;
-
-    svg {
-      path {
-      }
-    }
   }
+
   .site__logo {
     @include mq($until: xl) {
       display: block;
@@ -52,7 +48,7 @@
       width: 35px;
       margin: 0;
       display: block;
-      background: $white;
+      background: $primary;
       transform: rotate(45deg);
       position: absolute;
       top: 11px;

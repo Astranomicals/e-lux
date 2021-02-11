@@ -1,6 +1,6 @@
 <?php
 /**
- * Theme Support
+ * Display Block
  *
  * @category   Components
  * @package    WordPress
@@ -11,8 +11,10 @@
  * @since      1.0.0
  */
 
-add_theme_support( 'post-thumbnails' );
-add_theme_support( 'woocommerce' );
-add_theme_support( 'wc-product-gallery-zoom' );
-add_theme_support( 'wc-product-gallery-lightbox' );
-add_theme_support( 'wc-product-gallery-slider' );
+?>
+
+<div class="container-fluid">
+  <div class="row">
+
+ </div>
+</div>

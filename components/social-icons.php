@@ -28,7 +28,7 @@ $social_icon_class_map = array(
 ?>
 
 <?php if ( have_rows( 'social_icons', 'option' ) ) : ?>
-	<ul class="social-icons d-flex">
+	<ul class="social--icons">
 		<?php
 		while ( have_rows( 'social_icons', 'option' ) ) :
 			the_row();

@@ -35,9 +35,7 @@ require_once get_template_directory() . '/includes/acf/admin-styles.php';
 require_once get_template_directory() . '/includes/post-types/galleries.php';
 require_once get_template_directory() . '/includes/post-types/procedures.php';
 require_once get_template_directory() . '/includes/post-types/testimonials.php';
-require_once get_template_directory() . '/includes/post-types/staff.php';
 require_once get_template_directory() . '/includes/post-types/team-members.php';
-require_once get_template_directory() . '/includes/post-types/faqs.php';
 
 // MENUS
 // ==================================================.
@@ -64,8 +62,6 @@ require_once get_template_directory() . '/includes/sidebars/blog.php';
 // ==================================================.
 require_once get_template_directory() . '/includes/shortcodes/btn.php';
 require_once get_template_directory() . '/includes/shortcodes/call-number.php';
-require_once get_template_directory() . '/includes/shortcodes/reusable-block.php';
-require_once get_template_directory() . '/includes/shortcodes/sidebar.php';
 require_once get_template_directory() . '/includes/shortcodes/child-pages.php';
 require_once get_template_directory() . '/includes/shortcodes/staff.php';
 require_once get_template_directory() . '/includes/shortcodes/spacer.php';
