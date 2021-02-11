@@ -2,7 +2,7 @@
   margin: 0 !important;
 
   ::placeholder {
-    color: $off-black;
+    color: $black;
   }
   ul.gform_fields {
     li.gfield {
@@ -55,8 +55,7 @@
             width: 100%;
             max-width: 100%;
             display: block;
-            color: $off-black;
-            font-family: $source;
+            color: $black;
             font-style: normal;
             font-weight: 600;
             font-size: 18px;
