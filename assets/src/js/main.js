@@ -25,7 +25,6 @@
           this.mobileMenu();
           this.siteNavSticky();
           this.galleryBuilder();
-					this.swiperSetup();
 					this.popups();
 					this.openAnim();
 				},
@@ -314,17 +313,7 @@
               }
             });
           }
-				},
-        swiperSetup: function() {
-          var gallery_block = new Swiper(".swiper__gallery", {
-            slidesPerView: 1,
-            loop: true,
-            navigation: {
-              nextEl: ".swiper-button-next",
-              prevEl: ".swiper-button-prev"
-            }
-          });
-        }
+				}
       }
     };
 

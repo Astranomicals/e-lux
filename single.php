@@ -1,6 +1,6 @@
 <?php
 /**
- * Single.php
+ * Single
  *
  * @category   Components
  * @package    WordPress
@@ -12,9 +12,6 @@
  */
 
 get_header(); ?>
-<section class="block block--full_width_page_header">
-	<?php get_template_part( 'components/blocks/full_width_page_header' ); ?>
-</section>
 <section class="block block--meta-info">
 	<div class="container">
 		<div class="row justify-content-center">

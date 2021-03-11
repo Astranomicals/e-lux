@@ -1,0 +1,13 @@
+footer {
+  svg.im-logo {
+    height: 16px;
+    width: 16px;
+    background: $magenta;
+    border-radius: 100em;
+    padding: 2px;
+
+    path {
+      fill: $white;
+    }
+  }
+}

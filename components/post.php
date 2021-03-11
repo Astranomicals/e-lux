@@ -17,7 +17,7 @@
 			<div class="background__full">
 				<div class="image__holder">
 					<?php if ( has_post_thumbnail() ) : ?>
-						<?php the_post_thumbnail( 'blog_row_thumb', array( 'class' => 'img-fluid' ) ); ?>
+						<?php the_post_thumbnail( 'large' ); ?>
 					<?php endif; ?>
 				</div>
 			</div>

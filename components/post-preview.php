@@ -25,7 +25,7 @@
 	<div class="content--area">
 		<h2><a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php printf( 'Permanent Link to %s', the_title_attribute( 'echo=0' ) ); ?>"><?php the_title(); ?></a></h2>
 		<hr/>
-		<?php echo get_the_excerpt(); ?>
+		<?php echo esc_attr( get_the_excerpt() ); ?>
 		<a class="read-more" href="<?php the_permalink(); ?>" rel="bookmark" title="<?php printf( 'Permanent Link to %s', the_title_attribute( 'echo=0' ) ); ?>">Read Full Article</a>
 	</div>
 </article>

@@ -11,22 +11,18 @@
  * @since      1.0.0
  */
 
-$content = get_sub_field( 'content' );
-$video   = get_sub_field( 'background_video' );
-$video2  = get_sub_field( 'background_video_webm' );
-
+$heading          = get_sub_field( 'heading' );
+$background_image = get_sub_field( 'background_image' );
 ?>
-<video autoplay muted loop id="hero-video">
-	<source src="<?php echo esc_url( $video ); ?>" type="video/mp4">
-	<source src="<?php echo esc_url( $video2 ); ?>" type="video/mp4">
-	Your browser does not support HTML5 video.
-</video>
-<div class="container-fluid">
+<?php if ( $background_image ) : ?>
+	<div class="background--image">
+		<img src="<?php echo esc_url( $background_image['sizes']['hero'] ); ?>" />
+	</div>
+<?php endif; ?>
+<div class="container">
 	<div class="row">
 		<div class="col-12">
-			<div class="content--square">
-				<?php echo $content; ?>
-			</div>
+			<h1><?php echo $heading; ?></h1>
 		</div>
 	</div>
 </div>

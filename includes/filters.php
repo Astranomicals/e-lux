@@ -46,10 +46,10 @@ add_filter( 'next_post_link', 'im_next_post_link_attributes' );
  */
 function im_disable_gutenberg( $use_block_editor, $post_type ) {
 	$disabled = array(
-	// 'page',
-	// 'testimonial',
-	// 'team_member',
-	// 'patient',
+		// 'page',
+		// 'testimonial',
+		// 'team_member',
+		// 'patient',
 	);
 	if ( in_array( $post_type, $disabled, true ) ) {
 		return false;
@@ -75,43 +75,31 @@ add_filter(
  *
  * @param array $fragments Elements to fix the cart amount.
  */
-function misha_add_to_cart_fragment( $fragments ) {
+function im_add_to_cart_fragment( $fragments ) {
 	global $woocommerce;
 
 	$fragments['.cart-button'] = '<a href="' . wc_get_cart_url() . '" class="text-link cart-button"><i class="fas fa-shopping-cart"></i> Check out (' . $woocommerce->cart->cart_contents_count . ') items</a>';
 	return $fragments;
 
 }
-add_filter( 'woocommerce_add_to_cart_fragments', 'misha_add_to_cart_fragment' );
+add_filter( 'woocommerce_add_to_cart_fragments', 'im_add_to_cart_fragment' );
 
 /**
- * Update Cross Sells
- *
- * @param array $columns Change # of columns in Cross Sells.
+ * Update Cross Sells Columns to 2
  */
-function im_change_cross_sells_columns( $columns ) {
+function im_change_cross_sells_columns() {
 	return 2;
 }
 
 add_filter( 'woocommerce_cross_sells_columns', 'im_change_cross_sells_columns' );
 
 /**
- * Update Cross Sells
- *
- * @param array $columns Change # of items in Cross Sells.
+ * Update Cross Sells Product Rows to 2
  */
-function bbloomer_change_cross_sells_product_no( $columns ) {
+function im_change_cross_sells_product_no() {
 	return 2;
 }
-add_filter( 'woocommerce_cross_sells_total', 'bbloomer_change_cross_sells_product_no' );
-
-remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10, 0 );
-
-remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0 );
-
-remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10, 0 );
-
-remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20, 0 );
+add_filter( 'woocommerce_cross_sells_total', 'im_change_cross_sells_product_no' );
 
 /**
  * Update Single Product Display

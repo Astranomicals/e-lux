@@ -19,10 +19,10 @@ get_header(); ?>
 				<?php if ( have_posts() ) : ?>
 					<?php while ( have_posts() ) : ?>
 						<?php the_post(); ?>
-						<div class="image--holder right--shade">
-							<?php echo get_the_post_thumbnail( $post->ID, 'featured_hero_thumb' ); ?>
+						<div class="image--holder">
+							<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
 						</div>
-						<h3><?php echo get_field( 'team_position' ); ?></h3>
+						<h3><?php echo esc_attr( get_field( 'position' ) ); ?></h3>
 						<?php the_content(); ?>
 					<?php endwhile; ?> 
 				<?php endif; ?>

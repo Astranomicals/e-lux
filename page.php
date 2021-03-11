@@ -1,6 +1,6 @@
 <?php
 /**
- * Page.php
+ * Page
  *
  * @category   Components
  * @package    WordPress

@@ -11,7 +11,9 @@
  * @since      1.0.0
  */
 
+add_image_size( 'hero', 1920, 1080, true );
 add_image_size( 'blog_thumb', 330, 186, true );
+add_image_size( 'youtube_thumb', 414, 233, true );
 
 /**
  * Add Image Sizes to Array

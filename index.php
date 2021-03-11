@@ -1,6 +1,6 @@
 <?php
 /**
- * Index.php
+ * Index
  *
  * @category   Components
  * @package    WordPress
@@ -12,10 +12,7 @@
  */
 
 get_header(); ?>
-<section class="block block--full_width_page_header">
-	<?php get_template_part( 'components/blocks/full_width_page_header' ); ?>
-</section>
-<section class="block block--blog-page">
+<section class="block block--blog">
 	<div class="container">
 		<div class="row justify-content-center">
 			<div class="col-12 col-xl-8">

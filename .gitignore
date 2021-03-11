@@ -9,9 +9,9 @@
 ehthumbs.db
 Thumbs.db
 assets/dist/*
-*.zip
 buildtheme/*
 .vscode
+gulpfile-OLD.js
 
 # Node #
 ######################
