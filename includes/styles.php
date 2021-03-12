@@ -29,6 +29,10 @@ add_action( 'wp_enqueue_scripts', 'im_register_styles' );
 function im_enqueue_styles() {
 	wp_enqueue_style( 'google-fonts' );
 	wp_enqueue_style( 'main' );
-	wp_enqueue_style( 'style' );
+
+	/*
+		Remove Comment if you want to enable style.css
+		wp_enqueue_style( 'style' );
+	*/
 }
 add_action( 'wp_enqueue_scripts', 'im_enqueue_styles' );

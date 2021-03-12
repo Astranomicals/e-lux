@@ -5,6 +5,7 @@ const { series, src, dest, watch } = require("gulp"),
   concat = require("gulp-concat"),
   merge = require("gulp-merge"),
   notify = require("gulp-notify"),
+	webpack = require('webpack-stream'),
   browserSync = require("browser-sync").create(),
   localSiteUrl = "dev.bluvida.com";
 
@@ -25,8 +26,19 @@ function css() {
     );
 }
 
+function pluginsjs() {
+  return src("./assets/src/js/plugins/*.js")
+    .pipe(concat("plugins.min.js"))
+    .pipe(dest("./assets/dist/js/"))
+    .pipe(
+      notify({ message: "JS plugins.min.js has been compiled.", onLast: true })
+    )
+    .pipe(browserSync.stream({ once: true }));
+}
+
 function js() {
-  return src("./assets/src/js/main.js"")
+  return src("./assets/src/js/*.js")
+	.pipe(webpack( require('./webpack.custom.config.js') ))
     .pipe(
       babel({
         presets: ["@babel/env"],
@@ -37,7 +49,7 @@ function js() {
     .pipe(
       notify({ message: "JS main.min.js has been compiled.", onLast: true })
     )
-		.pipe(browserSync.stream({ once: true }));
+    .pipe(browserSync.stream({ once: true }));
 }
 
 function browser() {
@@ -65,4 +77,4 @@ function copy() {
 exports.css = css;
 exports.js = js;
 exports.copy = copy;
-exports.default = series(css, js, browser);
+exports.default = series(css, pluginsjs, js, browser);

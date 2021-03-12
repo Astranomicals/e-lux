@@ -109,3 +109,36 @@ function im_woocommerce_additional_info_and_description() {
 	wc_get_template( 'single-product/short-description.php' );
 }
 add_filter( 'woocommerce_single_product_summary', 'im_woocommerce_additional_info_and_description', 20 );
+
+/**
+ * Deregister wp-embed script
+ */
+function im_deregister_scripts() {
+	wp_deregister_script( 'wp-embed' );
+}
+add_action( 'wp_footer', 'im_deregister_scripts' );
+
+/**
+ * Remove Guttenburg on front-end
+ */
+function im_remove_wp_block_library_css() {
+	wp_dequeue_style( 'wp-block-library' );
+	wp_dequeue_style( 'wp-block-library-theme' );
+	wp_dequeue_style( 'wc-block-style' );
+}
+add_action( 'wp_enqueue_scripts', 'im_remove_wp_block_library_css', 100 );
+
+/**
+ * Remove Recent Comment Style in Source
+ */
+add_filter( 'show_recent_comments_widget_style', '__return_false', 99 );
+
+/**
+ * Move jQuery Files to bottom of page to remove render blocking resources
+ */
+function im_move_jquery_to_footer() {
+	wp_scripts()->add_data( 'jquery', 'group', 1 );
+	wp_scripts()->add_data( 'jquery-core', 'group', 1 );
+	wp_scripts()->add_data( 'jquery-migrate', 'group', 1 );
+}
+add_action( 'wp_enqueue_scripts', 'im_move_jquery_to_footer' );

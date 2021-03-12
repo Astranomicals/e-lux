@@ -18,48 +18,8 @@ function im_register_scripts() {
 	$theme         = wp_get_theme();
 	$theme_version = $theme->get( 'Version' );
 
-	// Comment in/out the gsap plugins you wish to use.
-	$gsap_plugins = array(
-		// 'AttrPlugin.min.js',
-		// 'BezierPlugin.min.js',
-		// 'ColorPropsPlugin.min.js',
-		// 'CSSPlugin.min.js',
-		// 'CustomBounce.min.js',
-		// 'CustomEase.min.js',
-		// 'CustomWiggle.min.js',
-		// 'DirectionalRotationPlugin.min.js',
-		// 'Draggable.min.js',
-		// 'DrawSVGPlugin.min.js',
-		// 'EaselPlugin.min.js',
-		// 'EasePack.min.js',
-		// 'EndArrayPlugin.min.js',
-		// 'GSDevTools.min.js',
-		// 'jquery.gsap.min.js',
-		// 'ModifiersPlugin.min.js',
-		// 'MorphSVGPlugin.min.js',
-		// 'Physics2DPlugin.min.js',
-		// 'PhysicsPropsPlugin.min.js',
-		// 'PixiPlugin.min.js',
-		// 'RaphaelPlugin.min.js',
-		// 'RoundPropsPlugin.min.js',
-		// 'ScrambleTextPlugin.min.js',
-		// 'ScrollToPlugin.min.js',
-		// 'SplitText.min.js',
-		// 'TextPlugin.min.js',
-		// 'ThrowPropsPlugin.min.js',
-		// 'TimelineLite.min.js',
-		'TimelineMax.min.js',
-		// 'TweenLite.min.js',
-		'TweenMax.min.js',
-	);
-
-	foreach ( $gsap_plugins as $gsap_plugin ) {
-		wp_enqueue_script( 'gsap-' . str_replace( '.js', '', $gsap_plugin ), get_template_directory_uri() . '/assets/dist/plugins/gsap/' . $gsap_plugin, array( 'main' ), $theme_version, false );
-	}
-
-	wp_register_script( 'scrollmagic', get_template_directory_uri() . '/assets/dist/plugins/scrollmagic/ScrollMagic.min.js', '', $theme_version, true );
-	wp_register_script( 'scrollanimation', get_template_directory_uri() . '/assets/dist/plugins/scrollmagic/plugins/animation.gsap.min.js', '', $theme_version, true );
-	wp_register_script( 'main', get_template_directory_uri() . '/assets/dist/js/main.min.js', array( 'plugins' ), $theme_version, false );
+	wp_register_script( 'main', get_template_directory_uri() . '/assets/dist/js/main.min.js', '', $theme_version, true );
+	wp_register_script( 'plugins', get_template_directory_uri() . '/assets/dist/js/plugins.min.js', '', $theme_version, true );
 }
 add_action( 'wp_enqueue_scripts', 'im_register_scripts' );
 
@@ -68,11 +28,11 @@ add_action( 'wp_enqueue_scripts', 'im_register_scripts' );
  */
 function im_enqueue_scripts() {
 	wp_enqueue_script( 'jquery' );
-	wp_enqueue_script( 'scrollmagic' );
-	wp_enqueue_script( 'scrollanimation' );
+	wp_enqueue_script( 'plugins' );
 	wp_enqueue_script( 'main' );
 
-	// Create AJAX variable.
+	/*
+	Create AJAX variable (Remove if you do not need AJAX).
 	wp_localize_script(
 		'main',
 		'im',
@@ -82,5 +42,6 @@ function im_enqueue_scripts() {
 			'ajax_url'     => admin_url( 'admin-ajax.php' ),
 		)
 	);
+	*/
 }
 add_action( 'wp_enqueue_scripts', 'im_enqueue_scripts' );

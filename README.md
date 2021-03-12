@@ -6,7 +6,6 @@ WordPress theme for custom builds.
 * [Swiper](http://idangero.us/swiper/api/)
 * [Font Awesome 5 Pro](https://fontawesome.com/)
 * [TweenMax](https://greensock.com/docs/TweenMax)
-* [ScrollMagic](http://scrollmagic.io/)
 
 ## Installation
 Follow these steps to get up and running with the included Plugins and Custom Fields installed and synced correctly.
@@ -46,8 +45,9 @@ At this point you should have `incredibletheme` installed with all custom field 
 The Gulp tools in this build allow you to use sass, imagemin, js min/concat and js/css linters for errors. CSS media queries are also combinded for shorter code. Follow the steps below to get started!
 
 1. Install [Node.js](https://nodejs.org/en/) and [Gulp](https://gulpjs.com/)
+2. Install fontawesome pro to your computer and use /Users/fontawesome/development/ folder to store fortawesome-pro-duotone-svg-icons-5.13.1.tgz. This will allow you to install fontawesome pro to the theme without any extra steps.
 2. cd to your project and run `npm install`.
-3. Go to line 13 in gulpfile.js and update to reflect your local setup.
+3. Go to line 10 in gulpfile.js and update to reflect your local setup.
 4. Run "gulp" from your project root.
 5. If this is your first time running gulp or you are getting the error "Command Not Found" when trying to run 'gulp', run this command:
    'npm install --global gulp-cli'
@@ -61,4 +61,3 @@ Licenses, addons, etc.
 * [Advanced Custom Fields Pro](https://podio.com/incrediblemarketingcom/dev-area-2/apps/dev-assets/items/11)
 * [Font Awesome 5 Pro](https://podio.com/incrediblemarketingcom/dev-area-2/apps/dev-assets/items/30)
 * [Gravity Forms](https://podio.com/incrediblemarketingcom/dev-area-2/apps/dev-assets/items/35)
-* [WPMU Dev Dashboard](https://podio.com/incrediblemarketingcom/dev-area-2/apps/dev-assets/items/16)
