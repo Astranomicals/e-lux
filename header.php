@@ -23,6 +23,9 @@
 	<title><?php wp_title( '&laquo;', true, 'right' ); ?> <?php bloginfo( 'name' ); ?></title>
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+	<link rel="preload" href="/wp-content/themes/incredible/assets/dist/webfonts/fa-light-300.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="/wp-content/themes/incredible/assets/dist/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/wp-content/themes/incredible/assets/dist/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
 	<?php wp_head(); ?>
 </head>
 

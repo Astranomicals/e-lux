@@ -1,0 +1,13 @@
+.btn {
+  text-decoration: none;
+}
+
+.btn--primary {
+  background: $primary;
+  color: $white;
+
+  &:hover {
+    background: $secondary;
+    color: $white;
+  }
+}

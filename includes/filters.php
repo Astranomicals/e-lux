@@ -12,6 +12,16 @@
  */
 
 /**
+ * Display Image using WordPress native sizing
+ *
+ * @param array  $image array of the image that was selected.
+ * @param string $sizes string of the custom size that is needed.
+ */
+function display_image( $image, $sizes ) {
+	echo wp_get_attachment_image( $image['id'], $sizes, '', array( 'loading' => 'lazy' ) );
+}
+
+/**
  * Excerpt_more
  */
 function im_excerpt_more() {

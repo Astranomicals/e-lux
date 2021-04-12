@@ -1,3 +1,37 @@
 .block {
   position: relative;
 }
+
+.woocommerce {
+  .woocommerce-product-gallery {
+    ol {
+      list-style: none;
+      margin: 25px auto 0;
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0;
+      justify-content: space-between;
+
+      li {
+        margin: 0;
+      }
+    }
+  }
+
+  ul.products {
+    li.products {
+      .button {
+        @extend .btn;
+        @extend .btn--primary;
+      }
+    }
+  }
+
+  .shop--single-product {
+    padding: 120px 0;
+  }
+  .related--products {
+    padding: 120px 0;
+    background-color: #efefef;
+  }
+}
