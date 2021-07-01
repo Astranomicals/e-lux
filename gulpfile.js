@@ -1,13 +1,13 @@
 const { series, src, dest, watch } = require("gulp"),
-  sass = require("gulp-sass"),
+  sass = require("gulp-sass")(require("sass")),
   minifyCSS = require("gulp-csso"),
   babel = require("gulp-babel"),
   concat = require("gulp-concat"),
   merge = require("gulp-merge"),
   notify = require("gulp-notify"),
-	webpack = require('webpack-stream'),
+  webpack = require("webpack-stream"),
   browserSync = require("browser-sync").create(),
-  localSiteUrl = "dev.bluvida.com";
+  localSiteUrl = "dev.buttsbydesign.com";
 
 function css() {
   return src("./assets/src/sass/main.scss")
@@ -38,7 +38,7 @@ function pluginsjs() {
 
 function js() {
   return src("./assets/src/js/*.js")
-	.pipe(webpack( require('./webpack.custom.config.js') ))
+    .pipe(webpack(require("./webpack.custom.config.js")))
     .pipe(
       babel({
         presets: ["@babel/env"],
