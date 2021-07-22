@@ -4,8 +4,10 @@
   "description": "Incredible Marketing package for the incredible theme",
   "main": "gulpfile.js",
   "dependencies": {
+    "gulp-cli": "^2.3.0",
     "resolve-url": "^0.2.1",
-    "webpack-stream": "^6.1.2"
+    "webpack-stream": "^6.1.2",
+    "yargs-parser": "^20.2.9"
   },
   "devDependencies": {
     "@babel/core": "^7.13.10",
@@ -13,7 +15,7 @@
     "@fortawesome/fontawesome-pro": "file:../../../../../../../../fontawesome/development/fortawesome-pro-duotone-svg-icons-5.13.1.tgz",
     "babel-preset-env": "^1.7.0",
     "babel-preset-es2015": "^6.24.1",
-    "bootstrap": "^5.0.0-beta2",
+    "bootstrap": "^4.6.0",
     "browser-sync": "^2.26.14",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
@@ -31,8 +33,8 @@
     "sass": "^1.35.1",
     "sass-mq": "^5.0.1",
     "swiper": "^6.5.0",
-    "webpack": "^5.24.4",
-    "webpack-cli": "^4.5.0"
+    "webpack": "^5.45.1",
+    "webpack-cli": "^4.7.2"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
