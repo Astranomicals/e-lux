@@ -1,9 +1,9 @@
 /*! Incredible Marketing Theme Main JS */
 
-(function($, window, document, undefined) {
+(function ($, window, document, undefined) {
   "use strict";
 
-  $(document).ready(function() {
+  $(document).ready(function () {
     var $cache = {
       window: $(window),
       document: $(document),
@@ -12,43 +12,104 @@
       jsToTop: $(".js-to-top"),
       jsScrollTo: $(".js-scroll-to"),
       siteWrap: $(".site-wrap"),
-      siteNav: $(".site-nav")
+      siteNav: $(".site-nav"),
     };
 
     var IM = {
-      init: function() {
+      init: function () {
         this.utils.init();
       },
       utils: {
-        init: function() {
-					this.openAnim();
+        init: function () {
+          this.openAnim();
           this.siteNavSticky();
           this.mobileMenu();
           this.scrollTo();
           this.mag();
-				},
-				mag: function(){
-					$('.popup-youtube').magnificPopup({
-						disableOn: 700,
-						type: 'iframe',
-						mainClass: 'mfp-fade',
-						removalDelay: 160,
-						preloader: false,
-						fixedContentPos: false
-					});
-				},
-				openAnim: function(){
+          this.pageAnim();
+        },
+        pageAnim: function () {
+          let callback = function (entries, observer) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.timeline.play();
+              }
+            });
+          };
+
+          let options = {
+            threshold: 0.4, // target 'section' should be 60% visible
+            rootMargin: "0px",
+          };
+
+          let observer = new IntersectionObserver(callback, options);
+          let targets = document.querySelectorAll("section");
+
+          // a loop: create the individual target timelines
+          targets.forEach(function (target) {
+            let targetAnim = gsap.timeline({ paused: true });
+
+            if ($(target).find(".fade-in-left").length > 0) {
+              let fil = $(target).find(".fade-in-left");
+              targetAnim.staggerFrom(
+                fil,
+                1,
+                { autoAlpha: 0, xPercent: -100 },
+                0.35
+              );
+            }
+
+            if ($(target).find(".fade-in").length > 0) {
+              let fi = $(target).find(".fade-in");
+              targetAnim.staggerFrom(fi, 1, { autoAlpha: 0 }, 0.35);
+            }
+
+            if ($(target).find(".fade-in-right").length > 0) {
+              let fir = $(target).find(".fade-in-right");
+              targetAnim.staggerFrom(
+                fir,
+                1,
+                { autoAlpha: 0, xPercent: 100 },
+                0.35
+              );
+            }
+            if ($(target).find(".fade-in-bottom").length > 0) {
+              let fib = $(target).find(".fade-in-bottom");
+              targetAnim.staggerFrom(
+                fib,
+                1,
+                { autoAlpha: 0, yPercent: 100 },
+                0.35
+              );
+            }
+
+            target.timeline = targetAnim;
+          });
+
+          Array.prototype.forEach.call(targets, (el) => {
+            observer.observe(el);
+          });
+        },
+        mag: function () {
+          $(".popup-youtube").magnificPopup({
+            disableOn: 700,
+            type: "iframe",
+            mainClass: "mfp-fade",
+            removalDelay: 160,
+            preloader: false,
+            fixedContentPos: false,
+          });
+        },
+        openAnim: function () {
           var openTween = new TimelineMax();
-          openTween.to(".site-nav #menu-left-menu-1", 1, { opacity: 1, left: 0 }, .5);
-          openTween.to(".site-nav #menu-right-menu-1", 1, { opacity: 1, right: 0 }, .5);
+          openTween.to(".site-nav .menu", 1, { opacity: 1, left: 0 }, 0.5);
           openTween.to(".site-nav .top--nav a", 0.5, { opacity: 1 }, 1);
-					openTween.to(".block--hero .content--square", 1.5, { opacity: 1, top: 0 }, 1);					
-				},
-        siteNavSticky: function() {
-					if ($cache.window.scrollTop() > 0) {
-						$cache.siteNav.addClass("sticky");
-					}
-          $cache.window.scroll(function() {
+        },
+        siteNavSticky: function () {
+          if ($cache.window.scrollTop() > 0) {
+            $cache.siteNav.addClass("sticky");
+          }
+          $cache.window.scroll(function () {
             if ($cache.window.scrollTop() > 0) {
               $cache.siteNav.addClass("sticky");
             } else {
@@ -56,9 +117,9 @@
             }
           });
         },
-        mobileMenu: function() {
+        mobileMenu: function () {
           /* stop jump to top if link is # */
-          $('a[href="#"]').on("click", function(e) {
+          $('a[href="#"]').on("click", function (e) {
             e.preventDefault();
           });
 
@@ -68,7 +129,7 @@
 
           $(".menu__mobile .menu li.menu-item-has-children i").on(
             "click",
-            function() {
+            function () {
               $(this)
                 .closest(".menu-item-has-children")
                 .find("> .sub-menu")
@@ -81,7 +142,7 @@
           tl.to(".menu__mobile", 0.1, {
             zIndex: 9999,
             opacity: 1,
-            left: 0
+            left: 0,
           });
           tl.staggerTo(
             ".menu__mobile .menu > li",
@@ -90,26 +151,26 @@
             0.1
           );
 
-          $('[data-toggle="menu"]').on("click", function() {
+          $('[data-toggle="menu"]').on("click", function () {
             tl.reversed() ? tl.play() : tl.reverse();
           });
         },
-        scrollTo: function() {
+        scrollTo: function () {
           // Animate the scroll to top
-          $cache.jsToTop.on("click", function(e) {
+          $cache.jsToTop.on("click", function (e) {
             e.preventDefault();
             $("html, body").animate({ scrollTop: 0 }, 300);
           });
 
           // Animate scroll to id
-          $cache.jsScrollTo.on("click", function(e) {
+          $cache.jsScrollTo.on("click", function (e) {
             e.preventDefault();
             var href = $(this).attr("href"),
               scrollPoint = $(href).offset();
             $("html, body").animate({ scrollTop: scrollPoint.top }, 300);
           });
-        }
-      }
+        },
+      },
     };
 
     IM.init();

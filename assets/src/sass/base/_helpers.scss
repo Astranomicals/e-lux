@@ -90,31 +90,6 @@
   @extend %visuallyhidden;
 }
 
-/* Animations */
-
-.fade-in-left {
-  position: relative;
-  left: -200px;
-  opacity: 0;
-}
-
-.fade-in-right {
-  position: relative;
-  right: -200px;
-  opacity: 0;
-}
-
-.fade-in {
-  position: relative;
-  opacity: 0;
-}
-
-.fade-in-bottom {
-  position: relative;
-  bottom: -200px;
-  opacity: 0;
-}
-
 @keyframes scrollDown {
   0% {
     transform: scaleY(0);
@@ -139,5 +114,23 @@
   100% {
     transform: scaleY(0);
     transform-origin: center top;
+  }
+}
+
+.background--image {
+  @include absolute_cover;
+
+  img {
+    @include absolute_cover;
+    object-fit: cover;
+  }
+}
+
+.image--holder {
+  position: relative;
+
+  img {
+    max-width: 100%;
+    height: auto;
   }
 }
