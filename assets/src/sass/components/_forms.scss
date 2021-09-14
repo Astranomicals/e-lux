@@ -14,11 +14,8 @@
       div.ginput_container {
         margin: 0 !important;
         position: relative;
-        background: rgba(255, 255, 255, 0.55);
-        border: 1px solid rgba(255, 255, 255, 0.5);
-        box-sizing: border-box;
-        backdrop-filter: blur(30px);
         display: block;
+
         input,
         textarea {
           margin: 0;
@@ -31,13 +28,8 @@
           border: none;
           color: $black;
 
-          @include mq(md) {
-            font-size: 18px !important;
-            padding: 25px 30px !important;
-          }
           &:focus {
             outline: none;
-            background: $white;
           }
         }
         textarea {

@@ -34,17 +34,6 @@
   display: block;
 }
 
-@mixin background_cover($position: center center) {
-  background-size: cover;
-  background-position: $position;
-  background-repeat: no-repeat;
-}
-
-@mixin pseudo_background_cover($position: center center) {
-  @include pseudo_cover();
-  @include background_cover($position);
-}
-
 @keyframes scrollDown {
   0% {
     transform: scaleY(0);
