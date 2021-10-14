@@ -34,5 +34,6 @@
 </div><!-- end of .site-wrap -->
 
 <?php wp_footer(); ?>
+<?php echo get_field( 'footer_scripts', 'options' ); ?>
 </body>
 </html>

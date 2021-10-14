@@ -42,12 +42,6 @@ function incredible__register_required_plugins() {
 			'required' => true,
 		),
 
-		array(
-			'name'     => 'GatherContent Plugin',
-			'slug'     => 'gathercontent-import',
-			'required' => false,
-		),
-
 	);
 
 	$config = array(
