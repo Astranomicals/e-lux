@@ -1,157 +1,159 @@
-.gform_wrapper {
-  margin: 0 !important;
-
-  ::placeholder {
-    color: $black;
-  }
-  ul.gform_fields {
-    li.gfield {
-      padding: 0 !important;
-      margin: 0;
-      label {
-        display: none;
-      }
-      div.ginput_container {
-        margin: 0 !important;
-        position: relative;
-        display: block;
-
-        input,
-        textarea {
-          margin: 0;
-          width: 100%;
-          padding: 15px 20px !important;
-          background: transparent;
-          font-size: 16px !important;
-          line-height: auto;
-          font-weight: normal;
-          border: none;
-          color: $black;
-
-          &:focus {
-            outline: none;
-          }
-        }
-        textarea {
-          height: 172px;
-        }
-
-        &.ginput_container_checkbox {
-          background: transparent;
-          border: none;
-          backdrop-filter: none;
-          margin: 20px 0 60px !important;
-
-          li label {
-            margin: 2px 0 0 33px;
-            width: 100%;
-            max-width: 100%;
-            display: block;
-            color: $black;
-            font-style: normal;
-            font-weight: 600;
-            font-size: 18px;
-            line-height: 30px;
-            letter-spacing: 0.03em;
-
-            @include mq(md) {
-              color: $white;
-            }
-          }
-          label::after,
-          label::after {
-            content: "";
-            opacity: 1;
-          }
-          li input[type="radio"],
-          li input[type="checkbox"] {
-            display: none;
-          }
-          li[class^="gchoice"] label:before,
-          li[class^="gchoice"] label:after,
-          li[class^="gchoice"] label:before,
-          li[class^="gchoice"] label:after {
-            bottom: 0;
-            content: "";
-            margin: auto;
-            position: absolute;
-            top: 0;
-          }
-          li[class^="gchoice"] label:after,
-          li[class^="gchoice"] label:after {
-            content: "";
-            background-color: #fff;
-            border: solid 1px #cfcfcf;
-            border-radius: 0;
-            display: inline-block;
-            height: 13px;
-            left: 0;
-            position: absolute;
-            top: 0;
-            transition: left 0.25s, background-color 0.13s;
-            width: 13px;
-          }
-          input[type="checkbox"]:checked + label:before,
-          input[type="radio"]:checked + label:before {
-            content: "";
-            display: block;
-            width: 9px;
-            height: 9px;
-            background: $slate;
-            font-size: 18.5px;
-            font-weight: 700;
-            left: 2px;
-            /*.75px*/
-            text-align: center;
-            top: 0px;
-            z-index: 9;
-          }
-        }
-      }
-    }
-  }
-  .gform_footer {
-    padding: 0 !important;
+body {
+  .gform_wrapper {
     margin: 0 !important;
-    text-align: center;
-  }
-  &.gform_validation_error {
-    .validation_error {
-      background: $error;
-      color: $white;
-      font-size: 1.1rem;
-      font-weight: 500;
-      padding: 15px;
-      border: none;
+
+    ::placeholder {
+      color: $black;
     }
-    .validation_message {
-      color: $error;
-      font-weight: 300;
-    }
-    ul.gform_fields {
-      li.gfield.gfield_error {
-        border: none;
-        margin-bottom: 0 !important;
-        background: transparent;
-        color: $error;
-        input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="button"]):not([type="image"]):not([type="file"]),
-        textarea {
-          border: 1px solid $error;
-          margin-bottom: 0;
-          padding: 19px 10px 19px 50px !important;
+    .gform_fields {
+      .gfield {
+        padding: 0 !important;
+        margin: 0;
+        label {
+          display: none;
         }
         .ginput_container {
-          &::before {
-            left: 11px;
-            top: 20px;
+          margin: 0 !important;
+          position: relative;
+          display: block;
+
+          input,
+          textarea {
+            margin: 0;
+            width: 100%;
+            padding: 15px 20px !important;
+            background: transparent;
+            font-size: 16px !important;
+            line-height: auto;
+            font-weight: normal;
+            border: none;
+            color: $black;
+
+            &:focus {
+              outline: none;
+            }
+          }
+          textarea {
+            height: 172px;
+          }
+
+          &.ginput_container_checkbox {
+            background: transparent;
+            border: none;
+            backdrop-filter: none;
+            margin: 20px 0 60px !important;
+
+            li label {
+              margin: 2px 0 0 33px;
+              width: 100%;
+              max-width: 100%;
+              display: block;
+              color: $black;
+              font-style: normal;
+              font-weight: 600;
+              font-size: 18px;
+              line-height: 30px;
+              letter-spacing: 0.03em;
+
+              @include mq(md) {
+                color: $white;
+              }
+            }
+            label::after,
+            label::after {
+              content: "";
+              opacity: 1;
+            }
+            input[type="radio"],
+            input[type="checkbox"] {
+              display: none;
+            }
+            [class^="gchoice"] label:before,
+            [class^="gchoice"] label:after,
+            [class^="gchoice"] label:before,
+            [class^="gchoice"] label:after {
+              bottom: 0;
+              content: "";
+              margin: auto;
+              position: absolute;
+              top: 0;
+            }
+            [class^="gchoice"] label:after,
+            [class^="gchoice"] label:after {
+              content: "";
+              background-color: #fff;
+              border: solid 1px #cfcfcf;
+              border-radius: 0;
+              display: inline-block;
+              height: 13px;
+              left: 0;
+              position: absolute;
+              top: 0;
+              transition: left 0.25s, background-color 0.13s;
+              width: 13px;
+            }
+            input[type="checkbox"]:checked + label:before,
+            input[type="radio"]:checked + label:before {
+              content: "";
+              display: block;
+              width: 9px;
+              height: 9px;
+              background: $slate;
+              font-size: 18.5px;
+              font-weight: 700;
+              left: 2px;
+              /*.75px*/
+              text-align: center;
+              top: 0px;
+              z-index: 9;
+            }
           }
         }
-        div.gfield_description {
-          padding: 0 !important;
+      }
+    }
+    .gform_footer {
+      padding: 0 !important;
+      margin: 0 !important;
+      text-align: center;
+    }
+    &.gform_validation_error {
+      .validation_error {
+        background: $error;
+        color: $white;
+        font-size: 1.1rem;
+        font-weight: 500;
+        padding: 15px;
+        border: none;
+      }
+      .validation_message {
+        color: $error;
+        font-weight: 300;
+      }
+      .gform_fields {
+        .gfield.gfield_error {
+          border: none;
+          margin-bottom: 0 !important;
+          background: transparent;
           color: $error;
-          text-transform: uppercase;
-          font-size: 1.1rem;
-          font-weight: 400;
+          input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="button"]):not([type="image"]):not([type="file"]),
+          textarea {
+            border: 1px solid $error;
+            margin-bottom: 0;
+            padding: 19px 10px 19px 50px !important;
+          }
+          .ginput_container {
+            &::before {
+              left: 11px;
+              top: 20px;
+            }
+          }
+          .gfield_description {
+            padding: 0 !important;
+            color: $error;
+            text-transform: uppercase;
+            font-size: 1.1rem;
+            font-weight: 400;
+          }
         }
       }
     }
