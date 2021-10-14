@@ -12,6 +12,10 @@ assets/dist/*
 buildtheme/*
 .vscode
 gulpfile-OLD.js
+components/svg/footer-logo.php
+components/svg/menu-icon.php
+components/svg/logo.php
+components/svg/weird-shaped-bg.php
 
 # Node #
 ######################

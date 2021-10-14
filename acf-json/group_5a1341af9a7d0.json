@@ -123,7 +123,7 @@
                             "conditional_logic": 0,
                             "wrapper": {
                                 "width": "",
-                                "class": "hide-label",
+                                "class": "",
                                 "id": ""
                             },
                             "return_format": "url",
@@ -142,12 +142,36 @@
                             "conditional_logic": 0,
                             "wrapper": {
                                 "width": "",
-                                "class": "hide-label",
+                                "class": "",
                                 "id": ""
                             },
                             "return_format": "url",
                             "library": "all",
                             "min_size": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        },
+                        {
+                            "key": "field_61685d6cdbdb5",
+                            "label": "Background Video Poster",
+                            "name": "background_video_poster",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "preview_size": "medium",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
                             "max_size": "",
                             "mime_types": ""
                         }
@@ -303,5 +327,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1625110165
+    "modified": 1634230594
 }
