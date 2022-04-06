@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Display Blog Loop Navigation
  *
@@ -11,11 +12,11 @@
  * @since      1.0.0
  */
 
-	$newer_link = get_previous_posts_link( 'Previous Page' );
-	$older_link = get_next_posts_link( 'Next Page' );
+$newer_link = get_previous_posts_link('Previous Page');
+$older_link = get_next_posts_link('Next Page');
 ?>
-<?php if ( $wp_query->max_num_pages > 1 ) : ?>
-	<?php if ( $older_link || $newer_link ) : ?>
+<?php if ($wp_query->max_num_pages > 1) : ?>
+	<?php if ($older_link || $newer_link) : ?>
 		<nav class="d-flex align-items-center navigation navigation-loop">
 			<?php echo $newer_link; ?>
 			<?php echo $older_link; ?>

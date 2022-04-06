@@ -1,23 +1,23 @@
 <?php
-/**
- * Displays Hero Block
- *
- * @category   Components
- * @package    WordPress
- * @subpackage Incredible Theme
- * @author     Nick Gonzales
- * @license    https://www.gnu.org/licenses/gpl-3.0.txt GNU/GPLv3
- * @link       https://www.incrediblemarketing.com/
- * @since      1.0.0
- */
+	/**
+	 * Displays Hero Block
+	 *
+	 * @category   Components
+	 * @package    WordPress
+	 * @subpackage Incredible Theme
+	 * @author     Nick Gonzales
+	 * @license    https://www.gnu.org/licenses/gpl-3.0.txt GNU/GPLv3
+	 * @link       https://www.incrediblemarketing.com/
+	 * @since      1.0.0
+	 */
 
-$heading                 = get_sub_field( 'heading' );
-$subheading              = get_sub_field( 'subheading' );
-$background_video_mp4    = get_sub_field( 'background_video_mp4' );
-$background_video_webm   = get_sub_field( 'background_video_webm' );
-$background_video_poster = get_sub_field( 'background_video_poster' );
+	$heading                 = get_sub_field( 'heading' );
+	$subheading              = get_sub_field( 'subheading' );
+	$background_video_mp4    = get_sub_field( 'background_video_mp4' );
+	$background_video_webm   = get_sub_field( 'background_video_webm' );
+	$background_video_poster = get_sub_field( 'background_video_poster' );
 ?>
-<?php if ( $background_video_mp4 || $background_video_webm ) : ?>
+<?php if ( $background_video_mp4 || $background_video_webm ): ?>
 	<video width="1920" height="1080" poster="<?php echo esc_attr( $background_video_poster['sizes']['hero'] ); ?>" controls>
 		<source src="<?php echo esc_attr( $background_video_mp4 ); ?>" type="video/mp4">
 		<source src="<?php echo esc_attr( $background_video_webm ); ?>" type="video/webm">
