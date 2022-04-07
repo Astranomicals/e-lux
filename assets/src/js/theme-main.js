@@ -123,36 +123,61 @@
             e.preventDefault();
           });
 
-          $(".menu__mobile .menu li.menu-item-has-children > a").after(
-            '<i class="fal fa-angle-down"></i>'
+          $(".menu__mobile .menu > li.menu-item > a").wrapInner(
+            "<span></span>"
           );
 
-          $(".menu__mobile .menu li.menu-item-has-children i").on(
+          $(
+            ".menu__mobile .menu li#menu-item-4173 a,.menu__mobile .menu li#menu-item-3366 a, .menu__mobile .menu #menu-item-467 .sub-menu a"
+          ).attr("target", "_blank");
+
+          $(
+            ".menu__mobile .primary--menu .menu>li>.sub-menu>li>a:not([href=#])"
+          ).append("<i class='fal fa-long-arrow-right'></i> <span>More</span>");
+          $(".menu__mobile .primary--menu .menu>li>.sub-menu").append(
+            "<button data-toggle='back'><span>Back</span> <i class='fal fa-long-arrow-right'></i></button>"
+          );
+
+          $(".menu__mobile .menu > li.menu-item-has-children > a").on(
             "click",
-            function () {
-              $(this)
-                .closest(".menu-item-has-children")
-                .find("> .sub-menu")
-                .toggleClass("active");
+            function (e) {
+              e.preventDefault();
+              $(".menu__mobile .menu > li").removeClass("active");
+              $(".menu__mobile").addClass("open-inner-menu");
+              $(".primary--menu").addClass("shrink");
+              $(this).parent().addClass("active");
+            }
+          );
+          $(".menu__mobile button[data-toggle='back']").on(
+            "click",
+            function (e) {
+              e.preventDefault();
+              $(".menu__mobile .menu > li").removeClass("active");
+              $(".primary--menu").removeClass("shrink");
             }
           );
 
           var tl = new TimelineLite({ paused: true, reversed: true });
 
-          tl.to(".menu__mobile", 0.1, {
-            zIndex: 9999,
+          tl.to(".menu__mobile", 1, {
+            zIndex: 999999,
             opacity: 1,
             left: 0,
           });
-          tl.staggerTo(
-            ".menu__mobile .menu > li",
-            0.25,
-            { left: 0, opacity: 1 },
-            0.1
-          );
 
           $('[data-toggle="menu"]').on("click", function () {
             tl.reversed() ? tl.play() : tl.reverse();
+          });
+          $(".menu__mobile .background--image").on("click", function () {
+            tl.reversed() ? tl.play() : tl.reverse();
+          });
+          $("#menu-item-3377 a").on("click", function () {
+            tl.reversed() ? tl.play() : tl.reverse();
+            var href = $(this).attr("href"),
+              newString = href.substr(href.indexOf("#") + 1),
+              scrollPoint = $(`#` + newString).offset();
+            console.log(newString);
+            $("html, body").animate({ scrollTop: scrollPoint.top - 200 }, 300);
           });
         },
         scrollTo: function () {

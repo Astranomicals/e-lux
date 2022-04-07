@@ -3,155 +3,704 @@
   z-index: 999;
   width: 100%;
   height: 100%;
-  left: -100%;
+  right: -100%;
   opacity: 0;
-  padding: 30px 15px;
-  background: linear-gradient(180deg, $primary 0%, $secondary 100%);
+  padding: 0;
+  overflow: hidden;
 
-  @include mq(md) {
-    padding: 60px 45px;
-  }
+  &.open-inner-menu {
+    padding: 0;
 
-  .logo {
-    width: 240px;
-    height: auto;
-    margin: 0 auto 15px;
-    display: flex;
-  }
+    button[data-toggle="menu"] {
+      @include mq($until: md) {
+        right: 0;
+      }
+    }
 
-  .site__logo {
-    @include mq($until: xl) {
-      display: block;
-      width: 100%;
-      text-align: center;
+    .inner--menu {
+      opacity: 1;
+      z-index: 7;
+      transition: all 0.6s ease-in-out;
+      transition-delay: 0.6s;
+
+      button {
+        position: relative;
+        top: unset;
+        right: unset;
+        width: 50px;
+        height: 50px;
+        background: $white;
+        border: 1px solid #ccbb98;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: $futura;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 16px;
+        line-height: 21px;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: $primary;
+        border-radius: 0;
+        flex-direction: row;
+        transition: all 0.5s ease-in-out;
+
+        @include mq(md) {
+          justify-content: space-between;
+          width: 130px;
+          height: 51px;
+          padding: 15px 25px;
+        }
+
+        &::before {
+          background: $primary;
+        }
+        &:hover {
+          color: $white;
+
+          i {
+            color: $white;
+          }
+        }
+
+        strong {
+          font-weight: 800;
+          @include mq($until: md) {
+            display: none;
+          }
+        }
+      }
     }
   }
-  button {
+
+  .background--image {
+    z-index: -1;
+    background: rgba($primary-green, 0.5);
+    opacity: 1;
+    transition: all 1s ease-in-out;
+  }
+
+  button[data-toggle="menu"] {
     display: flex;
     flex-direction: column;
-    width: 35px;
-    height: 25px;
-    background: none;
+    width: 70px;
+    height: 70px;
+    background: rgba(255, 255, 255, 0.07);
     border: none;
     padding: 0;
     justify-content: space-between;
     margin: 0;
     position: absolute;
-    right: 15px;
-    top: 15px;
+    right: 5px;
+    top: 10px;
+    z-index: 9;
+
+    @include mq(md) {
+      box-shadow: rgba($black, 0) 0 4px 10px;
+      right: 55px;
+      top: 15px;
+    }
+    @include mq(xxxl) {
+      right: 73px;
+      top: 25px;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: transparent;
+      transform: scale(0);
+      transition: all 0.3s ease-in-out;
+      z-index: -1;
+      @include mq(md) {
+        background: $white;
+      }
+    }
 
     &:focus {
       outline: none;
     }
     span {
-      height: 3px;
-      width: 35px;
+      height: 4px;
+      width: 23px;
       margin: 0;
+      border-radius: 100em;
       display: block;
       background: $primary;
       transform: rotate(45deg);
       position: absolute;
-      top: 11px;
+      top: 33px;
+      left: 23px;
+
       &:nth-child(2) {
         transform: rotate(-45deg);
+      }
+    }
+    &:hover {
+      @include mq(md) {
+        box-shadow: rgba($black, 0.3) 0 4px 10px;
+      }
+      &::before {
+        transform: scale(1);
       }
     }
   }
   .menu {
     padding: 0;
-    margin: 45px 0;
+    margin: 0;
     list-style: none;
-    max-height: 65%;
-    height: 70%;
-    overflow: auto;
-    text-align: center;
-    @media screen and (max-height: 600px) {
-      max-height: 40%;
-    }
-    @include mq($until: md) {
-      margin-top: 15px;
-    }
-    li {
-      font-size: 24px;
-      line-height: 2em;
-      display: block;
-      font-weight: 400;
-      position: relative;
-      left: -100%;
+    overflow: hidden;
+    width: 560px;
+    max-width: 100%;
+
+    > li {
+      margin-bottom: 10px;
       @include mq(md) {
-        font-size: 35px;
+        width: 457px;
       }
-      i {
-        margin-left: 20px;
-        position: absolute;
-        top: 11px;
-        @include mq(md) {
-          top: 19px;
-        }
-      }
-      a {
+      > a {
+        font-family: $futura;
+        display: block;
+        font-style: normal;
+        font-weight: 500;
+        font-size: rem(28);
+        line-height: em(36, 28);
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
         color: $white;
-        text-decoration: none !important;
+        position: relative;
+        padding: 0;
+
+        @include mq(md) {
+          text-align: right;
+          font-size: rem(38);
+          line-height: em(49, 38);
+        }
+
+        @media screen and (max-height: 750px) {
+          font-size: rem(26);
+        }
+
+        &::after {
+          content: "";
+          display: inline-block;
+          height: 37px;
+          width: 37px;
+          position: relative;
+          margin-left: 20px;
+          margin-top: 1px;
+
+          @include mq($until: md) {
+            display: none;
+          }
+
+          @media screen and (max-height: 750px) {
+            height: 25px;
+            width: 25px;
+          }
+        }
+
         &:hover {
           color: $primary;
         }
+
+        > span {
+          white-space: nowrap;
+        }
       }
+
+      &#menu-item-420 {
+        > a {
+          &::after {
+            background: url(/wp-content/uploads/2021/11/acc_ico.png) center /
+              contain no-repeat;
+          }
+        }
+      }
+      &#menu-item-454 {
+        > a {
+          &::after {
+            background: url(/wp-content/uploads/2021/11/injectbles.png) center /
+              contain no-repeat;
+          }
+        }
+      }
+      &#menu-item-425 {
+        > a {
+          &::after {
+            background: url(/wp-content/uploads/2021/11/face.png) center /
+              contain no-repeat;
+          }
+        }
+      }
+      &#menu-item-453 {
+        > a {
+          &::after {
+            background: url(/wp-content/uploads/2021/11/body_ico.png) center /
+              contain no-repeat;
+          }
+        }
+      }
+      &#menu-item-455 {
+        > a {
+          &::after {
+            background: url(/wp-content/uploads/2021/11/face-laser_ico.png)
+              center / contain no-repeat;
+          }
+        }
+      }
+      &#menu-item-4749 {
+        > a {
+          &::after {
+            background: url(/wp-content/uploads/2021/11/camera_ico.png) center /
+              contain no-repeat;
+          }
+        }
+      }
+      &#menu-item-4173 {
+        > a {
+          &::after {
+            background: url(/wp-content/uploads/2021/11/bottles-creams_ico.png)
+              center / contain no-repeat;
+          }
+        }
+      }
+      &#menu-item-469 {
+        > a {
+          &::after {
+            background: url(/wp-content/uploads/2021/11/contact_ico.png) center /
+              contain no-repeat;
+          }
+        }
+      }
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+
       .sub-menu {
         display: none;
-        &.active {
-          display: block;
-          padding: 0;
-        }
-        li {
-          left: 0;
-          font-size: 1rem;
-          font-weight: 300;
-          @include mq(md) {
-            font-size: 26px;
-          }
+
+        button[data-toggle="back"] {
+          font-family: $futura;
+          font-style: normal;
+          font-weight: 500;
+          font-size: rem(16);
+          line-height: em(21, 16);
+          letter-spacing: 0.15em;
+          text-transform: uppercase;
+          color: $primary;
+          display: flex;
+          width: 128px;
+          height: 51px;
+          align-items: center;
+          justify-content: center;
+          flex-direction: row;
+          right: 40px;
+          top: 40px;
+          position: absolute;
+          background: transparent;
+          border: none;
+
           i {
-            top: 7px;
-            color: $white;
             @include mq(md) {
-              top: 14px;
+              margin-left: 15px;
             }
           }
+
+          &:hover {
+            box-shadow: unset;
+            color: $black;
+          }
+        }
+      }
+    }
+  }
+
+  .primary--menu {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    transition: width 0.7s ease-in-out;
+    padding: 150px 35px 60px;
+    background: $primary-green;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: auto;
+
+    @include mq(md) {
+      padding: 140px 87px 70px;
+      width: 631px;
+    }
+
+    @media (min-width: 600px) and (max-height: 790px) {
+      padding: 100px 87px 40px;
+    }
+
+    .mobile-logo {
+      position: absolute;
+      top: 55px;
+      left: 35px;
+
+      @include mq(md) {
+        display: none;
+      }
+    }
+
+    &.shrink {
+      padding: 70px 0px;
+      width: 70px;
+      max-width: 100%;
+
+      @include mq(md) {
+        width: 180px;
+        padding: 190px 0 70px;
+      }
+      @include mq(xxxl) {
+        width: 211px;
+      }
+
+      @media screen and (max-height: 850px) {
+        padding: 100px 0 40px;
+      }
+
+      .mobile-logo {
+        display: none;
+      }
+
+      .menu {
+        > li {
+          font-family: $futura;
+          font-style: normal;
+          font-weight: 500;
+          font-size: rem(19);
+          line-height: em(33, 26);
+          letter-spacing: 0.03em;
+          text-transform: uppercase;
+          width: 100%;
+          margin-bottom: 0;
+
+          @include mq(md) {
+            margin-bottom: 20px;
+          }
+
+          @include mq(lg) {
+            font-size: rem(22);
+          }
+
+          @media screen and (max-height: 950px) {
+            margin-bottom: 0;
+          }
+
           a {
-            color: $white;
-            &:hover {
-              color: $primary;
+            text-align: center;
+            padding: 20px 0;
+            display: flex;
+            @include mq($until: md) {
+              padding: 0 !important;
+            }
+
+            @media screen and (max-height: 850px) {
+              padding: 12px 0;
+            }
+
+            span {
+              display: none;
+              white-space: nowrap;
+              font-family: $halcom;
+              font-style: normal;
+              font-weight: 400;
+              font-size: 14px;
+              line-height: 17px;
+              letter-spacing: 0.05em;
+              color: #a8abab;
+              opacity: 0;
+            }
+
+            &::after {
+              position: relative;
+              right: unset;
+              margin: 0 auto;
+
+              @include mq($until: md) {
+                display: none;
+              }
+            }
+
+            i {
+              margin-left: 15px;
+              margin-right: 15px;
             }
           }
-          .sub-menu {
-            padding: 0;
-            li {
-              font-size: 0.8em;
-              letter-spacing: 0;
-              i {
-                top: 7px;
+
+          &.active {
+            a {
+              background: rgba(#f9f6f3, 0.1);
+              @include mq(md) {
+                padding: 22px 0;
+              }
+              @media screen and (max-height: 850px) {
+                padding: 12px 0;
+              }
+            }
+
+            > .sub-menu {
+              position: absolute;
+              top: 0;
+              height: 100%;
+              right: 70px;
+              background: $white;
+              padding: 100px 35px 35px;
+              list-style: none;
+              margin: 0;
+              display: grid;
+              grid-template-columns: 1fr;
+              grid-gap: 35px;
+              overflow: auto;
+              width: calc(100vw - 180px);
+              max-width: calc(100vw - 180px);
+
+              @include mq($until: md) {
+                width: calc(100vw - 70px);
+                max-width: calc(100vw - 70px);
+              }
+
+              @include mq(md) {
+                right: 180px;
+                grid-gap: 35px 70px;
+
+                width: auto;
+              }
+
+              @include mq(xl) {
+                padding: 140px 35px;
+                grid-template-columns: unset;
+                grid-auto-flow: column;
+                grid-template-rows: 1fr 1fr;
+                grid-gap: 50px 50px;
+              }
+              @include mq(xxxl) {
+                right: 211px;
+                grid-gap: 50px 70px;
+                padding: 140px 70px;
+              }
+
+              button[data-toggle="back"] {
+                @include mq($until: md) {
+                  border: 1px solid $primary;
+                  width: 50px;
+                  height: 50px;
+                  top: 30px;
+                  left: 35px;
+                  right: unset;
+                }
+
+                span {
+                  @include mq($until: md) {
+                    display: none;
+                  }
+                }
+
+                i {
+                  @include mq($until: md) {
+                    transform: rotate(180deg);
+                  }
+                }
+              }
+
+              * ::-webkit-scrollbar {
+                background: $primary;
+              }
+              * ::-webkit-scrollbar-thumb {
+                background: $primary;
+              }
+
+              > li {
+                width: 100%;
+                max-width: 100%;
+
+                @include mq(md) {
+                  width: 315px;
+                }
+                @include mq(xl) {
+                  width: 300px;
+                }
+                @include mq(xxl) {
+                  width: 315px;
+                }
+                > a {
+                  font-family: $futura;
+                  font-style: normal;
+                  font-weight: 500;
+                  font-size: rem(18);
+                  line-height: em(28, 18);
+                  letter-spacing: 0.1em;
+                  text-transform: uppercase;
+                  color: $primary;
+                  margin-bottom: 25px;
+                  padding: 0;
+                  align-items: center;
+                  text-align: left;
+
+                  span {
+                    display: block;
+                    opacity: 0;
+                    transition: all 0.5s ease-in-out;
+                  }
+
+                  &:hover {
+                    span {
+                      font-family: $halcom;
+                      font-style: normal;
+                      font-weight: normal;
+                      font-size: 14px;
+                      line-height: 17px;
+                      letter-spacing: 0.05em;
+                      color: #a8abab;
+                      opacity: 1;
+                    }
+                  }
+                }
+              }
+
+              .sub-menu {
+                display: block;
+                padding: 0;
+                list-style: none;
+                margin-top: 25px;
+
+                .sub-menu {
+                  margin: 0;
+                }
+
+                li {
+                  margin-bottom: 10px;
+
+                  &:last-of-type {
+                    margin-bottom: 0;
+                  }
+                  a {
+                    font-family: $futura;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: rem(20);
+                    line-height: em(26, 20);
+                    color: #2e2e2e;
+                    text-transform: initial;
+                    display: block;
+                    padding: 0;
+                    text-align: left;
+
+                    &:hover {
+                      color: $primary;
+                    }
+                  }
+                }
               }
             }
           }
+
+          &#menu-item-455 {
+            > .sub-menu {
+              grid-template-rows: 1fr 1fr 1fr;
+            }
+          }
+        }
+      }
+
+      .contact--info {
+        @include mq($until: md) {
+          flex-direction: column;
+          align-items: center;
+          height: 100%;
+          justify-content: center;
+        }
+        @include mq(md) {
+          display: none;
+        }
+        .call {
+          border-top: 1px solid rgba($white, 0.3);
+          background: transparent;
+
+          &:last-of-type {
+            border-bottom: 1px solid rgba($white, 0.3);
+          }
         }
       }
     }
   }
-  hr {
-    background: $white;
-    max-width: 100%;
-    margin-bottom: 25px;
-  }
-  .social--icons {
-    justify-content: center;
+  .contact--info {
     display: flex;
+    justify-content: center;
 
-    li {
-      margin: 5px 15px;
+    .call {
+      margin: 0 5px;
+      padding: 0 5px;
+      height: 95px;
+      width: 95px;
+      max-width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.07);
+      text-align: center;
+      font-family: $futura;
+
+      @include mq(md) {
+        height: 137px;
+        width: 146px;
+      }
+
+      @media screen and (max-height: 750px) {
+        height: 80px;
+      }
+
+      p {
+        font-style: normal;
+        font-weight: 800;
+        font-size: rem(15);
+        line-height: em(26, 15);
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: #fdfdfd;
+        margin: 0;
+        white-space: nowrap;
+
+        @include mq($until: md) {
+          display: none;
+        }
+
+        @media screen and (max-height: 750px) {
+          font-size: rem(12);
+        }
+      }
       a {
-        color: $white;
-        font-size: 22px;
-        &:hover {
-          color: $primary;
+        color: #fdfdfd;
+      }
+
+      i {
+        display: block;
+        color: $secondary;
+        font-size: 25px;
+
+        @include mq(md) {
+          margin-bottom: 15px;
+          font-size: 35px;
+        }
+
+        @media screen and (max-height: 750px) {
+          font-size: 20px;
+          margin-bottom: 8px;
         }
       }
     }
