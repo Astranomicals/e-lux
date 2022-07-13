@@ -35,7 +35,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        font-family: $futura;
+
         font-style: normal;
         font-weight: 800;
         font-size: 16px;
@@ -77,7 +77,7 @@
 
   .background--image {
     z-index: -1;
-    background: rgba($primary-green, 0.5);
+    background: rgba($primary, 0.5);
     opacity: 1;
     transition: all 1s ease-in-out;
   }
@@ -166,7 +166,6 @@
         width: 457px;
       }
       > a {
-        font-family: $futura;
         display: block;
         font-style: normal;
         font-weight: 500;
@@ -289,7 +288,6 @@
         display: none;
 
         button[data-toggle="back"] {
-          font-family: $futura;
           font-style: normal;
           font-weight: 500;
           font-size: rem(16);
@@ -331,7 +329,7 @@
     padding: 0;
     transition: width 0.7s ease-in-out;
     padding: 150px 35px 60px;
-    background: $primary-green;
+    background: $primary;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -380,7 +378,6 @@
 
       .menu {
         > li {
-          font-family: $futura;
           font-style: normal;
           font-weight: 500;
           font-size: rem(19);
@@ -417,7 +414,7 @@
             span {
               display: none;
               white-space: nowrap;
-              font-family: $halcom;
+
               font-style: normal;
               font-weight: 400;
               font-size: 14px;
@@ -539,7 +536,6 @@
                   width: 315px;
                 }
                 > a {
-                  font-family: $futura;
                   font-style: normal;
                   font-weight: 500;
                   font-size: rem(18);
@@ -560,7 +556,6 @@
 
                   &:hover {
                     span {
-                      font-family: $halcom;
                       font-style: normal;
                       font-weight: normal;
                       font-size: 14px;
@@ -590,7 +585,6 @@
                     margin-bottom: 0;
                   }
                   a {
-                    font-family: $futura;
                     font-style: normal;
                     font-weight: 500;
                     font-size: rem(20);
@@ -654,7 +648,6 @@
       justify-content: center;
       background: rgba(255, 255, 255, 0.07);
       text-align: center;
-      font-family: $futura;
 
       @include mq(md) {
         height: 137px;
