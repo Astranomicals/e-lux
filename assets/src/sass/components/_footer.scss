@@ -1,13 +1,26 @@
 footer {
-  svg.im-logo {
-    height: 16px;
-    width: 16px;
-    background: $magenta;
-    border-radius: 100em;
-    padding: 2px;
+	padding: 20px 0;
 
-    path {
-      fill: $white;
-    }
-  }
+	.copyright--flex {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		p {
+			margin: 0;
+		}
+	}
+	svg.im-logo {
+		height: 16px;
+		width: 16px;
+		background: $magenta;
+		border-radius: 100em;
+		padding: 2px;
+		position: relative;
+		top: 2px;
+
+		path {
+			fill: $white;
+		}
+	}
 }

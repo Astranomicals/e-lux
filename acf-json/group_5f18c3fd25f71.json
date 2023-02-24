@@ -6,6 +6,7 @@
             "key": "field_5f18c40432a89",
             "label": "Team Position",
             "name": "team_position",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -27,7 +28,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "staff"
+                "value": "team_members"
             }
         ]
     ],
@@ -37,7 +38,8 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": 1,
+    "active": true,
     "description": "",
-    "modified": 1595458631
+    "show_in_rest": 0,
+    "modified": 1677194857
 }

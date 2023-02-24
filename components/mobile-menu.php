@@ -12,19 +12,14 @@
  * @since      1.0.0
  */
 
-if (have_rows('business', 'options')) :
-	while (have_rows('business', 'options')) :
-		the_row();
-		$phone        = get_field('business_phone_display', 'option');
-		$phone_url    = get_field('business_phone_url', 'option');
-		$address_link = get_field('business_address_link', 'option');
-	endwhile;
-endif;
+$address_link = get_field('business_address_link', 'option');
+$phone        = get_field('business_phone_display', 'option');
+$phone_url    = get_field('business_phone_url', 'option');
 ?>
 
 <section class="menu__mobile">
 	<div class="background--image"></div>
-	<button data-toggle="menu">
+	<button data-toggle="menu" aria-label="Menu Close">
 		<span></span>
 		<span></span>
 	</button>

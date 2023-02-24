@@ -7,7 +7,7 @@ const { series, src, dest, watch } = require("gulp"),
   notify = require("gulp-notify"),
   webpack = require("webpack-stream"),
   browserSync = require("browser-sync").create(),
-  localSiteUrl = "dev.cyspera.com";
+  localSiteUrl = "dev.incredible-theme.com";
 
 function css() {
   return src("./assets/src/sass/main.scss")
@@ -67,7 +67,7 @@ function browser() {
   watch("./assets/src/js/**/*.js", js).on("change", browserSync.reload);
 }
 
-function copy() {
+async function copy() {
   var fontawesomewebfonts = src(
     "./node_modules/@fortawesome/fontawesome-pro/webfonts/**/*"
   ).pipe(dest("./assets/dist/webfonts"));
