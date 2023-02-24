@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Single
  *
@@ -16,18 +17,18 @@ get_header(); ?>
 	<div class="container">
 		<div class="row justify-content-center">
 			<div class="col-xl-10">
-				<div class="meta--box">
-					<h6><strong>Published:</strong> <?php echo get_the_date( 'F j, Y' ); ?></h6> | <h6><strong>Category: </strong>
-					<?php
-					$categories = get_the_category();
-					$output     = array();
-					foreach ( $categories as $category ) {
-						$category_link = get_category_link( $category->ID );
-						$output[]      = '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '">' . esc_html( $category->name ) . '</a>';
-					}
-					echo implode( ', ', $output );
-					?>
-					</h6>
+				<div class="d-flex justify-content-center align-items-center meta--box">
+					<p><strong>Published:</strong> <?php echo get_the_date('F j, Y'); ?></p> | <p><strong>Category: </strong>
+						<?php
+						$categories = get_the_category();
+						$output     = array();
+						foreach ($categories as $category) {
+							$category_link = get_category_link($category->ID);
+							$output[]      = '<a href="' . esc_url(get_category_link($category->term_id)) . '">' . esc_html($category->name) . '</a>';
+						}
+						echo implode(', ', $output);
+						?>
+					</p>
 				</div>
 			</div>
 		</div>
@@ -37,18 +38,18 @@ get_header(); ?>
 	<div class="container">
 		<div class="row justify-content-center">
 			<div class="col-12 col-xl-8">
-				<?php if ( have_posts() ) : ?>
-					<?php while ( have_posts() ) : ?>
+				<?php if (have_posts()) : ?>
+					<?php while (have_posts()) : ?>
 						<?php the_post(); ?>
-						<?php get_template_part( 'components/post' ); ?>
-					<?php endwhile; ?> 
-					<?php get_template_part( 'components/navigation-single' ); ?>
+						<?php get_template_part('components/post'); ?>
+					<?php endwhile; ?>
+					<?php get_template_part('components/navigation-single'); ?>
 				<?php else : ?>
-					<?php get_template_part( 'components/post-not-found' ); ?>
+					<?php get_template_part('components/post-not-found'); ?>
 				<?php endif; ?>
 			</div>
 			<div class="col-xl-4">
-				<?php get_sidebar( 'blog' ); ?>
+				<?php get_sidebar('blog'); ?>
 			</div>
 		</div>
 	</div>

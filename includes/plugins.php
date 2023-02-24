@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Plugins
  *
@@ -16,14 +17,15 @@ require_once get_template_directory() . '/includes/TGM-Plugin-Activation-2.6.1/c
 /**
  * Required Plugins
  */
-function incredible__register_required_plugins() {
+function incredible__register_required_plugins()
+{
 
 	$plugins = array(
 
 		array(
 			'name'         => 'Advanced Custom Fields Pro',
 			'slug'         => 'advanced-custom-fields-pro',
-			'source'       => get_template_directory() . '/includes/plugins/advanced-custom-fields-pro-5.9.5.zip',
+			'source'       => get_template_directory() . '/includes/plugins/advanced-custom-fields-pro.zip',
 			'external_url' => 'https://www.advancedcustomfields.com/pro/',
 			'required'     => true,
 		),
@@ -36,11 +38,6 @@ function incredible__register_required_plugins() {
 			'required'     => true,
 		),
 
-		array(
-			'name'     => 'All in One SEO Pack',
-			'slug'     => 'all-in-one-seo-pack',
-			'required' => true,
-		),
 
 	);
 
@@ -57,7 +54,7 @@ function incredible__register_required_plugins() {
 		'message'      => '',                      // Message to output right before the plugins table.
 	);
 
-	tgmpa( $plugins, $config );
+	tgmpa($plugins, $config);
 }
 
-add_action( 'tgmpa_register', 'incredible__register_required_plugins' );
+add_action('tgmpa_register', 'incredible__register_required_plugins');

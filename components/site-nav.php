@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Display Site Nav
  *
@@ -14,8 +15,8 @@
 ?>
 
 <nav class="site-nav">
-	<a class="logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-		<?php get_template_part( 'components/svg/logo' ); ?>
+	<a title="<?php echo esc_attr(get_bloginfo()); ?>" class="logo" href="<?php echo esc_url(home_url('/')); ?>">
+		<?php get_template_part('components/svg/logo'); ?>
 	</a>
 
 	<?php
@@ -24,11 +25,11 @@
 		'container'      => false,
 		'menu_class'     => 'menu',
 	);
-	wp_nav_menu( $args );
+	wp_nav_menu($args);
 	?>
 
-	<?php get_template_part( 'components/call' ); ?>
-	<button data-toggle="menu">
+	<?php get_template_part('components/call'); ?>
+	<button data-toggle="menu" aria-label="Menu Open">
 		<span></span>
 		<span></span>
 		<span></span>

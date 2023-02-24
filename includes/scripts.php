@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Scripts.php
  *
@@ -14,22 +15,24 @@
 /**
  * Register javascript files
  */
-function im_register_scripts() {
+function im_register_scripts()
+{
 	$theme         = wp_get_theme();
-	$theme_version = $theme->get( 'Version' );
+	$theme_version = $theme->get('Version');
 
-	wp_register_script( 'main', get_template_directory_uri() . '/assets/dist/js/main.min.js', '', $theme_version, true );
-	wp_register_script( 'plugins', get_template_directory_uri() . '/assets/dist/js/plugins.min.js', '', $theme_version, true );
+	wp_register_script('plugins', get_template_directory_uri() . '/assets/dist/js/plugins.min.js', '', $theme_version, true);
+	wp_register_script('main', get_template_directory_uri() . '/assets/dist/js/main.min.js', '', $theme_version, true);
 }
-add_action( 'wp_enqueue_scripts', 'im_register_scripts' );
+add_action('wp_enqueue_scripts', 'im_register_scripts');
 
 /**
  * Enqueue javascript files
  */
-function im_enqueue_scripts() {
-	wp_enqueue_script( 'jquery' );
-	wp_enqueue_script( 'plugins' );
-	wp_enqueue_script( 'main' );
+function im_enqueue_scripts()
+{
+	wp_enqueue_script('jquery');
+	wp_enqueue_script('plugins');
+	wp_enqueue_script('main');
 
 	/*
 	Create AJAX variable (Remove if you do not need AJAX).
@@ -44,4 +47,4 @@ function im_enqueue_scripts() {
 	);
 	*/
 }
-add_action( 'wp_enqueue_scripts', 'im_enqueue_scripts' );
+add_action('wp_enqueue_scripts', 'im_enqueue_scripts');

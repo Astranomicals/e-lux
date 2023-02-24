@@ -128,14 +128,10 @@
           );
 
           $(
-            ".menu__mobile .menu li#menu-item-4173 a,.menu__mobile .menu li#menu-item-3366 a, .menu__mobile .menu #menu-item-467 .sub-menu a"
-          ).attr("target", "_blank");
-
-          $(
             ".menu__mobile .primary--menu .menu>li>.sub-menu>li>a:not([href=#])"
           ).append("<i class='fal fa-long-arrow-right'></i> <span>More</span>");
           $(".menu__mobile .primary--menu .menu>li>.sub-menu").append(
-            "<button data-toggle='back'><span>Back</span> <i class='fal fa-long-arrow-right'></i></button>"
+            "<button data-toggle='back' aria-label='Menu Back Button'><span>Back</span> <i class='fal fa-long-arrow-right'></i></button>"
           );
 
           $(".menu__mobile .menu > li.menu-item-has-children > a").on(
@@ -170,14 +166,6 @@
           });
           $(".menu__mobile .background--image").on("click", function () {
             tl.reversed() ? tl.play() : tl.reverse();
-          });
-          $("#menu-item-3377 a").on("click", function () {
-            tl.reversed() ? tl.play() : tl.reverse();
-            var href = $(this).attr("href"),
-              newString = href.substr(href.indexOf("#") + 1),
-              scrollPoint = $(`#` + newString).offset();
-            console.log(newString);
-            $("html, body").animate({ scrollTop: scrollPoint.top - 200 }, 300);
           });
         },
         scrollTo: function () {

@@ -1,0 +1,17 @@
+.block--blog,
+.block--blog-single {
+	nav {
+		margin-top: 45px;
+		justify-content: space-between;
+
+		a {
+			@extend .btn;
+			@extend .btn--primary;
+		}
+	}
+}
+.meta--box {
+	p {
+		margin: 0 15px;
+	}
+}

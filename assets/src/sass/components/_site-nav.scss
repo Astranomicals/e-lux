@@ -1,250 +1,218 @@
 .site-nav {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  background: linear-gradient(
-    180deg,
-    rgba(37, 55, 70, 0.45) 0%,
-    rgba(37, 55, 70, 0) 100%
-  );
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 99;
-  transition: all 0.4s ease-in-out;
-  padding: 10px 15px;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	background: linear-gradient(
+		180deg,
+		rgba($black, 0.45) 0%,
+		rgba($black, 0) 100%
+	);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	z-index: 99;
+	transition: all 0.4s ease-in-out;
+	padding: 10px 15px;
 
-  @include mq(md) {
-    padding: 20px 15px;
-  }
+	@include mq(md) {
+		padding: 20px 15px;
+	}
 
-  @include mq(lg) {
-    padding: 0 15px;
-  }
-  @include mq(xxl) {
-    padding: 0 40px;
-  }
+	@include mq(lg) {
+		padding: 0 15px;
+	}
 
-  .logo {
-    img {
-      width: 200px;
-      height: auto;
+	.logo {
+		img {
+			width: 200px;
+			height: auto;
 
-      @include mq(xxl) {
-        width: 244px;
-      }
-    }
-  }
+			@include mq(xxl) {
+				width: 244px;
+			}
+		}
+	}
 
-  .menu {
-    padding: 0;
-    margin: 0;
-    display: none;
-    list-style: none;
-    font-size: 16px;
-    text-transform: uppercase;
-    font-weight: bold;
+	.menu {
+		padding: 0;
+		margin: 0;
+		display: none;
+		list-style: none;
+		font-size: 16px;
+		text-transform: uppercase;
+		font-weight: bold;
 
-    @include mq(lg) {
-      display: flex;
-    }
+		@include mq(lg) {
+			display: flex;
+		}
 
-    > li {
-      position: relative;
-      > a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 140px;
-        padding: 0 8px;
-        color: $white;
-        text-align: center;
-        text-decoration: none;
-        transition: all 0.4s ease-in-out;
+		> li {
+			position: relative;
+			> a {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				height: 140px;
+				padding: 0 8px;
+				color: $white;
+				text-align: center;
+				text-decoration: none;
+				transition: all 0.4s ease-in-out;
 
-        @include mq(xl) {
-          padding: 0 10px;
-        }
+				@include mq(xl) {
+					padding: 0 10px;
+				}
 
-        @include mq(xxl) {
-          height: 162px;
-          padding: 0 1.1vw;
-        }
-      }
+				@include mq(xxl) {
+					height: 162px;
+					padding: 0 1.1vw;
+				}
+			}
 
-      &:hover {
-        > .sub-menu {
-          list-style: none;
-          padding: 0;
-          margin: 0;
-          position: absolute;
-          background: $slate;
-          top: 100%;
-          left: 0;
-          display: block;
-          width: 250px;
+			&:hover {
+				> .sub-menu {
+					list-style: none;
+					padding: 0;
+					margin: 0;
+					position: absolute;
+					background: $slate;
+					top: 100%;
+					left: 0;
+					display: block;
+					width: 250px;
 
-          > li {
-            position: relative;
-            a {
-              color: $white;
-              padding: 8px 15px;
-              display: block;
-              text-decoration: none;
+					> li {
+						position: relative;
+						a {
+							color: $white;
+							padding: 8px 15px;
+							display: block;
+							text-decoration: none;
 
-              &:hover {
-                background: $gray;
-              }
-            }
-            &:hover {
-              > .sub-menu {
-                position: absolute;
-                display: block;
-                background: $slate;
-                top: 0;
-                left: 100%;
-                list-style: none;
-                padding: 0;
-                margin: 0;
-                width: 250px;
+							&:hover {
+								background: $gray;
+							}
+						}
+						&:hover {
+							> .sub-menu {
+								position: absolute;
+								display: block;
+								background: $slate;
+								top: 0;
+								left: 100%;
+								list-style: none;
+								padding: 0;
+								margin: 0;
+								width: 250px;
 
-                > li {
-                  position: relative;
-                  a {
-                    color: $white;
-                    padding: 8px 15px;
-                    display: block;
+								> li {
+									position: relative;
+									a {
+										color: $white;
+										padding: 8px 15px;
+										display: block;
 
-                    &:hover {
-                      color: $gray;
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
+										&:hover {
+											color: $gray;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 
-  .call {
-    font-size: 1.4rem;
-    line-height: 1.33em;
-    color: $white;
-    letter-spacing: 0;
-    position: relative;
-    margin-left: auto;
-    margin-right: 25px;
-    text-decoration: none;
+	.btn--call {
+		color: $white;
+		position: relative;
+		margin-left: auto;
+		margin-right: 25px;
 
-    @include mq(lg) {
-      margin: unset;
-    }
+		@include mq(lg) {
+			margin: unset;
+		}
 
-    @include mq(xxl) {
-      font-size: 2rem;
-    }
+		i {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			background: $primary;
+			font-size: rem(16);
+			border-radius: 100em;
+			transform: rotateY(180deg);
+			height: 42px;
+			width: 42px;
 
-    &::after {
-      width: 70px;
-      height: 3px;
-      background: $white;
-      position: absolute;
-      top: 100%;
-      left: calc(50% + 32px);
-      transform: translateX(-50%);
-      transition: all 0.4s ease-in-out;
+			@include mq(xl) {
+				margin-right: 8px;
+			}
 
-      @include mq(xl) {
-        content: "";
-        display: block;
-      }
-    }
+			@include mq(xxl) {
+				border-radius: 0;
+				background: unset;
+				height: unset;
+				width: unset;
+				margin-right: 12px;
+			}
+		}
 
-    &:hover {
-      &::after {
-        width: 150px;
-      }
-    }
+		span {
+			display: none;
+			@include mq(xl) {
+				display: inline-block;
+			}
+		}
+	}
 
-    i {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      color: $white;
-      background: $gray;
-      font-size: 16px;
-      border-radius: 100em;
-      transform: rotateY(180deg);
-      height: 42px;
-      width: 42px;
+	button {
+		display: flex;
+		width: 32px;
+		height: 22px;
+		flex-direction: column;
+		justify-content: space-between;
+		background: none;
+		border: none;
+		padding: 0;
 
-      @include mq(xl) {
-        margin-right: 8px;
-      }
+		span {
+			display: block;
+			width: 30px;
+			height: 2px;
+			background: $primary;
+		}
+		@include mq(lg) {
+			display: none;
+		}
 
-      @include mq(xxl) {
-        height: 47px;
-        width: 47px;
-        margin-right: 18px;
-      }
-    }
+		&:focus {
+			outline: none;
+		}
+	}
 
-    span {
-      display: none;
-      @include mq(xl) {
-        display: inline-block;
-      }
-    }
-  }
+	.sub-menu {
+		display: none;
+	}
 
-  button {
-    display: flex;
-    width: 32px;
-    height: 22px;
-    flex-direction: column;
-    justify-content: space-between;
-    background: none;
-    border: none;
-    padding: 0;
+	// offset if WP admin bar is present
+	.admin-bar & {
+		top: 46px;
+		@media (min-width: 783px) {
+			top: 32px;
+		}
+	}
 
-    span {
-      display: block;
-      width: 30px;
-      height: 2px;
-      background: $primary;
-    }
-    @include mq(lg) {
-      display: none;
-    }
-
-    &:focus {
-      outline: none;
-    }
-  }
-
-  .sub-menu {
-    display: none;
-  }
-
-  // offset if WP admin bar is present
-  .admin-bar & {
-    top: 46px;
-    @media (min-width: 783px) {
-      top: 32px;
-    }
-  }
-
-  &.sticky {
-    background: $slate;
-    .menu {
-      > li {
-        > a {
-          height: 90px;
-        }
-      }
-    }
-  }
+	&.sticky {
+		background: $primary;
+		.menu {
+			> li {
+				> a {
+					height: 90px;
+				}
+			}
+		}
+	}
 }

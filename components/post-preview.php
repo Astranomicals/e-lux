@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Display Blog Post Preview
  *
@@ -13,20 +14,15 @@
 
 ?>
 <article class="post-preview" id="post-<?php the_ID(); ?>">
-	<?php if ( has_post_thumbnail() ) : ?>
-		<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
-			<?php the_post_thumbnail( 'blog_preview_thumb' ); ?>
-		</a>
-	<?php else : ?>
-		<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
-			<?php im_the_placeholder_image( 'blog_preview_thumb' ); ?>
+	<?php if (has_post_thumbnail()) : ?>
+		<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+			<?php the_post_thumbnail('blog_thumb'); ?>
 		</a>
 	<?php endif; ?>
 	<div class="content--area">
-		<h2><a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php printf( 'Permanent Link to %s', the_title_attribute( 'echo=0' ) ); ?>"><?php the_title(); ?></a></h2>
-		<hr/>
-		<?php echo esc_attr( get_the_excerpt() ); ?>
-		<a class="read-more" href="<?php the_permalink(); ?>" rel="bookmark" title="<?php printf( 'Permanent Link to %s', the_title_attribute( 'echo=0' ) ); ?>">Read Full Article</a>
+		<h2><a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php printf('Permanent Link to %s', the_title_attribute('echo=0')); ?>"><?php the_title(); ?></a></h2>
+		<hr />
+		<p><?php echo esc_attr(get_the_excerpt()); ?></p>
+		<a class="btn btn--primary" href="<?php the_permalink(); ?>" rel="bookmark" title="<?php printf('Permanent Link to %s', the_title_attribute('echo=0')); ?>">Read Full Article</a>
 	</div>
 </article>
-
