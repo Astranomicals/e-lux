@@ -16,5 +16,5 @@ $image = get_field('site_logo', 'options');
 ?>
 
 <?php if ($image) : ?>
-	<img src="<?php echo esc_url($image); ?>" class="site-logo" alt="Site Logo" />
+	<?php display_image($image, 'full'); ?>
 <?php endif; ?>

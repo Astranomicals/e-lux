@@ -31,7 +31,7 @@ endif;
 <header id="header" class="page--header">
 	<?php if ($background_image) : ?>
 		<div class="background--image">
-			<?php display_image($background_image, 'page_header_image'); ?>
+			<?php echo wp_get_attachment_image($background_image['id'], 'hero', '', ''); ?>
 		</div>
 	<?php endif; ?>
 	<h1>

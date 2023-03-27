@@ -12,14 +12,14 @@
  * @since      1.0.0
  */
 
-$newer_link = get_previous_posts_link('Previous Page');
-$older_link = get_next_posts_link('Next Page');
+$newer_link = get_previous_posts_link('Newer Posts <i class="fal fa-arrow-right"></i>');
+$older_link = get_next_posts_link('<i class="fal fa-arrow-left"></i> Older Page ');
 ?>
 <?php if ($wp_query->max_num_pages > 1) : ?>
 	<?php if ($older_link || $newer_link) : ?>
-		<nav class="d-flex align-items-center navigation navigation-loop">
-			<?php echo $newer_link; ?>
+		<nav class="navigation-loop">
 			<?php echo $older_link; ?>
+			<?php echo $newer_link; ?>
 		</nav>
 	<?php endif; ?>
 <?php endif; ?>

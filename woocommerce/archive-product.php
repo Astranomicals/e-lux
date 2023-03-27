@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The Template for displaying product archives, including the main shop page which is a post type archive
  *
@@ -15,12 +16,12 @@
  * @version 3.4.0
  */
 
-defined( 'ABSPATH' ) || exit;
+defined('ABSPATH') || exit;
 
-$bg_image = get_field( 'treat_background_image', 'option' );
-$content  = get_field( 'treat_content', 'option' );
+$bg_image = get_field('treat_background_image', 'option');
+$content  = get_field('treat_content', 'option');
 
-get_header( 'shop' );
+get_header('shop');
 
 /**
  * Hook: woocommerce_before_main_content.
@@ -29,18 +30,15 @@ get_header( 'shop' );
  * @hooked woocommerce_breadcrumb - 20
  * @hooked WC_Structured_Data::generate_website_data() - 30
  */
-do_action( 'woocommerce_before_main_content' );
+do_action('woocommerce_before_main_content');
 ?>
 
-<section class="blog--page woocommerce">
+<section class="block block--woocommerce">
 	<div class="container">
-		<div class="row">
+		<div class="row flex-row-reverse">
 			<div class="col-12 col-lg-9">
-				<div class="products--header">
-					<a href="<?php echo wc_get_cart_url(); ?>" class="text-link cart-button"><i class="fas fa-shopping-cart"></i> Check out (<?php echo $woocommerce->cart->cart_contents_count; ?>) items</a>
-				</div>
 				<?php
-				if ( woocommerce_product_loop() ) {
+				if (woocommerce_product_loop()) {
 
 					/**
 					 * Hook: woocommerce_before_shop_loop.
@@ -49,20 +47,20 @@ do_action( 'woocommerce_before_main_content' );
 					 * @hooked woocommerce_result_count - 20
 					 * @hooked woocommerce_catalog_ordering - 30
 					 */
-					do_action( 'woocommerce_before_shop_loop' );
+					do_action('woocommerce_before_shop_loop');
 
 					woocommerce_product_loop_start();
 
-					if ( wc_get_loop_prop( 'total' ) ) {
-						while ( have_posts() ) {
+					if (wc_get_loop_prop('total')) {
+						while (have_posts()) {
 							the_post();
 
 							/**
 							 * Hook: woocommerce_shop_loop.
 							 */
-							do_action( 'woocommerce_shop_loop' );
+							do_action('woocommerce_shop_loop');
 
-							wc_get_template_part( 'content', 'product' );
+							wc_get_template_part('content', 'product');
 						}
 					}
 
@@ -73,26 +71,24 @@ do_action( 'woocommerce_before_main_content' );
 					 *
 					 * @hooked woocommerce_pagination - 10
 					 */
-					do_action( 'woocommerce_after_shop_loop' );
+					do_action('woocommerce_after_shop_loop');
 				} else {
 					/**
 					 * Hook: woocommerce_no_products_found.
 					 *
 					 * @hooked wc_no_products_found - 10
 					 */
-					do_action( 'woocommerce_no_products_found' );
+					do_action('woocommerce_no_products_found');
 				}
 				?>
 			</div>
-			<?php if ( is_active_sidebar( 'woocommerce_blog' ) ) : ?>
-				<div class="col-lg-3">
-					<div class="woocommerce-sidebar">
-						<?php dynamic_sidebar( 'woocommerce_blog' ); ?>
-					</div>
+			<div class="col-lg-3">
+				<div class="woocommerce-sidebar">
+					<?php echo do_shortcode('[wpf-filters id=1]'); ?>
 				</div>
-			<?php endif; ?>
+			</div>
 		</div>
 	</div>
 </section>
 <?php
-get_footer( 'shop' );
+get_footer('shop');
