@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Index
  *
@@ -12,22 +13,22 @@
  */
 
 get_header(); ?>
-<section class="block block--blog">
+<section class="block block--blog-archive">
 	<div class="container">
-		<div class="row justify-content-center">
-			<div class="col-12 col-xl-8">
-				<?php if ( have_posts() ) : ?>
-					<?php while ( have_posts() ) : ?>
+		<div class="row justify-content-center flex-row-reverse">
+			<div class="col-12 col-md-9">
+				<?php if (have_posts()) : ?>
+					<?php while (have_posts()) : ?>
 						<?php the_post(); ?>
-						<?php get_template_part( 'components/post-preview' ); ?>
-					<?php endwhile; ?> 
-					<?php get_template_part( 'components/navigation-loop' ); ?>
+						<?php get_template_part('components/post-preview-large'); ?>
+					<?php endwhile; ?>
+					<?php get_template_part('components/navigation-loop'); ?>
 				<?php else : ?>
-					<?php get_template_part( 'components/post-not-found' ); ?>
+					<?php get_template_part('components/post-not-found'); ?>
 				<?php endif; ?>
 			</div>
-			<div class="col-xl-4">
-				<?php get_sidebar( 'blog' ); ?>
+			<div class="col-md-3">
+				<?php get_sidebar('blog'); ?>
 			</div>
 		</div>
 	</div>

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Result Count
  *
@@ -17,29 +18,26 @@
  * @version     3.7.0
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
+if (!defined('ABSPATH')) {
 	exit;
 }
 ?>
 <!-- Added product-info for breadcrumbs and visual look desired by mockup -->
 <div class="product-info">
-	<div class="breadcrumbs">
-		<a href="/">Home</a> / <span>Shop</span>
-	</div>
 	<!-- End of new content -->
 
-	<p class="result-count"><i class="fas fa-eye"></i> 
+	<p class="result-count"><i class="fas fa-eye"></i>
 		<?php
-		if ( 1 === $total ) {
-			_e( 'Showing the single result', 'woocommerce' );
-		} elseif ( $total <= $per_page || -1 === $per_page ) {
+		if (1 === $total) {
+			_e('Showing the single result', 'woocommerce');
+		} elseif ($total <= $per_page || -1 === $per_page) {
 			/* translators: %d: total results */
-			printf( _n( 'Viewing %d items', 'Viewing %d items', $total, 'woocommerce' ), $total );
+			printf(_n('Viewing %d items', 'Viewing %d items', $total, 'woocommerce'), $total);
 		} else {
-			$first = ( $per_page * $current ) - $per_page + 1;
-			$last  = min( $total, $per_page * $current );
+			$first = ($per_page * $current) - $per_page + 1;
+			$last  = min($total, $per_page * $current);
 			/* translators: 1: first result 2: last result 3: total results */
-			printf( _nx( 'Viewing %1$d&ndash;%2$d of %3$d items', 'Viewing %1$d&ndash;%2$d of %3$d items', $total, 'with first and last result', 'woocommerce' ), $first, $last, $total );
+			printf(_nx('Viewing %1$d&ndash;%2$d of %3$d items', 'Viewing %1$d&ndash;%2$d of %3$d items', $total, 'with first and last result', 'woocommerce'), $first, $last, $total);
 		}
 		?>
 	</p>

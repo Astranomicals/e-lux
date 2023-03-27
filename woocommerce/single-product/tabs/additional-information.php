@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Additional Information tab
  *
@@ -15,12 +16,25 @@
  * @version 3.0.0
  */
 
-defined( 'ABSPATH' ) || exit;
+defined('ABSPATH') || exit;
 
 global $product;
 
-$heading = apply_filters( 'woocommerce_product_additional_information_heading', __( 'Additional information', 'woocommerce' ) );
+$heading = apply_filters('woocommerce_product_additional_information_heading', __('Additional information', 'woocommerce'));
 
 ?>
 
-<?php do_action( 'woocommerce_product_additional_information', $product ); ?>
+<h2>Additional Information</h2>
+<?php
+if (have_rows('additional_info')) :
+	while (have_rows('additional_info')) : the_row();
+		if (get_row_layout() == 'additional_info_block') :
+			$title = get_sub_field('title');
+			$content = get_sub_field('content');
+
+			echo '<p><strong>' . $title . '</strong></p>';
+			echo $content;
+		endif;
+	endwhile;
+endif;
+?>

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Display Single Post Navigation
  *
@@ -11,18 +12,37 @@
  * @since      1.0.0
  */
 
-	$older_link = get_next_post_link( '%link', '<i class="far fa-angle-right"></i>' );
-	$newer_link = get_previous_post_link( '%link', '<i class="far fa-angle-left"></i>' );
+$newer_link = get_next_post_link('%link', 'NEXT');
+$older_link = get_previous_post_link('%link', 'PREVIOUS');
 ?>
 
-<?php if ( $older_link || $newer_link ) : ?>
+<?php if ($older_link || $newer_link) : ?>
 	<nav class="d-flex align-items-center navigation navigation-single">
-		<div class="arrows">
-			<?php echo $newer_link; ?>
+		<div class="prev-post">
 			<?php echo $older_link; ?>
+			<?php
+			$prev_post = get_previous_post();
+			if (!empty($prev_post)) : ?>
+				<div class="post-container">
+					<div class="title">
+						<?php echo apply_filters('the_title', $prev_post->post_title); ?>
+					</div>
+					<?php echo get_the_post_thumbnail($prev_post->ID, 'medium'); ?>
+				</div>
+			<?php endif; ?>
 		</div>
-		<div class="back--button">
-			<a href="/blog/" class="btn btn--secondary">Back To Blog</a>
+		<div class="next-post">
+			<?php echo $newer_link; ?>
+			<?php
+			$prev_post = get_next_post();
+			if (!empty($prev_post)) : ?>
+				<div class="post-container">
+					<div class="title">
+						<?php echo apply_filters('the_title', $prev_post->post_title); ?>
+					</div>
+					<?php echo get_the_post_thumbnail($prev_post->ID, 'medium'); ?>
+				</div>
+			<?php endif; ?>
 		</div>
 	</nav>
 <?php endif; ?>

@@ -25,6 +25,10 @@ $hero_image = get_sub_field('background_video_poster');
 			<source src="<?php echo esc_url($video_webm); ?>" type="video/webm">
 		</video>
 	</div>
+<?php elseif ($hero_image) : ?>
+	<div class="background--image">
+		<?php echo wp_get_attachment_image($hero_image['id'], 'hero', '', ''); ?>
+	</div>
 <?php endif; ?>
 <div class="container">
 	<div class="row justify-content-center">

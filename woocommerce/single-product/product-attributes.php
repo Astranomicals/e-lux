@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Product attributes
  *
@@ -18,27 +19,28 @@
  * @version     3.6.0
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
+if (!defined('ABSPATH')) {
 	exit;
 }
 ?>
-<?php if ( $attributes ) : ?>
+<!--
+<?php if ($attributes) : ?>
 <hr />
 <?php endif; ?>
-<?php foreach ( $attributes as $attribute ) : ?>
-	<p><strong><?php echo wc_attribute_label( $attribute->get_name() ); ?>:</strong> 
+<?php foreach ($attributes as $attribute) : ?>
+	<p><strong><?php echo wc_attribute_label($attribute->get_name()); ?>:</strong>
 		<?php
-				$values = array();
+		$values = array();
 
-		if ( $attribute->is_taxonomy() ) {
+		if ($attribute->is_taxonomy()) {
 			$attribute_taxonomy = $attribute->get_taxonomy_object();
-			$attribute_values   = wc_get_product_terms( $product->get_id(), $attribute->get_name(), array( 'fields' => 'all' ) );
+			$attribute_values   = wc_get_product_terms($product->get_id(), $attribute->get_name(), array('fields' => 'all'));
 
-			foreach ( $attribute_values as $attribute_value ) {
-				$value_name = esc_html( $attribute_value->name );
+			foreach ($attribute_values as $attribute_value) {
+				$value_name = esc_html($attribute_value->name);
 
-				if ( $attribute_taxonomy->attribute_public ) {
-					$values[] = '<a href="' . esc_url( get_term_link( $attribute_value->term_id, $attribute->get_name() ) ) . '" rel="tag">' . $value_name . '</a>';
+				if ($attribute_taxonomy->attribute_public) {
+					$values[] = '<a href="' . esc_url(get_term_link($attribute_value->term_id, $attribute->get_name())) . '" rel="tag">' . $value_name . '</a>';
 				} else {
 					$values[] = $value_name;
 				}
@@ -46,20 +48,21 @@ if ( ! defined( 'ABSPATH' ) ) {
 		} else {
 			$values = $attribute->get_options();
 
-			foreach ( $values as &$value ) {
-				$value = esc_html( $value );
+			foreach ($values as &$value) {
+				$value = esc_html($value);
 			}
 		}
 
-				echo apply_filters( 'woocommerce_attribute', wptexturize( implode( ', ', $values ) ) , $attribute, $values );
+		echo apply_filters('woocommerce_attribute', wptexturize(implode(', ', $values)), $attribute, $values);
 		?>
 			</p>
 <?php endforeach; ?>
 
-<?php if ( $display_dimensions && $product->has_weight() ) : ?>
-	<p><strong><?php _e( 'Weight', 'woocommerce' ); ?>:</strong> <?php echo esc_html( wc_format_weight( $product->get_weight() ) ); ?></p>
+<?php if ($display_dimensions && $product->has_weight()) : ?>
+	<p><strong><?php _e('Weight', 'woocommerce'); ?>:</strong> <?php echo esc_html(wc_format_weight($product->get_weight())); ?></p>
 <?php endif; ?>
 
-<?php if ( $display_dimensions && $product->has_dimensions() ) : ?>
-	<p><strong><?php _e( 'Dimensions', 'woocommerce' ); ?>:</strong> <?php echo esc_html( wc_format_dimensions( $product->get_dimensions( false ) ) ); ?></p>
+<?php if ($display_dimensions && $product->has_dimensions()) : ?>
+	<p><strong><?php _e('Dimensions', 'woocommerce'); ?>:</strong> <?php echo esc_html(wc_format_dimensions($product->get_dimensions(false))); ?></p>
 <?php endif; ?>
+-->

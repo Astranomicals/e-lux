@@ -16,7 +16,7 @@
 <article class="post-preview" id="post-<?php the_ID(); ?>">
 	<?php if (has_post_thumbnail()) : ?>
 		<div class="image--holder">
-			<?php the_post_thumbnail('blog_thumb'); ?>
+			<?php the_post_thumbnail('large'); ?>
 			<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" class="btn btn--primary">Read Article</a>
 		</div>
 	<?php endif; ?>
@@ -41,5 +41,7 @@
 				<?php echo get_the_author(); ?>
 			</div>
 		</div>
+		<p><?php echo get_the_excerpt(); ?></p>
+		<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" class="btn btn--primary">Read Article <i class="fas fa-chevron-right"></i></a>
 	</div>
 </article>
