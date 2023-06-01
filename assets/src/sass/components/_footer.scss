@@ -1,3 +1,48 @@
+.block--consultation {
+	position: relative;
+	padding: 93px 0 300px;
+
+	.background--image {
+		&::before {
+			display: none;
+		}
+		img {
+			width: auto;
+			height: 100%;
+			position: absolute;
+			object-position: right;
+		}
+	}
+
+	.footer--curve {
+		position: absolute;
+		top: 63%;
+		left: 0;
+		width: 100%;
+		height: auto;
+	}
+
+	h2 {
+		font-size: rem(64);
+		line-height: em(72, 64);
+		position: relative;
+		padding-bottom: 30px;
+		margin-bottom: 35px;
+
+		&::after {
+			content: '';
+			display: block;
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			max-width: 218px;
+			background: $primary;
+			height: 2px;
+		}
+	}
+}
+
 footer {
 	padding: 20px 0;
 

@@ -27,15 +27,20 @@ $hero_image = get_sub_field('background_video_poster');
 	</div>
 <?php elseif ($hero_image) : ?>
 	<div class="background--image">
-		<?php echo wp_get_attachment_image($hero_image['id'], 'hero', '', ''); ?>
+		<?php echo wp_get_attachment_image($hero_image['id'], 'full', '', ''); ?>
 	</div>
 <?php endif; ?>
 <div class="container">
-	<div class="row justify-content-center">
-		<div class="col-12 col-md-6">
+	<div class="row ">
+		<div class="col-12 col-md-8">
 			<h1><?php echo $heading; ?></h1>
 			<p><?php echo $subheading; ?></p>
-			<a href="#" class="btn btn--primary">Schedule A Consultation</a>
+			<div class="flex--buttons">
+				<a href="#" class="btn btn--secondary">Our Services</a>
+				<a href="#" class="btn btn--primary">Request A Consultation</a>
+			</div>
 		</div>
 	</div>
 </div>
+
+<?php get_template_part('components/svg/hero-curve'); ?>

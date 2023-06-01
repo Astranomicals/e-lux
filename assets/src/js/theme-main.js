@@ -28,6 +28,16 @@
 					this.mag();
 					this.pageAnim();
 					this.parallax();
+					this.treatSquare();
+				},
+				treatSquare: function(){
+					$(`.content--square:first-of-type`).addClass(`active`);
+
+					$(`.treat--container h3`).on(`click`, function(){
+						const $this_id = $(this).attr(`data-id`);
+						$(`.content--square`).removeClass(`active`);
+						$(`.content--square[data-id=${$this_id}]`).addClass(`active`);
+					});
 				},
 				parallax: function () {
 					gsap.registerPlugin(ScrollTrigger);
@@ -40,20 +50,6 @@
 								scrub: true,
 								pin: false,
 								start: 'top 25%',
-								end: 'bottom top',
-							},
-						});
-					}
-
-					if ($(`.block--hero`).length > 0) {
-						gsap.to('.block--hero .background--image img', {
-							yPercent: -35,
-							ease: 'none',
-							scrollTrigger: {
-								trigger: '.block--hero',
-								scrub: true,
-								pin: false,
-								start: 'bottom bottom',
 								end: 'bottom top',
 							},
 						});
@@ -122,7 +118,7 @@
 					});
 				},
 				mag: function () {
-					$('.popup-youtube').magnificPopup({
+					$('.btn--play').magnificPopup({
 						disableOn: 700,
 						type: 'iframe',
 						mainClass: 'mfp-fade',

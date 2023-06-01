@@ -1,0 +1,64 @@
+.block--meet_our_staff {
+	position: relative;
+	padding: 75px 0 144px;
+	text-align: center;
+
+	h2 {
+		margin-bottom: 30px;
+		padding-bottom: 30px;
+		position: relative;
+		font-size: rem(64);
+		line-height: em(72, 64);
+
+		&::after {
+			content: '';
+			display: block;
+			width: 100%;
+			max-width: 218px;
+			height: 2px;
+			background: $primary;
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+	}
+
+	.btn {
+		margin-bottom: 72px;
+	}
+
+	.team--container {
+		overflow: visible;
+		article {
+			background: $white;
+			box-shadow: 0px 10px 50px rgba(99, 95, 86, 0.1);
+			border-radius: 20px;
+			padding: 14px;
+			display: flex;
+			flex-direction: column;
+
+			img {
+				width: 100%;
+				height: auto;
+				margin-bottom: 17px;
+			}
+
+			.content {
+				h3 {
+					font-size: rem(28);
+					line-height: em(32, 28);
+					margin-bottom: 9px;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					height: 2em;
+				}
+				p {
+					margin-bottom: 0;
+					margin-top: auto;
+				}
+			}
+		}
+	}
+}

@@ -1,15 +1,31 @@
 .btn {
 	text-decoration: none;
-	padding: 12px 15px;
+	padding: 15px 30px;
 	display: inline-flex;
+	font-size: rem(20);
+	line-height: em(30, 20);
+	letter-spacing: 0.02em;
+	text-transform: uppercase;
+	font-weight: 400;
+	border-radius: 50px;
 }
 
 .btn--primary {
 	background: $primary;
-	color: $white;
+	color: #272b2a;
 
 	&:hover {
-		background: $secondary;
+		background: #272b2a;
+		color: $white;
+	}
+}
+
+.btn--secondary {
+	background: $white;
+	color: #272b2a;
+
+	&:hover {
+		background: #272b2a;
 		color: $white;
 	}
 }

@@ -1,10 +1,69 @@
 .block--hero {
 	position: relative;
-	height: 100vh;
+	height: 1395px;
 	z-index: 0;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	text-align: center;
 	color: $white;
+
+	.hero-curve {
+		z-index: 999;
+		position: absolute;
+		width: 100%;
+		height: auto;
+		top: 1035px;
+		left: 0;
+		pointer-events: none;
+	}
+
+	.background--image {
+		z-index: 0;
+		img {
+			height: 1183px;
+			width: auto;
+			position: absolute;
+			bottom: 0;
+			top: unset;
+			right: 197px;
+			z-index: 1;
+		}
+		&::before {
+			display: none;
+		}
+		&::after {
+			content: '';
+			display: block;
+			width: 852px;
+			height: 852px;
+			background: $primary;
+			border-radius: 100em;
+			position: absolute;
+			right: 155px;
+			top: 332px;
+			z-index: -2;
+		}
+	}
+
+	h1 {
+		font-size: rem(120);
+		line-height: em(122, 120);
+		margin-bottom: 55px;
+		font-weight: 200;
+	}
+
+	p {
+		margin-bottom: 55px;
+		padding-right: 16vw;
+	}
+
+	.flex--buttons {
+		display: flex;
+
+		.btn {
+			&:first-of-type {
+				margin-right: 40px;
+			}
+		}
+	}
 }

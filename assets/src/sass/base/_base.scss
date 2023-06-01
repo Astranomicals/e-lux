@@ -7,8 +7,46 @@ html {
 }
 
 body {
-	font-size: 1rem;
 	margin: 0;
+	background: #f5f3f1;
+	font-family: $poppins;
+	font-style: normal;
+	font-weight: 300;
+	font-size: rem(22);
+	line-height: em(44, 22);
+	letter-spacing: 0.02em;
+	color: #272b2a;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	font-family: $poppins;
+	font-weight: 300;
+	font-size: normal;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	color: #272b2a;
+	margin-top: 0;
+}
+
+h1 {
+	font-size: rem(64);
+	line-height: em(122, 64);
+}
+
+h2 {
+	font-size: rem(40);
+	line-height: em(56, 40);
+	margin-bottom: 30px;
+}
+
+P {
+	color: #272b2a;
+	margin-bottom: 30px;
+	margin-top: 0;
 }
 
 *:last-child {

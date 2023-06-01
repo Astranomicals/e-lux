@@ -1,0 +1,39 @@
+.block--two_column_with_video {
+	position: relative;
+	padding-top: 10px;
+
+	.section--holder {
+		position: relative;
+		padding-right: 60px;
+
+		.image--holder {
+			border-radius: 100em;
+			overflow: hidden;
+
+			img {
+				width: 100%;
+				height: auto;
+			}
+		}
+
+		.btn--play {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border-radius: 100em;
+			color: $white;
+			background: $primary;
+			height: 158px;
+			width: 158px;
+			box-shadow: 0px 10px 50px rgba(99, 95, 86, 0.1);
+			i {
+				font-size: 76px;
+				font-weight: 100;
+				margin-left: 14px;
+			}
+		}
+	}
+}

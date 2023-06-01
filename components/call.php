@@ -18,7 +18,7 @@ $business_phone_url     = get_field('business_phone_url', 'options');
 ?>
 
 <?php if ($business_phone_display && $business_phone_url) : ?>
-	<a class="btn btn--primary btn--call" href="tel:<?php echo esc_attr($business_phone_url); ?>">
+	<a class="btn--call" href="tel:<?php echo esc_attr($business_phone_url); ?>">
 		<i class="fal fa-phone"></i> <span><?php echo esc_attr($business_phone_display); ?></span>
 	</a>
 <?php endif; ?>

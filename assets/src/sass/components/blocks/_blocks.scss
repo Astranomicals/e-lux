@@ -1,37 +1,117 @@
 .block {
-  position: relative;
+	position: relative;
 }
 
 .woocommerce {
-  .woocommerce-product-gallery {
-    ol {
-      list-style: none;
-      margin: 25px auto 0;
-      display: flex;
-      flex-wrap: wrap;
-      padding: 0;
-      justify-content: space-between;
+	.woocommerce-product-gallery {
+		ol {
+			list-style: none;
+			margin: 25px auto 0;
+			display: flex;
+			flex-wrap: wrap;
+			padding: 0;
+			justify-content: space-between;
 
-      li {
-        margin: 0;
-      }
-    }
-  }
+			li {
+				margin: 0;
+			}
+		}
+	}
 
-  ul.products {
-    li.products {
-      .button {
-        @extend .btn;
-        @extend .btn--primary;
-      }
-    }
-  }
+	ul.products {
+		li.products {
+			.button {
+				@extend .btn;
+				@extend .btn--primary;
+			}
+		}
+	}
 
-  .shop--single-product {
-    padding: 120px 0;
-  }
-  .related--products {
-    padding: 120px 0;
-    background-color: #efefef;
-  }
+	.shop--single-product {
+		padding: 120px 0;
+	}
+	.related--products {
+		padding: 120px 0;
+		background-color: #efefef;
+	}
+}
+
+.block--testimonials {
+	padding: 65px 0;
+	background: $primary;
+	overflow: hidden;
+
+	.center-circle {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		text-align: center;
+		width: 380px;
+		height: auto;
+		z-index: 9;
+
+		h2 {
+			color: $primary;
+			font-size: rem(64);
+			line-height: em(72, 64);
+		}
+
+		&::before {
+			content: '';
+			display: block;
+			width: 600px;
+			height: 600px;
+			background: rgba(39, 43, 42, 0.8);
+			border: 1px solid rgba(255, 255, 255, 0.04);
+			backdrop-filter: blur(15px);
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			border-radius: 100em;
+			z-index: -1;
+		}
+	}
+
+	.flex--testimonial {
+		display: flex;
+		margin: 50px 0;
+
+		.single--testimonial {
+			display: inline-flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: flex-start;
+			padding: 40px;
+			max-width: 655px;
+			width: auto;
+			height: 250px;
+			background: #f5f3f1;
+			border-radius: 20px;
+			margin: 0 10px;
+			flex-shrink: 0;
+			svg {
+				flex-shrink: 0;
+				left: -3px;
+				margin-bottom: 10px;
+			}
+
+			p {
+				margin-bottom: 10px;
+
+				&:last-of-type {
+					margin: 0;
+				}
+			}
+		}
+	}
+
+	.testimonial--group-1 {
+		position: relative;
+		transform: translateX(-10%);
+	}
+	.testimonial--group-2 {
+		justify-content: flex-end;
+	}
 }

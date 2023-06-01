@@ -16,3 +16,6 @@ add_image_size('hero', 1920, 1080, true);
 add_image_size('blog_thumb', 330, 186, true);
 add_image_size('youtube_thumb', 414, 233, true);
 add_image_size('page_header_image', 1920, 500, true);
+add_image_size('services_thumb', 480, 340, true);
+add_image_size('team_thumb', 355, 423, true);
+add_image_size('ba_thumb', 380, 448, true);

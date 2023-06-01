@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Functions
  *
@@ -34,13 +35,16 @@ require_once get_template_directory() . '/includes/acf/admin-styles.php';
 // ==================================================.
 require_once get_template_directory() . '/includes/post-types/galleries.php';
 require_once get_template_directory() . '/includes/post-types/procedures.php';
+require_once get_template_directory() . '/includes/post-types/what-we-treat.php';
 require_once get_template_directory() . '/includes/post-types/testimonials.php';
 require_once get_template_directory() . '/includes/post-types/team-members.php';
 
 // MENUS
 // ==================================================.
 require_once get_template_directory() . '/includes/menus/header-menu.php';
+require_once get_template_directory() . '/includes/menus/header-top-menu.php';
 require_once get_template_directory() . '/includes/menus/footer-menu.php';
+require_once get_template_directory() . '/includes/menus/footer-menu-1.php';
 
 // IMAGE SIZES
 // ==================================================.
