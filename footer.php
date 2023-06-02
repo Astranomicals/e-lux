@@ -19,6 +19,7 @@ $address2     = get_field('business_city_state_zip', 'option');
 $address_link = get_field('business_address_link', 'option');
 $phone        = get_field('business_phone_display', 'option');
 $phone_url    = get_field('business_phone_url', 'option');
+$hours    		= get_field('business_hours', 'option');
 $footer_image    = get_field('footer_image', 'option');
 
 ?>
@@ -111,11 +112,64 @@ $footer_image    = get_field('footer_image', 'option');
 	<?php get_template_part('components/svg/footer-curve'); ?>
 </section>
 <footer id="footer">
+	<div class="container">
+		<div class="row">
+			<div class="col-xl-8 col-12">
+				<?php get_template_part('components/svg/logo'); ?>
+			</div>
+			<div class="col-xl-4 border-left"></div>
+		</div>
+		<div class="row">
+			<div class="col-xl-2">
+				<h4>Address</h4>
+				<p><?php echo $address; ?><br /><?php echo $address2; ?></p>
+				<h4>Phone</h4>
+				<p><?php echo $phone; ?></p>
+			</div>
+			<div class="col-xl-2">
+				<h4>Hours</h4>
+				<?php echo $hours; ?>
+				<div class="spacer"></div>
+			</div>
+			<div class="col-xl-2">
+				<h4>Information</h4>
+				<?php
+				$args = array(
+					'theme_location' => 'footer-menu',
+					'container'      => false,
+					'menu_class'     => 'menu',
+				);
+				wp_nav_menu($args);
+				?>
+			</div>
+			<div class="col-xl-2">
+				<h4>Resources</h4>
+				<?php
+				$args = array(
+					'theme_location' => 'footer-menu-1',
+					'container'      => false,
+					'menu_class'     => 'menu',
+				);
+				wp_nav_menu($args);
+				?>
+			</div>
+			<div class="col-xl-4 border-left">
+				<h4>Follow us on social media</h4>
+				<?php get_template_part('components/social-icons'); ?>
+				<?php echo do_shortcode('[gravityforms id="2" title="false" description="false" ajax="true"]'); ?>
+			</div>
+		</div>
+	</div>
 	<div class="container copyright">
 		<div class="row">
 			<div class="col-12 copyright--flex">
-				<p>Copyright &copy; <?php echo esc_attr(gmdate('Y')); ?> <?php echo esc_attr(get_bloginfo()); ?>. All Rights Reserved | <a href="/privacy-policy/">Privacy Policy</a> | <a href="/terms-of-use/">Terms of Service</a></p>
-				<p>Designed By <a href="https://www.incrediblemarketing.com/" target="_blank"><?php get_template_part('components/svg/incredible-marketing'); ?>Incredible Marketing</a></p>
+				<div class="left--copyright">
+					<p>Copyright &copy; <?php echo esc_attr(gmdate('Y')); ?> <?php echo esc_attr(get_bloginfo()); ?>. All Rights Reserved <a href="/privacy-policy/">Privacy Policy</a></p>
+					<p>Digital Marketing by <a href="https://www.incrediblemarketing.com/" target="_blank"><?php get_template_part('components/svg/incredible-marketing'); ?>Incredible Marketing</a></p>
+				</div>
+				<div class="right--copyright">
+					<a href="#" class="js-to-top"><i class="fal fa-long-arrow-up"></i> Back to top</a>
+				</div>
 			</div>
 		</div>
 	</div>

@@ -78,6 +78,14 @@ add_filter('use_block_editor_for_post_type', 'im_disable_gutenberg', 10, 2);
  * Use <button> for gravity forms submit buttons
  */
 add_filter(
+	'gform_submit_button_2',
+	function ($button, $form) {
+		return "<button aria-label='Submit Form' class='btn btn--secondary' id='gform_submit_button_{$form['id']}'><i class='far fa-long-arrow-right'></i></button>";
+	},
+	10,
+	2
+);
+add_filter(
 	'gform_submit_button',
 	function ($button, $form) {
 		return "<button aria-label='Submit Form' class='btn btn--primary' id='gform_submit_button_{$form['id']}'><span> " . $form['button']['text'] . '</span></button>';

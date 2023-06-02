@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Display social icons
  *
@@ -27,15 +28,15 @@ $social_icon_class_map = array(
 );
 ?>
 
-<?php if ( have_rows( 'social_icons', 'option' ) ) : ?>
+<?php if (have_rows('social_icons', 'option')) : ?>
 	<ul class="social--icons">
 		<?php
-		while ( have_rows( 'social_icons', 'option' ) ) :
+		while (have_rows('social_icons', 'option')) :
 			the_row();
-			?>
-			<li><a href="<?php echo esc_attr( get_sub_field( 'social_url' ) ); ?>" target="_blank">
-				<i class="<?php echo esc_attr( $social_icon_class_map[ get_sub_field( 'social_icon' ) ] ); ?>" aria-hidden="true"></i>
-			</a></li>
+		?>
+			<li><a href="<?php echo esc_attr(get_sub_field('social_url')); ?>" target="_blank">
+					<?php echo get_sub_field('social_icon'); ?>
+				</a></li>
 		<?php endwhile; ?>
 	</ul>
 <?php endif; ?>

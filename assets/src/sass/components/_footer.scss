@@ -44,7 +44,54 @@
 }
 
 footer {
-	padding: 20px 0;
+	padding: 0 0 40px;
+	position: relative;
+
+	.src-logo {
+		margin-bottom: 90px;
+		margin-top: -65px;
+	}
+
+	h4 {
+		font-family: $poppins;
+		font-style: normal;
+		font-weight: 600;
+		font-size: rem(18);
+		line-height: em(36, 18);
+		letter-spacing: 0.02em;
+		color: #272b2a;
+		margin: 0;
+		text-transform: initial;
+	}
+	.spacer {
+		padding-bottom: 57px;
+	}
+	p,
+	ul {
+		font-family: $poppins;
+		font-style: normal;
+		font-weight: 300;
+		font-size: rem(18);
+		line-height: em(36, 18);
+		letter-spacing: 0.02em;
+		color: #272b2a;
+		margin-bottom: 36px;
+		padding: 0;
+		list-style: none;
+		margin-top: 0;
+
+		a {
+			color: #272b2a;
+
+			&:hover {
+				color: $primary;
+			}
+		}
+
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+	}
 
 	.copyright--flex {
 		display: flex;
@@ -53,7 +100,41 @@ footer {
 
 		p {
 			margin: 0;
+			font-weight: 300;
+			font-size: rem(14);
+			line-height: em(36, 14);
+			letter-spacing: 0.02em;
+			color: rgba(39, 43, 42, 0.6);
 		}
+
+		a {
+			color: rgba(39, 43, 42, 0.6);
+			font-weight: 600;
+
+			&:hover {
+				color: $primary;
+			}
+
+			&.js-to-top {
+				font-size: rem(18);
+				line-height: 2em;
+				letter-spacing: 0.02em;
+				color: #272b2a;
+			}
+		}
+	}
+	.social--icons {
+		a {
+			text-transform: capitalize;
+		}
+	}
+	.border-left {
+		border-left: 1px solid $primary;
+		padding-left: 81px;
+	}
+	.copyright {
+		border-top: 1px solid $primary;
+		padding-top: 37px;
 	}
 	svg.im-logo {
 		height: 16px;
@@ -66,6 +147,41 @@ footer {
 
 		path {
 			fill: $white;
+		}
+	}
+
+	.gform_wrapper {
+		margin-top: 20px !important;
+		position: relative;
+		form {
+			display: flex;
+			align-items: center;
+			.gform_fields {
+				grid-template-columns: 1fr !important;
+			}
+
+			.gform-body {
+				width: 90%;
+			}
+		}
+		.gform_footer {
+			position: absolute;
+			right: 0;
+			top: -9px;
+
+			.btn {
+				width: 74px;
+				height: 74px;
+				box-shadow: 0px 10px 50px rgba(99, 95, 86, 0.1);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+
+				i {
+					font-size: 34px;
+					color: $primary;
+				}
+			}
 		}
 	}
 }
