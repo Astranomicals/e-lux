@@ -29,6 +29,15 @@ const swiper_video = new Swiper('.video--container', {
 	},
 });
 
+const swiper_content = new Swiper('.content--slider', {
+	slidesPerView: 1,
+	loop: false,
+	spaceBetween: 20,
+	pagination: {
+		el: '.swiper-pagination',
+		clickable: true,
+	},
+});
 const swiper_treat = new Swiper('.treat--container', {
 	direction: 'vertical',
 	slidesPerView: 'auto',

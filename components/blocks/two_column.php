@@ -19,15 +19,16 @@ $image = get_sub_field('image');
 ?>
 
 <div class="container">
-	<div class="row justify-content-center">
-		<div class="col-xl-5 col-12">
+	<div class="row align-items-center">
+		<div class="col-xl-6 col-12 pr col-md-6">
 			<h2><?php echo $heading; ?></h2>
 			<?php echo $content; ?>
 		</div>
-		<div class="col-xl-5 col-12">
+		<div class="col-xl-6 col-12 pl col-md-6">
 			<div class="image--holder">
 				<?php display_image($image, 'full'); ?>
 			</div>
 		</div>
 	</div>
 </div>
+<?php get_template_part('components/svg/top-double-curve'); ?>

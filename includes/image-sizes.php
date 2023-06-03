@@ -19,3 +19,6 @@ add_image_size('page_header_image', 1920, 500, true);
 add_image_size('services_thumb', 480, 340, true);
 add_image_size('team_thumb', 355, 423, true);
 add_image_size('ba_thumb', 380, 448, true);
+add_image_size('circle_thumb', 728, 728, true);
+add_image_size('top_header_thumb', 973, 973, true);
+add_image_size('square_thumb', 480, 447, true);
