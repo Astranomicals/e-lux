@@ -29,6 +29,34 @@
 					this.pageAnim();
 					this.parallax();
 					this.treatSquare();
+					this.serviceList();
+				},
+				serviceList: function(){
+					const lists = document.getElementsByClassName(`page-links`);
+
+					Array.prototype.forEach.call(lists, function (list) {
+						let listItems = list.querySelectorAll(`li`);
+						console.log(listItems);
+						if(listItems.length > 7){
+							console.log(`in`);
+							for(let i = 7; i < listItems.length; i++){
+								console.log(listItems[i]);
+								listItems[i].classList.add(`hide`);
+							}
+							let button = document.createElement(`button`);
+							button.setAttribute('data-id', 'show-more');
+							button.setAttribute('onclick', 'showMore()');
+							button.textContent = 'More +';
+							list.appendChild(button);
+							button.onclick = showMore;
+						}
+					});
+
+					function showMore(){
+						console.log(`in function`);
+						$(this).parent().find(`.hide`).removeClass(`hide`);
+						$(this).remove();
+					}
 				},
 				treatSquare: function(){
 					$(`.content--square:first-of-type`).addClass(`active`);
