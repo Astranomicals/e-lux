@@ -18,7 +18,8 @@ body {
 					grid-row: 1 / 4 !important;
 					grid-column: 2 / 2 !important;
 				}
-				&#field_1_9 {
+				&#field_1_9,
+				&#field_3_9 {
 					grid-column: 1 / -1 !important;
 					display: flex;
 					justify-content: flex-start;
@@ -36,11 +37,21 @@ body {
 						letter-spacing: 0.02em;
 					}
 				}
+				&#field_3_9 {
+					display: block;
+					.gchoice {
+						margin: 0 40px 0 0 !important;
+					}
+				}
 				.ginput_container {
 					margin: 0 !important;
 					position: relative;
 					display: block;
 					height: 55px;
+
+					&.ginput_container_textarea {
+						height: auto;
+					}
 
 					.ginput_counter {
 						display: none;
@@ -81,7 +92,8 @@ body {
 						display: flex;
 						height: auto;
 
-						#input_1_9 {
+						#input_1_9,
+						#input_3_9 {
 							display: flex;
 
 							.gchoice {
@@ -200,6 +212,11 @@ body {
 						font-weight: 400;
 					}
 				}
+			}
+		}
+		&#gform_wrapper_3 {
+			.gform_fields {
+				grid-template-columns: 1fr !important;
 			}
 		}
 	}
