@@ -47,7 +47,27 @@ const swiper_treat = new Swiper('.treat--container', {
 	},
 });
 
+const swiper_gallery_single = new Swiper('.gallery-single--container', {
+	slidesPerView: 1,
+	navigation: {
+		nextEl: '.gallery-single--container .swiper-button-next',
+		prevEl: '.gallery-single--container .swiper-button-prev',
+	},
+});
+
 const swiper_team = new Swiper('.team--container', {
 	slidesPerView: 4,
 	spaceBetween: 20
+});
+const swiper_steps = new Swiper('.swiper--steps', {
+	slidesPerView: 1,
+	spaceBetween: 20,
+	navigation: {
+		nextEl: '.swiper--steps .swiper-button-next',
+		prevEl: '.swiper--steps .swiper-button-prev',
+	},
+	pagination: {
+		el: '.swiper--steps .swiper-pagination',
+		clickable: true,
+	},
 });

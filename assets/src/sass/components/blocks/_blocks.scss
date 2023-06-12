@@ -118,7 +118,7 @@
 
 .page--header {
 	position: relative;
-	height: 550px;
+	height: 600px;
 	display: flex;
 	align-items: flex-end;
 	padding-bottom: 150px;
@@ -129,6 +129,29 @@
 		left: 0;
 		width: 100%;
 		height: auto;
+	}
+
+	h1 {
+		line-height: 1.3em;
+	}
+
+	.single-post & {
+		height: 750px;
+		padding-bottom: 240px;
+
+		.header-curve {
+			top: 61%;
+		}
+	}
+
+	a {
+		color: #272b2a;
+		text-transform: uppercase;
+		letter-spacing: 0.02em;
+		font-size: rem(18);
+		line-height: em(22, 18);
+		margin-bottom: 15px;
+		font-weight: 400;
 	}
 }
 

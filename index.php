@@ -15,20 +15,21 @@
 get_header(); ?>
 <section class="block block--blog-archive">
 	<div class="container">
-		<div class="row justify-content-center flex-row-reverse">
-			<div class="col-12 col-md-9">
+		<div class="row">
+			<div class="col-12">
+				<div class="top--blog">
+					<div class="left--blog">
+						<p>Filter by: </p>
+						<?php get_sidebar('blog'); ?>
+					</div>
+					<?php echo do_shortcode('[gravityforms id="2" title="false" description="false" ajax="true"]'); ?>
+				</div>
 				<?php if (have_posts()) : ?>
 					<?php while (have_posts()) : ?>
 						<?php the_post(); ?>
-						<?php get_template_part('components/post-preview-large'); ?>
+						<?php get_template_part('components/post-preview'); ?>
 					<?php endwhile; ?>
-					<?php get_template_part('components/navigation-loop'); ?>
-				<?php else : ?>
-					<?php get_template_part('components/post-not-found'); ?>
 				<?php endif; ?>
-			</div>
-			<div class="col-md-3">
-				<?php get_sidebar('blog'); ?>
 			</div>
 		</div>
 	</div>

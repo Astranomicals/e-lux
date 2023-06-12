@@ -14,32 +14,15 @@
 
 ?>
 <article class="post-preview" id="post-<?php the_ID(); ?>">
-	<?php if (has_post_thumbnail()) : ?>
-		<div class="image--holder">
-			<?php the_post_thumbnail('blog_thumb'); ?>
-			<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" class="btn btn--primary">Read Article</a>
-		</div>
-	<?php endif; ?>
+	<div class="image--holder">
+		<?php the_post_thumbnail('main_blog_thumb'); ?>
+	</div>
 	<div class="content--area">
-		<div class="categories">
-			<?php
-			$categories = get_the_category();
-			$output     = array();
-			foreach ($categories as $category) {
-				$category_link = get_category_link($category->ID);
-				$output[]      = '<a href="' . esc_url(get_category_link($category->term_id)) . '">' . esc_html($category->name) . '</a>';
-			}
-			echo implode(', ', $output);
-			?>
+		<div class="post-meta">
+			<div class="date"><?php echo get_the_date(); ?></div>
 		</div>
 		<h3><a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php printf('Permanent Link to %s', the_title_attribute('echo=0')); ?>"><?php the_title(); ?></a></h3>
-		<div class="post-meta">
-			<div class="date">
-				<?php echo get_the_date(); ?> at <?php echo get_the_time(); ?>
-			</div> by
-			<div class="author">
-				<?php echo get_the_author(); ?>
-			</div>
-		</div>
+		<?php echo the_excerpt(); ?>
+		<a href="<?php echo get_the_permalink(); ?>" class="btn btn--primary">Read Blog</a>
 	</div>
 </article>

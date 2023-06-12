@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Display Block
  *
@@ -11,10 +12,23 @@
  * @since      1.0.0
  */
 
+$title = get_sub_field('title');
+$column_1 = get_sub_field('column_1');
+$column_2 = get_sub_field('column_2');
 ?>
 
-<div class="container-fluid">
-  <div class="row">
-
- </div>
+<div class="container">
+	<div class="row">
+		<div class="col-12">
+			<h2><?php echo $title; ?></h2>
+			<div class="content--info">
+				<div class="content">
+					<?php echo $column_1; ?>
+				</div>
+				<div class="info">
+					<?php echo $column_2; ?>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
