@@ -17,10 +17,10 @@ $pages = get_sub_field('pages');
 
 <div class="container">
 	<div class="row align-items-center">
-		<div class="col-xl-3">
+		<div class="col-xxl-3 col-md-5">
 			<?php echo $content; ?>
 		</div>
-		<div class="col-xl-9">
+		<div class="col-xxl-9 col-md-7">
 			<?php if ($pages) : ?>
 				<div class="swiper-container services--container">
 					<div class="swiper-wrapper">

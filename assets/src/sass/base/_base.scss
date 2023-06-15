@@ -12,10 +12,17 @@ body {
 	font-family: $poppins;
 	font-style: normal;
 	font-weight: 300;
-	font-size: rem(22);
+	font-size: rem(16);
 	line-height: em(44, 22);
 	letter-spacing: 0.02em;
 	color: #272b2a;
+
+	@include mq(md) {
+		font-size: rem(18);
+	}
+	@include mq(xl) {
+		font-size: rem(22);
+	}
 }
 
 h1,
@@ -33,14 +40,39 @@ h5 {
 }
 
 h1 {
-	font-size: rem(64);
+	font-size: rem(36);
 	line-height: em(122, 64);
+	@include mq(md) {
+		font-size: rem(48);
+	}
+	@include mq(lg) {
+		font-size: rem(52);
+	}
+	@include mq(xl) {
+		font-size: rem(56);
+	}
+	@include mq(xxl) {
+		font-size: rem(64);
+	}
 }
 
 h2 {
-	font-size: rem(40);
+	font-size: rem(26);
 	line-height: em(56, 40);
 	margin-bottom: 30px;
+
+	@include mq(md) {
+		font-size: rem(28);
+	}
+	@include mq(lg) {
+		font-size: rem(32);
+	}
+	@include mq(xl) {
+		font-size: rem(36);
+	}
+	@include mq(xxl) {
+		font-size: rem(40);
+	}
 }
 
 P {

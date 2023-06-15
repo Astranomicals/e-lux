@@ -26,7 +26,7 @@ get_header();  ?>
 		<?php echo get_the_post_thumbnail($post->ID, 'top_header_thumb'); ?>
 	</div>
 	<div class="container">
-		<div class="col-xl-6">
+		<div class="col-md-6">
 			<?php echo do_shortcode('[gravityforms id="3" title="false" description="false" ajax="true"]'); ?>
 		</div>
 	</div>

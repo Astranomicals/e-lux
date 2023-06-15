@@ -1,18 +1,47 @@
 .block--child_pages,
 .block--archive-squares {
-	padding-bottom: 200px;
-	padding-top: 60px;
+	padding-bottom: 60px;
+	padding-top: 40px;
+
+	@include mq(md) {
+		padding-bottom: 80px;
+		padding-top: 40px;
+	}
+	@include mq(lg) {
+		padding-bottom: 100px;
+		padding-top: 40px;
+	}
+	@include mq(xl) {
+		padding-bottom: 160px;
+		padding-top: 40px;
+	}
+	@include mq(xxxl) {
+		padding-bottom: 200px;
+		padding-top: 60px;
+	}
 
 	.square--grid {
 		display: grid;
-		grid-template-columns: 1fr 1fr 1fr;
-		grid-gap: 65px 20px;
+		grid-template-columns: 1fr;
+		grid-gap: 35px 15px;
+
+		@include mq(md) {
+			grid-template-columns: 1fr 1fr;
+		}
+		@include mq(lg) {
+			grid-template-columns: 1fr 1fr 1fr;
+			grid-gap: 45px 20px;
+		}
+		@include mq(xxxl) {
+			grid-gap: 65px 20px;
+		}
 
 		article {
 			padding: 27px 20px;
 			background: $white;
 			box-shadow: 0px 10px 50px rgba(99, 95, 86, 0.1);
 			border-radius: 20px;
+			text-align: center;
 
 			img {
 				width: 100%;
@@ -34,8 +63,18 @@
 			box-shadow: 0px 10px 50px rgba(99, 95, 86, 0.1);
 			border-radius: 20px;
 			padding: 20px;
-			margin-bottom: 100px;
+			margin-bottom: 35px;
 			position: relative;
+
+			@include mq(lg) {
+				margin-bottom: 60px;
+			}
+			@include mq(xl) {
+				margin-bottom: 80px;
+			}
+			@include mq(xxl) {
+				margin-bottom: 100px;
+			}
 			&:last-of-type {
 				margin-bottom: 0;
 			}
@@ -44,14 +83,39 @@
 				display: flex;
 				justify-content: space-between;
 				align-items: center;
-				padding: 45px 60px 25px;
+				padding: 20px 15px 0;
+				flex-direction: column;
+
+				@include mq(md) {
+					flex-direction: row;
+				}
+
+				@include mq(xxl) {
+					padding: 45px 60px 25px;
+				}
 
 				h2 {
-					margin-bottom: 0;
-					font-size: rem(64);
+					margin-bottom: 15px;
+					font-size: rem(30);
 					line-height: em(72, 64);
 					position: relative;
 					top: 4px;
+					@include mq(md) {
+						font-size: rem(34);
+					}
+					@include mq(lg) {
+						font-size: rem(46);
+					}
+					@include mq(xl) {
+						font-size: rem(50);
+					}
+					@include mq(xxl) {
+						font-size: rem(64);
+					}
+
+					@include mq(md) {
+						margin-bottom: 0;
+					}
 				}
 			}
 
@@ -75,30 +139,62 @@
 					width: 100%;
 					height: auto;
 					z-index: -1;
+
+					@include mq($until: xl) {
+						position: absolute;
+						bottom: 0;
+						right: 0;
+						width: 100%;
+						height: 100%;
+						object-fit: cover;
+					}
 				}
 				ul {
-					position: absolute;
-					bottom: 40px;
-					right: 40px;
+					position: relative;
+					padding: 15px;
 					list-style: none;
-					padding: 0;
 					margin: 0;
 					z-index: 1;
 					text-align: right;
+					min-height: 400px;
+
+					@include mq(xl) {
+						min-height: unset;
+						position: absolute;
+						bottom: 15px;
+						right: 15px;
+						padding: 0;
+					}
+
+					@include mq(xxl) {
+						bottom: 40px;
+						right: 40px;
+					}
 
 					li {
-						margin-top: 20px;
+						margin-top: 10px;
 						text-align: right;
 						height: auto;
 						max-height: 200px;
 						transition: all 0.5s ease-in-out;
 						opacity: 1;
 
+						@include mq(xxl) {
+							margin-top: 20px;
+						}
+
 						&.hide {
 							opacity: 0;
 							max-height: 0;
 							margin-top: 0;
 							pointer-events: none;
+						}
+
+						a {
+							@include mq($until: xxl) {
+								font-size: rem(16);
+								padding: 12px 15px;
+							}
 						}
 					}
 					button {

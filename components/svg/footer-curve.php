@@ -1,4 +1,4 @@
-<svg class="footer--curve" width="1920" height="821" viewBox="0 0 1920 821" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg preserveAspectRatio="xMidYMid meet" class="footer--curve" width="1920" height="821" viewBox="0 0 1920 821" fill="none" xmlns="http://www.w3.org/2000/svg">
 	<g filter="url(#footer-curve)">
 		<path d="M1103.45 290.144C815.416 182.439 242 75.05 -1 266.05V779.501H1921V173.03C1823.4 290.144 1493.56 436.018 1103.45 290.144Z" fill="#F5F3F1" stroke="#EADED2" />
 		<rect y="774.55" width="1920" height="10" fill="#F5F3F1" />

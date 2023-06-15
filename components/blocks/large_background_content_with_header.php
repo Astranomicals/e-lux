@@ -32,7 +32,7 @@ $background_image = get_sub_field('background_image');
 	</div>
 	<div class="container">
 		<div class="row justify-content-end">
-			<div class="col-xl-5">
+			<div class="col-xl-5 col-md-8">
 				<div class="circle">
 					<?php echo $content; ?>
 				</div>

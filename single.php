@@ -18,7 +18,7 @@ get_header(); ?>
 		<div class="row justify-content-center">
 			<div class="col-12 col-md-10">
 				<div class="top--image">
-					<?php echo get_the_post_thumbnail($post->ID, 'full'); ?>
+					<?php echo get_the_post_thumbnail($post->ID, 'large_top_thumb'); ?>
 				</div>
 			</div>
 		</div>

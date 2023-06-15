@@ -21,7 +21,7 @@ get_header(); ?>
 		<?php display_image($service_image, 'top_header_thumb'); ?>
 	</div>
 	<div class="container">
-		<div class="col-xl-6">
+		<div class="col-md-6">
 			<?php echo $service_content; ?>
 			<a href="#" class="btn btn--primary">Request a Consultation</a>
 		</div>

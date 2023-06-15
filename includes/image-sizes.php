@@ -24,3 +24,4 @@ add_image_size('circle_thumb', 728, 728, true);
 add_image_size('top_header_thumb', 973, 973, true);
 add_image_size('square_thumb', 480, 447, true);
 add_image_size('large_square_thumb', 1560, 806, true);
+add_image_size('large_top_thumb', 1330, 748, true);

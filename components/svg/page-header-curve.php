@@ -1,4 +1,4 @@
-<svg class="header-curve" width="1920" height="709" viewBox="0 0 1920 709" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg preserveAspectRatio="xMidYMid meet" class="header-curve" width="1920" height="709" viewBox="0 0 1920 709" fill="none" xmlns="http://www.w3.org/2000/svg">
 	<g filter="url(#page-header-curve)">
 		<path d="M816.702 218.657C1122.72 191.386 1623.5 101.543 1920 218.657V708.014H0V186.563C110.5 252.063 425 253.563 816.702 218.657Z" fill="#F5F3F1" />
 	</g>

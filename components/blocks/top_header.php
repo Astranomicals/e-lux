@@ -19,7 +19,7 @@ $image = get_sub_field('image');
 	<?php display_image($image, 'top_header_thumb'); ?>
 </div>
 <div class="container">
-	<div class="col-xl-6">
+	<div class="col-md-6">
 		<?php echo $content; ?>
 		<a href="#" class="btn btn--primary">Request a Consultation</a>
 	</div>

@@ -19,7 +19,7 @@ $after_2 = get_sub_field('after_2');
 
 <div class="container-fluid">
 	<div class="row align-items-center">
-		<div class="col-md-4">
+		<div class="col-lg-4">
 			<div class="ba--holder">
 				<div class="image--up">
 					<?php display_image($before_1, 'ba_thumb'); ?>
@@ -29,14 +29,14 @@ $after_2 = get_sub_field('after_2');
 				</div>
 			</div>
 		</div>
-		<div class="col-md-4">
+		<div class="col-lg-4">
 			<div class="circle">
 				<?php get_template_part('components/svg/logo-icon'); ?>
 				<h2>Before <span>&</span> After</h2>
 				<a href="/gallery/" class="btn btn--primary">View Photo Results Gallery</a>
 			</div>
 		</div>
-		<div class="col-md-4">
+		<div class="col-lg-4">
 			<div class="ba--holder ba--holder-2">
 				<div class="image--down">
 					<?php display_image($before_2, 'ba_thumb'); ?>

@@ -2,44 +2,14 @@
 	position: relative;
 }
 
-.woocommerce {
-	.woocommerce-product-gallery {
-		ol {
-			list-style: none;
-			margin: 25px auto 0;
-			display: flex;
-			flex-wrap: wrap;
-			padding: 0;
-			justify-content: space-between;
-
-			li {
-				margin: 0;
-			}
-		}
-	}
-
-	ul.products {
-		li.products {
-			.button {
-				@extend .btn;
-				@extend .btn--primary;
-			}
-		}
-	}
-
-	.shop--single-product {
-		padding: 120px 0;
-	}
-	.related--products {
-		padding: 120px 0;
-		background-color: #efefef;
-	}
-}
-
 .block--testimonials {
-	padding: 65px 0;
+	padding: 30px 0;
 	background: $primary;
 	overflow: hidden;
+
+	@include mq(xl) {
+		padding: 65px 0;
+	}
 
 	.center-circle {
 		position: absolute;
@@ -53,15 +23,27 @@
 
 		h2 {
 			color: $primary;
-			font-size: rem(64);
+			font-size: rem(42);
 			line-height: em(72, 64);
+			@include mq(md) {
+				font-size: rem(48);
+			}
+			@include mq(lg) {
+				font-size: rem(52);
+			}
+			@include mq(xl) {
+				font-size: rem(56);
+			}
+			@include mq(xxl) {
+				font-size: rem(64);
+			}
 		}
 
 		&::before {
 			content: '';
 			display: block;
-			width: 600px;
-			height: 600px;
+			width: 400px;
+			height: 400px;
 			background: rgba(39, 43, 42, 0.8);
 			border: 1px solid rgba(255, 255, 255, 0.04);
 			backdrop-filter: blur(15px);
@@ -71,26 +53,68 @@
 			transform: translate(-50%, -50%);
 			border-radius: 100em;
 			z-index: -1;
+
+			@include mq(md) {
+				width: 450px;
+				height: 450px;
+			}
+			@include mq(lg) {
+				width: 480px;
+				height: 480px;
+			}
+			@include mq(xl) {
+				width: 550px;
+				height: 550px;
+			}
+			@include mq(xxl) {
+				width: 600px;
+				height: 600px;
+			}
 		}
 	}
 
 	.flex--testimonial {
 		display: flex;
-		margin: 50px 0;
+		margin: 25px 0;
+
+		@include mq(xl) {
+			margin: 50px 0;
+		}
 
 		.single--testimonial {
 			display: inline-flex;
 			flex-direction: column;
 			justify-content: center;
 			align-items: flex-start;
-			padding: 40px;
-			max-width: 655px;
+			padding: 20px;
+			max-width: 450px;
 			width: auto;
-			height: 250px;
+			height: 180px;
 			background: #f5f3f1;
 			border-radius: 20px;
 			margin: 0 10px;
 			flex-shrink: 0;
+
+			@include mq(lg) {
+				padding: 25px;
+				height: 180px;
+				max-width: 500px;
+			}
+			@include mq(lg) {
+				padding: 30px;
+				height: 200px;
+				max-width: 550px;
+			}
+			@include mq(xl) {
+				padding: 35px;
+				height: 220px;
+				max-width: 600px;
+			}
+			@include mq(xxl) {
+				padding: 40px;
+				height: 250px;
+				max-width: 655px;
+			}
 			svg {
 				flex-shrink: 0;
 				left: -3px;
@@ -98,7 +122,10 @@
 			}
 
 			p {
-				margin-bottom: 10px;
+				margin-bottom: 0;
+				@include mq(lg) {
+					margin-bottom: 10px;
+				}
 
 				&:last-of-type {
 					margin: 0;
@@ -118,17 +145,38 @@
 
 .page--header {
 	position: relative;
-	height: 600px;
+	height: 450px;
 	display: flex;
 	align-items: flex-end;
-	padding-bottom: 150px;
+	padding-bottom: 100px;
+
+	@include mq(md) {
+		padding-bottom: 150px;
+		height: 500px;
+	}
+	@include mq(xl) {
+		height: 600px;
+	}
 
 	.header-curve {
 		position: absolute;
-		top: 49%;
+		top: 85%;
 		left: 0;
 		width: 100%;
 		height: auto;
+
+		@include mq(md) {
+			top: 75%;
+		}
+		@include mq(xl) {
+			top: 65%;
+		}
+		@include mq(xxl) {
+			top: 60%;
+		}
+		@include mq(xxxl) {
+			top: 49%;
+		}
 	}
 
 	h1 {
@@ -136,11 +184,53 @@
 	}
 
 	.single-post & {
-		height: 750px;
-		padding-bottom: 240px;
+		height: 600px;
+		padding-bottom: 120px;
+
+		@include mq(md) {
+			height: 500px;
+		}
+		@include mq(lg) {
+			height: 650px;
+			padding-bottom: 240px;
+		}
+		@include mq(xl) {
+			height: 750px;
+		}
 
 		.header-curve {
-			top: 61%;
+			top: 95%;
+			@include mq(md) {
+				top: 90%;
+			}
+			@include mq(lg) {
+				top: 80%;
+			}
+			@include mq(xl) {
+				top: 71%;
+			}
+			@include mq(xxl) {
+				top: 71%;
+			}
+			@include mq(xxxl) {
+				top: 61%;
+			}
+		}
+
+		h1 {
+			font-size: rem(28);
+			@include mq(md) {
+				font-size: rem(32);
+			}
+			@include mq(lg) {
+				font-size: rem(42);
+			}
+			@include mq(xl) {
+				font-size: rem(48);
+			}
+			@include mq(xxl) {
+				font-size: rem(52);
+			}
 		}
 	}
 
@@ -148,30 +238,84 @@
 		color: #272b2a;
 		text-transform: uppercase;
 		letter-spacing: 0.02em;
-		font-size: rem(18);
+		font-size: rem(16);
 		line-height: em(22, 18);
 		margin-bottom: 15px;
 		font-weight: 400;
+
+		@include mq(lg) {
+			font-size: rem(18);
+		}
 	}
 }
 
 .block--content {
-	padding-bottom: 150px;
+	padding-bottom: 60px;
+
+	@include mq(md) {
+		padding-bottom: 80px;
+	}
+	@include mq(lg) {
+		padding-bottom: 100px;
+	}
+	@include mq(xl) {
+		padding-bottom: 120px;
+	}
+	@include mq(xxl) {
+		padding-bottom: 150px;
+	}
 	.content--info {
 		display: grid;
-		grid-template-columns: 1fr 520px;
+		grid-template-columns: 1fr;
 		grid-gap: 0;
 		background: #f5f3f1;
 		box-shadow: 0px 10px 50px rgba(99, 95, 86, 0.1);
 		border-radius: 20px;
 
+		@include mq(lg) {
+			grid-template-columns: 1fr 380px;
+		}
+		@include mq(xl) {
+			grid-template-columns: 1fr 420px;
+		}
+		@include mq(xxl) {
+			grid-template-columns: 1fr 520px;
+		}
+
 		.content {
-			padding: 96px 136px;
+			padding: 40px 30px;
 			box-shadow: 0px 10px 50px rgba(99, 95, 86, 0.1);
 			border-radius: 20px 0px 0px 20px;
+
+			@include mq(md) {
+				padding: 50px;
+			}
+			@include mq(lg) {
+				padding: 70px 80px;
+			}
+			@include mq(xl) {
+				padding: 96px 100px;
+			}
+			@include mq(xxl) {
+				padding: 96px 136px;
+			}
+
+			ul {
+				padding-left: 25px;
+			}
 		}
 		.info {
-			padding: 70px 0 50px 135px;
+			padding: 30px;
+
+			@include mq(lg) {
+				padding: 70px 0 50px 80px;
+			}
+			@include mq(xl) {
+				padding: 70px 0 50px 100px;
+			}
+			@include mq(xxl) {
+				padding: 70px 0 50px 135px;
+			}
 		}
 	}
 

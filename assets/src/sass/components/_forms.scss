@@ -9,14 +9,20 @@ body {
 			grid-template-columns: 1fr 1fr !important;
 			grid-gap: 20px 35px !important;
 
+			@include mq($until: md) {
+				grid-template-columns: 1fr !important;
+			}
+
 			.gfield {
 				padding: 0 !important;
 				margin: 0;
 				grid-column: 1 !important;
 
 				&#field_1_3 {
-					grid-row: 1 / 5 !important;
-					grid-column: 2 / 2 !important;
+					@include mq(md) {
+						grid-row: 1 / 5 !important;
+						grid-column: 2 / 2 !important;
+					}
 				}
 				&#field_1_9,
 				&#field_3_9 {
@@ -24,6 +30,9 @@ body {
 					display: flex;
 					justify-content: flex-start;
 					margin: 14px 0 23px;
+					@include mq($until: lg) {
+						display: block;
+					}
 
 					.gfield_description {
 						width: auto;
@@ -102,6 +111,11 @@ body {
 								align-items: center;
 								margin-right: 10px;
 								margin-left: 20px;
+
+								@include mq($until: lg) {
+									margin-left: 0;
+									margin-right: 20px;
+								}
 							}
 						}
 

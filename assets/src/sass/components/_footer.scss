@@ -1,6 +1,11 @@
 .block--consultation {
 	position: relative;
-	padding: 93px 0 300px;
+	padding: 93px 0 200px;
+	overflow: hidden;
+
+	@include mq(md) {
+		padding: 93px 0 300px;
+	}
 
 	.background--image {
 		&::before {
@@ -11,23 +16,67 @@
 			height: 100%;
 			position: absolute;
 			object-position: right;
+			display: none;
+
+			@include mq(md) {
+				display: block;
+				right: -40%;
+			}
+			@include mq(lg) {
+				right: -20%;
+			}
+			@include mq(xl) {
+				right: -10%;
+			}
+			@include mq(xxl) {
+				right: 0;
+			}
 		}
 	}
 
 	.footer--curve {
 		position: absolute;
-		top: 63%;
+		top: auto;
+		bottom: 0;
 		left: 0;
 		width: 100%;
 		height: auto;
+
+		@include mq(md) {
+			bottom: -5%;
+		}
+		@include mq(lg) {
+			bottom: -13%;
+		}
+		@include mq(xl) {
+			bottom: -21%;
+		}
+		@include mq(xxl) {
+			bottom: -35%;
+		}
+		@include mq(xxxl) {
+			bottom: -45%;
+		}
 	}
 
 	h2 {
-		font-size: rem(64);
+		font-size: rem(40);
 		line-height: em(72, 64);
 		position: relative;
 		padding-bottom: 30px;
 		margin-bottom: 35px;
+		@include mq(md) {
+			font-size: rem(48);
+		}
+		@include mq(lg) {
+			font-size: rem(52);
+		}
+		@include mq(xl) {
+			font-size: rem(56);
+		}
+		@include mq(xxl) {
+			font-size: rem(64);
+		}
 
 		&::after {
 			content: '';
@@ -48,8 +97,22 @@ footer {
 	position: relative;
 
 	.src-logo {
-		margin-bottom: 90px;
-		margin-top: -65px;
+		margin-bottom: 25px;
+		margin-top: -35px;
+		width: 200px;
+		height: auto;
+
+		@include mq(md) {
+			margin-top: -65px;
+			margin-bottom: 40px;
+		}
+		@include mq(xxl) {
+			margin-bottom: 90px;
+			width: 250px;
+		}
+		@include mq(xxxl) {
+			width: 300px;
+		}
 	}
 
 	h4 {
@@ -62,9 +125,14 @@ footer {
 		color: #272b2a;
 		margin: 0;
 		text-transform: initial;
+		@include mq($until: lg) {
+			margin-top: 25px;
+		}
 	}
 	.spacer {
-		padding-bottom: 57px;
+		@include mq(lg) {
+			padding-bottom: 57px;
+		}
 	}
 	p,
 	ul {
@@ -97,6 +165,9 @@ footer {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		@include mq($until: md) {
+			display: block;
+		}
 
 		p {
 			margin: 0;
@@ -120,6 +191,12 @@ footer {
 				line-height: 2em;
 				letter-spacing: 0.02em;
 				color: #272b2a;
+
+				@include mq($until: md) {
+					margin-top: 15px;
+					text-align: right;
+					display: block;
+				}
 			}
 		}
 	}
@@ -129,8 +206,21 @@ footer {
 		}
 	}
 	.border-left {
-		border-left: 1px solid $primary;
-		padding-left: 81px;
+		padding-left: 15px;
+		margin-bottom: 35px;
+
+		@include mq(lg) {
+			margin-bottom: 0;
+			border-left: 1px solid $primary;
+			padding-left: 45px;
+		}
+		@include mq(xxl) {
+			padding-left: 81px;
+		}
+
+		&.no-mar {
+			display: none;
+		}
 	}
 	.copyright {
 		border-top: 1px solid $primary;

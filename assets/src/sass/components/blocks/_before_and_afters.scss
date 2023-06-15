@@ -7,7 +7,18 @@
 		),
 		#272b2a;
 	text-align: center;
-	padding: 209px 0 319px;
+	padding: 60px 0;
+	overflow: hidden;
+
+	@include mq(lg) {
+		padding: 120px 0 180px;
+	}
+	@include mq(xl) {
+		padding: 180px 0 250px;
+	}
+	@include mq(xxl) {
+		padding: 209px 0 319px;
+	}
 
 	&::after {
 		content: '';
@@ -19,6 +30,10 @@
 	.circle {
 		position: relative;
 		z-index: 0;
+		margin: 25px 0 35px;
+		@include mq(lg) {
+			margin: 0;
+		}
 
 		&::before {
 			content: '';
@@ -30,18 +45,50 @@
 			background: rgba(39, 43, 42, 0.4);
 			border: 1px solid rgba(255, 255, 255, 0.04);
 			backdrop-filter: blur(15px);
-			width: 719px;
-			height: 719px;
+			width: 450px;
+			height: 450px;
 			z-index: -1;
 			border-radius: 100em;
+
+			@include mq(md) {
+				width: 500px;
+				height: 500px;
+			}
+			@include mq(lg) {
+				width: 550px;
+				height: 550px;
+			}
+			@include mq(xl) {
+				width: 620px;
+				height: 620px;
+			}
+			@include mq(xxl) {
+				width: 719px;
+				height: 719px;
+			}
 		}
 
 		h2 {
 			color: $primary;
-			font-size: rem(120);
+			font-size: rem(45);
 			line-height: em(122, 120);
 			font-weight: 300;
 			margin: 30px 0;
+			@include mq(md) {
+				font-size: rem(60);
+			}
+			@include mq(lg) {
+				font-size: rem(70);
+			}
+			@include mq(xl) {
+				font-size: rem(70);
+			}
+			@include mq(xxl) {
+				font-size: rem(95);
+			}
+			@include mq(xxxl) {
+				font-size: rem(120);
+			}
 
 			span {
 				display: block;
@@ -56,16 +103,50 @@
 
 	.ba--holder {
 		display: flex;
-		width: 648px;
+		width: 100%;
 		height: auto;
 
+		@include mq(md) {
+			width: 400px;
+			margin: 0 auto;
+		}
+		@include mq(lg) {
+			margin: unset;
+			width: 500px;
+		}
+		@include mq(xl) {
+			width: 600px;
+		}
+		@include mq(xxl) {
+			width: 648px;
+		}
+
 		.image--down {
-			transform: translateY(64%);
 			position: relative;
-			left: -110px;
+			@include mq(lg) {
+				transform: translateY(64%);
+				left: -140px;
+			}
+			@include mq(xl) {
+				left: -110px;
+			}
 		}
 		.image--up {
-			transform: translateY(-19%);
+			@include mq(lg) {
+				transform: translateY(-19%);
+			}
+		}
+
+		img {
+			width: 100%;
+			height: auto;
+
+			@include mq(lg) {
+				width: 21vw;
+			}
+			@include mq(xxxl) {
+				width: auto;
+			}
 		}
 	}
 
@@ -73,7 +154,7 @@
 		justify-content: flex-end;
 	}
 
-	.col-md-4 {
+	.col-lg-4 {
 		&:nth-of-type(2) {
 			z-index: 9;
 		}
@@ -82,8 +163,15 @@
 			display: flex;
 
 			.image--down {
-				right: -110px;
 				left: unset;
+
+				@include mq(lg) {
+					right: -140px;
+				}
+
+				@include mq(xl) {
+					right: -110px;
+				}
 			}
 		}
 	}

@@ -1,4 +1,4 @@
-<svg class="bottom--curve" width="1920" height="449" viewBox="0 0 1920 449" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg preserveAspectRatio="xMidYMid meet" class="bottom--curve" width="1920" height="449" viewBox="0 0 1920 449" fill="none" xmlns="http://www.w3.org/2000/svg">
 	<g filter="url(#bottom-curve)">
 		<path d="M816.702 221.977C1104.43 172.011 1684 111.962 1920 221.977V449H0V167.645C97.5 221.977 427 289.651 816.702 221.977Z" fill="#F5F3F1" />
 	</g>

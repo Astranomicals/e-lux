@@ -2,13 +2,13 @@
 
 // Import Swiper and modules
 import SwiperCore, {
-  Swiper,
-  EffectFade,
-  Navigation,
-  Pagination,
-  Thumbs,
-  Autoplay,
-} from "swiper/core";
+	Swiper,
+	EffectFade,
+	Navigation,
+	Pagination,
+	Thumbs,
+	Autoplay,
+} from 'swiper/core';
 
 // Install modules
 SwiperCore.use([Swiper, EffectFade, Navigation, Pagination, Thumbs, Autoplay]);
@@ -56,8 +56,19 @@ const swiper_gallery_single = new Swiper('.gallery-single--container', {
 });
 
 const swiper_team = new Swiper('.team--container', {
-	slidesPerView: 4,
-	spaceBetween: 20
+	slidesPerView: 1,
+	spaceBetween: 20,
+	breakpoints: {
+		768: {
+			slidesPerView: 2,
+		},
+		991: {
+			slidesPerView: 3,
+		},
+		1200: {
+			slidesPerView: 4,
+		},
+	},
 });
 const swiper_steps = new Swiper('.swiper--steps', {
 	slidesPerView: 1,
@@ -69,5 +80,18 @@ const swiper_steps = new Swiper('.swiper--steps', {
 	pagination: {
 		el: '.swiper--steps .swiper-pagination',
 		clickable: true,
+	},
+});
+
+const swiper_related_post = new Swiper('.related-slider', {
+	slidesPerView: 1,
+	spaceBetween: 20,
+	breakpoints: {
+		768: {
+			slidesPerView: 2,
+		},
+		991: {
+			slidesPerView: 3,
+		},
 	},
 });

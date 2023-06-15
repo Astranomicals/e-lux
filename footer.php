@@ -106,7 +106,7 @@ $footer_image    = get_field('footer_image', 'option');
 		<?php display_image($footer_image, 'full'); ?>
 	</div>
 	<div class="container">
-		<div class="col-xl-8 col-md-10 col-12">
+		<div class="col-xl-8 col-md-8 col-12">
 			<h2>Request A Consultation</h2>
 			<?php echo do_shortcode('[gravityforms id="1" title="false" description="false" ajax="true"]'); ?>
 		</div>
@@ -119,21 +119,21 @@ $footer_image    = get_field('footer_image', 'option');
 			<div class="col-xl-8 col-12">
 				<?php get_template_part('components/svg/logo'); ?>
 			</div>
-			<div class="col-xl-4 border-left"></div>
+			<div class="col-xl-4 border-left no-mar"></div>
 		</div>
 		<div class="row">
-			<div class="col-xl-2">
+			<div class="col-lg-2 col-md-6">
 				<h4>Address</h4>
 				<p><?php echo $address; ?><br /><?php echo $address2; ?></p>
 				<h4>Phone</h4>
 				<p><?php echo $phone; ?></p>
 			</div>
-			<div class="col-xl-2">
+			<div class="col-lg-2 col-md-6">
 				<h4>Hours</h4>
 				<?php echo $hours; ?>
 				<div class="spacer"></div>
 			</div>
-			<div class="col-xl-2">
+			<div class="col-lg-2 col-md-6">
 				<h4>Information</h4>
 				<?php
 				$args = array(
@@ -144,7 +144,7 @@ $footer_image    = get_field('footer_image', 'option');
 				wp_nav_menu($args);
 				?>
 			</div>
-			<div class="col-xl-2">
+			<div class="col-lg-2 col-md-6">
 				<h4>Resources</h4>
 				<?php
 				$args = array(
@@ -155,7 +155,7 @@ $footer_image    = get_field('footer_image', 'option');
 				wp_nav_menu($args);
 				?>
 			</div>
-			<div class="col-xl-4 border-left">
+			<div class="col-lg-4 border-left">
 				<h4>Follow us on social media</h4>
 				<?php get_template_part('components/social-icons'); ?>
 				<?php echo do_shortcode('[gravityforms id="2" title="false" description="false" ajax="true"]'); ?>

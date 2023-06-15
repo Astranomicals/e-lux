@@ -7,8 +7,20 @@
 		margin-bottom: 30px;
 		padding-bottom: 30px;
 		position: relative;
-		font-size: rem(64);
+		font-size: rem(42);
 		line-height: em(72, 64);
+		@include mq(md) {
+			font-size: rem(48);
+		}
+		@include mq(lg) {
+			font-size: rem(52);
+		}
+		@include mq(xl) {
+			font-size: rem(56);
+		}
+		@include mq(xxl) {
+			font-size: rem(64);
+		}
 
 		&::after {
 			content: '';
@@ -26,9 +38,19 @@
 
 	.team--grid {
 		display: grid;
-		grid-template-columns: 1fr 1fr 1fr 1fr;
+		grid-template-columns: 1fr;
 		grid-gap: 40px 20px;
 		margin-top: 57px;
+
+		@include mq(md) {
+			grid-template-columns: 1fr 1fr;
+		}
+		@include mq(lg) {
+			grid-template-columns: 1fr 1fr 1fr;
+		}
+		@include mq(xxl) {
+			grid-template-columns: 1fr 1fr 1fr 1fr;
+		}
 
 		article {
 			background: $white;
@@ -46,13 +68,20 @@
 
 			.content {
 				h3 {
-					font-size: rem(28);
+					font-size: rem(20);
 					line-height: em(32, 28);
 					margin-bottom: 9px;
 					display: flex;
 					align-items: center;
 					justify-content: center;
 					height: 2em;
+
+					@include mq(xl) {
+						font-size: rem(24);
+					}
+					@include mq(xxl) {
+						font-size: rem(28);
+					}
 				}
 				p {
 					margin-bottom: 0;

@@ -12,6 +12,7 @@
 	.flex--header {
 		display: flex;
 		align-items: center;
+		width: 100%;
 
 		p {
 			align-items: center;
@@ -52,11 +53,23 @@
 		ul,
 		a {
 			font-weight: 400;
-			font-size: rem(18);
+			font-size: rem(14);
 			line-height: em(27, 18);
 			text-transform: uppercase;
 			color: #272b2a;
 			margin: 0;
+
+			@include mq(md) {
+				font-size: rem(16);
+			}
+			@include mq(xl) {
+				font-size: rem(18);
+			}
+		}
+		ul {
+			@include mq($until: lg) {
+				display: none !important;
+			}
 		}
 
 		.btn--call {
@@ -77,7 +90,11 @@
 	align-items: center;
 	z-index: 99;
 	transition: all 0.4s ease-in-out;
-	padding: 47px 0 0;
+	padding: 15px 0 0;
+
+	@include mq(xl) {
+		padding: 47px 0 0;
+	}
 
 	.flex--header {
 		display: flex;
@@ -86,11 +103,23 @@
 
 	.logo {
 		display: flex;
+		@include mq($until: xl) {
+			padding: 5px 0;
+		}
 
-		img {
+		svg {
 			width: 200px;
 			height: auto;
 
+			@include mq(md) {
+				width: 250px;
+			}
+			@include mq(lg) {
+				width: 220px;
+			}
+			@include mq(xl) {
+				width: 250px;
+			}
 			@include mq(xxl) {
 				width: 300px;
 			}
@@ -106,19 +135,26 @@
 		text-transform: uppercase;
 		font-weight: bold;
 
-		@include mq(lg) {
+		@include mq(xl) {
 			display: flex;
 		}
 
 		> li {
 			position: relative;
-			margin: 0 10px;
+			margin: 0 6px;
+
+			@include mq(xl) {
+				margin: 0 7px;
+			}
+			@include mq(xxl) {
+				margin: 0 10px;
+			}
 			> a {
 				display: flex;
 				align-items: center;
 				justify-content: center;
 				padding: 0;
-				font-size: rem(20);
+				font-size: rem(16);
 				line-height: em(30, 20);
 				height: 65px;
 				font-weight: 400;
@@ -126,6 +162,10 @@
 				text-align: center;
 				text-decoration: none;
 				transition: all 0.4s ease-in-out;
+
+				@include mq(xxl) {
+					font-size: rem(20);
+				}
 			}
 
 			&:hover {
@@ -231,6 +271,18 @@
 		}
 	}
 
+	.btn--primary {
+		margin-left: auto;
+		margin-right: 25px;
+		@include mq(xl) {
+			margin-right: 0;
+			margin-left: 0;
+		}
+		@include mq($until: md) {
+			display: none !important;
+		}
+	}
+
 	button {
 		display: flex;
 		width: 32px;
@@ -240,14 +292,19 @@
 		background: none;
 		border: none;
 		padding: 0;
+		margin-left: auto;
+
+		@include mq(md) {
+			margin-left: unset;
+		}
 
 		span {
 			display: block;
 			width: 30px;
 			height: 2px;
-			background: $primary;
+			background: $black;
 		}
-		@include mq(lg) {
+		@include mq(xl) {
 			display: none;
 		}
 
@@ -270,13 +327,17 @@
 
 	&.sticky {
 		background: $white;
-		box-shadow: rgba($black, 0.4);
+		box-shadow: rgba($black, 0.05) 0 4px 10px;
 		padding: 0;
 
 		.menu {
 			> li {
 				> a {
-					height: 136px;
+					height: 100px;
+
+					@include mq(xxl) {
+						height: 136px;
+					}
 				}
 			}
 		}

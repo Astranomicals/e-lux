@@ -19,15 +19,15 @@ $image = get_sub_field('image');
 ?>
 
 <div class="container">
-	<div class="row align-items-center">
-		<div class="col-xl-6 col-12 pr col-md-6">
-			<h2><?php echo $heading; ?></h2>
-			<?php echo $content; ?>
-		</div>
+	<div class="row align-items-center flex-row-reverse">
 		<div class="col-xl-6 col-12 pl col-md-6">
 			<div class="image--holder">
 				<?php display_image($image, 'full'); ?>
 			</div>
+		</div>
+		<div class="col-xl-6 col-12 pr col-md-6">
+			<h2><?php echo $heading; ?></h2>
+			<?php echo $content; ?>
 		</div>
 	</div>
 </div>

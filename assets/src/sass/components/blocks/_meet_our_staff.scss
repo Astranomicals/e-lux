@@ -1,14 +1,34 @@
 .block--meet_our_staff {
 	position: relative;
-	padding: 75px 0 144px;
+	padding: 60px 0;
 	text-align: center;
+	overflow: hidden;
+
+	@include mq(md) {
+		padding: 75px 0;
+	}
+	@include mq(xl) {
+		padding: 75px 0 144px;
+	}
 
 	h2 {
 		margin-bottom: 30px;
 		padding-bottom: 30px;
 		position: relative;
-		font-size: rem(64);
+		font-size: rem(42);
 		line-height: em(72, 64);
+		@include mq(md) {
+			font-size: rem(48);
+		}
+		@include mq(lg) {
+			font-size: rem(52);
+		}
+		@include mq(xl) {
+			font-size: rem(56);
+		}
+		@include mq(xxl) {
+			font-size: rem(64);
+		}
 
 		&::after {
 			content: '';
@@ -25,7 +45,10 @@
 	}
 
 	.btn {
-		margin-bottom: 72px;
+		margin-bottom: 45px;
+		@include mq(md) {
+			margin-bottom: 72px;
+		}
 	}
 
 	.team--container {
@@ -46,13 +69,20 @@
 
 			.content {
 				h3 {
-					font-size: rem(28);
+					font-size: rem(20);
 					line-height: em(32, 28);
 					margin-bottom: 9px;
 					display: flex;
 					align-items: center;
 					justify-content: center;
 					height: 2em;
+
+					@include mq(xl) {
+						font-size: rem(22);
+					}
+					@include mq(xxl) {
+						font-size: rem(28);
+					}
 				}
 				p {
 					margin-bottom: 0;

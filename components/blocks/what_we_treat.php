@@ -19,7 +19,7 @@ $background_image = get_sub_field('background_image');
 </div>
 <div class="container">
 	<div class="row flex-row-reverse align-items-end">
-		<div class="col-md-5 offset-md-1">
+		<div class="col-xl-5 offset-xl-1 col-md-6">
 			<h2>What we treat</h2>
 			<?php
 			$args = array(

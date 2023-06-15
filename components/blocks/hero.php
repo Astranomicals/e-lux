@@ -32,7 +32,7 @@ $hero_image = get_sub_field('background_video_poster');
 <?php endif; ?>
 <div class="container">
 	<div class="row ">
-		<div class="col-12 col-md-8">
+		<div class="col-12 col-md-8 col-xl-6 col-xxxl-8">
 			<h1><?php echo $heading; ?></h1>
 			<p><?php echo $subheading; ?></p>
 			<div class="flex--buttons">
