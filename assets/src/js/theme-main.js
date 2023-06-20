@@ -178,6 +178,8 @@
 						e.preventDefault();
 					});
 
+					$('.menu-item-632 > a').attr(`target`, `_blank`);
+
 					$('.menu__mobile .menu > li.menu-item > a').wrapInner(
 						'<span></span>'
 					);

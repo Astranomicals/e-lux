@@ -35,13 +35,15 @@ $content = get_sub_field('content');
 						$query->the_post();
 					?>
 						<article class="post--square">
-							<div class="image--holder">
-								<?php echo get_the_post_thumbnail($post->ID, 'team_thumb'); ?>
-							</div>
-							<div class="content">
-								<h3><?php echo get_the_title(); ?></h3>
-								<p><?php echo get_field('team_position'); ?></p>
-							</div>
+							<a href="<?php echo get_the_permalink(); ?>">
+								<div class="image--holder">
+									<?php echo get_the_post_thumbnail($post->ID, 'team_thumb'); ?>
+								</div>
+								<div class="content">
+									<h3><?php echo get_the_title(); ?></h3>
+									<p><?php echo get_field('team_title'); ?></p>
+								</div>
+							</a>
 						</article>
 					<?php endwhile; ?>
 					<?php wp_reset_postdata(); ?>

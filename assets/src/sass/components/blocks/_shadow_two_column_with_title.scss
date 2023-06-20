@@ -44,12 +44,15 @@
 					display: none;
 				}
 			}
+			h4 {
+				font-weight: bold;
+			}
 		}
 		.info {
 			padding: 180px 50px;
 		}
 
-		a {
+		a:not(.btn) {
 			color: #272b2a;
 			text-decoration: underline;
 
@@ -64,6 +67,76 @@
 			line-height: em(44, 22);
 			margin-bottom: 30px;
 			text-transform: initial;
+		}
+
+		.gform_wrapper {
+			.gf_progressbar_percentage.percentbar_blue {
+				background-color: $primary;
+				color: $black;
+			}
+			.gform_fields {
+				grid-template-columns: 1fr !important;
+
+				.ginput_complex {
+					height: auto !important;
+
+					span {
+						padding: 0 !important;
+					}
+				}
+				.gfield_radio {
+					display: flex;
+					align-items: center;
+					width: 100%;
+
+					.gchoice {
+						display: flex;
+						align-items: center;
+						margin-right: 25px;
+
+						label {
+							display: block;
+							width: 100%;
+							max-width: 100%;
+							padding-left: 10px;
+							white-space: nowrap;
+						}
+					}
+				}
+
+				.gfield_checkbox {
+					display: block;
+					width: 100%;
+
+					button {
+						@extend .btn;
+						@extend .btn--primary;
+						border: none;
+					}
+
+					.gchoice {
+						display: flex;
+						align-items: center;
+
+						input {
+							display: none;
+						}
+
+						label {
+							position: relative;
+							padding-left: 50px;
+							margin: 0 0 10px;
+						}
+					}
+				}
+			}
+			.gform_page_footer {
+				input {
+					@extend .btn;
+					@extend .btn--primary;
+					border: none;
+				}
+			}
 		}
 	}
 }

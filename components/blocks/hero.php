@@ -12,6 +12,7 @@
  * @since      1.0.0
  */
 
+$contact_link = get_field('contact_link', 'options');
 $heading       = get_sub_field('heading');
 $subheading              = get_sub_field('subheading');
 $video_mp4    = get_sub_field('background_video_mp4');
@@ -36,8 +37,8 @@ $hero_image = get_sub_field('background_video_poster');
 			<h1><?php echo $heading; ?></h1>
 			<p><?php echo $subheading; ?></p>
 			<div class="flex--buttons">
-				<a href="#" class="btn btn--secondary">Our Services</a>
-				<a href="#" class="btn btn--primary">Request A Consultation</a>
+				<a href="/our-services/" class="btn btn--secondary">Our Services</a>
+				<a href="<?php echo $contact_link; ?>" class="btn btn--primary" target="_blank">Request a Consultation</a>
 			</div>
 		</div>
 	</div>

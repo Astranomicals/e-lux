@@ -79,6 +79,8 @@ endif;
 							Recent News | Blog
 						<?php elseif (is_category()) : ?>
 							Category<br><small><?php single_cat_title(); ?></small>
+						<?php elseif (is_tax()) : ?>
+							Gallery: <?php single_term_title('', true); ?>
 						<?php elseif (is_archive()) : ?>
 							<?php post_type_archive_title(''); ?>
 						<?php elseif (is_search()) : ?>

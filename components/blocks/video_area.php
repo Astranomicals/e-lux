@@ -30,10 +30,12 @@
 									$video_title = get_sub_field('video_title');
 							?>
 									<div class="swiper-slide">
-										<div class="video--holder">
-											<video poster="<?php echo wp_get_attachment_image_url($video_poster['ID'], 'hero'); ?>" id="video-<?php echo $counter; ?>" allow="autoplay" class="embed-responsive-item" src="<?php $video_id; ?>" allowfullscreen="" data-ready="true"></video>
-											<div class="play--video" data-video="<?php echo $counter; ?>"><i class="fal fa-play"></i></div>
-										</div>
+										<?php if ($video_poster) : ?>
+											<div class="video--holder">
+												<video poster="<?php echo wp_get_attachment_image_url($video_poster['ID'], 'hero'); ?>" id="video-<?php echo $counter; ?>" allow="autoplay" class="embed-responsive-item" src="<?php $video_id; ?>" allowfullscreen="" data-ready="true"></video>
+												<div class="play--video" data-video="<?php echo $counter; ?>"><i class="fal fa-play"></i></div>
+											</div>
+										<?php endif; ?>
 									</div>
 							<?php
 									$counter++;

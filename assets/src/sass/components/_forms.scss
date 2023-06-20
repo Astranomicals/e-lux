@@ -186,13 +186,19 @@ body {
 			}
 		}
 		&.gform_validation_error {
-			.validation_error {
+			.gform_validation_errors {
 				background: $error;
 				color: $white;
-				font-size: 1.1rem;
-				font-weight: 500;
 				padding: 15px;
 				border: none;
+				margin: 0 0 15px;
+
+				> h2.hide_summary {
+					font-size: 1.1rem;
+					font-weight: 500;
+					margin: 0;
+					color: $white;
+				}
 			}
 			.validation_message {
 				color: $error;
@@ -221,9 +227,12 @@ body {
 					.gfield_description {
 						padding: 0 !important;
 						color: $error;
+						background: none;
+						border: none;
 						text-transform: uppercase;
 						font-size: 1.1rem;
 						font-weight: 400;
+						margin: 0 !important;
 					}
 				}
 			}

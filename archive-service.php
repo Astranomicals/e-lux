@@ -11,7 +11,7 @@
  * @link       https://www.incrediblemarketing.com/
  * @since      1.0.0
  */
-
+$contact_link = get_field('contact_link', 'options');
 $service_content = get_field('service_content', 'options');
 $service_image = get_field('service_image', 'options');
 get_header(); ?>
@@ -23,7 +23,7 @@ get_header(); ?>
 	<div class="container">
 		<div class="col-md-6">
 			<?php echo $service_content; ?>
-			<a href="#" class="btn btn--primary">Request a Consultation</a>
+			<a href="<?php echo $contact_link; ?>" class="btn btn--primary" target="_blank">Request a Consultation</a>
 		</div>
 	</div>
 </section>

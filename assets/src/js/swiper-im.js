@@ -23,6 +23,7 @@ const swiper_video = new Swiper('.video--container', {
 	slidesPerView: 1,
 	loop: false,
 	spaceBetween: 20,
+	autoHeight: true,
 	pagination: {
 		el: '.swiper-pagination',
 		clickable: true,

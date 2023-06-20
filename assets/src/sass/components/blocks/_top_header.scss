@@ -99,4 +99,31 @@
 			top: 60%;
 		}
 	}
+
+	a:not(.btn) {
+		color: $black;
+		text-decoration: underline;
+
+		&:hover {
+			color: $primary;
+		}
+	}
+	&.block--top-header-staff {
+		padding: 100px 0;
+
+		.image--holder {
+			display: block;
+			position: relative;
+			@include mq(md) {
+				top: -10%;
+			}
+
+			img {
+				width: 100%;
+				height: auto;
+				display: block;
+				border-radius: 100em;
+			}
+		}
+	}
 }

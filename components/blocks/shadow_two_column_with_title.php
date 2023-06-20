@@ -20,7 +20,9 @@ $column_2 = get_sub_field('column_2');
 <div class="container">
 	<div class="row">
 		<div class="col-12">
-			<h2><?php echo $title; ?></h2>
+			<?php if ($title) : ?>
+				<h2><?php echo $title; ?></h2>
+			<?php endif; ?>
 			<div class="content--info">
 				<div class="content">
 					<?php echo $column_1; ?>

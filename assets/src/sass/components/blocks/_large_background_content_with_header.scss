@@ -7,7 +7,7 @@
 		padding: 55px 0 60px;
 	}
 	@include mq(xxl) {
-		padding: 55px 0 80px;
+		padding: 80px 0 80px;
 	}
 
 	h2 {
@@ -78,6 +78,15 @@
 		@include mq(xxl) {
 			padding: 132px 72px;
 		}
+
+		a {
+			color: $black;
+			text-decoration: underline;
+
+			&:hover {
+				color: $primary;
+			}
+		}
 	}
 
 	h3 {
@@ -114,6 +123,39 @@
 		}
 		@include mq(xxl) {
 			bottom: -18%;
+		}
+	}
+}
+
+.page-id-96 {
+	.block--background {
+		padding: 80px 0;
+		z-index: 0;
+
+		@include mq(md) {
+			padding: 110px 0;
+		}
+		@include mq(lg) {
+			padding: 123px 0;
+		}
+		@include mq(xl) {
+			padding: 123px 0;
+		}
+		@include mq(xxl) {
+			padding: 123px 0;
+		}
+		svg {
+			display: none;
+		}
+	}
+}
+
+.postid-105 {
+	.block--background {
+		svg {
+			@include mq(xxl) {
+				bottom: -14%;
+			}
 		}
 	}
 }

@@ -14,6 +14,7 @@
 
 $title = get_sub_field('title');
 $gallery = get_sub_field('gallery');
+
 ?>
 
 <div class="container">
@@ -21,16 +22,21 @@ $gallery = get_sub_field('gallery');
 		<div class="col-md-4">
 			<?php get_template_part('components/svg/logo-icon'); ?>
 			<h2>Before <span>&</span> After</h2>
-			<a href="<?php echo get_the_permalink($gallery->ID); ?>" class="btn btn--primary">View Photo Results Gallery</a>
+			<a href="<?php echo get_term_link($gallery[0]->term_id); ?>" class="btn btn--primary">View Photo Results Gallery</a>
 		</div>
 		<div class="col-md-5 offset-md-1">
 			<?php
 			$args = array(
 				'post_type' => 'gallery',
-				'post__in' => array($gallery->ID),
+				'tax_query' => array(
+					array(
+						'taxonomy' => 'gallery_treatment',
+						'field' => 'term_id',
+						'terms' => $gallery[0]->term_id,
+					),
+				),
 			);
 			$query = new WP_Query($args);
-
 			if ($query->have_posts()) :
 			?>
 				<div class="swiper-container gallery-single--container">
@@ -38,18 +44,18 @@ $gallery = get_sub_field('gallery');
 						<?php
 						while ($query->have_posts()) :
 							$query->the_post();
-							$gallery_images = get_field('gallery_images');
-							$counter = 0;
-							if ($gallery_images) :
-								foreach ($gallery_images as $image) :
-									if ($counter < 5) : ?>
-										<div class="swiper-slide">
-											<?php display_image($image, 'full'); ?>
-										</div>
-									<?php
-										$counter++;
-									endif; ?>
-								<?php endforeach; ?>
+							$before = get_field('result_before');
+							$after = get_field('result_after');
+							if ($after) :
+						?>
+								<div class="swiper-slide">
+									<?php display_image($before, 'full'); ?>
+									<?php display_image($after, 'full'); ?>
+								</div>
+							<?php else : ?>
+								<div class="swiper-slide">
+									<?php display_image($before, 'full'); ?>
+								</div>
 							<?php endif; ?>
 						<?php endwhile; ?>
 						<?php wp_reset_postdata(); ?>

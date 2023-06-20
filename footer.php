@@ -48,7 +48,7 @@ $footer_image    = get_field('footer_image', 'option');
 								<?php $query->the_post(); ?>
 								<div class="single--testimonial">
 									<?php get_template_part('components/svg/stars'); ?>
-									<?php the_content(); ?>
+									<?php echo wp_trim_words(get_field('testimonial_content'), 18, '...'); ?>
 									<p>- <?php echo get_the_title(); ?></p>
 								</div>
 							<?php endwhile; ?>
@@ -69,7 +69,7 @@ $footer_image    = get_field('footer_image', 'option');
 								<?php $query->the_post(); ?>
 								<div class="single--testimonial">
 									<?php get_template_part('components/svg/stars'); ?>
-									<p><?php the_content(); ?></p>
+									<?php echo wp_trim_words(get_field('testimonial_content'), 18, '...'); ?>
 									<p>- <?php echo get_the_title(); ?></p>
 								</div>
 							<?php endwhile; ?>
@@ -90,7 +90,7 @@ $footer_image    = get_field('footer_image', 'option');
 								<?php $query->the_post(); ?>
 								<div class="single--testimonial">
 									<?php get_template_part('components/svg/stars'); ?>
-									<p><?php the_content(); ?></p>
+									<?php echo wp_trim_words(get_field('testimonial_content'), 18, '...'); ?>
 									<p>- <?php echo get_the_title(); ?></p>
 								</div>
 							<?php endwhile; ?>

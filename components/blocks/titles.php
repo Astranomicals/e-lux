@@ -12,6 +12,7 @@
  * @since      1.0.0
  */
 
+$contact_link = get_field('contact_link', 'option');
 $title = get_sub_field('title');
 ?>
 
@@ -34,7 +35,7 @@ $title = get_sub_field('title');
 						<?php endif; ?>
 					<?php endwhile; ?>
 					<div class="single--tile request-tile">
-						<a href="/contact/">Request a Consultation</a>
+						<a href="<?php echo $contact_link; ?>" target="_blank">Request a Consultation</a>
 					</div>
 				</div>
 			<?php endif; ?>

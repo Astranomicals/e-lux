@@ -1,11 +1,11 @@
 {
-    "key": "group_5f18c3fd25f71",
-    "title": "Staff Add-ons",
+    "key": "group_5fdb7752c437a",
+    "title": "CPT: Team",
     "fields": [
         {
-            "key": "field_5f18c40432a89",
-            "label": "Team Position",
-            "name": "team_position",
+            "key": "field_5fdb778e047d1",
+            "label": "Title",
+            "name": "team_title",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -21,6 +21,26 @@
             "prepend": "",
             "append": "",
             "maxlength": ""
+        },
+        {
+            "key": "field_5fdb779f047d2",
+            "label": "Bio",
+            "name": "team_bio",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
         }
     ],
     "location": [
@@ -41,5 +61,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1677194857
+    "modified": 1686895184
 }

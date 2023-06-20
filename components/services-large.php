@@ -13,7 +13,7 @@
  */
 
 global $this_ID;
-
+$contact_link = get_field('contact_link', 'options');
 $args = array(
 	'post_type' => 'service',
 	'posts_per_page' => -1,
@@ -38,6 +38,6 @@ $query = new WP_Query($args);
 	</div>
 	<div class="bottom--title">
 		<h2><?php echo get_the_title($this_ID); ?></h2>
-		<a href="/contact/" class="btn btn--primary">Request a Consultation</a>
+		<a href="<?php echo $contact_link; ?>" class="btn btn--primary" target="_blank">Request a Consultation</a>
 	</div>
 </article>

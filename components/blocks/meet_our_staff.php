@@ -45,7 +45,7 @@ $content = get_sub_field('content');
 									</div>
 									<div class="content">
 										<h3><?php echo get_the_title(); ?></h3>
-										<p><?php echo get_field('team_position'); ?></p>
+										<p><?php echo get_field('team_title'); ?></p>
 									</div>
 								</article>
 							</div>

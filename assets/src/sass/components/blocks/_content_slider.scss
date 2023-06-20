@@ -44,6 +44,35 @@
 			background: $primary;
 		}
 	}
+	h3 {
+		font-size: rem(20);
+		line-height: em(56, 32);
+		margin-bottom: 30px;
+		padding-bottom: 35px;
+		position: relative;
+
+		@include mq(md) {
+			font-size: rem(24);
+		}
+		@include mq(lg) {
+			font-size: rem(28);
+		}
+		@include mq(xxl) {
+			font-size: rem(32);
+		}
+
+		&::after {
+			content: '';
+			display: block;
+			width: 100%;
+			max-width: 218px;
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			height: 2px;
+			background: $primary;
+		}
+	}
 	.swiper-container {
 		overflow: visible;
 		margin-top: 35px;
@@ -103,6 +132,11 @@
 			font-size: rem(20);
 			line-height: em(56, 32);
 			margin-bottom: 12px;
+			padding: 0;
+
+			&::after {
+				display: none;
+			}
 
 			@include mq(md) {
 				font-size: rem(24);

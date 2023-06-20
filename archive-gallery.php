@@ -12,31 +12,21 @@
  * @since      1.0.0
  */
 $contact_link = get_field('contact_link', 'options');
-$top_level_content = get_field('top_level_content', 'options');
-$main_image = get_field('main_image', 'options');
+$service_content = get_field('service_content', 'options');
+$service_image = get_field('service_image', 'options');
 get_header(); ?>
 
-<section class="block block--top-header">
-	<div class="side--image">
-		<?php display_image($main_image, 'top_header_thumb'); ?>
-	</div>
-	<div class="container">
-		<div class="col-md-6">
-			<?php echo $top_level_content; ?>
-			<a href="<?php echo $contact_link; ?>" class="btn btn--primary" target="_blank">Request a Consultation</a>
-		</div>
-	</div>
-</section>
 
 <section class="block block--archive-squares">
 	<div class="container">
 		<div class="row">
 			<div class="col-12">
 				<?php if (have_posts()) : ?>
-					<div class="square--grid">
+					<div class="square--grid-large">
 						<?php while (have_posts()) : ?>
 							<?php the_post(); ?>
-							<?php get_template_part('components/what-we-treat'); ?>
+							<?php $this_ID = $post->ID; ?>
+							<?php get_template_part('components/services-large'); ?>
 						<?php endwhile; ?>
 					</div>
 				<?php endif; ?>
