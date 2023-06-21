@@ -6,4 +6,13 @@
 	.page-id-671 & {
 		padding: 0;
 	}
+
+	a {
+		text-decoration: underline;
+		color: $black;
+
+		&:hover {
+			columns: $primary;
+		}
+	}
 }
