@@ -15,13 +15,19 @@
 $title = get_sub_field('title');
 $background_image = get_sub_field('background_image');
 ?>
-<div class="background--image">
-	<?php display_image($background_image, 'full'); ?>
-</div>
+<?php if ($background_image) : ?>
+	<div class="background--image">
+		<?php display_image($background_image, 'full'); ?>
+	</div>
+<?php endif; ?>
 <div class="container">
 	<div class="row flex-row-reverse align-items-end">
-		<div class="col-md-5 offset-md-1">
-			<h2><?php echo $title; ?></h2>
+		<div class="col-xl-5 offset-xl-1 col-md-7 col-lg-6">
+			<?php if ($title) : ?>
+				<h2><?php echo $title; ?></h2>
+			<?php else : ?>
+				<h2>Procedure At A Glance</h2>
+			<?php endif; ?>
 			<?php if (have_rows('details')) : ?>
 				<div class="swiper-container treat--container">
 					<div class="swiper-wrapper">

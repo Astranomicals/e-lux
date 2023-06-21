@@ -7,9 +7,20 @@
 		),
 		#272b2a;
 	text-align: center;
-	padding: 120px 0 100px;
+	padding: 60px 0;
 	margin-bottom: 60px;
 	z-index: 0;
+	overflow: hidden;
+
+	@include mq(md) {
+		padding: 80px 0;
+	}
+	@include mq(lg) {
+		padding: 100px 0;
+	}
+	@include mq(xl) {
+		padding: 120px 0 100px;
+	}
 
 	&::after {
 		content: '';
@@ -21,10 +32,22 @@
 
 	h2 {
 		color: $primary;
-		font-size: rem(56);
+		font-size: rem(36);
 		line-height: em(72, 64);
 		font-weight: 300;
-		margin: 0 0 95px;
+		margin: 0 0 25px;
+		@include mq(lg) {
+			margin: 0 0 35px;
+			font-size: rem(48);
+		}
+		@include mq(xl) {
+			margin: 0 0 65px;
+			font-size: rem(52);
+		}
+		@include mq(xxl) {
+			margin: 0 0 95px;
+			font-size: rem(56);
+		}
 
 		span {
 			font-family: $playfair;
@@ -33,6 +56,13 @@
 			position: relative;
 			top: 15px;
 			font-size: 1.5em;
+		}
+	}
+
+	.btn {
+		margin-bottom: 35px;
+		@include mq(md) {
+			margin-bottom: 0;
 		}
 	}
 
@@ -51,8 +81,8 @@
 		.swiper-button-next,
 		.swiper-button-prev {
 			position: relative;
-			width: 74px;
-			height: 74px;
+			width: 60px;
+			height: 60px;
 			border: 1px solid #eee;
 			border-radius: 100em;
 			margin: 0;
@@ -67,6 +97,10 @@
 			right: unset;
 			bottom: unset;
 			box-shadow: 0px 10px 50px rgba(99, 95, 86, 0.1);
+			@include mq(xxl) {
+				height: 74px;
+				width: 74px;
+			}
 
 			i {
 				font-weight: 600;

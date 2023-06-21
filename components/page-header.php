@@ -73,7 +73,7 @@ endif;
 	<?php else : ?>
 		<div class="container">
 			<div class="row">
-				<div class="col-12 col-xl-9">
+				<div class="col-12 col-xl-8">
 					<h1>
 						<?php if (is_home()) : ?>
 							Recent News | Blog

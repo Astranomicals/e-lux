@@ -19,7 +19,7 @@ $gallery = get_sub_field('gallery');
 
 <div class="container">
 	<div class="row justify-content-center align-items-center">
-		<div class="col-md-4">
+		<div class="col-lg-4 col-md-5">
 			<?php get_template_part('components/svg/logo-icon'); ?>
 			<h2>Before <span>&</span> After</h2>
 			<a href="<?php echo get_term_link($gallery[0]->term_id); ?>" class="btn btn--primary">View Photo Results Gallery</a>

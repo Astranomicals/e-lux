@@ -35,6 +35,7 @@ $query = new WP_Query($args);
 						<?php get_template_part('components/what-we-treat'); ?>
 					<?php endwhile; ?>
 				</div>
+				<?php wp_reset_postdata(); ?>
 			<?php endif; ?>
 		</div>
 	</div>

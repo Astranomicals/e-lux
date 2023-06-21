@@ -74,6 +74,7 @@ const swiper_team = new Swiper('.team--container', {
 const swiper_steps = new Swiper('.swiper--steps', {
 	slidesPerView: 1,
 	spaceBetween: 20,
+	autoHeight: true,
 	navigation: {
 		nextEl: '.swiper--steps .swiper-button-next',
 		prevEl: '.swiper--steps .swiper-button-prev',

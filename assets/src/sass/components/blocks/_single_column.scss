@@ -3,4 +3,7 @@
 	@include mq(md) {
 		padding: 80px 0;
 	}
+	.page-id-671 & {
+		padding: 0;
+	}
 }
