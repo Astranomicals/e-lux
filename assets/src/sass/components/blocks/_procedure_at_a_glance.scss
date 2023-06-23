@@ -43,24 +43,22 @@
 
 		img {
 			height: 100%;
-			width: auto;
+			width: 100%;
 			top: 0;
-			left: -60%;
-			position: relative;
+			position: absolute;
 			opacity: 0.25;
+			object-position: 15%;
 
 			@include mq(md) {
-				opacity: 1;
-				left: -45%;
+				object-position: 36%;
+				opacity: 0.35;
 			}
 			@include mq(lg) {
-				left: -30%;
+				opacity: 1;
 			}
+
 			@include mq(xl) {
-				left: -10%;
-			}
-			@include mq(xxl) {
-				left: 0;
+				object-position: unset;
 			}
 		}
 	}

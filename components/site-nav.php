@@ -12,6 +12,7 @@
  * @since      1.0.0
  */
 
+$contact_link = get_field('contact_link', 'options');
 ?>
 
 <div class="top--header">
@@ -55,7 +56,7 @@
 					wp_nav_menu($args);
 					?>
 
-					<a href="#" class="btn btn--primary">Book Now</a>
+					<a href="<?php echo $contact_link; ?>" target="_blank" class="btn btn--primary">Book Now</a>
 					<button data-toggle="menu" aria-label="Menu Open">
 						<span></span>
 						<span></span>

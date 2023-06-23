@@ -14,6 +14,7 @@
 
 $image = get_sub_field('image');
 $content = get_sub_field('content');
+$video_id = get_sub_field('video_id');
 ?>
 
 <div class="container">
@@ -23,7 +24,7 @@ $content = get_sub_field('content');
 				<div class="image--holder">
 					<?php display_image($image, 'full'); ?>
 				</div>
-				<a href="" class="btn--play"><i class="far fa-play"></i></a>
+				<a href="https://vimeo.com/<?php echo $video_id; ?>" class="btn--play"><i class="far fa-play"></i></a>
 			</div>
 		</div>
 		<div class="col-xl-6 col-md-6">

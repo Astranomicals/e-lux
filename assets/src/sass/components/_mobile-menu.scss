@@ -3,6 +3,7 @@
 	z-index: 999;
 	width: 100%;
 	height: 100%;
+	top: 0;
 	right: -100%;
 	opacity: 0;
 	padding: 0;
@@ -104,7 +105,7 @@
 				line-height: em(36, 28);
 				letter-spacing: 0.03em;
 				text-transform: uppercase;
-				color: $white;
+				color: $black;
 				position: relative;
 				padding: 0;
 
@@ -119,7 +120,7 @@
 				}
 
 				&:hover {
-					color: $black;
+					color: #232323;
 				}
 
 				> span {
@@ -141,7 +142,7 @@
 					line-height: em(21, 16);
 					letter-spacing: 0.15em;
 					text-transform: uppercase;
-					color: $primary;
+					color: $black;
 					display: flex;
 					width: 128px;
 					height: 51px;
@@ -378,7 +379,7 @@
 							padding: 100px 35px 35px;
 							list-style: none;
 							margin: 0;
-							display: grid;
+							display: block;
 							grid-template-columns: 1fr;
 							grid-gap: 35px;
 							overflow: auto;
@@ -393,7 +394,6 @@
 							@include mq(md) {
 								right: 180px;
 								grid-gap: 35px 70px;
-
 								width: auto;
 							}
 
@@ -412,7 +412,7 @@
 
 							button[data-toggle='back'] {
 								@include mq($until: md) {
-									border: 1px solid $primary;
+									border: 1px solid $black;
 									width: 50px;
 									height: 50px;
 									top: 30px;
@@ -431,6 +431,11 @@
 										transform: rotate(180deg);
 									}
 								}
+
+								&:hover {
+									background: $black;
+									color: $white;
+								}
 							}
 
 							* ::-webkit-scrollbar {
@@ -443,6 +448,7 @@
 							> li {
 								width: 100%;
 								max-width: 100%;
+								margin-bottom: 25px;
 
 								@include mq(md) {
 									width: 315px;
@@ -455,12 +461,12 @@
 								}
 								> a {
 									font-style: normal;
-									font-weight: 500;
+									font-weight: 700;
 									font-size: rem(18);
 									line-height: em(28, 18);
 									letter-spacing: 0.1em;
 									text-transform: uppercase;
-									color: $primary;
+									color: #2e2e2e;
 									margin-bottom: 25px;
 									padding: 0;
 									align-items: center;
@@ -473,13 +479,14 @@
 									}
 
 									&:hover {
+										color: $black;
 										span {
 											font-style: normal;
 											font-weight: normal;
 											font-size: 14px;
 											line-height: 17px;
 											letter-spacing: 0.05em;
-											color: #a8abab;
+											color: $black;
 											opacity: 1;
 										}
 									}
@@ -494,6 +501,8 @@
 
 								.sub-menu {
 									margin: 0;
+									padding-left: 25px;
+									margin-top: 10px;
 								}
 
 								li {
@@ -520,6 +529,27 @@
 								}
 							}
 						}
+						&.menu-item-267,
+						&.menu-item-252 {
+							> .sub-menu {
+								> li {
+									margin-bottom: 10px;
+
+									a {
+										font-weight: 500;
+										margin: 0;
+										i,
+										span {
+											display: none;
+										}
+
+										&:hover {
+											color: $primary;
+										}
+									}
+								}
+							}
+						}
 					}
 				}
 			}
@@ -535,11 +565,16 @@
 					display: none;
 				}
 				.call {
-					border-top: 1px solid rgba($white, 0.3);
+					border-top: 1px solid rgba($black, 0.3);
 					background: transparent;
+					flex-grow: unset;
 
 					&:last-of-type {
-						border-bottom: 1px solid rgba($white, 0.3);
+						border-bottom: 1px solid rgba($black, 0.3);
+					}
+
+					a {
+						box-shadow: none;
 					}
 				}
 			}
@@ -555,6 +590,10 @@
 			flex-grow: 1;
 			width: 33.3%;
 
+			@include mq($until: md) {
+				width: 100%;
+			}
+
 			&:nth-of-type(2) {
 				margin: 0 15px;
 			}
@@ -569,9 +608,15 @@
 				justify-content: center;
 				align-items: center;
 				transition: all 0.5s ease-in-out;
+				box-shadow: rgba($black, 0.15) 0 3px 15px;
 
 				&:hover {
 					background: $black;
+
+					p,
+					i {
+						color: $white;
+					}
 				}
 			}
 
@@ -579,7 +624,7 @@
 				font-size: rem(12);
 				line-height: 1.4em;
 				text-transform: uppercase;
-				color: $white;
+				color: $black;
 				margin: 0;
 				white-space: nowrap;
 
@@ -590,7 +635,7 @@
 
 			i {
 				display: block;
-				color: $white;
+				color: $black;
 				font-size: 22px;
 
 				@include mq(md) {

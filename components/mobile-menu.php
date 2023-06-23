@@ -12,6 +12,7 @@
  * @since      1.0.0
  */
 
+$contact_link = get_field('contact_link', 'option');
 $address_link = get_field('business_address_link', 'option');
 $phone        = get_field('business_phone_display', 'option');
 $phone_url    = get_field('business_phone_url', 'option');
@@ -39,7 +40,7 @@ $phone_url    = get_field('business_phone_url', 'option');
 				</a>
 			</div>
 			<div class="call">
-				<a href="/contact/" class="mobile-phone"><i class="fal fa-envelope"></i>
+				<a href="<?php echo $contact_link; ?>" class="mobile-phone" target="_blank"><i class="fal fa-envelope"></i>
 					<p>Email Us</p>
 				</a>
 			</div>

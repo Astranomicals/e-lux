@@ -71,6 +71,7 @@ $background_image = get_sub_field('background_image');
 					<div class="content--square" data-id="<?php echo $post->ID; ?>">
 						<h4><?php echo get_the_title(); ?></h4>
 						<?php echo get_field('homepage_excerpt'); ?>
+						<a href="<?php echo get_the_permalink(); ?>" class="btn btn--primary">Learn More</a>
 					</div>
 				<?php endwhile; ?>
 				<?php wp_reset_postdata(); ?>

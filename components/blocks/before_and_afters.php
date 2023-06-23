@@ -33,7 +33,7 @@ $after_2 = get_sub_field('after_2');
 			<div class="circle">
 				<?php get_template_part('components/svg/logo-icon'); ?>
 				<h2>Before <span>&</span> After</h2>
-				<a href="/gallery/" class="btn btn--primary">View Photo Results Gallery</a>
+				<a href="/results/" class="btn btn--primary">View Photo Results Gallery</a>
 			</div>
 		</div>
 		<div class="col-lg-4">

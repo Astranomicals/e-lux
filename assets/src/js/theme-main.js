@@ -30,6 +30,16 @@
 					this.parallax();
 					this.treatSquare();
 					this.serviceList();
+					this.galleryFilter();
+				},
+				galleryFilter: function(){
+					$(`.block--archive-squares #sidebar li i.fa-plus`).on(`click`, function(){
+						$(this).parent().toggleClass(`active`);
+					});
+					$(`.block--archive-squares #sidebar > ul > li > a:not([data-id="76"]):not([data-id="83"])`).on(`click`, function(e){
+						e.preventDefault();
+						$(this).parent().toggleClass(`active`);
+					});
 				},
 				serviceList: function(){
 					const lists = document.getElementsByClassName(`page-links`);

@@ -19,7 +19,7 @@ $content = get_sub_field('content');
 	<div class="row">
 		<div class="col-12">
 			<?php echo $content; ?>
-			<a href="/meet-our-staff/" class="btn btn--secondary">Meet Our Team</a>
+			<a href="/about/our-team/" class="btn btn--secondary">Meet Our Team</a>
 			<?php
 			$args = array(
 				'post_type' => 'team_members',

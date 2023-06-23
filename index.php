@@ -29,6 +29,7 @@ get_header(); ?>
 						<?php the_post(); ?>
 						<?php get_template_part('components/post-preview'); ?>
 					<?php endwhile; ?>
+					<?php im_numeric_posts_nav(); ?>
 				<?php endif; ?>
 			</div>
 		</div>

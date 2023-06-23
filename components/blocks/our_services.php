@@ -18,11 +18,11 @@ $content = get_sub_field('content');
 <?php get_template_part('components/svg/top-double-curve'); ?>
 <div class="container">
 	<div class="row align-items-center">
-		<div class="col-xl-3 col-md-5">
+		<div class="col-xl-3 col-md-5 z-1">
 			<?php echo $content; ?>
 			<a href="/our-services/" class="btn btn--secondary">View All Services</a>
 		</div>
-		<div class="col-xl-9 col-md-7">
+		<div class="col-xl-9 col-md-7 z-0">
 			<?php
 			$args = array(
 				'post_type' => 'service',

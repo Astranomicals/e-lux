@@ -38,6 +38,9 @@
 			height: 100px;
 			width: 100px;
 			box-shadow: 0px 10px 50px rgba(99, 95, 86, 0.1);
+			overflow: hidden;
+			z-index: 0;
+			transition: all 0.5s ease-in-out;
 
 			@include mq(lg) {
 				height: 120px;
@@ -56,6 +59,26 @@
 				}
 				@include mq(xl) {
 					font-size: 76px;
+				}
+			}
+
+			&::after {
+				content: '';
+				@include absolute_cover;
+				background: #272b2a;
+				z-index: -1;
+				top: 100%;
+				transition: all 0.5s ease-in;
+			}
+			&:hover {
+				box-shadow: 0px 4px 30px rgba(99, 95, 86, 0.15);
+				bottom: 3px;
+
+				&::after {
+					top: 0;
+				}
+				i {
+					color: $white;
 				}
 			}
 		}

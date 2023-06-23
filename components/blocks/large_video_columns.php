@@ -27,8 +27,8 @@ $column_2 = get_sub_field('column_2');
 			</div>
 			<div class="content--container">
 				<div class="video--holder">
-					<video poster="<?php echo wp_get_attachment_image_url($video_poster['ID'], 'hero'); ?>" id="video-<?php echo $counter; ?>" allow="autoplay" class="embed-responsive-item" src="<?php $video_id; ?>" allowfullscreen="" data-ready="true"></video>
-					<div class="play--video" data-video="<?php echo $counter; ?>"><i class="fal fa-play"></i></div>
+					<?php display_image($video_poster, 'hero'); ?>
+					<a href="https://vimeo.com/<?php echo $video_id; ?>" class="btn--play play--video"><i class="fal fa-play"></i></a>
 				</div>
 				<div class="content--holder">
 					<div class="column-1">

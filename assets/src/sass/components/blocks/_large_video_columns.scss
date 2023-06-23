@@ -45,6 +45,11 @@
 	.video--holder {
 		position: relative;
 
+		img {
+			width: 100%;
+			height: auto;
+		}
+
 		video {
 			width: 100%;
 			height: auto;
@@ -69,6 +74,9 @@
 			position: absolute;
 			right: 30px;
 			bottom: 30px;
+			z-index: 1;
+			transition: all 0.5s ease-in-out;
+			overflow: hidden;
 
 			@include mq($until: md) {
 				width: 60px;
@@ -82,6 +90,25 @@
 
 				@include mq($until: md) {
 					font-size: 28px;
+				}
+			}
+			&::after {
+				content: '';
+				@include absolute_cover;
+				background: #272b2a;
+				z-index: -1;
+				top: 100%;
+				transition: all 0.5s ease-in;
+			}
+			&:hover {
+				box-shadow: 0px 4px 30px rgba(99, 95, 86, 0.15);
+				bottom: 25px;
+
+				&::after {
+					top: 0;
+				}
+				i {
+					color: $white;
 				}
 			}
 		}

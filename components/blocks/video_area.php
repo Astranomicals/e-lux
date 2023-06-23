@@ -32,7 +32,7 @@
 									<div class="swiper-slide">
 										<?php if ($video_poster) : ?>
 											<div class="video--holder">
-												<video poster="<?php echo wp_get_attachment_image_url($video_poster['ID'], 'hero'); ?>" id="video-<?php echo $counter; ?>" allow="autoplay" class="embed-responsive-item" src="<?php $video_id; ?>" allowfullscreen="" data-ready="true"></video>
+												<video poster="<?php echo wp_get_attachment_image_url($video_poster['ID'], 'hero'); ?>" id="video-<?php echo $counter; ?>" allow="autoplay" class="embed-responsive-item" src="https://vimeo.com/<?php echo $video_id; ?>" allowfullscreen="" data-ready="true"></video>
 												<div class="play--video" data-video="<?php echo $counter; ?>"><i class="fal fa-play"></i></div>
 											</div>
 										<?php endif; ?>

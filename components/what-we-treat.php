@@ -18,6 +18,10 @@
 		<?php if (has_post_thumbnail()) : ?>
 			<div class="image--holder">
 				<?php the_post_thumbnail('square_thumb'); ?>
+				<div class="read-more">
+					<?php get_template_part('components/svg/logo-icon'); ?>
+					<p>Learn More</p>
+				</div>
 			</div>
 		<?php endif; ?>
 		<div class="content--area">

@@ -68,7 +68,7 @@ if (!function_exists('im_register_galleries')) {
 			'publicly_queryable'  => true,
 			'capability_type'     => 'page',
 			'show_in_rest'        => true,
-			'rewrite'             => array('with_front' => false),
+			'rewrite'             => array('slug' => 'results', 'with_front' => false),
 		);
 		register_post_type('gallery', $args);
 	}
@@ -105,7 +105,7 @@ if (!function_exists('register_gallery_taxonomies')) {
 			'show_in_nav_menus'   => false,
 			'show_admin_column'   => true,
 			'query_var'           => true,
-			'rewrite'             => array('slug' => 'gallery_treatment')
+			'rewrite'             => array('slug' => 'treatment-results')
 		);
 
 		register_taxonomy('gallery_treatment', array('gallery'), $args); // Must include custom post type name

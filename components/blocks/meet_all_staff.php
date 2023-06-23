@@ -38,6 +38,10 @@ $content = get_sub_field('content');
 							<a href="<?php echo get_the_permalink(); ?>">
 								<div class="image--holder">
 									<?php echo get_the_post_thumbnail($post->ID, 'team_thumb'); ?>
+									<div class="read-bio">
+										<?php get_template_part('components/svg/logo-icon'); ?>
+										<p>Read Bio</p>
+									</div>
 								</div>
 								<div class="content">
 									<h3><?php echo get_the_title(); ?></h3>

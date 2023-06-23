@@ -18,7 +18,7 @@ $before = get_field('result_before');
 $after = get_field('result_after');
 ?>
 <article class="gallery__item" id="post-<?php the_ID(); ?>">
-	<div class="image__holder">
+	<div class="image--holder">
 		<?php display_image($before, 'full'); ?>
 		<?php if ($after) : ?>
 			<?php display_image($after, 'full'); ?>

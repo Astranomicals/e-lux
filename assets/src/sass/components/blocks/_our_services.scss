@@ -76,6 +76,8 @@
 	.swiper-slide {
 		width: 100%;
 		opacity: 0;
+		height: auto;
+
 		@include mq(md) {
 			width: 380px;
 		}
@@ -97,7 +99,7 @@
 
 	article {
 		width: 100%;
-		height: auto;
+		height: 100%;
 		display: flex;
 		flex-direction: column;
 		background: $white;
@@ -157,10 +159,31 @@
 			color: $white;
 			box-shadow: 0px 10px 50px rgba(99, 95, 86, 0.1);
 			transition: all 0.6s ease-in;
+			overflow: hidden;
+			z-index: 0;
 
 			@include mq(lg) {
 				height: 74px;
 				width: 74px;
+			}
+			&::after {
+				content: '';
+				@include absolute_cover;
+				background: #272b2a;
+				z-index: -1;
+				top: 100%;
+				transition: all 0.5s ease-in;
+			}
+			&:hover {
+				box-shadow: 0px 4px 30px rgba(99, 95, 86, 0.15);
+				bottom: 10px;
+
+				&::after {
+					top: 0;
+				}
+				i {
+					color: $white;
+				}
 			}
 
 			&:hover {
