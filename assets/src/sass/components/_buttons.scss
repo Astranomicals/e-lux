@@ -3,44 +3,4 @@
 	padding: 15px 20px;
 	display: inline-flex;
 	justify-content: center;
-	font-size: rem(16);
-	line-height: em(30, 20);
-	letter-spacing: 0.02em;
-	text-transform: uppercase;
-	font-weight: 400;
-	border-radius: 50px;
-	box-shadow: rgba($black, 0.1) 0 4px 10px;
-	transition: all 0.5s ease-in-out;
-	@include mq(xl) {
-		box-shadow: rgba($black, 0) 0 4px 10px;
-	}
-
-	@include mq(xl) {
-		padding: 15px 30px;
-		font-size: rem(20);
-	}
-
-	&:hover {
-		box-shadow: rgba($black, 0.3) 0 4px 10px;
-	}
-}
-
-.btn--primary {
-	background: $primary;
-	color: #272b2a;
-
-	&:hover {
-		background: #272b2a;
-		color: $white;
-	}
-}
-
-.btn--secondary {
-	background: $white;
-	color: #272b2a;
-
-	&:hover {
-		background: #272b2a;
-		color: $white;
-	}
 }

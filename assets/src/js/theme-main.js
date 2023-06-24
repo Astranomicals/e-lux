@@ -28,54 +28,6 @@
 					this.mag();
 					this.pageAnim();
 					this.parallax();
-					this.treatSquare();
-					this.serviceList();
-					this.galleryFilter();
-				},
-				galleryFilter: function(){
-					$(`.block--archive-squares #sidebar li i.fa-plus`).on(`click`, function(){
-						$(this).parent().toggleClass(`active`);
-					});
-					$(`.block--archive-squares #sidebar > ul > li > a:not([data-id="76"]):not([data-id="83"])`).on(`click`, function(e){
-						e.preventDefault();
-						$(this).parent().toggleClass(`active`);
-					});
-				},
-				serviceList: function(){
-					const lists = document.getElementsByClassName(`page-links`);
-
-					Array.prototype.forEach.call(lists, function (list) {
-						let listItems = list.querySelectorAll(`li`);
-						console.log(listItems);
-						if(listItems.length > 7){
-							console.log(`in`);
-							for(let i = 7; i < listItems.length; i++){
-								console.log(listItems[i]);
-								listItems[i].classList.add(`hide`);
-							}
-							let button = document.createElement(`button`);
-							button.setAttribute('data-id', 'show-more');
-							button.setAttribute('onclick', 'showMore()');
-							button.textContent = 'More +';
-							list.appendChild(button);
-							button.onclick = showMore;
-						}
-					});
-
-					function showMore(){
-						console.log(`in function`);
-						$(this).parent().find(`.hide`).removeClass(`hide`);
-						$(this).remove();
-					}
-				},
-				treatSquare: function(){
-					$(`.content--square:first-of-type`).addClass(`active`);
-
-					$(`.treat--container h3`).on(`click`, function(){
-						const $this_id = $(this).attr(`data-id`);
-						$(`.content--square`).removeClass(`active`);
-						$(`.content--square[data-id=${$this_id}]`).addClass(`active`);
-					});
 				},
 				parallax: function () {
 					gsap.registerPlugin(ScrollTrigger);

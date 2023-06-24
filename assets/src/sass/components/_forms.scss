@@ -6,52 +6,11 @@ body {
 			color: $black;
 		}
 		.gform_fields {
-			grid-template-columns: 1fr 1fr !important;
-			grid-gap: 20px 35px !important;
-
-			@include mq($until: md) {
-				grid-template-columns: 1fr !important;
-			}
-
 			.gfield {
 				padding: 0 !important;
 				margin: 0;
 				grid-column: 1 !important;
 
-				&#field_1_3 {
-					@include mq(md) {
-						grid-row: 1 / 5 !important;
-						grid-column: 2 / 2 !important;
-					}
-				}
-				&#field_1_9,
-				&#field_3_9 {
-					grid-column: 1 / -1 !important;
-					display: flex;
-					justify-content: flex-start;
-					margin: 14px 0 23px;
-					@include mq($until: lg) {
-						display: block;
-					}
-
-					.gfield_description {
-						width: auto;
-						padding: 0;
-						margin: 0;
-
-						font-family: $poppins;
-						font-weight: 300;
-						font-size: rem(18) !important;
-						line-height: em(44, 18);
-						letter-spacing: 0.02em;
-					}
-				}
-				&#field_3_9 {
-					display: block;
-					.gchoice {
-						margin: 0 40px 0 0 !important;
-					}
-				}
 				.ginput_container {
 					margin: 0 !important;
 					position: relative;
@@ -235,11 +194,6 @@ body {
 						margin: 0 !important;
 					}
 				}
-			}
-		}
-		&#gform_wrapper_3 {
-			.gform_fields {
-				grid-template-columns: 1fr !important;
 			}
 		}
 	}
