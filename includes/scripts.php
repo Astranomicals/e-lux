@@ -5,17 +5,17 @@
  *
  * @category   Components
  * @package    WordPress
- * @subpackage Incredible Theme
+ * @subpackage Astranomial Theme
  * @author     Nick Gonzales
  * @license    https://www.gnu.org/licenses/gpl-3.0.txt GNU/GPLv3
- * @link       https://www.incrediblemarketing.com/
+ * @link       https://www.astranomicals.com/
  * @since      1.0.0
  */
 
 /**
  * Register javascript files
  */
-function im_register_scripts()
+function astra_register_scripts()
 {
 	$theme         = wp_get_theme();
 	$theme_version = $theme->get('Version');
@@ -23,12 +23,12 @@ function im_register_scripts()
 	wp_register_script('plugins', get_template_directory_uri() . '/assets/dist/js/plugins.min.js', '', $theme_version, true);
 	wp_register_script('main', get_template_directory_uri() . '/assets/dist/js/main.min.js', '', $theme_version, true);
 }
-add_action('wp_enqueue_scripts', 'im_register_scripts');
+add_action('wp_enqueue_scripts', 'astra_register_scripts');
 
 /**
  * Enqueue javascript files
  */
-function im_enqueue_scripts()
+function astra_enqueue_scripts()
 {
 	wp_enqueue_script('jquery');
 	wp_enqueue_script('plugins');
@@ -47,4 +47,4 @@ function im_enqueue_scripts()
 	);
 	*/
 }
-add_action('wp_enqueue_scripts', 'im_enqueue_scripts');
+add_action('wp_enqueue_scripts', 'astra_enqueue_scripts');

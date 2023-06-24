@@ -5,19 +5,19 @@
  *
  * @category   Components
  * @package    WordPress
- * @subpackage Incredible Theme
+ * @subpackage Astranomial Theme
  * @author     Nick Gonzales
  * @license    https://www.gnu.org/licenses/gpl-3.0.txt GNU/GPLv3
- * @link       https://www.incrediblemarketing.com/
+ * @link       https://www.astranomicals.com/
  * @since      1.0.0
  */
 
-if (!function_exists('im_register_services')) {
+if (!function_exists('astra_register_services')) {
 
 	/**
 	 * Register Service Post Type
 	 */
-	function im_register_services()
+	function astra_register_services()
 	{
 
 		$labels = array(
@@ -72,5 +72,5 @@ if (!function_exists('im_register_services')) {
 		);
 		register_post_type('service', $args);
 	}
-	add_action('init', 'im_register_services', 0);
+	add_action('init', 'astra_register_services', 0);
 }

@@ -1,20 +1,22 @@
 <?php
+
 /**
  * Blog Sidebar
  *
  * @category   Components
  * @package    WordPress
- * @subpackage Incredible Theme
+ * @subpackage Astranomial Theme
  * @author     Nick Gonzales
  * @license    https://www.gnu.org/licenses/gpl-3.0.txt GNU/GPLv3
- * @link       https://www.incrediblemarketing.com/
+ * @link       https://www.astranomicals.com/
  * @since      1.0.0
  */
 
 /**
  * Register Blog Sidebar
  */
-function im_register_sidebar_blog() {
+function astra_register_sidebar_blog()
+{
 	register_sidebar(
 		array(
 			'name'          => 'Sidebar Blog',
@@ -26,4 +28,4 @@ function im_register_sidebar_blog() {
 		)
 	);
 }
-add_action( 'widgets_init', 'im_register_sidebar_blog' );
+add_action('widgets_init', 'astra_register_sidebar_blog');

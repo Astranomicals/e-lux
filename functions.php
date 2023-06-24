@@ -5,10 +5,10 @@
  *
  * @category   Components
  * @package    WordPress
- * @subpackage Incredible Theme
+ * @subpackage Astranomial Theme
  * @author     Nick Gonzales
  * @license    https://www.gnu.org/licenses/gpl-3.0.txt GNU/GPLv3
- * @link       https://www.incrediblemarketing.com/
+ * @link       https://www.astranomicals.com/
  * @since      1.0.0
  */
 
@@ -35,16 +35,12 @@ require_once get_template_directory() . '/includes/acf/admin-styles.php';
 // ==================================================.
 require_once get_template_directory() . '/includes/post-types/galleries.php';
 require_once get_template_directory() . '/includes/post-types/procedures.php';
-require_once get_template_directory() . '/includes/post-types/what-we-treat.php';
 require_once get_template_directory() . '/includes/post-types/testimonials.php';
 require_once get_template_directory() . '/includes/post-types/team-members.php';
 
 // MENUS
 // ==================================================.
 require_once get_template_directory() . '/includes/menus/header-menu.php';
-require_once get_template_directory() . '/includes/menus/header-top-menu.php';
-require_once get_template_directory() . '/includes/menus/footer-menu.php';
-require_once get_template_directory() . '/includes/menus/footer-menu-1.php';
 
 // IMAGE SIZES
 // ==================================================.
@@ -67,8 +63,6 @@ require_once get_template_directory() . '/includes/sidebars/blog.php';
 require_once get_template_directory() . '/includes/shortcodes/btn.php';
 require_once get_template_directory() . '/includes/shortcodes/call-number.php';
 require_once get_template_directory() . '/includes/shortcodes/child-pages.php';
-require_once get_template_directory() . '/includes/shortcodes/staff.php';
-require_once get_template_directory() . '/includes/shortcodes/spacer.php';
 require_once get_template_directory() . '/includes/shortcodes/testimonials.php';
 
 // PLUGINS

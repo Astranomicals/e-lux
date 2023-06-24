@@ -5,17 +5,17 @@
  *
  * @category   Components
  * @package    WordPress
- * @subpackage Incredible Theme
+ * @subpackage Astranomial Theme
  * @author     Nick Gonzales
  * @license    https://www.gnu.org/licenses/gpl-3.0.txt GNU/GPLv3
- * @link       https://www.incrediblemarketing.com/
+ * @link       https://www.astranomicals.com/
  * @since      1.0.0
  */
 
 /**
  * Check if blog page
  */
-function im_is_blog()
+function astra_is_blog()
 {
 	return (is_archive() || is_author() || is_category() || is_home() || is_single() || is_tag()) && 'post' === get_post_type();
 }
@@ -64,7 +64,7 @@ add_action('pre_get_posts', 'my_change_sort_order_treat');
 
 /* Custom number pagination */
 
-function im_numeric_posts_nav()
+function astra_numeric_posts_nav()
 {
 	if (is_singular()) {
 		return;

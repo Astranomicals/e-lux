@@ -5,10 +5,10 @@
  *
  * @category   Components
  * @package    WordPress
- * @subpackage Incredible Theme
+ * @subpackage Astranomial Theme
  * @author     Nick Gonzales
  * @license    https://www.gnu.org/licenses/gpl-3.0.txt GNU/GPLv3
- * @link       https://www.incrediblemarketing.com/
+ * @link       https://www.astranomicals.com/
  * @since      1.0.0
  */
 
@@ -24,7 +24,7 @@ get_header(); ?>
 							<?php get_template_part('components/gallery-preview'); ?>
 						<?php endwhile; ?>
 					</div>
-					<?php im_numeric_posts_nav(); ?>
+					<?php astra_numeric_posts_nav(); ?>
 				<?php endif; ?>
 			</div>
 			<div id="sidebar" class="col-xl-3 col-lg-4">

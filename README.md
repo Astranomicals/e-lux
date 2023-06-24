@@ -1,4 +1,4 @@
-# incredibletheme
+# astratheme
 WordPress theme for custom builds.
 
 ## Assets
@@ -13,8 +13,8 @@ Follow these steps to get up and running with the included Plugins and Custom Fi
 ### Install Theme
 ![download](https://user-images.githubusercontent.com/36015859/41052239-dc588f1a-697d-11e8-8561-60c1ceb25cd4.png)
 1) Download zip of the the master branch
-2) Rename the folder `incredibletheme` and re-zip
-3) Upload and activate `incredibletheme.zip` in your new WordPress install
+2) Rename the folder `astratheme` and re-zip
+3) Upload and activate `astratheme.zip` in your new WordPress install
 
 ### Install Plugins
 After activating the theme, you will see a message with required and recommended plugins.
@@ -27,7 +27,7 @@ After activating the theme, you will see a message with required and recommended
 ![install-plugins](https://user-images.githubusercontent.com/36015859/41052777-605df77c-697f-11e8-8cdd-07fb8768abf5.gif)
 
 ### Sync ACF Fields
-This theme comes packaged with several pre-built custom Field Groups via ACF Pro. After activating incredibletheme and Advanced Custom Fields Pro, these fields are automatically imported, **however if you edit any of them without syncing first, it treats your edits as NEW fields resulting in duplication issues**.
+This theme comes packaged with several pre-built custom Field Groups via ACF Pro. After activating astratheme and Advanced Custom Fields Pro, these fields are automatically imported, **however if you edit any of them without syncing first, it treats your edits as NEW fields resulting in duplication issues**.
 
 To avoid this, **sync the existing field groups before changing any fields**:
 1. Go to Custom Fields
@@ -38,7 +38,7 @@ To avoid this, **sync the existing field groups before changing any fields**:
 
 ![sync](https://user-images.githubusercontent.com/36015859/41048997-8a8319a6-6975-11e8-88f5-48e63734b6d5.gif)
 
-At this point you should have `incredibletheme` installed with all custom field groups imported and synced. Moving forward you should be able to edit anything you want without issue.
+At this point you should have `astratheme` installed with all custom field groups imported and synced. Moving forward you should be able to edit anything you want without issue.
 
 
 ### Using Gulp

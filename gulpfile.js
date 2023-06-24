@@ -7,7 +7,7 @@ const { series, src, dest, watch } = require('gulp'),
 	notify = require('gulp-notify'),
 	webpack = require('webpack-stream'),
 	browserSync = require('browser-sync').create(),
-	localSiteUrl = 'dev.skinrejuvenationclinic.com';
+	localSiteUrl = 'dev.elux.com';
 
 function css() {
   return src("./assets/src/sass/main.scss")

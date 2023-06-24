@@ -1,6 +1,6 @@
 # imtheme
 
-a CLI tool to speed up development with [incredibletheme](https://github.com/incrediblemarketing/incredibletheme)
+a CLI tool to speed up development with [astratheme](https://github.com/incrediblemarketing/astratheme)
 
 ## Installation
 

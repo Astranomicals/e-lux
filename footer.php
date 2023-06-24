@@ -7,10 +7,10 @@
  *
  * @category   Components
  * @package    WordPress
- * @subpackage Incredible Theme
+ * @subpackage Astranomial Theme
  * @author     Nick Gonzales
  * @license    https://www.gnu.org/licenses/gpl-3.0.txt GNU/GPLv3
- * @link       https://www.incrediblemarketing.com/
+ * @link       https://www.astranomicals.com/
  * @since      1.0.0
  */
 
@@ -48,7 +48,7 @@ $footer_image    = get_field('footer_image', 'option');
 								<?php $query->the_post(); ?>
 								<div class="single--testimonial">
 									<?php get_template_part('components/svg/stars'); ?>
-									<?php echo wp_trim_words(get_field('testimonial_content'), 18, '...'); ?>
+									<?php echo wp_trastra_words(get_field('testimonial_content'), 18, '...'); ?>
 									<p>- <?php echo get_the_title(); ?></p>
 								</div>
 							<?php endwhile; ?>
@@ -69,7 +69,7 @@ $footer_image    = get_field('footer_image', 'option');
 								<?php $query->the_post(); ?>
 								<div class="single--testimonial">
 									<?php get_template_part('components/svg/stars'); ?>
-									<?php echo wp_trim_words(get_field('testimonial_content'), 18, '...'); ?>
+									<?php echo wp_trastra_words(get_field('testimonial_content'), 18, '...'); ?>
 									<p>- <?php echo get_the_title(); ?></p>
 								</div>
 							<?php endwhile; ?>
@@ -90,7 +90,7 @@ $footer_image    = get_field('footer_image', 'option');
 								<?php $query->the_post(); ?>
 								<div class="single--testimonial">
 									<?php get_template_part('components/svg/stars'); ?>
-									<?php echo wp_trim_words(get_field('testimonial_content'), 18, '...'); ?>
+									<?php echo wp_trastra_words(get_field('testimonial_content'), 18, '...'); ?>
 									<p>- <?php echo get_the_title(); ?></p>
 								</div>
 							<?php endwhile; ?>
@@ -167,7 +167,7 @@ $footer_image    = get_field('footer_image', 'option');
 			<div class="col-12 copyright--flex">
 				<div class="left--copyright">
 					<p>Copyright &copy; <?php echo esc_attr(gmdate('Y')); ?> <?php echo esc_attr(get_bloginfo()); ?>. All Rights Reserved <a href="/privacy-policy/">Privacy Policy</a></p>
-					<p>Digital Marketing by <a href="https://www.incrediblemarketing.com/" target="_blank"><?php get_template_part('components/svg/incredible-marketing'); ?>Incredible Marketing</a></p>
+					<p>Digital Marketing by <a href="https://www.astranomicals.com/" target="_blank"><?php get_template_part('components/svg/incredible-marketing'); ?>Incredible Marketing</a></p>
 				</div>
 				<div class="right--copyright">
 					<a href="#" class="js-to-top"><i class="fal fa-long-arrow-up"></i> Back to top</a>

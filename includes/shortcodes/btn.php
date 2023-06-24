@@ -1,13 +1,14 @@
 <?php
+
 /**
  * Shortcode for a button
  *
  * @category   Components
  * @package    WordPress
- * @subpackage Incredible Theme
+ * @subpackage Astranomial Theme
  * @author     Nick Gonzales
  * @license    https://www.gnu.org/licenses/gpl-3.0.txt GNU/GPLv3
- * @link       https://www.incrediblemarketing.com/
+ * @link       https://www.astranomicals.com/
  * @since      1.0.0
  */
 
@@ -16,7 +17,8 @@
  *
  * @param array $atts Can contain post_id, url, target, class, text strings to display a button.
  */
-function shortcode_btn( $atts ) {
+function shortcode_btn($atts)
+{
 
 	$a = shortcode_atts(
 		array(
@@ -34,25 +36,25 @@ function shortcode_btn( $atts ) {
 		'class' => 'btn ' . $a['class'],
 	);
 
-	if ( $a['post_id'] ) {
-		$link_atts['href'] = get_permalink( $a['post_id'] );
-	} elseif ( $a['url'] ) {
+	if ($a['post_id']) {
+		$link_atts['href'] = get_permalink($a['post_id']);
+	} elseif ($a['url']) {
 		$link_atts['href'] = $a['url'];
 	}
 
-	if ( $a['target'] ) {
+	if ($a['target']) {
 		$link_atts['target'] = $a['target'];
 	}
 
 	$output = '<a';
-	foreach ( $link_atts as $att => $val ) {
+	foreach ($link_atts as $att => $val) {
 		$output .= ' ' . $att . '="' . $val . '"';
 	}
 	$output .= '>' . $a['text'];
 
-	if ( strpos( $a['class'], 'btn-lg-link' ) !== false ) {
+	if (strpos($a['class'], 'btn-lg-link') !== false) {
 		ob_start();
-		get_template_part( 'components/svg/icon-long-arrow-right-solid' );
+		get_template_part('components/svg/icon-long-arrow-right-solid');
 		$output .= ob_get_clean();
 	}
 
@@ -60,4 +62,4 @@ function shortcode_btn( $atts ) {
 
 	return $output;
 }
-add_shortcode( 'btn', 'shortcode_btn' );
+add_shortcode('btn', 'shortcode_btn');
