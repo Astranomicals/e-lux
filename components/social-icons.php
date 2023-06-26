@@ -24,6 +24,7 @@ $social_icon_class_map = array(
 	'yelp'       => 'fab fa-yelp',
 	'call'       => 'fas fa-phone',
 	'email'      => 'fas fa-envelope',
+	'tiktok'   => 'fab fa-tiktok',
 	'location'   => 'fas fa-map-marker-alt',
 );
 ?>

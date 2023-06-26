@@ -1,4 +1,4 @@
-/*! Incredible Marketing Theme Main JS */
+/*! Astranomicals Theme Main JS */
 
 (function ($, window, document, undefined) {
 	'use strict';

@@ -6,6 +6,7 @@
             "key": "field_59821b7540abf",
             "label": "Defaults",
             "name": "",
+            "aria-label": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -22,6 +23,7 @@
             "key": "field_5f0f847b00a0b",
             "label": "Site Logo",
             "name": "site_logo",
+            "aria-label": "",
             "type": "image",
             "instructions": "",
             "required": 0,
@@ -31,8 +33,7 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "url",
-            "preview_size": "thumbnail",
+            "return_format": "array",
             "library": "all",
             "min_width": "",
             "min_height": "",
@@ -40,12 +41,14 @@
             "max_width": "",
             "max_height": "",
             "max_size": "",
-            "mime_types": ""
+            "mime_types": "",
+            "preview_size": "thumbnail"
         },
         {
             "key": "field_593789f4da250",
             "label": "Social Icons",
             "name": "",
+            "aria-label": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -62,6 +65,7 @@
             "key": "field_59378a29da251",
             "label": "Social Icons",
             "name": "social_icons",
+            "aria-label": "",
             "type": "repeater",
             "instructions": "",
             "required": 0,
@@ -76,11 +80,13 @@
             "max": 0,
             "layout": "table",
             "button_label": "Add Icon",
+            "rows_per_page": 20,
             "sub_fields": [
                 {
                     "key": "field_59378a62da252",
                     "label": "Icon",
                     "name": "social_icon",
+                    "aria-label": "",
                     "type": "select",
                     "instructions": "",
                     "required": 0,
@@ -102,20 +108,23 @@
                         "yelp": "Yelp",
                         "call": "Call",
                         "email": "Email",
+                        "tiktok": "Tiktok",
                         "location": "Location"
                     },
                     "default_value": false,
-                    "allow_null": 1,
+                    "return_format": "value",
                     "multiple": 0,
+                    "allow_null": 1,
                     "ui": 0,
                     "ajax": 0,
-                    "return_format": "value",
-                    "placeholder": ""
+                    "placeholder": "",
+                    "parent_repeater": "field_59378a29da251"
                 },
                 {
                     "key": "field_59378b65da253",
                     "label": "Url",
                     "name": "social_url",
+                    "aria-label": "",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
@@ -129,7 +138,8 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "maxlength": ""
+                    "maxlength": "",
+                    "parent_repeater": "field_59378a29da251"
                 }
             ]
         },
@@ -137,6 +147,7 @@
             "key": "field_59389356c8d9d",
             "label": "Business Information",
             "name": "",
+            "aria-label": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -153,6 +164,7 @@
             "key": "field_5982496426a5a",
             "label": "Business Street Address",
             "name": "business_street_address",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -172,6 +184,7 @@
             "key": "field_5982497826a5b",
             "label": "Business City State Zip",
             "name": "business_city_state_zip",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -191,6 +204,7 @@
             "key": "field_598250b8eaa29",
             "label": "Business Address Link (Directions)",
             "name": "business_address_link",
+            "aria-label": "",
             "type": "url",
             "instructions": "",
             "required": 0,
@@ -207,6 +221,7 @@
             "key": "field_598249a726a5d",
             "label": "Business Phone URL",
             "name": "business_phone_url",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -240,5 +255,6 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1622249007
+    "show_in_rest": 0,
+    "modified": 1687722231
 }

@@ -1,4 +1,4 @@
-/*! Incredible Marketing Swiper JS */
+/*! Astranomicals Swiper JS */
 
 // Import Swiper and modules
 import SwiperCore, {

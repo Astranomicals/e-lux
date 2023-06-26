@@ -167,7 +167,7 @@ $footer_image    = get_field('footer_image', 'option');
 			<div class="col-12 copyright--flex">
 				<div class="left--copyright">
 					<p>Copyright &copy; <?php echo esc_attr(gmdate('Y')); ?> <?php echo esc_attr(get_bloginfo()); ?>. All Rights Reserved <a href="/privacy-policy/">Privacy Policy</a></p>
-					<p>Digital Marketing by <a href="https://www.astranomicals.com/" target="_blank"><?php get_template_part('components/svg/incredible-marketing'); ?>Incredible Marketing</a></p>
+					<p>Digital Marketing by <a href="https://www.astranomicals.com/" target="_blank">Astranomicals</a></p>
 				</div>
 				<div class="right--copyright">
 					<a href="#" class="js-to-top"><i class="fal fa-long-arrow-up"></i> Back to top</a>

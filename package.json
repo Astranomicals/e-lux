@@ -1,7 +1,7 @@
 {
 	"name": "astra-package",
 	"version": "1.0.0",
-	"description": "Incredible Marketing package for the Astranomial Theme",
+	"description": "Astranomicals package for the Astranomial Theme",
 	"main": "gulpfile.js",
 	"dependencies": {
 		"gulp-cli": "^2.3.0",
