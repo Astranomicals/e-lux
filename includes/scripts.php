@@ -33,18 +33,5 @@ function astra_enqueue_scripts()
 	wp_enqueue_script('jquery');
 	wp_enqueue_script('plugins');
 	wp_enqueue_script('main');
-
-	/*
-	Create AJAX variable (Remove if you do not need AJAX).
-	wp_localize_script(
-		'main',
-		'im',
-		array(
-			'siteUrl'      => site_url(),
-			'directoryUrl' => get_template_directory_uri(),
-			'ajax_url'     => admin_url( 'admin-ajax.php' ),
-		)
-	);
-	*/
 }
 add_action('wp_enqueue_scripts', 'astra_enqueue_scripts');

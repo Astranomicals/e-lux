@@ -1,16 +1,17 @@
 .site-nav {
 	position: fixed;
 	left: 0;
-	top: 50px;
+	top: 0;
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	z-index: 99;
+	z-index: 100;
 	transition: all 0.4s ease-in-out;
-	padding: 23px 0 15px;
+	padding: 0;
 	justify-content: center;
 	align-items: center;
+	background: $background;
 
 	.flex--header {
 		display: flex;
@@ -38,6 +39,8 @@
 
 		> li {
 			position: relative;
+			margin: 0 7px;
+
 			> a {
 				display: flex;
 				align-items: center;
@@ -48,34 +51,40 @@
 				text-align: center;
 				text-decoration: none;
 				transition: all 0.4s ease-in-out;
+				i {
+					color: $primary;
+					font-size: 12px;
+					margin-left: 8px;
+				}
 			}
 
 			&:hover {
+				color: $primary;
+
 				> .sub-menu {
 					list-style: none;
 					padding: 0;
 					margin: 0;
 					position: absolute;
-					background: $white;
+					background: $background;
 					top: 100%;
 					left: 0;
 					display: block;
 					width: 230px;
+					text-align: left;
 
 					> li {
 						position: relative;
 						a {
-							color: #272b2a;
+							color: $white;
 							padding: 6px 15px;
 							display: block;
-							font-size: rem(16);
-							line-height: em(30, 20);
-							height: auto;
 							font-weight: 400;
 							text-decoration: none;
 
 							&:hover {
 								background: $primary;
+								color: $black;
 							}
 						}
 						&:hover {
@@ -112,6 +121,14 @@
 							}
 						}
 					}
+				}
+			}
+		}
+		&.top-menu {
+			margin: 0;
+			> li {
+				&:last-of-type {
+					margin-right: 0;
 				}
 			}
 		}
@@ -202,20 +219,59 @@
 	}
 
 	&.sticky {
-		background: $white;
-		box-shadow: rgba($black, 0.05) 0 4px 10px;
+		box-shadow: rgba($white, 0.05) 0 4px 10px;
 		padding: 0;
 
 		.menu {
 			> li {
 				> a {
-					height: 100px;
+					height: 70px;
+				}
+			}
+		}
+	}
+}
 
-					@include mq(xxl) {
-						height: 136px;
+.bike--main {
+	background: #222;
+	position: fixed;
+	top: 70px;
+	width: 100%;
+	z-index: 99;
+
+	.flex--header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		.menu {
+			padding: 0;
+			margin: 0;
+			list-style: none;
+			display: flex;
+
+			li {
+				margin: 0 15px;
+
+				a {
+					font-size: rem(16);
+					line-height: em(20, 16);
+					color: $white;
+
+					&:hover {
+						color: $primary;
 					}
 				}
 			}
+		}
+
+		.btn {
+			height: 34px;
+			width: 127px;
+			padding: 0;
+			line-height: 1em;
+			align-items: center;
+			justify-content: center;
 		}
 	}
 }

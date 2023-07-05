@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Image Sizes
+ * Info Menu
  *
  * @category   Components
  * @package    WordPress
@@ -12,4 +12,15 @@
  * @since      1.0.0
  */
 
-add_image_size('hero', 1920, 1080, true);
+/**
+ * Register Info Menu
+ */
+function astra_register_info_menu()
+{
+	register_nav_menus(
+		array(
+			'info-menu' => __('Info Menu'),
+		)
+	);
+}
+add_action('init', 'astra_register_info_menu');

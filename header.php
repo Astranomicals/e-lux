@@ -28,7 +28,6 @@
 	<link rel="preload" href="/wp-content/themes/incredible/assets/dist/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
 	<link rel="preload" href="/wp-content/themes/incredible/assets/dist/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
 	<?php wp_head(); ?>
-	<?php echo get_field('header_scripts', 'options'); ?>
 </head>
 
 <body <?php body_class(); ?>>
@@ -37,6 +36,6 @@
 		<?php get_template_part('components/mobile-menu'); ?>
 		<?php get_template_part('components/site-nav'); ?>
 
-		<?php if (!is_front_page()) : ?>
+		<?php if (!is_front_page() && !is_singular('product')) : ?>
 			<?php get_template_part('components/page-header'); ?>
 		<?php endif; ?>

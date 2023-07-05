@@ -1,198 +1,57 @@
-body {
-	.gform_wrapper {
-		margin: 0 !important;
+form {
+	width: 100%;
+	margin-top: 15px;
 
-		::placeholder {
-			color: $black;
-		}
-		.gform_fields {
-			.gfield {
-				padding: 0 !important;
-				margin: 0;
-				grid-column: 1 !important;
+	::placeholder {
+		color: rgba($white, 0.5);
+	}
+	p {
+		width: 100%;
+		margin: 0;
+		display: flex;
+		align-items: flex-start;
+	}
+	span {
+		width: 100%;
+	}
+	input {
+		color: $white;
+		font-size: rem(18);
+		font-weight: 500;
+		line-height: em(46, 18);
+		border: 0;
+		border-bottom: 1px solid rgba($white, 0.5);
+		background: none;
+		width: 100%;
 
-				.ginput_container {
-					margin: 0 !important;
-					position: relative;
-					display: block;
-					height: 55px;
-
-					&.ginput_container_textarea {
-						height: auto;
-					}
-
-					.ginput_counter {
-						display: none;
-					}
-
-					input,
-					textarea {
-						margin: 0;
-						width: 100%;
-						padding: 5px 20px !important;
-						background: transparent;
-						font-weight: normal;
-						color: $black;
-						background: #f5f3f1;
-						border: 1px solid $white;
-						box-shadow: 0px 10px 50px rgba(99, 95, 86, 0.1);
-						border-radius: 10px;
-						font-weight: 300;
-						font-size: rem(18) !important;
-						line-height: em(44, 18);
-						letter-spacing: 0.02em;
-						color: $black;
-
-						&:focus {
-							outline: none;
-						}
-					}
-					textarea {
-						height: 284px;
-					}
-
-					&.ginput_container_checkbox {
-						background: transparent;
-						border: none;
-						backdrop-filter: none;
-						margin: 0 !important;
-						display: flex;
-						height: auto;
-
-						#input_1_9,
-						#input_3_9 {
-							display: flex;
-
-							.gchoice {
-								position: relative;
-								display: flex;
-								align-items: center;
-								margin-right: 10px;
-								margin-left: 20px;
-
-								@include mq($until: lg) {
-									margin-left: 0;
-									margin-right: 20px;
-								}
-							}
-						}
-
-						label {
-							margin: 2px 0 0 23px;
-							width: 100%;
-							max-width: 100%;
-							display: block;
-							font-weight: 300;
-							font-size: rem(18) !important;
-							line-height: em(44, 18);
-							letter-spacing: 0.02em;
-						}
-						label::after,
-						label::after {
-							content: '';
-							opacity: 1;
-						}
-						[class^='gchoice'] label:before,
-						[class^='gchoice'] label:after,
-						[class^='gchoice'] label:before,
-						[class^='gchoice'] label:after {
-							bottom: 0;
-							content: '';
-							margin: auto;
-							position: absolute;
-							top: 0;
-						}
-						[class^='gchoice'] label:after,
-						[class^='gchoice'] label:after {
-							content: '';
-							background-color: #fff;
-							border: solid 1px #cfcfcf;
-							border-radius: 4px;
-							display: inline-block;
-							left: 0;
-							position: absolute;
-							top: 0;
-							transition: left 0.25s, background-color 0.13s;
-							height: 28px;
-							width: 28px;
-						}
-						input[type='checkbox']:checked + label:before,
-						input[type='radio']:checked + label:before {
-							content: '';
-							display: block;
-							width: 20px;
-							height: 20px;
-							background: $primary;
-							left: 4px;
-							text-align: center;
-							top: 0px;
-							z-index: 9;
-							border-radius: 4px;
-						}
-					}
-				}
-			}
-		}
-		.gform_footer {
-			padding: 0 !important;
-			margin: 0 !important;
+		&[type='submit'] {
+			width: 145px;
 			text-align: center;
+			cursor: pointer;
+			color: rgba($white, 0.5);
 
-			.btn {
-				border: none;
+			&:hover {
+				background: $primary;
+				color: $black;
 			}
 		}
-		&.gform_validation_error {
-			.gform_validation_errors {
-				background: $error;
-				color: $white;
-				padding: 15px;
-				border: none;
-				margin: 0 0 15px;
 
-				> h2.hide_summary {
-					font-size: 1.1rem;
-					font-weight: 500;
-					margin: 0;
-					color: $white;
-				}
-			}
-			.validation_message {
-				color: $error;
-				font-weight: 300;
-			}
-			.gform_fields {
-				.gfield.gfield_error {
-					border: none;
-					margin-bottom: 0 !important;
-					background: transparent;
-					color: $error;
-					input:not([type='radio']):not([type='checkbox']):not(
-							[type='submit']
-						):not([type='button']):not([type='image']):not([type='file']),
-					textarea {
-						border: 1px solid $error;
-						margin-bottom: 0;
-						padding: 19px 10px 19px 50px !important;
-					}
-					.ginput_container {
-						&::before {
-							left: 11px;
-							top: 20px;
-						}
-					}
-					.gfield_description {
-						padding: 0 !important;
-						color: $error;
-						background: none;
-						border: none;
-						text-transform: uppercase;
-						font-size: 1.1rem;
-						font-weight: 400;
-						margin: 0 !important;
-					}
-				}
-			}
+		&:focus {
+			border-bottom: 1px solid $white;
 		}
 	}
+	.wpcf7-spinner {
+		display: none;
+	}
+}
+.wpcf7-not-valid-tip {
+	color: $primary;
+}
+.wpcf7 form.invalid .wpcf7-response-output {
+	background: $primary;
+	border: $primary 1px solid;
+	color: $black;
+	font-size: 1rem;
+	text-align: center;
+	padding: 10px;
 }

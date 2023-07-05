@@ -14,13 +14,30 @@ body {
 	font-family: $nanum;
 	line-height: em(32, 18);
 	letter-spacing: 0.1px;
+
+	&.modal-active {
+		overflow: hidden;
+	}
 }
 
 h1,
 h2 {
+	font-weight: normal;
 	font-size: rem(40);
 	line-height: em(48, 40);
 	letter-spacing: -0.5px;
+	margin-top: 0;
+}
+
+h4 {
+	font-size: rem(32);
+	line-height: em(38, 32);
+	letter-spacing: -0.4px;
+	font-weight: 700;
+}
+
+p {
+	margin-top: 0;
 }
 
 *:last-child {

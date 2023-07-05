@@ -13,14 +13,6 @@
  */
 
 /**
- * Check if blog page
- */
-function astra_is_blog()
-{
-	return (is_archive() || is_author() || is_category() || is_home() || is_single() || is_tag()) && 'post' === get_post_type();
-}
-
-/**
  * Enqueue Slide Assets
  */
 function enqueue_slider_assets()
@@ -28,38 +20,6 @@ function enqueue_slider_assets()
 	wp_enqueue_style('swiper');
 	wp_enqueue_script('swiper');
 }
-
-/**
- * Change sort order (checking for service)
- *
- * @param array $query Query $args that will be changing.
- */
-function my_change_sort_order($query)
-{
-	if (!is_admin() && $query->is_main_query() && is_post_type_archive('service')) :
-		$query->set('post_parent', 0);
-		$query->set('order', 'ASC');
-		$query->set('orderby', 'menu_order');
-	endif;
-};
-add_action('pre_get_posts', 'my_change_sort_order');
-
-/**
- * Change sort order (checking for what we treat)
- *
- * @param array $query Query $args that will be changing.
- */
-function my_change_sort_order_treat($query)
-{
-	if (!is_admin() && $query->is_main_query() && is_post_type_archive('what_we_treat')) :
-		$query->set('post_parent', 0);
-		$query->set('order', 'ASC');
-		$query->set('orderby', 'menu_order');
-		$query->set('posts_per_page', -1);
-
-	endif;
-};
-add_action('pre_get_posts', 'my_change_sort_order_treat');
 
 
 /* Custom number pagination */
@@ -136,3 +96,9 @@ function astra_numeric_posts_nav()
 
 	echo '</div>';
 }
+
+function custom_excerpt_length($length)
+{
+	return 15;
+}
+add_filter('excerpt_length', 'custom_excerpt_length', 999);

@@ -19,26 +19,20 @@ $video_mp4    = get_sub_field('background_video_mp4');
 $video_webm   = get_sub_field('background_video_webm');
 $hero_image = get_sub_field('background_video_poster');
 ?>
-<?php if ($video_mp4 || $video_webm) : ?>
-	<div class="background--image">
-		<video fechpriority="high" poster="<?php echo esc_url($hero_image['sizes']['hero']); ?>" id="bgvid" playsinline autoplay muted loop>
-			<source src="<?php echo esc_url($video_mp4); ?>" type="video/mp4">
-			<source src="<?php echo esc_url($video_webm); ?>" type="video/webm">
-		</video>
-	</div>
-<?php elseif ($hero_image) : ?>
-	<div class="background--image">
-		<?php echo wp_get_attachment_image($hero_image['id'], 'full', '', ''); ?>
-	</div>
-<?php endif; ?>
+
+<div class="background--image">
+	<video fechpriority="high" poster="<?php echo esc_url($hero_image['sizes']['hero']); ?>" id="bgvid" playsinline autoplay muted loop>
+		<source src="<?php echo esc_url($video_mp4); ?>" type="video/mp4">
+		<source src="<?php echo esc_url($video_webm); ?>" type="video/webm">
+	</video>
+</div>
 <div class="container">
-	<div class="row ">
-		<div class="col-12 col-md-8 col-xl-6 col-xxxl-8">
+	<div class="row justify-content-center ">
+		<div class="col-12 col-xl-7 col-md-10">
 			<h1><?php echo $heading; ?></h1>
 			<p><?php echo $subheading; ?></p>
 			<div class="flex--buttons">
-				<a href="/our-services/" class="btn btn--secondary">Our Services</a>
-				<a href="<?php echo $contact_link; ?>" class="btn btn--primary" target="_blank">Request a Consultation</a>
+				<a href="/shop/" class="btn btn--primary">Explore Our Products</a>
 			</div>
 		</div>
 	</div>

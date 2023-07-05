@@ -1,7 +1,7 @@
 // ==========================================================================
 // Setup
 // ==========================================================================
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nanum+Gothic:wght@400;700;800&display=swap');
 @import 'core/colors';
 // ==========================================================================
 // Dependencies
@@ -57,4 +57,12 @@
 @import 'components/blocks/hero';
 
 /*block_insert*/
+@import "components/blocks/product_page";
+@import 'components/blocks/testimonial_area';
+@import 'components/blocks/being_today';
+@import 'components/blocks/staggered_column';
+@import 'components/blocks/bike_details';
+@import 'components/blocks/full_width_content_w_side_image';
+@import 'components/blocks/three_column_products';
+@import 'components/blocks/single_column';
 @import 'components/blocks/two_column';

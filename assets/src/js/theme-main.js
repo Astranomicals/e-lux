@@ -28,6 +28,29 @@
 					this.mag();
 					this.pageAnim();
 					this.parallax();
+					this.fitSelect();
+					this.specsModal();
+				},
+				specsModal: function(){
+					$(`.btn-specs`).on(`click`, function(){
+						$(`#specs`).addClass(`active`);
+						$(`body`).addClass(`modal-active`);
+					});
+					$(`.details--background, #specs .close`).on(`click`, function(){
+						$(`#specs`).removeClass(`active`);
+						$(`body`).removeClass(`modal-active`);
+					});
+				},
+				fitSelect: function(){
+					if($(`.block--cruiser-fit`).length>0){
+						$(`.block--cruiser-fit [data-id="1"]`).addClass(`active`);
+					}
+					$(`.block--cruiser-fit .title h6`).on(`click`, function(){
+						$(`.height--single,.image`).removeClass(`active`);
+						const id = $(this).closest(`.height--single`).attr(`data-id`);
+						console.log(id);
+						$(`[data-id="${id}"]`).addClass(`active`);
+					});
 				},
 				parallax: function () {
 					gsap.registerPlugin(ScrollTrigger);
@@ -199,7 +222,7 @@
 						e.preventDefault();
 						var href = $(this).attr('href'),
 							scrollPoint = $(href).offset();
-						$('html, body').animate({ scrollTop: scrollPoint.top }, 300);
+						$('html, body').animate({ scrollTop: scrollPoint.top - 200}, 300);
 					});
 				},
 			},

@@ -3,8 +3,26 @@
 	align-items: center;
 	justify-content: center;
 	padding: 38px 38px 0;
+	height: 100vh;
+	text-align: center;
+
 	.background--image {
-		border: 1px solid rgba(255, 255, 255, 0.1);
-		background: rgba(0, 0, 0, 0.2);
+		video,
+		&::before {
+			width: calc(100% - 76px);
+			left: 50%;
+			transform: translateX(-50%);
+			background: rgba($black, 0.3);
+		}
+	}
+
+	p {
+		font-size: rem(22);
+		line-height: em(28, 22);
+		margin-bottom: 35px;
+	}
+
+	.btn {
+		margin: 0 auto;
 	}
 }

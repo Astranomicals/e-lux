@@ -36,7 +36,7 @@ $social_icon_class_map = array(
 			the_row();
 		?>
 			<li><a href="<?php echo esc_attr(get_sub_field('social_url')); ?>" target="_blank">
-					<?php echo get_sub_field('social_icon'); ?>
+					<i class="fal <?php echo $social_icon_class_map[get_sub_field('social_icon')]; ?>"></i>
 				</a></li>
 		<?php endwhile; ?>
 	</ul>

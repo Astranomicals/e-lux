@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Single Product title
  *
@@ -15,9 +16,12 @@
  * @version 4.4.0
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
+global $post;
+
+if (!defined('ABSPATH')) {
 	exit; // Exit if accessed directly.
 }
 
 ?>
-<h2><?php echo esc_html( get_the_title() ); ?></h2>
+<h5><?php echo esc_html(get_field('subheading')); ?></h5>
+<h2><?php echo esc_html(get_field('display_title')); ?></h2>

@@ -15,29 +15,6 @@
 $contact_link = get_field('contact_link', 'options');
 ?>
 
-<div class="top--header">
-	<div class="container">
-		<div class="row">
-			<div class="col-12">
-				<div class="flex--header">
-					<p>5.0 <?php get_template_part('components/svg/star'); ?> See Our Review</p>
-
-					<div class="right--top-menu">
-						<?php
-						$args = array(
-							'theme_location' => 'header-top-menu',
-							'container'      => false,
-							'menu_class'     => 'menu',
-						);
-						wp_nav_menu($args);
-						?>
-						<?php get_template_part('components/call'); ?>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
 <nav class="site-nav">
 	<div class="container">
 		<div class="row">
@@ -56,7 +33,15 @@ $contact_link = get_field('contact_link', 'options');
 					wp_nav_menu($args);
 					?>
 
-					<a href="<?php echo $contact_link; ?>" target="_blank" class="btn btn--primary">Book Now</a>
+					<?php
+					$args = array(
+						'theme_location' => 'cart-menu',
+						'container'      => false,
+						'menu_class'     => 'menu top-menu',
+					);
+					wp_nav_menu($args);
+					?>
+
 					<button data-toggle="menu" aria-label="Menu Open">
 						<span></span>
 						<span></span>
@@ -67,3 +52,21 @@ $contact_link = get_field('contact_link', 'options');
 		</div>
 	</div>
 </nav>
+<?php if (is_singular('product')) : ?>
+	<div class="bike--main">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="flex--header">
+						<h5><?php echo get_the_title(); ?></h5>
+						<ul class="menu">
+							<li><a href="#overview" class="js-scroll-to">Overview</a></li>
+							<li><a href="#" class="btn-specs">Specs / Details</a></li>
+						</ul>
+						<a href="#buy-now" class="btn btn--primary js-scroll-to">Buy Now</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<?php endif; ?>

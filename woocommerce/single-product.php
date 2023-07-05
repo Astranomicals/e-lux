@@ -22,26 +22,14 @@ if (!defined('ABSPATH')) {
 
 $bg_image = get_field('page_header', 'options');
 
-get_header('shop'); ?>
-<section class="block--woocommerce block--woocommerce-single">
-	<div class="container">
-		<div class="row">
-			<div class="col-12">
-				<?php do_action('woocommerce_before_main_content'); ?>
-				<?php while (have_posts()) : ?>
-					<?php the_post(); ?>
-					<?php wc_get_template_part('content', 'single-product'); ?>
-				<?php endwhile;  ?>
-				<?php do_action('woocommerce_after_main_content'); ?>
-				<div class="col-12">
-					<?php do_action('woocommerce_after_single_product_summary'); ?>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
+get_header('shop');
+do_action('woocommerce_before_main_content');
+while (have_posts()) :
+	the_post();
+	wc_get_template_part('content', 'single-product');
+endwhile;
+do_action('woocommerce_after_main_content');
 
-<?php
 get_footer('shop');
 
 /* Omit closing PHP tag at the end of PHP files to avoid "headers already sent" issues. */

@@ -1,0 +1,46 @@
+.block--bike_details {
+	padding: 124px 0;
+	text-align: center;
+	background: radial-gradient(
+		50% 50% at 50% 50%,
+		rgba($black, 0.4) 0%,
+		rgba($black, 0) 100%
+	);
+
+	h2 {
+		margin-bottom: -50px;
+	}
+
+	img {
+		width: 100%;
+		height: auto;
+	}
+
+	.flex--details {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		grid-gap: 50px;
+
+		.flex--single {
+			width: 260px;
+			margin: 0 auto;
+
+			p {
+				font-size: rem(30);
+				font-weight: 800;
+				line-height: 1em;
+				color: $white;
+				margin-bottom: 15px;
+			}
+
+			h6 {
+				border-radius: 5px;
+				border: 1px solid rgba($white, 0.5);
+				font-size: rem(16);
+				line-height: em(20, 16);
+				margin: 0;
+				padding: 10px;
+			}
+		}
+	}
+}

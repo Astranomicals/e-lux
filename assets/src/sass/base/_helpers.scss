@@ -73,83 +73,53 @@
 		padding-left: 60px;
 	}
 }
+p.product.woocommerce.add_to_cart_inline {
+	border: 0 !important;
+	padding: 0 !important;
+	margin: 0 !important;
+	width: 250px;
 
-.z-0 {
-	z-index: 0;
-}
-.z-1 {
-	z-index: 1;
+	.amount {
+		display: none;
+	}
+	.button {
+		@extend .btn;
+		@extend .btn--primary;
+		margin: 0 !important;
+
+		i {
+			display: none;
+		}
+	}
 }
 
-.blog-pagination {
+.swiper--nav {
+	position: relative;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	margin-top: 50px;
-	padding-top: 35px;
-	border-top: 1px solid #272b2a;
+	flex-direction: row-reverse;
+	margin-top: 35px;
 
-	@include mq($until: md) {
-		flex-wrap: wrap;
-	}
+	.swiper-button-next,
+	.swiper-button-prev {
+		position: relative;
+		color: $white;
+		margin: 0;
+		left: unset;
+		right: unset;
+		top: unset;
+		bottom: unset;
+		font-size: 30px;
+		margin: 0 10px;
 
-	p {
-		margin: 0 35px 0 0;
-		font-weight: 500;
-
-		@include mq($until: md) {
-			margin: 0 0 15px;
-			text-align: center;
-			width: 100%;
-		}
-	}
-	span {
-		margin: 0 0 0 15px;
-		@include mq($until: md) {
-			margin: 0 7.5px;
-		}
-	}
-	.pagination-bullet {
-		margin: 0 0 0 15px;
-		@include mq($until: md) {
-			margin: 0 7.5px;
-		}
-		a {
-			height: 40px;
-			width: 40px;
-			border: 1px solid $primary;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			color: $black;
-			background-color: $primary;
-			line-height: 1em;
-			padding-top: 5px;
-			border-radius: 4px;
-			span {
-				margin: 0;
-			}
-		}
-		&.pagination-bullet-active,
-		&:hover {
-			a {
-				background: #272b2a;
-				border: 1px solid #272b2a;
-				color: $primary;
-			}
+		&::after {
+			display: none;
 		}
 	}
 }
-
-.mfp-bg {
-	background: rgba($primary, 0.4);
-	backdrop-filter: blur(3px);
-
-	&.mfp-ready {
-		opacity: 1 !important;
-	}
-}
-.mfp-iframe-holder .mfp-close,
-.mfp-image-holder .mfp-close {
-	color: #272b2a;
+.mfp-fade.mfp-bg.mfp-ready {
+	background: rgba($background, 0.85);
+	backdrop-filter: blur(4px);
+	opacity: 1;
 }

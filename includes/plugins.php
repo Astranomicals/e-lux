@@ -30,15 +30,6 @@ function incredible__register_required_plugins()
 			'required'     => true,
 		),
 
-		array(
-			'name'         => 'Gravity Forms',
-			'slug'         => 'gravityforms',
-			'source'       => get_template_directory() . '/includes/plugins/gravityforms.zip',
-			'external_url' => 'https://www.gravityforms.com/',
-			'required'     => true,
-		),
-
-
 	);
 
 	$config = array(

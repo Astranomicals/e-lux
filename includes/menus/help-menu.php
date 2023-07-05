@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Image Sizes
+ * Help Menu
  *
  * @category   Components
  * @package    WordPress
@@ -12,4 +12,15 @@
  * @since      1.0.0
  */
 
-add_image_size('hero', 1920, 1080, true);
+/**
+ * Register Help Menu
+ */
+function astra_register_help_menu()
+{
+	register_nav_menus(
+		array(
+			'help-menu' => __('Help Menu'),
+		)
+	);
+}
+add_action('init', 'astra_register_help_menu');

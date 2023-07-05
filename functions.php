@@ -42,6 +42,9 @@ require_once get_template_directory() . '/includes/post-types/team-members.php';
 // ==================================================.
 require_once get_template_directory() . '/includes/menus/header-menu.php';
 require_once get_template_directory() . '/includes/menus/cart-menu.php';
+require_once get_template_directory() . '/includes/menus/bike-menu.php';
+require_once get_template_directory() . '/includes/menus/help-menu.php';
+require_once get_template_directory() . '/includes/menus/info-menu.php';
 
 // IMAGE SIZES
 // ==================================================.
