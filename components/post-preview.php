@@ -19,6 +19,8 @@ $youtube_id = get_field('youtube_id');
 	<?php echo the_excerpt(); ?>
 	<div class="flex--buttons">
 		<a href="<?php echo get_the_permalink(); ?>" class="btn btn--primary">Read More</a>
-		<a href="http://www.youtube.com/watch?v=<?php echo $youtube_id; ?>" class="btn btn--primary btn--play">View Video <i class="fas fa-play"></i></a>
+		<?php if ($youtube_id) : ?>
+			<a href="http://www.youtube.com/watch?v=<?php echo $youtube_id; ?>" class="btn btn--primary btn--play">View Video <i class="fas fa-play"></i></a>
+		<?php endif; ?>
 	</div>
 </article>

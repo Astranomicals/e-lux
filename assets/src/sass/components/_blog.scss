@@ -28,6 +28,8 @@
 			box-shadow: rgba($white, 0) 0 4px 10px;
 			transition: all 0.5s ease-in-out;
 			position: relative;
+			display: flex;
+			flex-direction: column;
 
 			h3 {
 				font-size: rem(24);
@@ -46,6 +48,7 @@
 
 			.flex--buttons {
 				display: flex;
+				margin-top: auto;
 				.btn:first-of-type {
 					margin-right: 15px;
 				}
@@ -98,6 +101,79 @@
 				background: $primary;
 				color: $background;
 				border: $background;
+			}
+		}
+	}
+}
+
+.block--blog-single {
+	padding: 85px 0;
+
+	.embed-responsive {
+		margin-bottom: 35px;
+	}
+
+	.featured--image {
+		margin-bottom: 35px;
+	}
+
+	.post-meta {
+		font-weight: bold;
+		margin-bottom: 25px;
+		text-align: center;
+	}
+
+	article {
+		figure {
+			margin: 0 0 25px;
+			padding: 0;
+			figcaption {
+				display: none;
+			}
+		}
+		img {
+			max-width: 100%;
+			height: auto;
+			margin: 0 auto;
+			display: block;
+		}
+	}
+}
+
+.share-post {
+	display: flex;
+	align-items: center;
+	font-weight: bold;
+	justify-content: space-between;
+	background: rgba($white, 0.05);
+	margin-top: 50px;
+	padding: 10px;
+	border: 1px solid $primary;
+
+	.share-title {
+		padding: 10px 20px;
+	}
+	.menu-social-icons {
+		display: flex;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+
+		li {
+			margin-left: 10px;
+			a {
+				height: 50px;
+				width: 50px;
+				display: flex;
+				align-items: center;
+				border: 1px solid rgba($white, 0.5);
+				justify-content: center;
+				color: $white;
+
+				&:hover {
+					background: $primary;
+					color: $background;
+				}
 			}
 		}
 	}

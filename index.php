@@ -15,23 +15,12 @@ $post_id = get_queried_object_id();
 //$post_id = get_option( 'page_for_posts' ); // you should use the above on the blog page
 $content = get_the_content(null, false, $post_id);
 get_header(); ?>
-<section class="block block--blog">
-	<div class="container">
-		<div class="row justify-content-center">
-			<div class="col-12 col-xl-8 col-md-10">
-				<?php echo $content; ?>
-				<div class="embed-responsive embed-responsive-16by9">
-					<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Vq63UsXftgI?rel=0" allowfullscreen></iframe>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
+
 <section class="block block--blog-posts">
 	<div class="container">
 		<div class="row">
 			<div class="col-12">
-				<h2>E-bike Tips, Advice, adn Knowledge Videos</h2>
+				<h2>E-bike Tips, Advice, and Knowledge Videos</h2>
 				<p>JP enjoys sharing his knowledge and experience from a decade in the business to help educate you and others about Electric Bikes.</p>
 				<?php if (is_active_sidebar('sidebar_blog')) : ?>
 					<div class="inner--sidebar">

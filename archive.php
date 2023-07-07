@@ -14,18 +14,20 @@
 $post_id = get_queried_object_id();
 $content = get_the_content(null, false, 194);
 get_header(); ?>
-<section class="block block--blog">
-	<div class="container">
-		<div class="row justify-content-center">
-			<div class="col-12 col-xl-8 col-md-10">
-				<?php echo $content; ?>
-				<div class="embed-responsive embed-responsive-16by9">
-					<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Vq63UsXftgI?rel=0" allowfullscreen></iframe>
+<?php if (is_category(126)) : ?>
+	<section class="block block--blog">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-12 col-xl-8 col-md-10">
+					<?php echo $content; ?>
+					<div class="embed-responsive embed-responsive-16by9">
+						<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Vq63UsXftgI?rel=0" allowfullscreen></iframe>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-</section>
+	</section>
+<?php endif; ?>
 <section class="block block--blog-posts">
 	<div class="container">
 		<div class="row">
