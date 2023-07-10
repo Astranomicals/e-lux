@@ -18,6 +18,17 @@
 		padding: 7px;
 		position: relative;
 		z-index: 0;
+		margin-bottom: 15px;
+
+		@include mq(md) {
+			margin-bottom: 30px;
+		}
+		@include mq(lg) {
+			margin-bottom: 0;
+		}
+		&:last-of-type {
+			margin-bottom: 0;
+		}
 
 		&::before {
 			content: '';
@@ -49,47 +60,105 @@
 			width: 100%;
 			height: auto;
 			z-index: 1;
-			margin-top: 105px;
-			margin-bottom: -50px;
+			margin-top: 80px;
+			margin-bottom: -20px;
+
+			@include mq(lg) {
+				margin-top: 80px;
+				margin-bottom: -30px;
+			}
+			@include mq(xl) {
+				margin-top: 105px;
+				margin-bottom: -50px;
+			}
 		}
 	}
 
 	.price {
 		font-size: rem(30);
 		line-height: 1em;
-		margin-bottom: 70px;
+		margin-bottom: 25px;
 		color: $primary;
 		font-weight: 800;
+
+		@include mq(lg) {
+			margin-bottom: 30px;
+		}
+		@include mq(xl) {
+			margin-bottom: 60px;
+		}
+		@include mq(xxl) {
+			margin-bottom: 70px;
+		}
 	}
 
 	.flex--buttons {
 		display: flex;
 		justify-content: center;
+		flex-direction: column;
+
+		@include mq(xl) {
+			flex-direction: row;
+		}
 
 		a,
 		.btn--second {
-			margin: 0 8px !important;
-			width: 250px;
+			margin: 0 auto 15px !important;
+			width: 100%;
+
+			@include mq(xl) {
+				margin: 0 8px !important;
+				width: 250px;
+			}
 		}
 	}
 
 	.swiper--nav {
-		margin-bottom: 35px;
+		margin-bottom: 15px;
 		margin-top: 15px;
+
+		@include mq(xxl) {
+			margin-bottom: 35px;
+		}
 	}
 
 	h3.back--title {
-		font-size: rem(65);
 		line-height: em(65, 65);
 		font-weight: 700;
 		position: absolute;
 		color: rgba($white, 0.9);
 		top: 0;
 		left: 0;
-		padding: 0 20px;
+		padding: 0 10px;
 		width: 100%;
 		opacity: 0.5;
 		z-index: -1;
 		text-transform: uppercase;
+		font-size: rem(35);
+
+		@include mq(md) {
+			padding: 0 15px;
+			font-size: rem(45);
+		}
+		@include mq(lg) {
+			font-size: rem(35);
+		}
+		@include mq(xl) {
+			font-size: rem(40);
+		}
+		@include mq(xxl) {
+			font-size: rem(50);
+		}
+		@include mq(xxxl) {
+			padding: 0 20px;
+			font-size: rem(65);
+		}
+	}
+	p.product.woocommerce.add_to_cart_inline {
+		a.button {
+			@include mq($until: xl) {
+				margin: 0 auto !important;
+			}
+		}
 	}
 }

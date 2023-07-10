@@ -20,7 +20,7 @@ $side_image = get_sub_field('side_image');
 </div>
 <div class="container">
 	<div class="row">
-		<div class="col-xl-10">
+		<div class="col-lg-10">
 			<?php echo $content; ?>
 		</div>
 	</div>

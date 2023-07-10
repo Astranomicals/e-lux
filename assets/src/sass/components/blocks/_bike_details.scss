@@ -1,5 +1,5 @@
 .block--bike_details {
-	padding: 124px 0;
+	padding: 40px 0;
 	text-align: center;
 	background: radial-gradient(
 		50% 50% at 50% 50%,
@@ -7,30 +7,69 @@
 		rgba($black, 0) 100%
 	);
 
+	@include mq(md) {
+		padding: 60px 0;
+	}
+	@include mq(xl) {
+		padding: 80px 0;
+	}
+	@include mq(xxxl) {
+		padding: 124px 0;
+	}
+
 	h2 {
-		margin-bottom: -50px;
+		margin-bottom: 0px;
 	}
 
 	img {
 		width: 100%;
 		height: auto;
+		margin-bottom: 25px;
 	}
 
 	.flex--details {
 		display: grid;
-		grid-template-columns: 1fr 1fr 1fr 1fr;
-		grid-gap: 50px;
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 25px 15px;
+
+		@include mq(md) {
+			grid-gap: 50px 20px;
+			grid-template-columns: 1fr 1fr;
+		}
+		@include mq(lg) {
+			grid-gap: 20px;
+			grid-template-columns: 1fr 1fr 1fr 1fr;
+		}
+		@include mq(xl) {
+			grid-gap: 50px;
+		}
 
 		.flex--single {
-			width: 260px;
+			width: 140px;
 			margin: 0 auto;
+			max-width: 100%;
+
+			@include mq(md) {
+				width: 215px;
+			}
+
+			@include mq(xl) {
+				width: 230px;
+			}
+			@include mq(xxl) {
+				width: 260px;
+			}
 
 			p {
-				font-size: rem(30);
+				font-size: rem(24);
 				font-weight: 800;
 				line-height: 1em;
 				color: $white;
 				margin-bottom: 15px;
+
+				@include mq(md) {
+					font-size: rem(30);
+				}
 			}
 
 			h6 {

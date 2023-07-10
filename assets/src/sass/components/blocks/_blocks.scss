@@ -2,15 +2,26 @@
 	position: relative;
 }
 .page--header {
-	height: 500px;
+	height: 260px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	z-index: 0;
 	overflow: hidden;
 	position: relative;
-	margin-top: 74px;
+	margin-top: 64px;
 	text-align: center;
+
+	@include mq(md) {
+		height: 330px;
+	}
+	@include mq(xl) {
+		margin-top: 74px;
+		height: 420px;
+	}
+	@include mq(xxl) {
+		height: 500px;
+	}
 
 	.background--image {
 		z-index: -1;
@@ -39,18 +50,28 @@
 
 	.grid--products {
 		display: grid;
-		grid-template-columns: 1fr 1fr;
-		grid-gap: 40px;
+		grid-template-columns: 1fr;
+		grid-gap: 25px;
+
+		@include mq(lg) {
+			grid-gap: 40px;
+			grid-template-columns: 1fr 1fr;
+		}
 	}
 	article {
+		width: 100%;
 		border-radius: 5px;
 		background: #111;
 		text-align: center;
 		position: relative;
 		z-index: 0;
-		padding: 40px;
+		padding: 25px;
 		display: flex;
 		flex-direction: column;
+
+		@include mq(md) {
+			padding: 40px;
+		}
 
 		&::before {
 			@include pseudo_cover;
@@ -64,47 +85,103 @@
 		}
 
 		img {
-			width: 80%;
+			width: 100%;
 			height: auto;
-			margin: 50px auto -55px;
+			margin: 40px auto -10px;
 			z-index: 4;
+
+			@include mq(md) {
+				margin: 50px auto -55px;
+			}
 		}
 
 		h3.back--title {
-			font-size: rem(65);
 			line-height: 1em;
 			font-weight: 700;
 			position: absolute;
-			top: 0;
+			top: 25px;
 			position: absolute;
 			left: 0;
-			padding: 0 20px;
+			padding: 0 10px;
 			width: 100%;
 			opacity: 0.5;
 			z-index: -1;
 			text-transform: uppercase;
+			font-size: rem(35);
+
+			@include mq(md) {
+				top: 55px;
+				padding: 0 15px;
+				font-size: rem(45);
+			}
+			@include mq(lg) {
+				font-size: rem(35);
+			}
+			@include mq(xl) {
+				font-size: rem(40);
+			}
+			@include mq(xxl) {
+				font-size: rem(50);
+			}
+			@include mq(xxxl) {
+				padding: 0 20px;
+				font-size: rem(65);
+			}
 		}
 
 		.price {
 			font-size: rem(30);
 			line-height: 1em;
-			margin-bottom: 70px;
+			margin-bottom: 25px;
 			color: $primary;
 			font-weight: 800;
 			z-index: 99;
 			position: relative;
+			@include mq(lg) {
+				margin-bottom: 30px;
+			}
+			@include mq(xl) {
+				margin-bottom: 60px;
+			}
+			@include mq(xxl) {
+				margin-bottom: 70px;
+			}
 		}
 
 		.flex--buttons {
 			display: flex;
 			justify-content: center;
 			margin-top: auto;
+			flex-direction: column;
+
+			@include mq(md) {
+				flex-direction: row;
+			}
 
 			a,
 			.btn--second {
-				margin: 0 8px !important;
-				width: 250px;
+				margin: 0 auto 15px !important;
+				width: 100%;
+				max-width: 100%;
+
+				@include mq(md) {
+					width: 250px;
+					margin: 0 8px !important;
+				}
+				@include mq(lg) {
+					width: 100%;
+				}
+				@include mq(xxl) {
+					width: 250px;
+				}
 			}
+		}
+	}
+
+	p.product.woocommerce.add_to_cart_inline {
+		.button {
+			margin: 0;
+			max-width: 100%;
 		}
 	}
 

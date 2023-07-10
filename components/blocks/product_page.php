@@ -191,7 +191,7 @@
 				while ($query->have_posts()) :
 					$query->the_post();
 			?>
-					<div class="col-xl-4">
+					<div class="col-lg-4 col-md-6">
 						<?php get_template_part('components/product-preview-accessories'); ?>
 					</div>
 			<?php

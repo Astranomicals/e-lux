@@ -2,24 +2,46 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	padding: 38px 38px 0;
+	padding: 38px 0 0;
 	height: 100vh;
 	text-align: center;
+
+	@include mq(md) {
+		padding: 38px 15px 0;
+	}
+	@include mq(xl) {
+		padding: 38px 38px 0;
+	}
 
 	.background--image {
 		video,
 		&::before {
-			width: calc(100% - 76px);
+			width: 100%;
 			left: 50%;
 			transform: translateX(-50%);
 			background: rgba($black, 0.3);
+
+			@include mq(md) {
+				width: calc(100% - 30px);
+			}
+			@include mq(xl) {
+				width: calc(100% - 76px);
+			}
 		}
 	}
 
 	p {
-		font-size: rem(22);
+		font-size: rem(16);
 		line-height: em(28, 22);
-		margin-bottom: 35px;
+		margin-bottom: 25px;
+
+		@include mq(md) {
+			margin-bottom: 35px;
+			font-size: rem(19);
+		}
+		@include mq(xl) {
+			font-size: rem(22);
+		}
 	}
 
 	.btn {

@@ -8,8 +8,9 @@
 	}
 
 	.image--holder {
-		position: relative;
-		margin-bottom: 45px;
+		position: sticky;
+		top: 90px;
+		margin-bottom: 35px;
 		@include mq(md) {
 			margin-bottom: 0;
 		}
@@ -21,22 +22,36 @@
 
 		a.btn--play {
 			border-radius: 100em;
-			height: 120px;
-			width: 120px;
+			height: 60px;
+			width: 60px;
 			display: flex;
 			align-items: center;
 			justify-content: center;
 			position: absolute;
 			bottom: 0;
 			left: 0;
-			transform: translate(-50%, -50%);
 			background: $primary;
 			color: $black;
 			z-index: 9;
+			@include mq(md) {
+				height: 100px;
+				width: 100px;
+			}
+			@include mq(lg) {
+				transform: translate(-50%, -50%);
+			}
+			@include mq(xl) {
+				height: 120px;
+				width: 120px;
+			}
 			i {
-				font-size: 30px;
-				transition: transform 0.4s ease-in;
-				z-index: 1;
+				font-size: 16px;
+				color: $black;
+				z-index: 2;
+
+				@include mq(md) {
+					font-size: 30px;
+				}
 			}
 
 			&::before {

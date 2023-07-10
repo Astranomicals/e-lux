@@ -21,8 +21,15 @@
 	.logo {
 		display: flex;
 		svg {
-			height: 75px;
+			height: 55px;
 			width: auto;
+
+			@include mq(md) {
+				height: 65px;
+			}
+			@include mq(xl) {
+				height: 75px;
+			}
 		}
 	}
 
@@ -138,48 +145,6 @@
 		}
 	}
 
-	.btn--call {
-		color: $white;
-		position: relative;
-		margin-left: auto;
-		margin-right: 25px;
-
-		@include mq(lg) {
-			margin: unset;
-		}
-
-		i {
-			display: inline-flex;
-			align-items: center;
-			justify-content: center;
-			background: $primary;
-			font-size: rem(16);
-			border-radius: 100em;
-			transform: rotateY(180deg);
-			height: 42px;
-			width: 42px;
-
-			@include mq(xl) {
-				margin-right: 8px;
-			}
-
-			@include mq(xxl) {
-				border-radius: 0;
-				background: unset;
-				height: unset;
-				width: unset;
-				margin-right: 12px;
-			}
-		}
-
-		span {
-			display: none;
-			@include mq(xl) {
-				display: inline-block;
-			}
-		}
-	}
-
 	button {
 		display: flex;
 		width: 32px;
@@ -191,7 +156,7 @@
 		padding: 0;
 		margin-left: auto;
 
-		@include mq(md) {
+		@include mq(xl) {
 			margin-left: unset;
 		}
 
@@ -199,7 +164,7 @@
 			display: block;
 			width: 30px;
 			height: 2px;
-			background: $black;
+			background: $primary;
 		}
 		@include mq(xl) {
 			display: none;

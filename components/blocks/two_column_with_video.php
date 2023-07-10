@@ -18,7 +18,7 @@ $youtube_id = get_sub_field('video_id');
 ?>
 
 <div class="container">
-	<div class="row align-items-center flex-row-reverse">
+	<div class="row flex-row-reverse">
 		<div class="col-xl-6 col-12 pl col-md-6">
 			<div class="image--holder">
 				<?php display_image($image, 'full'); ?>

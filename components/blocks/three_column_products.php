@@ -23,8 +23,8 @@ $content = get_sub_field('top_content');
 	</div>
 </div>
 <div class="container-fluid">
-	<div class="row">
-		<div class="col-xl-4">
+	<div class="row justify-content-center">
+		<div class="col-md-6 col-lg-4">
 			<div class="bike--holder">
 				<div class="bike--title">
 					<h5>Cruisers</h5>
@@ -73,7 +73,7 @@ $content = get_sub_field('top_content');
 				<?php endif; ?>
 			</div>
 		</div>
-		<div class="col-xl-4">
+		<div class="col-md-6 col-lg-4">
 			<div class="bike--holder">
 				<div class="bike--title">
 					<h5>Fat Tires</h5>
@@ -122,7 +122,7 @@ $content = get_sub_field('top_content');
 				<?php endif; ?>
 			</div>
 		</div>
-		<div class="col-xl-4">
+		<div class="col-md-6 col-lg-4">
 			<div class="bike--holder">
 				<div class="bike--title">
 					<h5>Folding</h5>

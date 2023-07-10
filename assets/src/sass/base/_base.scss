@@ -23,17 +23,33 @@ body {
 h1,
 h2 {
 	font-weight: normal;
-	font-size: rem(40);
+	font-size: rem(30);
 	line-height: em(48, 40);
 	letter-spacing: -0.5px;
 	margin-top: 0;
-}
 
+	@include mq(md) {
+		font-size: rem(35);
+	}
+	@include mq(xl) {
+		font-size: rem(40);
+	}
+}
+h3 {
+	margin-top: 0;
+}
 h4 {
-	font-size: rem(32);
 	line-height: em(38, 32);
 	letter-spacing: -0.4px;
 	font-weight: 700;
+	font-size: rem(24);
+
+	@include mq(md) {
+		font-size: rem(28);
+	}
+	@include mq(xl) {
+		font-size: rem(32);
+	}
 }
 
 p {
@@ -55,7 +71,7 @@ a {
 }
 
 p {
-	margin-bottom: 1.5rem;
+	margin-bottom: 35px;
 }
 
 // Remove subpixel-antialiased default but keep for retina resolutions.

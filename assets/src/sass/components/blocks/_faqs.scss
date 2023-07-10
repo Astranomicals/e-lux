@@ -1,6 +1,10 @@
 .block--faqs {
-	padding: 80px 0;
+	padding: 60px 0;
 	text-align: center;
+
+	@include mq(md) {
+		padding: 80px 0;
+	}
 
 	.faqs {
 		margin-top: 45px;

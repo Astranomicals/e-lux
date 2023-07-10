@@ -1,15 +1,27 @@
 footer {
-	padding: 84px 0;
+	padding: 60px 0;
 	background: $background;
+
+	@include mq(lg) {
+		padding: 84px 0;
+	}
 
 	#elux-logo {
 		width: 150px;
 		height: auto;
+		@include mq($until: md) {
+			margin: 0 auto 10px;
+			display: block;
+			width: 200px;
+		}
 	}
 
 	.row {
 		&:last-of-type {
-			margin-top: 100px;
+			margin-top: 50px;
+			@include mq(md) {
+				margin-top: 100px;
+			}
 		}
 	}
 	h4 {
@@ -22,6 +34,10 @@ footer {
 		height: 1px;
 		width: 100%;
 		margin: 25px 0 15px;
+
+		@include mq($until: lg) {
+			display: none;
+		}
 	}
 
 	.menu {
@@ -46,13 +62,25 @@ footer {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		flex-direction: column;
+		text-align: center;
+
+		@include mq(md) {
+			text-align: unset;
+			flex-direction: row;
+		}
 
 		p {
 			color: rgba($white, 0.5);
 			font-size: rem(12);
 			font-weight: 700;
-			line-height: em(46, 12);
+			line-height: 1.6em;
 			margin: 0;
+
+			@include mq($until: md) {
+				font-size: rem(14);
+				margin-bottom: 15px;
+			}
 
 			a {
 				color: rgba($white, 0.5);
@@ -67,6 +95,9 @@ footer {
 	.social--icons {
 		li {
 			margin-left: 12px;
+			@include mq($until: md) {
+				margin: 0 13px 10px;
+			}
 			a {
 				line-height: 1em;
 			}

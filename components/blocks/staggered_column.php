@@ -19,7 +19,7 @@ $background_image = get_sub_field('background_image');
 </div>
 <div class="container">
 	<div class="row justify-content-center">
-		<div class="col-xl-11 col-12">
+		<div class="col-xxxl-11 col-12">
 			<?php if (have_rows('content_holder')) : ?>
 				<div class="grid--content">
 					<?php while (have_rows('content_holder')) : the_row(); ?>
