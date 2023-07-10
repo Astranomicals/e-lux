@@ -24,10 +24,40 @@
 	<title><?php wp_title('&laquo;', true, 'right'); ?> <?php bloginfo('name'); ?></title>
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-	<link rel="preload" href="/wp-content/themes/incredible/assets/dist/webfonts/fa-light-300.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="/wp-content/themes/incredible/assets/dist/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="/wp-content/themes/incredible/assets/dist/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
 	<?php wp_head(); ?>
+	<?php if (have_rows('blocks')) :
+		while (have_rows('blocks')) :
+			the_row();
+			$faqs = get_sub_field('faqs');
+			if (have_rows('faqs')) :
+				echo '<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [';
+				while (have_rows('faqs')) : the_row();
+					$count = count($faqs);
+					if (get_row_layout() == 'faq') :
+						echo '{
+								"@type": "Question",
+								"name": "' . get_sub_field('question') . '",
+								"acceptedAnswer": {
+									"@type": "Answer",
+									"text": "' . get_sub_field('answer') . '"
+								}
+							}';
+						if (get_row_index() !== $count) :
+							echo ',';
+						endif;
+					endif;
+				endwhile;
+				echo ']
+    }
+    </script>';
+			endif;
+		endwhile;
+	endif;
+	?>
 </head>
 
 <body <?php body_class(); ?>>

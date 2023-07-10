@@ -13,22 +13,22 @@
  */
 
 $heading = get_sub_field('heading');
-$content = get_sub_field('content');
-$image = get_sub_field('image');
-
+$content_right = get_sub_field('content_right');
+$content_left = get_sub_field('content_left');
 ?>
 
 <div class="container">
-	<div class="row align-items-center flex-row-reverse">
-		<div class="col-xl-6 col-12 pl col-md-6">
-			<div class="image--holder">
-				<?php display_image($image, 'full'); ?>
-			</div>
+	<div class="row justify-content-center">
+		<div class="col-md-8 top--content">
+			<?php echo $heading; ?>
 		</div>
+	</div>
+	<div class="row">
 		<div class="col-xl-6 col-12 pr col-md-6">
-			<h2><?php echo $heading; ?></h2>
-			<?php echo $content; ?>
+			<?php echo $content_left; ?>
+		</div>
+		<div class="col-xl-6 col-12 pl col-md-6">
+			<?php echo $content_right; ?>
 		</div>
 	</div>
 </div>
-<?php get_template_part('components/svg/top-double-curve'); ?>

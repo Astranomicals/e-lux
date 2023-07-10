@@ -31,4 +31,4 @@ remove_action('woocommerce_after_main_content', 'woocommerce_output_content_wrap
 remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40, 0);
 remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_price', 10, 0);
 
-add_action('woocommerce_single_product_summary', 'woocommerce_template_single_price', 30, 30);
+add_action('woocommerce_single_product_summary', 'woocommerce_template_single_price', 20, 20);

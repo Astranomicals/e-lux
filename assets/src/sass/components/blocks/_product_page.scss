@@ -8,24 +8,85 @@
 	padding: 40px 0 80px;
 	text-align: center;
 	margin-top: 138px;
+
+	form.cart {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+
+		button {
+			margin-left: 15px;
+			text-transform: capitalize;
+
+			i {
+				margin-left: 10px;
+				display: none;
+			}
+		}
+		.cfvsw-selected-label {
+			display: none;
+		}
+	}
 	.woocommerce-product-gallery.images {
 		float: none !important;
 		width: 100% !important;
 	}
 
 	.variations {
+		width: auto !important;
+
 		.label {
 			display: none;
 		}
 	}
 	.single_variation_wrap {
-		display: none !important;
+		display: flex;
+		justify-content: center;
+		width: 100%;
+
+		.woocommerce-variation-add-to-cart {
+			display: flex;
+			align-items: center;
+		}
 	}
-	div.product form.cart .variations td {
-		position: absolute;
-		right: 0;
-		transform: translateX(50%) rotate(90deg);
-		top: 50%;
+	div.product form.cart .variations {
+		tr {
+			display: flex;
+			justify-content: center;
+			width: 100%;
+
+			.stock {
+				display: none;
+			}
+
+			&:first-of-type {
+				td {
+					position: absolute;
+					right: 0;
+					transform: translateX(50%) rotate(90deg);
+					top: 50%;
+				}
+			}
+			&:not(:first-of-type) {
+				td {
+					.cfvsw-swatches-option {
+						background: unset;
+						border: 2px solid rgba($white, 0.5);
+						font-size: 1rem;
+					}
+				}
+			}
+			.cfvsw-swatches-option {
+				&.cfvsw-selected-swatch {
+					border: 3px solid $primary !important;
+					background: unset;
+					.cfvsw-swatch-inner {
+						border: 0px solid $primary !important;
+					}
+				}
+			}
+		}
 	}
 	div.product form.cart .reset_variations {
 		display: none !important;
@@ -95,6 +156,16 @@
 				padding: 10px;
 			}
 		}
+	}
+	.content {
+		padding-left: 50px;
+		text-align: left;
+		margin-top: 35px;
+	}
+
+	&.block--product-accessories {
+		margin-top: 75px;
+		padding: 100px 0;
 	}
 }
 
@@ -444,6 +515,40 @@
 
 			i {
 				font-size: 30px;
+				transition: transform 0.4s ease-in;
+				z-index: 1;
+			}
+
+			&::before {
+				@include pseudo_cover;
+				background: rgba($primary, 0.5);
+				z-index: -1;
+				border-radius: 100em;
+				transition: all 0.5s ease-in-out;
+			}
+			&::after {
+				border-radius: 100em;
+				@include pseudo_cover;
+				background: $primary;
+				z-index: 0;
+				transition: all 0.5s ease-in-out;
+			}
+			&:hover {
+				background: $black;
+
+				i {
+					color: $primary;
+				}
+				&::before {
+					width: 120%;
+					height: 120%;
+					right: -10%;
+					top: -10%;
+				}
+
+				&::after {
+					background: $black;
+				}
 			}
 		}
 	}

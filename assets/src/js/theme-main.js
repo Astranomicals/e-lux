@@ -30,6 +30,21 @@
 					this.parallax();
 					this.fitSelect();
 					this.specsModal();
+					this.contactForms();
+					this.faqs();
+				},
+				faqs: function(){
+					$(`.faq h3`).on(`click`, function(){
+						$(`.faq`).removeClass(`active`);
+						$(this).parent(`.faq`).addClass(`active`);
+					});
+				},
+				contactForms: function(){
+					$(`.contact--options [data-option]`).on(`click`, function(){
+						const option = $(this).attr(`data-option`);
+						$(`[data-option]`).removeClass(`active`);
+						$(`[data-option="${option}"]`).addClass(`active`);
+					});
 				},
 				specsModal: function(){
 					$(`.btn-specs`).on(`click`, function(){

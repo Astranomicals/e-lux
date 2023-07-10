@@ -16,39 +16,42 @@
 $address      = get_field('business_street_address', 'option');
 $address2     = get_field('business_city_state_zip', 'option');
 $address_link = get_field('business_address_link', 'option');
-$phone        = get_field('business_phone_display', 'option');
 $phone_url    = get_field('business_phone_url', 'option');
-$hours    		= get_field('business_hours', 'option');
 get_header();  ?>
 
-<section class="block block--top-header">
-	<div class="side--image">
-		<?php echo get_the_post_thumbnail($post->ID, 'top_header_thumb'); ?>
-	</div>
+<section class="block block--contact">
 	<div class="container">
-		<div class="col-md-6">
-			<?php echo do_shortcode('[gravityforms id="3" title="false" description="false" ajax="true"]'); ?>
-		</div>
-	</div>
-</section>
-
-<section class="block block--content">
-	<div class="container">
-		<div class="row">
-			<div class="col-12">
-				<div class="content--info">
-					<div class="content">
-						<?php the_content(); ?>
+		<div class="row flex-row-reverse">
+			<div class="col-md-7 offset-md-1">
+				<p>Please select what type of quesiton you have, so we can best answer you question as soon as possible.</p>
+				<div class="contact--options">
+					<div class="active" data-option="1">Sale</div>
+					<div data-option="2">Technical</div>
+					<div data-option="3">General</div>
+				</div>
+				<div class="form--area">
+					<div class="form active" data-option="1">
+						<?php echo do_shortcode('[contact-form-7 id="438" title="Sales Contact Form"]'); ?>
 					</div>
-					<div class="info">
-						<h4>Phone Number</h4>
-						<p><a href="tel:<?php echo $phone_url; ?>"><?php echo $phone; ?></a></p>
-						<h4>Directions</h4>
-						<p><a href="<?php echo $address_link; ?>" target="_blank"><?php echo $address; ?><br /><?php echo $address2; ?></a></p>
-						<h4>Hours</h4>
-						<?php echo $hours; ?>
-						<?php get_template_part('components/social'); ?>
+					<div class="form" data-option="2">
+						<?php echo do_shortcode('[contact-form-7 id="1687" title="Technical Contact Form"]'); ?>
 					</div>
+					<div class="form" data-option="3">
+						<?php echo do_shortcode('[contact-form-7 id="1688" title="General Contact Form"]'); ?>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="content">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3319.55431424287!2d-117.9409287!3d33.6946028!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dd207037957bb1%3A0xeedbe2081d1ddfcc!2sE-LUX%20Electric%20Bikes!5e0!3m2!1sen!2sus!4v1688961420763!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+				</div>
+				<div class="info">
+					<h4>E-Lux Bikes Showroom / Warehouse</h4>
+					<p><a href="<?php echo $address_link; ?>" target="_blank"><?php echo $address; ?><br /><?php echo $address2; ?></a></p>
+					<h4>Phone Number</h4>
+					<p><a href="tel:+1-<?php echo $phone_url; ?>"><?php echo $phone_url; ?></a></p>
+					<h4>Find Us On Our Socials</h4>
+					<?php get_template_part('components/social-icons'); ?>
 				</div>
 			</div>
 		</div>

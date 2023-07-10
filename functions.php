@@ -33,10 +33,6 @@ require_once get_template_directory() . '/includes/acf/admin-styles.php';
 
 // POST TYPES
 // ==================================================.
-require_once get_template_directory() . '/includes/post-types/galleries.php';
-require_once get_template_directory() . '/includes/post-types/procedures.php';
-require_once get_template_directory() . '/includes/post-types/testimonials.php';
-require_once get_template_directory() . '/includes/post-types/team-members.php';
 
 // MENUS
 // ==================================================.

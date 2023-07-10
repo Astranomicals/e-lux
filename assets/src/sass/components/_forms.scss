@@ -14,7 +14,18 @@ form {
 	span {
 		width: 100%;
 	}
-	input {
+	label {
+		width: 100%;
+		span {
+			width: 100%;
+			display: block;
+		}
+	}
+	input,
+	textarea,
+	select,
+	.select2-container--default .select2-selection--single,
+	.select2-dropdown {
 		color: $white;
 		font-size: rem(18);
 		font-weight: 500;
@@ -37,7 +48,7 @@ form {
 		}
 
 		&:focus {
-			border-bottom: 1px solid $white;
+			border-bottom: 1px solid $primary;
 		}
 	}
 	.wpcf7-spinner {
@@ -54,4 +65,15 @@ form {
 	font-size: 1rem;
 	text-align: center;
 	padding: 10px;
+}
+.select2-dropdown {
+	background: $background;
+}
+.select2-container--default .select2-search--dropdown .select2-search__field {
+	display: none;
+}
+.select2-container--default
+	.select2-selection--single
+	.select2-selection__rendered {
+	color: $white;
 }

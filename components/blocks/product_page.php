@@ -159,7 +159,9 @@
 				<h2><?php echo get_sub_field('lifestyle_heading'); ?></h2>
 				<div class="content--area">
 					<div class="image--holder">
-						<?php display_image($lifestyle_image, 'full'); ?>
+						<?php if ($lifestyle_image) : ?>
+							<?php display_image($lifestyle_image, 'full'); ?>
+						<?php endif; ?>
 					</div>
 					<div class="content">
 						<?php echo get_sub_field('lifestyle_content'); ?>

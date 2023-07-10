@@ -19,6 +19,7 @@
 defined('ABSPATH') || exit;
 
 global $product;
+$product_id = $product->get_id();
 
 /**
  * Hook: woocommerce_before_single_product.
@@ -31,69 +32,109 @@ if (post_password_required()) {
 	echo get_the_password_form(); // WPCS: XSS ok.
 	return;
 }
+
 ?>
-
-<section id="buy-now" class="block block--product">
-	<div class="container-fluid">
-		<div id="product-<?php the_ID(); ?>" <?php wc_product_class('row mx-0 justify-content-center', $product); ?>>
-			<div class="col-12 col-xl-8 col-md-10">
-				<p class="review-stars">4.8 Star Reviews</p>
-				<div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-
-				<?php
-				/**
-				 * Hook: woocommerce_single_product_summary.
-				 *
-				 * @hooked woocommerce_template_single_title - 5
-				 * @hooked woocommerce_template_single_rating - 10
-				 * @hooked woocommerce_template_single_price - 10
-				 * @hooked woocommerce_template_single_excerpt - 20
-				 * @hooked woocommerce_template_single_add_to_cart - 30
-				 * @hooked woocommerce_template_single_meta - 40
-				 * @hooked woocommerce_template_single_sharing - 50
-				 * @hooked WC_Structured_Data::generate_product_data() - 60
-				 */
-				do_action('woocommerce_single_product_summary');
-				?>
-				<?php
-				/**
-				 * Hook: woocommerce_before_single_product_summary.
-				 *
-				 * @hooked woocommerce_show_product_sale_flash - 10
-				 * @hooked woocommerce_show_product_images - 20
-				 */
-				do_action('woocommerce_before_single_product_summary');
-				?>
-
-
-
-				<div class="flex--details">
-					<div class="flex--single">
-						<p>What's the range?</p>
-						<h6><?php echo get_field('range'); ?></h6>
-					</div>
-					<div class="flex--single">
-						<p>How fast can it go?</p>
-						<h6><?php echo get_field('how_fast'); ?></h6>
-					</div>
-					<div class="flex--single">
-						<p>How powerful?</p>
-						<h6><?php echo get_field('how_powerful'); ?></h6>
+<?php if (has_term('accessories', 'product_cat', $product_id)) : ?>
+	<section id="buy-now" class="block block--product block--product-accessories">
+		<div class="container-fluid">
+			<div id="product-<?php the_ID(); ?>" <?php wc_product_class('row mx-0 justify-content-center', $product); ?>>
+				<div class="col-12 col-xl-4 col-md-5">
+					<?php
+					/**
+					 * Hook: woocommerce_before_single_product_summary.
+					 *
+					 * @hooked woocommerce_show_product_sale_flash - 10
+					 * @hooked woocommerce_show_product_images - 20
+					 */
+					do_action('woocommerce_before_single_product_summary');
+					?>
+				</div>
+				<div class="col-12 col-xl-4 col-md-5">
+					<?php
+					/**
+					 * Hook: woocommerce_single_product_summary.
+					 *
+					 * @hooked woocommerce_template_single_title - 5
+					 * @hooked woocommerce_template_single_rating - 10
+					 * @hooked woocommerce_template_single_price - 10
+					 * @hooked woocommerce_template_single_excerpt - 20
+					 * @hooked woocommerce_template_single_add_to_cart - 30
+					 * @hooked woocommerce_template_single_meta - 40
+					 * @hooked woocommerce_template_single_sharing - 50
+					 * @hooked WC_Structured_Data::generate_product_data() - 60
+					 */
+					do_action('woocommerce_single_product_summary');
+					?>
+					<div class="content">
+						<?php the_content(); ?>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-</section>
+	</section>
+<?php else : ?>
+	<section id="buy-now" class="block block--product">
+		<div class="container-fluid">
+			<div id="product-<?php the_ID(); ?>" <?php wc_product_class('row mx-0 justify-content-center', $product); ?>>
+				<div class="col-12 col-xl-8 col-md-10">
+					<p class="review-stars">4.8 Star Reviews</p>
+					<div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
 
-<?php if (have_rows('blocks', $product->id)) :
-	while (have_rows('blocks', $product->id)) :
-		the_row();
-		$layout   = get_row_layout();
+					<?php
+					/**
+					 * Hook: woocommerce_single_product_summary.
+					 *
+					 * @hooked woocommerce_template_single_title - 5
+					 * @hooked woocommerce_template_single_rating - 10
+					 * @hooked woocommerce_template_single_price - 10
+					 * @hooked woocommerce_template_single_excerpt - 20
+					 * @hooked woocommerce_template_single_add_to_cart - 30
+					 * @hooked woocommerce_template_single_meta - 40
+					 * @hooked woocommerce_template_single_sharing - 50
+					 * @hooked WC_Structured_Data::generate_product_data() - 60
+					 */
+					do_action('woocommerce_single_product_summary');
+					?>
+					<?php
+					/**
+					 * Hook: woocommerce_before_single_product_summary.
+					 *
+					 * @hooked woocommerce_show_product_sale_flash - 10
+					 * @hooked woocommerce_show_product_images - 20
+					 */
+					do_action('woocommerce_before_single_product_summary');
+					?>
 
-		echo '<section class="block block--' . esc_attr($layout) . '">';
-		get_template_part('components/blocks/' . $layout);
-		echo '</section>';
-	endwhile;
-endif;
-?>
+
+
+					<div class="flex--details">
+						<div class="flex--single">
+							<p>What's the range?</p>
+							<h6><?php echo get_field('range'); ?></h6>
+						</div>
+						<div class="flex--single">
+							<p>How fast can it go?</p>
+							<h6><?php echo get_field('how_fast'); ?></h6>
+						</div>
+						<div class="flex--single">
+							<p>How powerful?</p>
+							<h6><?php echo get_field('how_powerful'); ?></h6>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<?php if (have_rows('blocks', $product->id)) :
+		while (have_rows('blocks', $product->id)) :
+			the_row();
+			$layout   = get_row_layout();
+
+			echo '<section class="block block--' . esc_attr($layout) . '">';
+			get_template_part('components/blocks/' . $layout);
+			echo '</section>';
+		endwhile;
+	endif;
+	?>
+<?php endif; ?>

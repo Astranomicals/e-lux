@@ -52,7 +52,7 @@ $contact_link = get_field('contact_link', 'options');
 		</div>
 	</div>
 </nav>
-<?php if (is_singular('product')) : ?>
+<?php if (is_singular('product') && (!has_term('accessories', 'product_cat', $post->ID))) : ?>
 	<div class="bike--main">
 		<div class="container">
 			<div class="row">

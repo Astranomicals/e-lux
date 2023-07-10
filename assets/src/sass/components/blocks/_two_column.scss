@@ -1,2 +1,17 @@
 .block--two_column {
+	padding: 80px 0;
+
+	.top--content {
+		text-align: center;
+
+		h3 {
+			color: $primary;
+		}
+		img {
+			max-width: 350px;
+			height: auto;
+			display: block;
+			margin: 0 auto 35px;
+		}
+	}
 }

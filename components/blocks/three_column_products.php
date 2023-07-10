@@ -57,11 +57,11 @@ $content = get_sub_field('top_content');
 									?>
 									<h3 class="back--title"><?php echo get_the_title(); ?></h3>
 									<?php echo get_the_post_thumbnail($post->ID, 'large'); ?>
-									<div class="price">$<?php echo $reg_price; ?></div>
+									<div class="price">$<?php echo $price; ?></div>
 									<div class="flex--buttons">
 										<a href="<?php echo get_the_permalink(); ?>" class="btn btn--secondary">View More</a>
 										<div class="btn--second">
-											<?php echo do_shortcode('[add_to_cart id="' . $post->ID . '"]'); ?>
+											<?php echo do_shortcode('[add_to_cart id="' . $post->ID . '" show_price="false"]'); ?>
 										</div>
 									</div>
 								</div>
@@ -80,7 +80,7 @@ $content = get_sub_field('top_content');
 				</div>
 				<?php $args = array(
 					'post_type' => 'product',
-					'order'	=> 'ASC',
+					'order'	=> 'DESC',
 					'orderby'	=> 'menu_order',
 					'tax_query'     => array(array(
 						'taxonomy'  => 'product_cat',
@@ -106,11 +106,11 @@ $content = get_sub_field('top_content');
 									?>
 									<h3 class="back--title"><?php echo get_the_title(); ?></h3>
 									<?php echo get_the_post_thumbnail($post->ID, 'large'); ?>
-									<div class="price">$<?php echo $reg_price; ?></div>
+									<div class="price">$<?php echo $price; ?></div>
 									<div class="flex--buttons">
 										<a href="<?php echo get_the_permalink(); ?>" class="btn btn--secondary">View More</a>
 										<div class="btn--second">
-											<?php echo do_shortcode('[add_to_cart id="' . $post->ID . '"]'); ?>
+											<?php echo do_shortcode('[add_to_cart id="' . $post->ID . '" show_price="false"]'); ?>
 										</div>
 									</div>
 								</div>
@@ -155,11 +155,11 @@ $content = get_sub_field('top_content');
 									?>
 									<h3 class="back--title"><?php echo get_the_title(); ?></h3>
 									<?php echo get_the_post_thumbnail($post->ID, 'large'); ?>
-									<div class="price">$<?php echo $reg_price; ?></div>
+									<div class="price">$<?php echo $price; ?></div>
 									<div class="flex--buttons">
 										<a href="<?php echo get_the_permalink(); ?>" class="btn btn--secondary">View More</a>
 										<div class="btn--second">
-											<?php echo do_shortcode('[add_to_cart id="' . $post->ID . '"]'); ?>
+											<?php echo do_shortcode('[add_to_cart id="' . $post->ID . '" show_price="false"]'); ?>
 										</div>
 									</div>
 								</div>

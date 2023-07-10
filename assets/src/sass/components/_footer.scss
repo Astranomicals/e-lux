@@ -1,6 +1,12 @@
 footer {
 	padding: 84px 0;
 	background: $background;
+
+	#elux-logo {
+		width: 150px;
+		height: auto;
+	}
+
 	.row {
 		&:last-of-type {
 			margin-top: 100px;

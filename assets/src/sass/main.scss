@@ -57,7 +57,9 @@
 @import 'components/blocks/hero';
 
 /*block_insert*/
-@import "components/blocks/product_page";
+@import 'components/blocks/two_column_with_video';
+@import 'components/blocks/faqs';
+@import 'components/blocks/product_page';
 @import 'components/blocks/testimonial_area';
 @import 'components/blocks/being_today';
 @import 'components/blocks/staggered_column';
@@ -66,3 +68,4 @@
 @import 'components/blocks/three_column_products';
 @import 'components/blocks/single_column';
 @import 'components/blocks/two_column';
+@import 'components/blocks/woocommerce';

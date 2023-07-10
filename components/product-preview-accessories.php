@@ -11,7 +11,7 @@
  * @link       https://www.astranomicals.com/
  * @since      1.0.0
  */
-
+global $woocommerce;
 $product = wc_get_product(get_the_ID());
 $sku = $product->get_sku();
 $reg_price = $product->get_regular_price();
@@ -21,11 +21,11 @@ $price = $product->get_price();
 <article class="post-preview" id="post-<?php the_ID(); ?>">
 	<h3 class="bike--title"><?php echo get_the_title(); ?></h3>
 	<?php echo get_the_post_thumbnail($post->ID, 'large'); ?>
-	<div class="price">$<?php echo $reg_price; ?></div>
+	<div class="price">$<?php echo $price; ?></div>
 	<div class="flex--buttons">
 		<a href="<?php echo get_the_permalink(); ?>" class="btn btn--secondary">View More</a>
 		<div class="btn--second">
-			<?php echo do_shortcode('[add_to_cart id="' . $post->ID . '"]'); ?>
+			<?php echo do_shortcode('[add_to_cart id="' . $post->ID . '" show_price="false"]'); ?>
 		</div>
 	</div>
 </article>

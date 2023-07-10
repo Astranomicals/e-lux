@@ -14,6 +14,7 @@
 
 ?>
 <article class="post-preview" id="post-<?php the_ID(); ?>">
+	<h3 class="back--title"><?php echo get_the_title(); ?></h3>
 	<div class="image--holder">
 		<?php the_post_thumbnail('main_blog_thumb'); ?>
 	</div>
@@ -24,12 +25,11 @@
 	$sale_price = $product->get_sale_price();
 	$price = $product->get_price();
 	?>
-	<h3 class="back--title"><?php echo get_the_title(); ?></h3>
-	<div class="price">$<?php echo $reg_price; ?></div>
+	<div class="price">$<?php echo $price; ?></div>
 	<div class="flex--buttons">
 		<a href="<?php echo get_the_permalink(); ?>" class="btn btn--secondary">View More</a>
 		<div class="btn--second">
-			<?php echo do_shortcode('[add_to_cart id="' . $post->ID . '"]'); ?>
+			<?php echo do_shortcode('[add_to_cart id="' . $post->ID . '" show_price="false"]'); ?>
 		</div>
 	</div>
 </article>
