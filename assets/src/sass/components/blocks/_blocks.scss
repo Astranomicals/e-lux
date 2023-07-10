@@ -190,6 +190,7 @@
 			position: relative;
 			margin-bottom: 0;
 			margin-top: 0;
+			top: 0;
 		}
 		article {
 			img {
@@ -239,7 +240,11 @@
 }
 
 .block--contact {
-	padding: 80px 0;
+	padding: 60px 0;
+
+	@include mq(md) {
+		padding: 80px 0;
+	}
 
 	h4 {
 		margin-top: 0;
@@ -250,6 +255,10 @@
 		height: 350px;
 		width: 100%;
 		margin-bottom: 35px;
+
+		@include mq($until: md) {
+			margin-top: 35px;
+		}
 	}
 
 	form {
@@ -282,8 +291,12 @@
 		flex-wrap: wrap;
 
 		li {
-			margin-right: 1vw;
+			margin-right: 15px;
 			margin-bottom: 15px;
+
+			@include mq(md) {
+				margin-right: 1vw;
+			}
 			a {
 				height: 45px;
 				width: 45px;
@@ -299,7 +312,7 @@
 		border-left: 1px solid rgba($white, 0.5);
 		border-right: 1px solid rgba($white, 0.5);
 		border-bottom: 1px solid rgba($white, 0.5);
-		padding: 0 60px;
+		padding: 0 30px;
 		transform: scaleY(0);
 		transition: transform 0.6s ease-in-out;
 		transform-origin: top center;
@@ -308,11 +321,19 @@
 		opacity: 0;
 		margin: 0;
 
+		@include mq(md) {
+			padding: 0 60px;
+		}
+
 		&.active {
 			opacity: 1;
-			padding: 60px;
+			padding: 30px;
 			transform: scaleY(1);
 			max-height: 2500px;
+
+			@include mq(md) {
+				padding: 60px;
+			}
 		}
 	}
 }

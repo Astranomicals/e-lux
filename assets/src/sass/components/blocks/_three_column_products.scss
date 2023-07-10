@@ -127,7 +127,7 @@
 		font-weight: 700;
 		position: absolute;
 		color: rgba($white, 0.9);
-		top: 0;
+		top: 25px;
 		left: 0;
 		padding: 0 10px;
 		width: 100%;
@@ -145,6 +145,7 @@
 		}
 		@include mq(xl) {
 			font-size: rem(40);
+			top: 55px;
 		}
 		@include mq(xxl) {
 			font-size: rem(50);

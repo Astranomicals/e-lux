@@ -204,9 +204,16 @@
 .bike--main {
 	background: #222;
 	position: fixed;
-	top: 70px;
+	top: 50px;
 	width: 100%;
 	z-index: 99;
+
+	@include mq(md) {
+		top: 62px;
+	}
+	@include mq(xl) {
+		top: 70px;
+	}
 
 	.flex--header {
 		display: flex;

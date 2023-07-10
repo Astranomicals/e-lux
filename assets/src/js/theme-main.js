@@ -178,50 +178,34 @@
 						e.preventDefault();
 					});
 
-					$('.menu-item-632 > a').attr(`target`, `_blank`);
+					$(`.menu__mobile .primary--menu ul>li.menu-item-has-children>a`).append(`<i class="fal fa-chevron-double-down"></i>`);
 
-					$('.menu__mobile .menu > li.menu-item > a').wrapInner(
-						'<span></span>'
-					);
-
-					$(
-						'.menu__mobile .primary--menu .menu>li>.sub-menu>li>a:not([href=#])'
-					).append("<i class='fal fa-long-arrow-right'></i> <span>More</span>");
-					$('.menu__mobile .primary--menu .menu>li>.sub-menu').append(
-						"<button data-toggle='back' aria-label='Menu Back Button'><span>Back</span> <i class='fal fa-long-arrow-right'></i></button>"
-					);
-
-					$('.menu__mobile .menu > li.menu-item-has-children > a').on(
+					$('.menu__mobile .menu > li.menu-item-has-children > a > i').on(
 						'click',
 						function (e) {
 							e.preventDefault();
-							$('.menu__mobile .menu > li').removeClass('active');
-							$('.menu__mobile').addClass('open-inner-menu');
-							$('.primary--menu').addClass('shrink');
-							$(this).parent().addClass('active');
-						}
-					);
-					$(".menu__mobile button[data-toggle='back']").on(
-						'click',
-						function (e) {
-							e.preventDefault();
-							$('.menu__mobile .menu > li').removeClass('active');
-							$('.primary--menu').removeClass('shrink');
+							if($(this).parent().parent().hasClass(`active`)){
+								$('.menu__mobile .menu > li').removeClass('active');
+							}else{
+								$('.menu__mobile .menu > li').removeClass('active');
+								$('.menu__mobile').addClass('open-inner-menu');
+								$('.primary--menu').addClass('shrink');
+								$(this).parent().parent().addClass('active');
+							}
 						}
 					);
 
 					var tl = new TimelineLite({ paused: true, reversed: true });
 
 					tl.to('.menu__mobile', 1, {
-						zIndex: 999999,
 						opacity: 1,
-						left: 0,
+						top: 0,
 					});
 
 					$('[data-toggle="menu"]').on('click', function () {
 						tl.reversed() ? tl.play() : tl.reverse();
 					});
-					$('.menu__mobile .background--image').on('click', function () {
+					$('.menu__mobile .menu--background').on('click', function () {
 						tl.reversed() ? tl.play() : tl.reverse();
 					});
 				},

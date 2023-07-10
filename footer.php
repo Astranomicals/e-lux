@@ -39,17 +39,6 @@ $footer_image    = get_field('footer_image', 'option');
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-2 col-md-4 col-6">
-				<h4>Help</h4>
-				<?php
-				$args = array(
-					'theme_location' => 'help-menu',
-					'container'      => false,
-					'menu_class'     => 'menu',
-				);
-				wp_nav_menu($args);
-				?>
-			</div>
-			<div class="col-lg-2 col-md-4 col-6">
 				<h4>Information</h4>
 				<?php
 				$args = array(
@@ -60,7 +49,18 @@ $footer_image    = get_field('footer_image', 'option');
 				wp_nav_menu($args);
 				?>
 			</div>
-			<div class="col-lg-2 col-md-4 col-12">
+			<div class="col-lg-2 col-md-4 col-6">
+				<h4>Help</h4>
+				<?php
+				$args = array(
+					'theme_location' => 'help-menu',
+					'container'      => false,
+					'menu_class'     => 'menu',
+				);
+				wp_nav_menu($args);
+				?>
+			</div>
+			<div class="col-lg-2 col-md-4 col-12 hide-sm">
 				<h4>E-Bikes</h4>
 				<?php
 				$args = array(

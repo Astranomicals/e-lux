@@ -127,3 +127,9 @@ p.product.woocommerce.add_to_cart_inline {
 	backdrop-filter: blur(4px);
 	opacity: 1;
 }
+
+.hide-sm {
+	@include mq($until: md) {
+		display: none;
+	}
+}

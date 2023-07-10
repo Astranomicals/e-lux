@@ -60,7 +60,7 @@ $contact_link = get_field('contact_link', 'options');
 					<div class="flex--header">
 						<h5><?php echo get_the_title(); ?></h5>
 						<ul class="menu">
-							<li><a href="#overview" class="js-scroll-to">Overview</a></li>
+							<li class="hide-sm"><a href="#overview" class="js-scroll-to">Overview</a></li>
 							<li><a href="#" class="btn-specs">Specs / Details</a></li>
 						</ul>
 						<a href="#buy-now" class="btn btn--primary js-scroll-to">Buy Now</a>

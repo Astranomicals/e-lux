@@ -18,9 +18,12 @@
 	.grid--posts {
 		display: grid;
 		grid-template-columns: 1fr;
-		grid-gap: 40px 20px;
+		grid-gap: 15px;
 		@include mq(md) {
 			grid-template-columns: 1fr 1fr;
+		}
+		@include mq(lg) {
+			grid-gap: 40px 20px;
 		}
 		@include mq(xl) {
 			grid-template-columns: 1fr 1fr 1fr;
@@ -55,8 +58,19 @@
 			.flex--buttons {
 				display: flex;
 				margin-top: auto;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+
+				@include mq(lg) {
+					flex-direction: row;
+				}
 				.btn:first-of-type {
-					margin-right: 15px;
+					margin-bottom: 15px;
+					@include mq(lg) {
+						margin-bottom: 0;
+						margin-right: 15px;
+					}
 				}
 
 				.btn {
@@ -81,11 +95,25 @@
 	align-items: center;
 	justify-content: center;
 	margin-top: 55px;
+	flex-wrap: wrap;
+
+	@include mq(md) {
+		flex-wrap: nowrap;
+	}
+
 	p {
 		margin: 0 35px 0 0;
+		@include mq($until: md) {
+			margin: 0 0 25px;
+			width: 100%;
+			text-align: center;
+		}
 	}
 	.pagination-bullet {
-		margin: 0 10px;
+		margin: 0 6px;
+		@include mq(md) {
+			margin: 0 10px;
+		}
 		a {
 			border-radius: 5px;
 			border: 1px solid rgba($white, 0.5);

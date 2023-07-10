@@ -19,7 +19,8 @@ $phone_url    = get_field('business_phone_url', 'option');
 ?>
 
 <section class="menu__mobile">
-	<div class="background--image"></div>
+	<div class="menu--background"></div>
+	<?php get_template_part('components/svg/logo'); ?>
 	<button data-toggle="menu" aria-label="Menu Close">
 		<span></span>
 		<span></span>
@@ -33,22 +34,5 @@ $phone_url    = get_field('business_phone_url', 'option');
 		);
 		wp_nav_menu($args);
 		?>
-		<div class="contact--info">
-			<div class="call">
-				<a href="tel:<?php echo esc_attr($phone_url); ?>" class="mobile-phone"><i class="fal fa-phone-alt"></i>
-					<p>Call Us</p>
-				</a>
-			</div>
-			<div class="call">
-				<a href="<?php echo $contact_link; ?>" class="mobile-phone" target="_blank"><i class="fal fa-envelope"></i>
-					<p>Email Us</p>
-				</a>
-			</div>
-			<div class="call">
-				<a href="<?php echo esc_attr($address_link); ?>" target="_blank" class="mobile-phone"><i class="fal fa-map-marker-alt"></i>
-					<p>Directions</p>
-				</a>
-			</div>
-		</div>
 	</div>
 </section>
