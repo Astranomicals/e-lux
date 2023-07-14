@@ -33,6 +33,7 @@ require_once get_template_directory() . '/includes/acf/admin-styles.php';
 
 // POST TYPES
 // ==================================================.
+require_once get_template_directory() . '/includes/post-types/locations.php';
 
 // MENUS
 // ==================================================.
@@ -60,10 +61,9 @@ require_once get_template_directory() . '/includes/sidebars/blog.php';
 
 // SHORTCODES
 // ==================================================.
-require_once get_template_directory() . '/includes/shortcodes/btn.php';
 require_once get_template_directory() . '/includes/shortcodes/call-number.php';
-require_once get_template_directory() . '/includes/shortcodes/child-pages.php';
-require_once get_template_directory() . '/includes/shortcodes/testimonials.php';
+require_once get_template_directory() . '/includes/shortcodes/logo.php';
+require_once get_template_directory() . '/includes/shortcodes/locations.php';
 
 // PLUGINS
 // ==================================================.

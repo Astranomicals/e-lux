@@ -337,3 +337,80 @@
 		}
 	}
 }
+
+.locations--area {
+	margin-top: 55px;
+
+	h2 {
+		font-weight: bold;
+		text-transform: uppercase;
+		color: $primary;
+		margin-bottom: 30px;
+	}
+
+	.location--flex {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+
+		.location--block {
+			width: 100%;
+			margin: 0 0 35px;
+			padding: 15px;
+			z-index: 0;
+			border: 1px solid rgba($white, 0.5);
+			transition: all 0.5s ease-in-out;
+			overflow: hidden;
+
+			@include mq(md) {
+				margin: 0 1.5% 50px;
+				width: 45%;
+			}
+			@include mq(lg) {
+				width: 30%;
+			}
+
+			.image--inner {
+				height: 200px;
+				width: 100%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				margin-bottom: 20px;
+				padding: 15px;
+			}
+			img {
+				max-width: 100%;
+				margin: 0;
+				height: auto;
+				max-height: 200px;
+				width: auto;
+			}
+
+			h4 {
+				margin-top: 0;
+			}
+
+			.content--inner {
+				padding: 15px;
+				opacity: 0.5;
+				z-index: -1;
+				position: relative;
+				transition: all 0.5s ease-in-out;
+
+				@include mq(xl) {
+					padding: 15px 35px;
+				}
+			}
+
+			&:hover {
+				background: $black;
+				box-shadow: rgba($white, 0.1) 0 4px 20px;
+				.content--inner {
+					opacity: 1;
+					z-index: 9;
+				}
+			}
+		}
+	}
+}

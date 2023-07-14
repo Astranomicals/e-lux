@@ -33,6 +33,18 @@
 			}
 		}
 	}
+	div.product {
+		div.images {
+			.flex-control-thumbs {
+				li {
+					width: 20%;
+					&:nth-child(4n + 1) {
+						clear: none;
+					}
+				}
+			}
+		}
+	}
 }
 
 .woocommerce-notices-wrapper {

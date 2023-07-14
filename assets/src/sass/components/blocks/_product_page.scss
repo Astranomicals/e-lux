@@ -5,9 +5,25 @@
 
 .block--product {
 	background-color: #111;
-	padding: 40px 0 80px;
+	padding: 40px 0 60px;
 	text-align: center;
-	margin-top: 138px;
+	margin-top: 128px;
+
+	@include mq(md) {
+		padding: 40px 0 80px;
+		margin-top: 138px;
+	}
+
+	.product {
+		position: relative;
+		z-index: 0;
+
+		div.images.woocommerce-product-gallery {
+			position: relative;
+			margin-top: -20px;
+			z-index: -1;
+		}
+	}
 
 	form.cart {
 		display: flex;
@@ -60,12 +76,21 @@
 				display: none;
 			}
 
+			&:nth-child(n + 2) {
+				margin-top: 15px;
+				.cfvsw-swatches-container {
+					@include mq($until: md) {
+						justify-content: center;
+					}
+				}
+			}
+
 			&:first-of-type {
 				td {
-					position: absolute;
+					/*position: absolute;
 					right: 0;
 					transform: translateX(50%) rotate(90deg);
-					top: 50%;
+					top: 50%;*/
 				}
 			}
 			&:not(:first-of-type) {
@@ -96,25 +121,51 @@
 		margin-bottom: 0;
 	}
 	.stars {
-		margin-bottom: 24px;
+		margin-bottom: 10px;
+		@include mq(md) {
+			margin-bottom: 24px;
+		}
 		i {
 			color: $primary;
 			margin: 0 2px;
+
+			@include mq($until: md) {
+				font-size: 16px;
+			}
 		}
 	}
 	h5 {
-		font-size: rem(24);
+		font-size: rem(18);
 		line-height: em(32, 24);
 		font-weight: 600;
 		margin: 0;
+
+		@include mq(lg) {
+			font-size: rem(20);
+		}
+		@include mq(xl) {
+			font-size: rem(22);
+		}
+		@include mq(xxl) {
+			font-size: rem(24);
+		}
 	}
 	h2 {
 		margin: 0;
+		@include mq($until: lg) {
+			margin: 10px 0;
+		}
 	}
 	.woocommerce-product-details__short-description {
 		font-size: rem(16);
 		line-height: em(24, 16);
 		margin: 0;
+	}
+	.cfvsw-swatches-option {
+		@include mq($until: md) {
+			min-width: 20px !important;
+			min-height: 20px !important;
+		}
 	}
 	.price {
 		font-size: rem(30);
@@ -133,18 +184,34 @@
 	.flex--details {
 		display: flex;
 		justify-content: center;
+		flex-wrap: wrap;
+
+		@include mq(lg) {
+			flex-wrap: nowrap;
+		}
 
 		.flex--single {
-			margin: 0 35px;
-			flex-shrink: 0;
+			margin: 0 15px 25px;
+			flex-shrink: 1;
 			min-width: 248px;
 
+			@include mq(lg) {
+				margin: 0 35px;
+			}
+
 			p {
-				font-size: rem(30);
+				font-size: rem(20);
 				font-weight: 800;
 				line-height: 1em;
 				color: $white;
 				margin-bottom: 15px;
+
+				@include mq(lg) {
+					font-size: rem(26);
+				}
+				@include mq(xxl) {
+					font-size: rem(30);
+				}
 			}
 
 			h6 {
@@ -164,8 +231,32 @@
 	}
 
 	&.block--product-accessories {
-		margin-top: 75px;
-		padding: 100px 0;
+		margin-top: 55px;
+		padding: 60px 0;
+		@include mq(md) {
+			margin-top: 75px;
+			padding: 80px 0;
+		}
+		@include mq(xl) {
+			padding: 100px 0;
+		}
+		.images {
+			@include mq(md) {
+				position: sticky !important;
+				top: 105px;
+			}
+		}
+		div.product {
+			form.cart {
+				display: flex;
+			}
+		}
+		.content {
+			@include mq($until: lg) {
+				margin: 0;
+				padding: 0;
+			}
+		}
 	}
 }
 
@@ -178,12 +269,21 @@
 			margin-bottom: 80px;
 		}
 	}
+	.mb-testimonial {
+		@include mq($until: md) {
+			margin-bottom: 25px;
+		}
+	}
 	.single--testimonial {
 		background: #333;
 		padding: 30px 35px;
 		text-align: center;
 		color: $white;
 		height: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
 
 		p {
 			margin-bottom: 15px;
@@ -202,13 +302,17 @@
 	}
 }
 .block--cruiser-fit {
-	padding: 80px 0;
+	padding: 40px 0;
 	background: radial-gradient(
 		50% 50% at 50% 50%,
 		rgba($black, 0.4) 0%,
 		rgba($black, 0) 100%
 	);
 	position: relative;
+
+	@include mq(lg) {
+		padding: 80px 0;
+	}
 
 	&::before {
 		@include pseudo_cover;
@@ -221,23 +325,84 @@
 
 	.cruiser--area {
 		display: grid;
-		grid-template-columns: 1fr 1fr;
-		padding-top: 100px;
+		grid-template-columns: 1fr;
+		align-items: center;
+
+		@include mq(md) {
+			grid-template-columns: 1fr 1fr;
+		}
+
+		.bike--image {
+			max-height: 72%;
+			width: auto;
+			display: flex;
+			align-items: flex-end;
+			justify-content: flex-start;
+			height: 300px;
+
+			@include mq(lg) {
+				height: 420px;
+			}
+			@include mq(xl) {
+				height: 520px;
+			}
+			@include mq(xxl) {
+				height: 650px;
+			}
+
+			img {
+				max-width: 100%;
+				max-height: 100%;
+				width: auto;
+				height: auto;
+			}
+		}
 
 		.image--holder {
 			position: relative;
 			z-index: 0;
+			display: flex;
+			align-items: flex-end;
+			height: 300px;
+
+			@include mq(lg) {
+				height: 420px;
+			}
+			@include mq(xl) {
+				height: 520px;
+			}
+			@include mq(xxl) {
+				height: 650px;
+			}
 
 			.image {
 				position: absolute;
-				bottom: 40px;
-				left: 55px;
+				bottom: 20px;
+				left: 5px;
 				z-index: -1;
 				opacity: 0;
 				transition: all 0.5s ease-in;
+				height: 100%;
+				width: auto;
+
+				@include mq(xl) {
+					left: 55px;
+				}
+
+				@include mq(xxl) {
+					height: auto;
+					bottom: 40px;
+				}
 
 				&.active {
 					opacity: 1;
+				}
+
+				img {
+					max-height: 100%;
+					max-width: 100%;
+					height: auto;
+					width: auto;
 				}
 			}
 			img:not(.image) {
@@ -254,13 +419,25 @@
 
 		.height--single {
 			display: grid;
-			grid-template-columns: 255px 1fr;
+			grid-template-columns: 1fr;
 			align-items: center;
 			width: 100%;
+
+			@include mq(md) {
+				grid-template-columns: 150px 1fr;
+			}
+
+			@include mq(lg) {
+				grid-template-columns: 200px 1fr;
+			}
+			@include mq(xl) {
+				grid-template-columns: 255px 1fr;
+			}
 
 			&.active {
 				.description {
 					opacity: 1;
+					display: block;
 				}
 				.title {
 					position: relative;
@@ -274,9 +451,15 @@
 						transform: translateY(-50%);
 						width: 0;
 						height: 0;
-						border-top: 25px solid transparent;
-						border-bottom: 25px solid transparent;
-						border-right: 34px solid $primary;
+						border-top: 15px solid transparent;
+						border-bottom: 15px solid transparent;
+						border-right: 20px solid $primary;
+
+						@include mq(lg) {
+							border-top: 25px solid transparent;
+							border-bottom: 25px solid transparent;
+							border-right: 34px solid $primary;
+						}
 					}
 					h6 {
 						background: $primary;
@@ -286,10 +469,20 @@
 			}
 		}
 		.title {
-			border-right: 1px solid $primary;
-			padding: 60px 0;
 			display: flex;
 			align-items: center;
+			padding: 20px 0;
+
+			@include mq(md) {
+				border-right: 1px solid $primary;
+				padding: 50px 0;
+			}
+			@include mq(lg) {
+				padding: 50px 0;
+			}
+			@include mq(xl) {
+				padding: 60px 0;
+			}
 		}
 		h6 {
 			cursor: pointer;
@@ -297,7 +490,7 @@
 			border: 2px solid $primary;
 			padding: 15px;
 			text-align: center;
-			width: 195px;
+			width: 100%;
 			height: 55px;
 			display: flex;
 			align-items: center;
@@ -306,45 +499,117 @@
 			line-height: em(20, 16);
 			color: $primary;
 			margin: 0;
+
+			@include mq(md) {
+				width: 120px;
+			}
+			@include mq(lg) {
+				width: 155px;
+			}
+			@include mq(xl) {
+				width: 195px;
+			}
 		}
 		.description {
-			padding-left: 125px;
+			padding-left: 25px;
 			opacity: 0;
 			transition: all 0.5s ease-in-out;
+			display: none;
+
+			@include mq(md) {
+				display: block;
+			}
+
+			@include mq(xl) {
+				padding-left: 50px;
+			}
+			@include mq(xxxl) {
+				padding-left: 125px;
+			}
 			h3 {
-				font-size: rem(40);
+				font-size: rem(24);
 				line-height: em(48, 40);
 				letter-spacing: -0.5px;
 				color: $white;
-				margin-bottom: 30px;
+				margin-bottom: 15px;
 				margin-top: 0;
+
+				@include mq(lg) {
+					font-size: rem(30);
+				}
+				@include mq(xl) {
+					margin-bottom: 30px;
+					font-size: rem(32);
+				}
+				@include mq(xxl) {
+					font-size: rem(36);
+				}
+				@include mq(xxxl) {
+					font-size: rem(40);
+				}
 			}
 			p {
-				font-size: rem(20);
+				font-size: rem(16);
 				line-height: em(30, 20);
 				margin: 0;
+
+				@include mq(lg) {
+					font-size: rem(18);
+				}
+				@include mq(xl) {
+					font-size: rem(20);
+				}
 			}
 		}
 	}
 }
 
 .block--icons {
-	padding: 30px 0 70px;
+	padding: 30px 0 60px;
 	background: $background;
+
+	@include mq(md) {
+		padding: 30px 0 70px;
+	}
 
 	.grid--icons {
 		display: grid;
-		grid-template-columns: 1fr 1fr 1fr;
-		grid-gap: 45px;
+		grid-template-columns: 1fr;
+		grid-gap: 25px;
 		text-align: center;
 
+		@include mq(md) {
+			grid-template-columns: 1fr 1fr 1fr;
+			grid-gap: 35px;
+		}
+		@include mq(xl) {
+			grid-gap: 45px;
+		}
+
 		.icons {
+			margin-top: 45px;
+			@include mq(md) {
+				margin-top: 0;
+			}
+
+			&:first-of-type {
+				margin-top: 0;
+			}
 			i {
-				height: 79px;
+				height: 45px;
+				font-size: 45px;
 				width: auto;
 				margin-bottom: 35px;
-				font-size: 79px;
 				color: $primary;
+
+				@include mq(md) {
+					height: 60px;
+					font-size: 60px;
+				}
+				@include mq(lg) {
+					height: 79px;
+					font-size: 79px;
+				}
 			}
 			p {
 				margin: 0;
@@ -355,17 +620,40 @@
 
 .block--details {
 	background: #111;
-	padding: 120px 0;
+	padding: 60px 0;
+
+	@include mq(md) {
+		padding: 80px 0;
+	}
+	@include mq(xl) {
+		padding: 100px 0;
+	}
+	@include mq(xxl) {
+		padding: 120px 0;
+	}
 
 	.top--header {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		padding: 0 80px;
+		flex-direction: column;
+
+		@include mq(md) {
+			flex-direction: row;
+		}
+
+		@include mq(xxl) {
+			padding: 0 80px;
+		}
 	}
 
 	.svg--holder {
 		position: relative;
+		margin: 35px 0;
+
+		@include mq(xl) {
+			margin: 0;
+		}
 
 		img {
 			width: 100%;
@@ -375,34 +663,71 @@
 
 	h2.large {
 		color: rgba($white, 0.2);
-		font-size: rem(160);
+		font-size: rem(60);
 		font-weight: 700;
-		line-height: em(32, 160);
-		margin: 0;
+		line-height: 1em;
+		margin: 0 0 25px;
+
+		@include mq(md) {
+			margin: 0;
+			font-size: rem(80);
+		}
+		@include mq(lg) {
+			font-size: rem(120);
+		}
+		@include mq(xl) {
+			font-size: rem(140);
+		}
+		@include mq(xxl) {
+			font-size: rem(150);
+		}
+		@include mq(xxxl) {
+			font-size: rem(160);
+		}
 	}
 	.btn--floater {
-		position: absolute;
-		bottom: 65px;
-		right: 65px;
+		margin: 0 auto;
+		@include mq(md) {
+			position: absolute;
+			bottom: 65px;
+			right: 65px;
+		}
 	}
 }
 
 .block--lifestyle {
-	padding: 120px 0;
+	padding: 60px 0;
 	background: $background;
+
+	@include mq(xl) {
+		padding: 100px 0;
+	}
+	@include mq(xxl) {
+		padding: 120px 0;
+	}
 	h2 {
 		text-align: center;
 		margin-bottom: 50px;
 	}
 	.content--area {
 		display: grid;
-		grid-template-columns: 1fr 1fr;
-		grid-gap: 70px;
+		grid-template-columns: 1fr;
+		grid-gap: 35px;
 		align-items: center;
 		background: #111;
 		border-radius: 5px;
-		padding: 50px;
+		padding: 30px;
 
+		@include mq(md) {
+			padding: 35px;
+			grid-gap: 35px;
+			grid-template-columns: 1fr 1fr;
+		}
+
+		@include mq(lg) {
+			grid-gap: 70px;
+			padding: 50px;
+		}
 		.image--holder {
 			img {
 				border-radius: 5px;
@@ -414,6 +739,11 @@
 }
 .block--accessories {
 	background: $background;
+	.col-md-6 {
+		@include mq($until: lg) {
+			margin-bottom: 25px;
+		}
+	}
 	article {
 		border-radius: 5px;
 		background: #111;
@@ -470,22 +800,42 @@
 	.flex--buttons {
 		display: flex;
 		justify-content: center;
+		flex-direction: column;
 		margin-bottom: 15px;
 
+		@include mq(xl) {
+			flex-direction: row;
+		}
 		a,
 		.btn--second {
-			margin: 0 8px !important;
-			width: 250px;
+			margin: 0 auto 15px !important;
+			width: 100%;
+
+			@include mq(xl) {
+				margin: 0 8px !important;
+				width: 250px;
+			}
+		}
+		p.product.woocommerce.add_to_cart_inline .button {
+			margin: 0 auto !important;
 		}
 	}
 }
 .block--testimonial-single {
-	padding: 80px 0;
+	padding: 60px 0;
 	text-align: center;
 	background: $background;
 
+	@include mq(lg) {
+		padding: 80px 0;
+	}
+
 	h2 {
-		margin-bottom: 60px;
+		margin-bottom: 35px;
+
+		@include mq(lg) {
+			margin-bottom: 60px;
+		}
 	}
 
 	.image--holder {
@@ -499,8 +849,8 @@
 
 		a.btn--play {
 			border-radius: 100em;
-			height: 120px;
-			width: 120px;
+			height: 60px;
+			width: 60px;
 			display: flex;
 			align-items: center;
 			justify-content: center;
@@ -512,12 +862,23 @@
 			color: $black;
 			z-index: 9;
 
-			i {
-				font-size: 30px;
-				transition: transform 0.4s ease-in;
-				z-index: 1;
+			@include mq(md) {
+				height: 100px;
+				width: 100px;
 			}
+			@include mq(xl) {
+				height: 120px;
+				width: 120px;
+			}
+			i {
+				font-size: 16px;
+				color: $black;
+				z-index: 2;
 
+				@include mq(md) {
+					font-size: 30px;
+				}
+			}
 			&::before {
 				@include pseudo_cover;
 				background: rgba($primary, 0.5);
@@ -565,27 +926,48 @@
 	z-index: -10;
 
 	.content {
-		width: calc(100% - 200px);
-		height: calc(100% - 200px);
+		width: calc(100% - 30px);
+		height: calc(100% - 30px);
 		background: #333;
 		color: $white;
 		overflow: auto;
 		box-shadow: rgba($white, 0.2) 0 4px 20px;
-		padding: 35px 5vw;
+		padding: 55px 15px 15px;
 		z-index: 1;
+
+		@include mq(lg) {
+			padding: 35px 5vw;
+			width: calc(100% - 100px);
+			height: calc(100% - 100px);
+		}
+		@include mq(xl) {
+			width: calc(100% - 200px);
+			height: calc(100% - 200px);
+		}
 
 		.close {
 			position: absolute;
 			right: 25px;
-			top: 25px;
+			top: 15px;
 			color: $white;
 			cursor: pointer;
+
+			@include mq(lg) {
+				top: 25px;
+			}
 		}
 
 		.spec--list {
 			display: grid;
-			grid-template-columns: 1fr 1fr;
-			grid-gap: 35px;
+			grid-template-columns: 1fr;
+			grid-gap: 20px;
+
+			@include mq(md) {
+				grid-template-columns: 1fr 1fr;
+			}
+			@include mq(lg) {
+				grid-gap: 35px;
+			}
 
 			h4 {
 				margin-bottom: 10px;

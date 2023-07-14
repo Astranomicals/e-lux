@@ -19,7 +19,7 @@
 		<?php the_post_thumbnail('main_blog_thumb'); ?>
 	</div>
 	<?php
-	$product = wc_get_product(get_the_ID());
+	global $product;
 	$sku = $product->get_sku();
 	$reg_price = $product->get_regular_price();
 	$sale_price = $product->get_sale_price();
@@ -27,7 +27,9 @@
 	?>
 	<div class="price">$<?php echo $price; ?></div>
 	<div class="flex--buttons">
-		<a href="<?php echo get_the_permalink(); ?>" class="btn btn--secondary">View More</a>
+		<?php if (!$product->is_type('variable')) : ?>
+			<a href="<?php echo get_the_permalink(); ?>" class="btn btn--secondary">View More</a>
+		<?php endif; ?>
 		<div class="btn--second">
 			<?php echo do_shortcode('[add_to_cart id="' . $post->ID . '" show_price="false"]'); ?>
 		</div>

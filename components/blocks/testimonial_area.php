@@ -23,8 +23,12 @@ $youtube_id = get_sub_field('youtube_id');
 				<img src="https://img.youtube.com/vi/<?php echo $youtube_id; ?>/maxresdefault.jpg" />
 				<a href="http://www.youtube.com/watch?v=<?php echo $youtube_id; ?>" class="btn--play"><i class="fas fa-play"></i></a>
 			</div>
+		</div>
+	</div>
+	<div class="row justify-content-center">
+		<div class="col-md-6">
+			<?php echo do_shortcode('[trustindex no-registration=google]'); ?>
 			<a href="/reviews/" class="btn--primary btn">View all Reviews</a>
 		</div>
 	</div>
-</div>
 </div>

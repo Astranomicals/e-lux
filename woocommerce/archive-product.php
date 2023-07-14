@@ -18,9 +18,6 @@
 
 defined('ABSPATH') || exit;
 
-$bg_image = get_field('treat_background_image', 'option');
-$content  = get_field('treat_content', 'option');
-
 get_header('shop');
 
 /**

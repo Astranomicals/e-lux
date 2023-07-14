@@ -48,22 +48,7 @@ $content = get_sub_field('top_content');
 							<?php while ($query->have_posts()) : ?>
 								<?php $query->the_post(); ?>
 								<div class="swiper-slide">
-									<?php
-									$product = wc_get_product(get_the_ID());
-									$sku = $product->get_sku();
-									$reg_price = $product->get_regular_price();
-									$sale_price = $product->get_sale_price();
-									$price = $product->get_price();
-									?>
-									<h3 class="back--title"><?php echo get_the_title(); ?></h3>
-									<?php echo get_the_post_thumbnail($post->ID, 'large'); ?>
-									<div class="price">$<?php echo $price; ?></div>
-									<div class="flex--buttons">
-										<a href="<?php echo get_the_permalink(); ?>" class="btn btn--secondary">View More</a>
-										<div class="btn--second">
-											<?php echo do_shortcode('[add_to_cart id="' . $post->ID . '" show_price="false"]'); ?>
-										</div>
-									</div>
+									<?php get_template_part('components/product-preview'); ?>
 								</div>
 							<?php endwhile; ?>
 						</div>
@@ -97,22 +82,7 @@ $content = get_sub_field('top_content');
 							<?php while ($query->have_posts()) : ?>
 								<?php $query->the_post(); ?>
 								<div class="swiper-slide">
-									<?php
-									$product = wc_get_product(get_the_ID());
-									$sku = $product->get_sku();
-									$reg_price = $product->get_regular_price();
-									$sale_price = $product->get_sale_price();
-									$price = $product->get_price();
-									?>
-									<h3 class="back--title"><?php echo get_the_title(); ?></h3>
-									<?php echo get_the_post_thumbnail($post->ID, 'large'); ?>
-									<div class="price">$<?php echo $price; ?></div>
-									<div class="flex--buttons">
-										<a href="<?php echo get_the_permalink(); ?>" class="btn btn--secondary">View More</a>
-										<div class="btn--second">
-											<?php echo do_shortcode('[add_to_cart id="' . $post->ID . '" show_price="false"]'); ?>
-										</div>
-									</div>
+									<?php get_template_part('components/product-preview'); ?>
 								</div>
 							<?php endwhile; ?>
 						</div>
@@ -146,22 +116,7 @@ $content = get_sub_field('top_content');
 							<?php while ($query->have_posts()) : ?>
 								<?php $query->the_post(); ?>
 								<div class="swiper-slide">
-									<?php
-									$product = wc_get_product(get_the_ID());
-									$sku = $product->get_sku();
-									$reg_price = $product->get_regular_price();
-									$sale_price = $product->get_sale_price();
-									$price = $product->get_price();
-									?>
-									<h3 class="back--title"><?php echo get_the_title(); ?></h3>
-									<?php echo get_the_post_thumbnail($post->ID, 'large'); ?>
-									<div class="price">$<?php echo $price; ?></div>
-									<div class="flex--buttons">
-										<a href="<?php echo get_the_permalink(); ?>" class="btn btn--secondary">View More</a>
-										<div class="btn--second">
-											<?php echo do_shortcode('[add_to_cart id="' . $post->ID . '" show_price="false"]'); ?>
-										</div>
-									</div>
+									<?php get_template_part('components/product-preview'); ?>
 								</div>
 							<?php endwhile; ?>
 						</div>

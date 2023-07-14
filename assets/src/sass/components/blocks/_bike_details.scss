@@ -45,7 +45,7 @@
 		}
 
 		.flex--single {
-			width: 140px;
+			width: 155px;
 			margin: 0 auto;
 			max-width: 100%;
 
@@ -75,10 +75,14 @@
 			h6 {
 				border-radius: 5px;
 				border: 1px solid rgba($white, 0.5);
-				font-size: rem(16);
+				font-size: rem(12);
 				line-height: em(20, 16);
 				margin: 0;
 				padding: 10px;
+
+				@include mq(md) {
+					font-size: rem(16);
+				}
 			}
 		}
 	}

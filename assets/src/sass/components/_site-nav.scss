@@ -239,6 +239,12 @@
 					}
 				}
 			}
+
+			&.hide-sm {
+				@include mq($until: md) {
+					display: none;
+				}
+			}
 		}
 
 		.btn {
