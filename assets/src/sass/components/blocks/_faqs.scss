@@ -60,4 +60,14 @@
 			}
 		}
 	}
+
+	body.day & {
+		.faqs {
+			.faq {
+				h3 {
+					border: 1px solid #1e1e1e;
+				}
+			}
+		}
+	}
 }

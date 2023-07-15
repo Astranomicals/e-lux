@@ -86,4 +86,15 @@
 			}
 		}
 	}
+
+	body.day & {
+		.flex--details {
+			p {
+				color: $black;
+			}
+			h6 {
+				border: 1px solid $primary;
+			}
+		}
+	}
 }

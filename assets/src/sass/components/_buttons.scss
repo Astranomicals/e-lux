@@ -61,6 +61,15 @@
 		color: $black;
 		border: 1px solid $primary;
 	}
+
+	body.day & {
+		border: 1px solid $primary;
+		color: $black;
+
+		&:hover {
+			color: $black;
+		}
+	}
 }
 .btn--tertiary {
 	background: $background;

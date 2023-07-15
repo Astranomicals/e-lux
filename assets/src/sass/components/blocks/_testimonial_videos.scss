@@ -36,6 +36,7 @@
 					@include pseudo_cover;
 					background: linear-gradient(to bottom, transparent, $background);
 					z-index: -1;
+					transition: all 0.5s ease-in-out;
 				}
 			}
 
@@ -120,8 +121,23 @@
 				rgba(0, 0, 0, 0.1) 50%
 			);
 	}
-	.swiper-button-next,
-	.swiper-button-prev {
-		color: #fff !important;
+
+	body.day & {
+		.swiper-container {
+			.video--article {
+				.content {
+					&::before {
+						background: linear-gradient(to bottom, transparent, #f5f5f7);
+					}
+				}
+			}
+		}
+
+		.ti-widget.ti-goog .ti-widget-container .ti-name,
+		.ti-widget.ti-goog .ti-review-content,
+		.ti-widget.ti-goog .ti-read-more,
+		.ti-widget.ti-goog .ti-read-more span {
+			color: $black;
+		}
 	}
 }

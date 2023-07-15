@@ -10,6 +10,11 @@
 	&::before {
 		color: $primary;
 	}
+
+	body.day & {
+		background: #ddd;
+		color: $black;
+	}
 }
 
 .woocommerce {

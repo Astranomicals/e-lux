@@ -100,4 +100,17 @@
 	.btn {
 		margin: 0 auto;
 	}
+
+	body.day & {
+		&::before {
+			background: url('/wp-content/uploads/2023/07/white-waves.webp');
+			opacity: 1;
+		}
+		.ti-widget.ti-goog .ti-review-content,
+		.ti-widget.ti-goog .ti-read-more,
+		.ti-widget.ti-goog .ti-review-header .ti-profile-details .ti-name,
+		.ti-widget.ti-goog .ti-read-more span {
+			color: #1e1e1e;
+		}
+	}
 }

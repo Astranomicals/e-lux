@@ -121,11 +121,26 @@ p.product.woocommerce.add_to_cart_inline {
 			color: $primary;
 		}
 	}
+
+	body.day & {
+		.swiper-button-next,
+		.swiper-button-prev {
+			color: $black;
+
+			&:hover {
+				color: $primary;
+			}
+		}
+	}
 }
 .mfp-fade.mfp-bg.mfp-ready {
 	background: rgba($background, 0.85);
 	backdrop-filter: blur(4px);
 	opacity: 1;
+
+	body.day & {
+		background: rgba($white, 0.85);
+	}
 }
 
 .hide-sm {

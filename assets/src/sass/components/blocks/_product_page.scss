@@ -258,6 +258,21 @@
 			}
 		}
 	}
+
+	body.day & {
+		background: #f5f5f7;
+
+		.flex--details {
+			.flex--single {
+				p {
+					color: $black;
+				}
+				h6 {
+					border: 1px solid $primary;
+				}
+			}
+		}
+	}
 }
 
 .block--product_page {
@@ -298,6 +313,15 @@
 			&:last-of-type {
 				margin-bottom: 0;
 			}
+		}
+	}
+
+	body.day & {
+		background: #f5f5f7;
+
+		.single--testimonial {
+			background: #ddd;
+			color: $black;
 		}
 	}
 }
@@ -562,6 +586,26 @@
 			}
 		}
 	}
+
+	body.day & {
+		background: $white;
+		&::before {
+			background: $white;
+		}
+
+		.measure--height {
+			.height--single {
+				h6 {
+					background: $white;
+				}
+			}
+			.description {
+				h3 {
+					color: $primary;
+				}
+			}
+		}
+	}
 }
 
 .block--icons {
@@ -615,6 +659,10 @@
 				margin: 0;
 			}
 		}
+	}
+
+	body.day & {
+		background: $white;
 	}
 }
 
@@ -693,6 +741,18 @@
 			right: 65px;
 		}
 	}
+
+	body.day & {
+		background: $white;
+		&::before {
+			@include pseudo_cover;
+			background: radial-gradient(rgba($black, 0.3), $white);
+		}
+
+		h2.large {
+			color: rgba($black, 0.5);
+		}
+	}
 }
 
 .block--lifestyle {
@@ -734,6 +794,14 @@
 				width: 100%;
 				height: auto;
 			}
+		}
+	}
+
+	body.day & {
+		background: #f5f5f7;
+
+		.content--area {
+			background: #ddd;
 		}
 	}
 }
@@ -818,6 +886,25 @@
 		}
 		p.product.woocommerce.add_to_cart_inline .button {
 			margin: 0 auto !important;
+		}
+	}
+	body.day & {
+		background: #f5f5f7;
+		article {
+			box-shadow: 2px 4px 12px rgba($black, 0.08);
+			background: #f5f5f7;
+
+			&::before {
+				border: 1px solid rgba($black, 0.5);
+			}
+
+			.bike--title {
+				border-bottom: 1px solid rgba($black, 0.5);
+			}
+
+			h3.back--title {
+				color: rgba($black, 0.7);
+			}
 		}
 	}
 }
@@ -911,6 +998,9 @@
 				}
 			}
 		}
+	}
+	body.day & {
+		background: #f5f5f7;
 	}
 }
 
@@ -1013,7 +1103,7 @@
 	}
 
 	&.active {
-		z-index: 9999;
+		z-index: 9999999;
 		.details--background {
 			transform: scaleY(0.01) scaleX(0);
 			animation: unfoldIn 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
@@ -1021,6 +1111,27 @@
 		.content {
 			transform: scale(0);
 			animation: zoomIn 0.5s 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+		}
+	}
+
+	body.day & {
+		.details--background {
+			background: rgba($white, 0.8);
+		}
+		.content {
+			background: $white;
+			box-shadow: rgba($black, 0.3) 0 4px 25px;
+
+			.close {
+				color: $black;
+			}
+
+			.spec--list {
+				.spec--single {
+					border: 1px solid rgba($black, 0.5);
+					color: $black;
+				}
+			}
 		}
 	}
 }

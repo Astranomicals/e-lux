@@ -167,4 +167,30 @@
 			}
 		}
 	}
+
+	body.day & {
+		.bike--holder {
+			box-shadow: 2px 4px 12px rgba($black, 0.08);
+			background: #f5f5f7;
+
+			&::before {
+				border: 1px solid rgba($black, 0.5);
+			}
+
+			.bike--title {
+				border-bottom: 1px solid rgba($black, 0.5);
+			}
+
+			.swiper--nav {
+				.swiper-button-next,
+				.swiper-button-prev {
+					color: $black;
+				}
+			}
+
+			h3.back--title {
+				color: rgba($black, 0.7);
+			}
+		}
+	}
 }

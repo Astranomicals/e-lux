@@ -32,6 +32,34 @@
 					this.specsModal();
 					this.contactForms();
 					this.faqs();
+					this.dayNightFeature();
+				},
+				dayNightFeature: function(){
+					const timeOfDay = sessionStorage.getItem(`dayNight`);
+					if (timeOfDay !== null ){
+						if(timeOfDay === `night`){
+							$(`.daytime-toggle .toggle--checkbox`).prop( "checked", true );
+							sessionStorage.setItem(`dayNight`, 'night');
+							$(`body`).removeClass(`day`);
+						}else{
+							sessionStorage.setItem(`dayNight`, 'day');
+							$(`body`).addClass(`day`);
+						}
+					}else{
+						$(`.daytime-toggle .toggle--checkbox`).prop( "checked", true );
+						sessionStorage.setItem(`dayNight`, 'night');
+						$(`body`).removeClass(`day`);
+					}
+
+					$(`.toggle--label`).on(`click`, function(){
+						if($(`body`).hasClass(`day`)){
+							sessionStorage.setItem(`dayNight`, 'night');
+							$(`body`).removeClass(`day`);
+						}else{
+							sessionStorage.setItem(`dayNight`, 'day');
+							$(`body`).addClass(`day`);
+						}
+					});
 				},
 				faqs: function(){
 					$(`.faq h3`).on(`click`, function(){

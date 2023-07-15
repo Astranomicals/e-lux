@@ -88,7 +88,13 @@ $footer_image    = get_field('footer_image', 'option');
 		</div>
 	</div>
 </footer>
-
+<div class="daytime-toggle">
+	<input type="checkbox" id="toggle" class="toggle--checkbox">
+	<label for="toggle" class="toggle--label">
+		<span class="toggle--label-background"></span>
+	</label>
+	<div class="background"></div>
+</div>
 </div><!-- end of .site-wrap -->
 
 <?php wp_footer(); ?>

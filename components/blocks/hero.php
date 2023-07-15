@@ -17,13 +17,19 @@ $heading       = get_sub_field('heading');
 $subheading              = get_sub_field('subheading');
 $video_mp4    = get_sub_field('background_video_mp4');
 $video_webm   = get_sub_field('background_video_webm');
+$night_mp4    = get_sub_field('night_mp4');
+$night_webm   = get_sub_field('night_webm');
 $hero_image = get_sub_field('background_video_poster');
 ?>
 
 <div class="background--image">
-	<video fechpriority="high" poster="<?php echo esc_url($hero_image['sizes']['hero']); ?>" id="bgvid" playsinline autoplay muted loop>
+	<video fechpriority="high" poster="<?php echo esc_url($hero_image['sizes']['hero']); ?>" id="day" playsinline autoplay muted loop>
 		<source src="<?php echo esc_url($video_mp4); ?>" type="video/mp4">
 		<source src="<?php echo esc_url($video_webm); ?>" type="video/webm">
+	</video>
+	<video fechpriority="high" poster="<?php echo esc_url($hero_image['sizes']['hero']); ?>" id="night" playsinline autoplay muted loop>
+		<source src="<?php echo esc_url($night_mp4); ?>" type="video/mp4">
+		<source src="<?php echo esc_url($night_webm); ?>" type="video/webm">
 	</video>
 </div>
 <div class="container">

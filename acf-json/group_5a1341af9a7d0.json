@@ -130,7 +130,7 @@
                             "conditional_logic": 0,
                             "wrapper": {
                                 "width": "",
-                                "class": "hide-label",
+                                "class": "",
                                 "id": ""
                             },
                             "return_format": "url",
@@ -150,7 +150,47 @@
                             "conditional_logic": 0,
                             "wrapper": {
                                 "width": "",
-                                "class": "hide-label",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "url",
+                            "library": "all",
+                            "min_size": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        },
+                        {
+                            "key": "field_64b1878520347",
+                            "label": "Night MP4",
+                            "name": "night_mp4",
+                            "aria-label": "",
+                            "type": "file",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "url",
+                            "library": "all",
+                            "min_size": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        },
+                        {
+                            "key": "field_64b1879220348",
+                            "label": "Night WEBM",
+                            "name": "night_webm",
+                            "aria-label": "",
+                            "type": "file",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
                                 "id": ""
                             },
                             "return_format": "url",
@@ -2404,5 +2444,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1689278632
+    "modified": 1689356235
 }

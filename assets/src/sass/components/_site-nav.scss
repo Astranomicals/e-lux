@@ -199,6 +199,44 @@
 			}
 		}
 	}
+
+	body.day & {
+		background: #f5f5f7;
+		.logo {
+			svg {
+				path[fill='#fff'] {
+					fill: #1e1e1e;
+				}
+			}
+		}
+
+		.menu {
+			> li {
+				> a {
+					color: #1e1e1e;
+
+					i {
+						font-weight: bolder;
+					}
+				}
+
+				&:hover {
+					> .sub-menu {
+						background: #f5f5f7;
+						> li {
+							a {
+								color: #1e1e1e;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		&.sticky {
+			box-shadow: rgba($black, 0.1) 0 4px 15px;
+		}
+	}
 }
 
 .bike--main {
@@ -254,6 +292,19 @@
 			line-height: 1em;
 			align-items: center;
 			justify-content: center;
+		}
+	}
+
+	body.day & {
+		background: #eee;
+		box-shadow: rgba($black, 0.1) 0 4px 10px;
+		z-index: 99999;
+		.menu {
+			li {
+				a {
+					color: $black;
+				}
+			}
 		}
 	}
 }

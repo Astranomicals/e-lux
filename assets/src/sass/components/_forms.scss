@@ -54,6 +54,20 @@ form {
 	.wpcf7-spinner {
 		display: none;
 	}
+
+	body.day & {
+		::placeholder {
+			color: #ccc;
+		}
+		input,
+		textarea,
+		select,
+		.select2-container--default .select2-selection--single,
+		.select2-dropdown {
+			border-bottom: 1px solid rgba($black, 0.5);
+			color: $black;
+		}
+	}
 }
 .wpcf7-not-valid-tip {
 	color: $primary;

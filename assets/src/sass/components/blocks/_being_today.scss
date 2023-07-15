@@ -130,4 +130,29 @@
 			}
 		}
 	}
+
+	body.day & {
+		background: $white;
+
+		.logos {
+			.single-logo {
+				a {
+					img {
+						filter: contrast(1) invert(1);
+					}
+					&:hover {
+						img {
+							filter: contrast(0) invert(0.5);
+						}
+					}
+				}
+			}
+		}
+		.flex--numbers {
+			.single--number:nth-of-type(2) {
+				border-left: 1px solid rgba($black, 0.4);
+				border-right: 1px solid rgba($black, 0.4);
+			}
+		}
+	}
 }
