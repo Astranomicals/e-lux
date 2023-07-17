@@ -64,6 +64,7 @@ require_once get_template_directory() . '/includes/sidebars/blog.php';
 require_once get_template_directory() . '/includes/shortcodes/call-number.php';
 require_once get_template_directory() . '/includes/shortcodes/logo.php';
 require_once get_template_directory() . '/includes/shortcodes/locations.php';
+require_once get_template_directory() . '/includes/shortcodes/edu_blogs.php';
 
 // PLUGINS
 // ==================================================.

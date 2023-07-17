@@ -16,7 +16,7 @@
 <article class="post-preview" id="post-<?php the_ID(); ?>">
 	<h3 class="back--title"><?php echo get_the_title(); ?></h3>
 	<div class="image--holder">
-		<?php the_post_thumbnail('main_blog_thumb'); ?>
+		<a href="<?php echo get_the_permalink(); ?>"><?php the_post_thumbnail('main_blog_thumb'); ?></a>
 	</div>
 	<?php
 	global $product;

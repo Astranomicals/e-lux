@@ -21,7 +21,7 @@ $youtube_id = get_sub_field('youtube_id');
 			<h2>Our customers say it best</h2>
 			<div class="image--holder">
 				<img src="https://img.youtube.com/vi/<?php echo $youtube_id; ?>/maxresdefault.jpg" />
-				<a href="http://www.youtube.com/watch?v=<?php echo $youtube_id; ?>" class="btn--play"><i class="fas fa-play"></i></a>
+				<a href="http://www.youtube.com/watch?v=<?php echo $youtube_id; ?>?autoplay=1" class="btn--play mfp-iframe"><i class="fas fa-play"></i></a>
 			</div>
 		</div>
 	</div>

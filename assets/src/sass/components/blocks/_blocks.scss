@@ -20,10 +20,24 @@
 		height: 420px;
 	}
 	@include mq(xxl) {
-		height: 500px;
+		height: 650px;
 	}
 
-	.background--image {
+	.video--holder {
+		@include absolute_cover;
+		z-index: -1;
+	}
+	video {
+		@include absolute_cover;
+		height: auto;
+		top: 50%;
+		transform: translateY(-50%);
+		object-fit: cover;
+		z-index: 0;
+	}
+
+	.background--image,
+	.video--holder {
 		z-index: -1;
 		overflow: hidden;
 

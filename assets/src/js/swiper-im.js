@@ -18,6 +18,9 @@ const homepageContainers = document.querySelectorAll('.product--slider');
 homepageContainers.forEach((homepageSlider) => {
 	const slider = new Swiper(homepageSlider, {
 		slidesPerView: 1,
+		autoplay: {
+			delay: 6000,
+		},
 		loop: true,
 		navigation: {
 			nextEl: homepageSlider.querySelector('.swiper-button-next'),

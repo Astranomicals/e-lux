@@ -33,7 +33,7 @@
 									<div class="video--article">
 										<div class="video--holder">
 											<img src="https://img.youtube.com/vi/<?php echo $youtube_id; ?>/maxresdefault.jpg" />
-											<a href="http://www.youtube.com/watch?v=<?php echo $youtube_id; ?>" class="btn--play"><i class="fas fa-play"></i></a>
+											<a href="http://www.youtube.com/watch?v=<?php echo $youtube_id; ?>?autoplay=1" class="btn--play"><i class="fas fa-play"></i></a>
 										</div>
 										<div class="content">
 											<h2><?php echo $title; ?></h2>

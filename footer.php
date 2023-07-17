@@ -23,13 +23,24 @@ $hours    		= get_field('business_hours', 'option');
 $footer_image    = get_field('footer_image', 'option');
 
 ?>
-<?php if (!is_front_page()) : ?>
+<?php if (!is_front_page() && !is_page(384)) : ?>
 	<section class="block block--concierge-button">
 		<div class="container">
 			<div class="row">
 				<div class="col-12">
-					<h2>Not sure? Allow Our E-bike Concierge Help You Find the Perfect Model</h2>
+					<h2>Not sure? Allow Our E-bike Concierge To Help You Find the Perfect Model</h2>
 					<a href="/conceirge/" class="btn btn--tertiary">Take the Concierge Quiz</a>
+				</div>
+			</div>
+		</div>
+	</section>
+<?php elseif (is_page(384)) : ?>
+	<section class="block block--concierge-button">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<h2>Found Your Perfect Model?</h2>
+					<a href="/product-category/models/" class="btn btn--tertiary">View All Models</a>
 				</div>
 			</div>
 		</div>

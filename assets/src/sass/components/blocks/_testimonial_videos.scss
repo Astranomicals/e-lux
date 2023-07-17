@@ -122,6 +122,10 @@
 			);
 	}
 
+	.ti-widget.ti-goog .ti-widget-container .ti-name {
+		font-size: rem(20);
+	}
+
 	body.day & {
 		.swiper-container {
 			.video--article {

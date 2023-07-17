@@ -15,6 +15,7 @@
 $postid           = get_the_id();
 $page_title       = get_the_title($postid);
 $background_image = get_field('page_header_background_image', $postid) ?: get_field('default_image', 'options');
+$video = get_field('video_bg', $postid);
 
 if (is_home()) :
 	$background_image = get_field('default_image', 'options');
@@ -26,7 +27,13 @@ endif;
 ?>
 
 <header id="header" class="page--header">
-	<?php if ($background_image) : ?>
+	<?php if ($video) : ?>
+		<div class="video--holder">
+			<video fechpriority="high" poster="<?php echo esc_url($background_image['url']); ?>" id="day" playsinline autoplay muted loop>
+				<source src="<?php echo esc_url($video); ?>" type="video/mp4">
+			</video>
+		</div>
+	<?php elseif ($background_image) : ?>
 		<div class="background--image">
 			<?php echo wp_get_attachment_image($background_image['id'], 'hero', '', ''); ?>
 		</div>

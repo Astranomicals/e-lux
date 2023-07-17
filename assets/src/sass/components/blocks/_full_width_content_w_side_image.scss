@@ -80,7 +80,7 @@
 			padding-right: 250px;
 		}
 		@include mq(lg) {
-			padding-right: 150px;
+			padding-right: 250px;
 		}
 		@include mq(xl) {
 			column-count: 2;
@@ -101,10 +101,30 @@
 				top: 1px;
 				left: 0;
 			}
+
+			a {
+				color: $white;
+
+				&:hover {
+					color: $primary;
+				}
+			}
 		}
 	}
 
 	body.day & {
 		background: #dedede;
+
+		ul {
+			li {
+				a {
+					color: $black;
+
+					&:hover {
+						color: $primary;
+					}
+				}
+			}
+		}
 	}
 }
