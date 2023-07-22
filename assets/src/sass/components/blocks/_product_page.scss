@@ -833,6 +833,18 @@
 			border-radius: 5px;
 		}
 
+		.image--holder {
+			height: 45vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			a {
+				display: block;
+				height: 100%;
+			}
+		}
+
 		.bike--title {
 			border-bottom: 1px solid rgba($white, 0.5);
 			font-size: rem(20);
@@ -849,11 +861,13 @@
 		}
 
 		img {
-			width: 100%;
+			width: auto;
+			max-width: 100%;
+			max-height: 100%;
 			height: auto;
 			z-index: 1;
 			margin-top: 0;
-			margin-bottom: -50px;
+			margin-bottom: 0;
 		}
 	}
 

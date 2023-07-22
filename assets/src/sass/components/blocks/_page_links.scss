@@ -1,4 +1,4 @@
-.block--testimonial_videos {
+.block--page_links {
 	overflow: hidden;
 	padding: 60px 0;
 
@@ -6,14 +6,26 @@
 		padding: 80px 0;
 	}
 
+	.links {
+		display: flex;
+		flex-wrap: wrap;
+		margin-bottom: 25px;
+		justify-content: center;
+
+		a {
+			margin: 0 10px 20px;
+			width: auto;
+			max-width: unset;
+		}
+	}
 	h2 {
 		text-align: center;
 		margin-bottom: 45px;
 	}
 
 	.swiper--nav {
-		margin-bottom: 25px;
 		margin-top: 0;
+		margin-bottom: 25px;
 	}
 
 	.swiper-container {
@@ -127,10 +139,6 @@
 			);
 	}
 
-	.ti-widget.ti-goog .ti-widget-container .ti-name {
-		font-size: rem(20);
-	}
-
 	body.day & {
 		.swiper-container {
 			.video--article {
@@ -140,13 +148,6 @@
 					}
 				}
 			}
-		}
-
-		.ti-widget.ti-goog .ti-widget-container .ti-name,
-		.ti-widget.ti-goog .ti-review-content,
-		.ti-widget.ti-goog .ti-read-more,
-		.ti-widget.ti-goog .ti-read-more span {
-			color: $black;
 		}
 	}
 }

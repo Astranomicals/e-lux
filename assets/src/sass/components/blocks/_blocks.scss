@@ -20,7 +20,10 @@
 		height: 420px;
 	}
 	@include mq(xxl) {
-		height: 650px;
+		height: 450px;
+	}
+	@include mq(xxxl) {
+		height: 550px;
 	}
 
 	.video--holder {
@@ -73,6 +76,39 @@
 	margin: 60px 0;
 	overflow: hidden;
 
+	.filters {
+		margin-bottom: 45px;
+
+		ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			display: flex;
+			flex-direction: row-reverse;
+			justify-content: flex-end;
+
+			li {
+				button {
+					@extend .btn;
+					@extend .btn--secondary;
+					cursor: pointer;
+					margin-right: 16px;
+					width: auto;
+
+					span {
+						margin-left: 6px;
+					}
+
+					&.active {
+						background: $primary;
+						color: $black;
+						border-color: $primary;
+					}
+				}
+			}
+		}
+	}
+
 	.grid--products {
 		display: grid;
 		grid-template-columns: 1fr;
@@ -93,6 +129,7 @@
 		padding: 25px;
 		display: flex;
 		flex-direction: column;
+		justify-content: flex-end;
 
 		@include mq(md) {
 			padding: 40px;
@@ -110,32 +147,38 @@
 		}
 
 		img {
-			width: 100%;
+			width: auto;
+			max-height: 100%;
+			max-width: 100%;
 			height: auto;
-			margin: 40px auto -10px;
+			margin: 0 auto;
 			z-index: 4;
+		}
 
-			@include mq(md) {
-				margin: 50px auto -55px;
+		.image--holder {
+			max-height: 45vh;
+
+			a {
+				display: block;
+				height: 100%;
 			}
 		}
 
 		h3.back--title {
 			line-height: 1em;
 			font-weight: 700;
-			position: absolute;
-			top: 25px;
-			position: absolute;
+			top: 30px;
+			margin-bottom: auto;
+			position: relative;
 			left: 0;
 			padding: 0 10px;
 			width: 100%;
-			opacity: 0.5;
+			opacity: 0.35;
 			z-index: -1;
 			text-transform: uppercase;
 			font-size: rem(35);
 
 			@include mq(md) {
-				top: 55px;
 				padding: 0 15px;
 				font-size: rem(45);
 			}
@@ -146,11 +189,11 @@
 				font-size: rem(40);
 			}
 			@include mq(xxl) {
-				font-size: rem(50);
+				font-size: rem(45);
 			}
 			@include mq(xxxl) {
 				padding: 0 20px;
-				font-size: rem(65);
+				font-size: rem(60);
 			}
 		}
 
@@ -165,18 +208,12 @@
 			@include mq(lg) {
 				margin-bottom: 30px;
 			}
-			@include mq(xl) {
-				margin-bottom: 60px;
-			}
-			@include mq(xxl) {
-				margin-bottom: 70px;
-			}
 		}
 
 		.flex--buttons {
 			display: flex;
 			justify-content: center;
-			margin-top: auto;
+			margin-top: 0;
 			flex-direction: column;
 
 			@include mq(md) {
@@ -213,7 +250,7 @@
 	.term-accessories & {
 		h3.back--title {
 			position: relative;
-			margin-bottom: 0;
+			margin-bottom: auto;
 			margin-top: 0;
 			top: 0;
 		}
@@ -245,6 +282,53 @@
 
 			h3.back--title {
 				color: rgba($black, 0.7);
+			}
+		}
+	}
+
+	body.post-type-archive-product & {
+		.grid--products {
+			grid-template-columns: 1fr 1fr 1fr;
+			grid-gap: 20px;
+
+			article {
+				justify-content: flex-end;
+
+				h3.back--title {
+					top: 0;
+					margin-bottom: auto;
+					line-height: auto;
+					position: relative;
+				}
+				.price {
+					margin-bottom: 35px;
+				}
+				.image--holder {
+					height: 38vh;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+
+					a {
+						display: block;
+						height: 100%;
+					}
+
+					img {
+						max-width: 100%;
+						max-height: 100%;
+						height: auto;
+						width: auto;
+						margin: 0;
+					}
+				}
+				.flex--buttons {
+					margin: 0;
+					.btn--second,
+					a {
+						width: 210px;
+					}
+				}
 			}
 		}
 	}

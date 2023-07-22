@@ -105,6 +105,10 @@ $footer_image    = get_field('footer_image', 'option');
 		<span class="toggle--label-background"></span>
 	</label>
 	<div class="background"></div>
+	<div class="text">
+		<span class="night">See E-lux in the Day</span>
+		<span class="day">See E-lux at Night</span>
+	</div>
 </div>
 </div><!-- end of .site-wrap -->
 

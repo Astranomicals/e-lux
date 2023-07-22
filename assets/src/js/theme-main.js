@@ -33,6 +33,22 @@
 					this.contactForms();
 					this.faqs();
 					this.dayNightFeature();
+					this.shopFilter();
+				},
+				shopFilter: function(){
+					$(`.block--products button[data-id]`).on(`click`, function(){
+						$(`.block--products button[data-id]`).removeClass(`active`);
+						$(this).addClass(`active`);
+						const data_id = $(this).attr(`data-id`);
+						console.log(data_id);
+
+						if(data_id === '-1'){
+							$(`.block--products article`).show();
+						}else{
+							$(`.block--products article`).hide();
+							$(`.block--products article[data-terms*="${data_id}"]`).show();
+						}
+					})
 				},
 				dayNightFeature: function(){
 					const timeOfDay = sessionStorage.getItem(`dayNight`);
@@ -41,23 +57,33 @@
 							$(`.daytime-toggle .toggle--checkbox`).prop( "checked", true );
 							sessionStorage.setItem(`dayNight`, 'night');
 							$(`body`).removeClass(`day`);
+							$(`.daytime-toggle .day`).hide();
+							$(`.daytime-toggle .night`).show();
 						}else{
 							sessionStorage.setItem(`dayNight`, 'day');
 							$(`body`).addClass(`day`);
+							$(`.daytime-toggle .night`).hide();
+							$(`.daytime-toggle .day`).show();
 						}
 					}else{
 						$(`.daytime-toggle .toggle--checkbox`).prop( "checked", true );
 						sessionStorage.setItem(`dayNight`, 'night');
 						$(`body`).removeClass(`day`);
+						$(`.daytime-toggle .night`).hide();
+						$(`.daytime-toggle .day`).show();
 					}
 
 					$(`.toggle--label`).on(`click`, function(){
 						if($(`body`).hasClass(`day`)){
 							sessionStorage.setItem(`dayNight`, 'night');
 							$(`body`).removeClass(`day`);
+							$(`.daytime-toggle .night`).hide();
+							$(`.daytime-toggle .day`).show();
 						}else{
 							sessionStorage.setItem(`dayNight`, 'day');
 							$(`body`).addClass(`day`);
+							$(`.daytime-toggle .night`).hide();
+							$(`.daytime-toggle .day`).show();
 						}
 					});
 				},

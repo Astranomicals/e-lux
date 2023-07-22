@@ -16,8 +16,22 @@
 
 <div class="container">
 	<div class="row justify-content-center">
-		<div class="col-xl-7 col-md-10">
-			<h2>Video Reviews</h2>
+		<div class="col-xl-8 col-md-10">
+			<h2>Manual Links</h2>
+			<?php if (have_rows('review_links')) : ?>
+				<div class="links">
+					<?php while (have_rows('review_links')) : the_row(); ?>
+						<?php if (get_row_layout() == 'single_link') : ?>
+							<?php
+							$link_text = get_sub_field('link_text');
+							$link_url = get_sub_field('link_url');
+							?>
+							<a href="<?php echo $link_url; ?>" target="_blank" class="btn btn--primary"><i class="fal fa-pdf"></i> <?php echo $link_text; ?></a>
+						<?php endif; ?>
+					<?php endwhile; ?>
+				</div>
+			<?php endif; ?>
+			<h2>Video Manuals</h2>
 			<?php if (have_rows('video_area')) : ?>
 				<div class="swiper-container video--container">
 					<?php get_template_part('components/swiper-nav'); ?>
@@ -51,7 +65,6 @@
 					</div>
 				</div>
 			<?php endif; ?>
-			<?php echo get_sub_field('content'); ?>
 		</div>
 	</div>
 </div>

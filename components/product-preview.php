@@ -12,8 +12,13 @@
  * @since      1.0.0
  */
 
+$post_categories = get_the_terms($post->ID, 'product_cat');
+if (!empty($post_categories) && !is_wp_error($post_categories)) {
+	$categories = wp_list_pluck($post_categories, 'term_id');
+}
+
 ?>
-<article class="post-preview" id="post-<?php the_ID(); ?>">
+<article class="post-preview" data-terms="<?php echo implode(',', $categories); ?>" id="post-<?php the_ID(); ?>">
 	<h3 class="back--title"><?php echo get_the_title(); ?></h3>
 	<div class="image--holder">
 		<a href="<?php echo get_the_permalink(); ?>"><?php the_post_thumbnail('main_blog_thumb'); ?></a>

@@ -82,3 +82,30 @@ function astra_move_jquery_to_footer()
 	wp_scripts()->add_data('jquery-migrate', 'group', 1);
 }
 add_action('wp_enqueue_scripts', 'astra_move_jquery_to_footer');
+
+/**
+ * Change sort order (checking for product category)
+ *
+ * @param array $query Query $args that will be changing.
+ */
+function product_category_unlimited($query)
+{
+	if (!is_admin() && $query->is_main_query() && is_tax('product_cat')) :
+		$query->set('posts_per_page', -1);
+	endif;
+};
+add_action('pre_get_posts', 'product_category_unlimited');
+
+
+/**
+ * Change sort order (checking for products)
+ *
+ * @param array $query Query $args that will be changing.
+ */
+function products_unlimited($query)
+{
+	if (!is_admin() && $query->is_main_query() && is_post_type_archive('product')) :
+		$query->set('posts_per_page', -1);
+	endif;
+};
+add_action('pre_get_posts', 'products_unlimited');

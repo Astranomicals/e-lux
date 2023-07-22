@@ -34,6 +34,25 @@ do_action('woocommerce_before_main_content');
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-12">
+				<div class="filters">
+					<?php
+					$terms = get_terms(array(
+						'taxonomy'   => 'product_cat',
+						'hide_empty' => true,
+					));
+					$count = 0;
+
+					if (!empty($terms) && !is_wp_error($terms)) {
+						echo '<ul>';
+						foreach ($terms as $term) {
+							echo '<li><button data-id="' . $term->term_id . '">' . $term->name . ' <span>(' . $term->count . ')</span></button></li>';
+							$count = $count + $term->count;
+						}
+						echo '<li><button data-id="-1" class="active">All <span>(' . $count . ')</span></button></li>';
+						echo '</ul>';
+					}
+					?>
+				</div>
 				<?php if (have_posts()) : ?>
 					<div class="grid--products">
 						<?php while (have_posts()) : ?>

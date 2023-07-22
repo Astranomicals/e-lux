@@ -13,6 +13,17 @@
  */
 
 $contact_link = get_field('contact_link', 'options');
+if (have_rows('blocks')) :
+	while (have_rows('blocks')) :
+		the_row();
+		$layout   = get_row_layout();
+		if ($layout === 'product_page') :
+			$other_link = get_sub_field('other_option_link');
+			$other_link_text = get_sub_field('other_option_link_text');
+			$other_link_text = str_replace('View ', '', $other_link_text);
+		endif;
+	endwhile;
+endif;
 ?>
 
 <nav class="site-nav">
@@ -62,6 +73,7 @@ $contact_link = get_field('contact_link', 'options');
 						<ul class="menu hide-sm">
 							<li><a href="#overview" class="js-scroll-to">Overview</a></li>
 							<li><a href="#" class="btn-specs">Specs / Details</a></li>
+							<li><a href="<?php echo $other_link; ?>" class="stepthru"><?php echo $other_link_text; ?></a></li>
 						</ul>
 						<a href="#buy-now" class="btn btn--primary js-scroll-to">Buy Now</a>
 					</div>

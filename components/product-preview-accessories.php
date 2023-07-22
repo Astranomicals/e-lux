@@ -20,7 +20,11 @@ $price = $product->get_price();
 ?>
 <article class="post-preview" id="post-<?php the_ID(); ?>">
 	<h3 class="bike--title"><?php echo get_the_title(); ?></h3>
-	<?php echo get_the_post_thumbnail($post->ID, 'large'); ?>
+	<div class="image--holder">
+		<a href="<?php echo get_the_permalink(); ?>">
+			<?php echo get_the_post_thumbnail($post->ID, 'large'); ?>
+		</a>
+	</div>
 	<div class="price">$<?php echo $price; ?></div>
 	<div class="flex--buttons">
 		<a href="<?php echo get_the_permalink(); ?>" class="btn btn--secondary">View More</a>

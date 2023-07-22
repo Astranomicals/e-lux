@@ -13,7 +13,7 @@
 		padding: 38px 38px 0;
 	}
 
-	#day {
+	#night {
 		display: none;
 	}
 
@@ -48,8 +48,19 @@
 		}
 	}
 
-	.btn {
-		margin: 0 auto;
+	.flex--buttons {
+		display: flex;
+		justify-content: center;
+
+		@include mq($until: md) {
+			flex-direction: column;
+		}
+		.btn {
+			margin: 0 10px;
+			@include mq($until: md) {
+				margin: 0 auto 15px;
+			}
+		}
 	}
 
 	body.day & {

@@ -39,6 +39,7 @@ $hero_image = get_sub_field('background_video_poster');
 			<p><?php echo $subheading; ?></p>
 			<div class="flex--buttons">
 				<a href="/shop/" class="btn btn--primary">Explore Our Products</a>
+				<a href="/product-category/stepthru/" class="btn btn--primary">View Our StepThru Options</a>
 			</div>
 		</div>
 	</div>

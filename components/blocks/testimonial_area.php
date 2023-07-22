@@ -28,7 +28,7 @@ $youtube_id = get_sub_field('youtube_id');
 	<div class="row justify-content-center">
 		<div class="col-md-6">
 			<?php echo do_shortcode('[trustindex no-registration=google]'); ?>
-			<a href="/reviews/" class="btn--primary btn">View all Reviews</a>
+			<a href="/reviews/" class="btn--primary btn">View More Reviews</a>
 		</div>
 	</div>
 </div>
