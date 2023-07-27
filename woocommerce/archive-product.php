@@ -39,6 +39,9 @@ do_action('woocommerce_before_main_content');
 					$terms = get_terms(array(
 						'taxonomy'   => 'product_cat',
 						'hide_empty' => true,
+						'orderby' => 'name',
+						'order' => 'ASC',
+						'parent'      => 0,
 					));
 					$count = 0;
 
@@ -48,7 +51,7 @@ do_action('woocommerce_before_main_content');
 							echo '<li><button data-id="' . $term->term_id . '">' . $term->name . ' <span>(' . $term->count . ')</span></button></li>';
 							$count = $count + $term->count;
 						}
-						echo '<li><button data-id="-1" class="active">All <span>(' . $count . ')</span></button></li>';
+						echo '<li><button data-id="-1" class="active">All <span class="count">(' . $count . ')</span></button></li>';
 						echo '</ul>';
 					}
 					?>

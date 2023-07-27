@@ -2,7 +2,11 @@
 	background: rgba($background, 0.75);
 	backdrop-filter: blur(4px);
 }
-
+.cfvsw-swatches-option {
+	background: transparent;
+	border: 1px solid $white;
+	font-size: 16px;
+}
 .block--product {
 	background-color: #111;
 	padding: 40px 0 60px;
@@ -20,8 +24,6 @@
 
 		div.images.woocommerce-product-gallery {
 			position: relative;
-			margin-top: -20px;
-			z-index: -1;
 		}
 	}
 

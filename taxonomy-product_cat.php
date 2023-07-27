@@ -17,6 +17,40 @@ get_header(); ?>
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-12">
+				<div class="filters">
+
+					<?php
+					if (get_queried_object()->term_id === 121) :
+						$terms = get_terms(array(
+							'taxonomy'   => 'product_cat',
+							'hide_empty' => true,
+							'orderby' => 'name',
+							'order' => 'ASC',
+							'parent'      => 0,
+							'include' => '111,118,195,196,85'
+						));
+					elseif (get_queried_object()->term_id === 92) :
+						$terms = get_terms(array(
+							'taxonomy'   => 'product_cat',
+							'hide_empty' => true,
+							'orderby' => 'name',
+							'order' => 'ASC',
+							'parent'      => 92,
+						));
+					endif;
+					$count = 0;
+
+					if (!empty($terms) && !is_wp_error($terms)) {
+						echo '<ul>';
+						foreach ($terms as $term) {
+							echo '<li><button data-id="' . $term->term_id . '">' . $term->name . ' <span>(' . $term->count . ')</span></button></li>';
+							$count = $count + $term->count;
+						}
+						echo '<li><button data-id="-1" class="active">All <span class="count">(' . $count . ')</span></button></li>';
+						echo '</ul>';
+					}
+					?>
+				</div>
 				<?php if (have_posts()) : ?>
 					<div class="grid--products">
 						<?php while (have_posts()) : ?>

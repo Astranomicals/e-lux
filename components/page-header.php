@@ -29,7 +29,7 @@ endif;
 <header id="header" class="page--header">
 	<?php if ($video) : ?>
 		<div class="video--holder">
-			<video fechpriority="high" poster="<?php echo esc_url($background_image['url']); ?>" id="day" playsinline autoplay muted loop>
+			<video fechpriority="high" poster="" id="day" playsinline autoplay muted loop>
 				<source src="<?php echo esc_url($video); ?>" type="video/mp4">
 			</video>
 		</div>

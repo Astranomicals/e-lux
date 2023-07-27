@@ -48,7 +48,11 @@
 							$(`.block--products article`).hide();
 							$(`.block--products article[data-terms*="${data_id}"]`).show();
 						}
-					})
+					});
+					if($(`.grid--products`).length>0){
+						const count = $(`.grid--products .post-preview`).length;
+						$(`.filters button span.count`).text(`(${count})`);
+					}
 				},
 				dayNightFeature: function(){
 					const timeOfDay = sessionStorage.getItem(`dayNight`);

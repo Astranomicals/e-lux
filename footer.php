@@ -28,8 +28,8 @@ $footer_image    = get_field('footer_image', 'option');
 		<div class="container">
 			<div class="row">
 				<div class="col-12">
-					<h2>Not sure? Allow Our E-bike Concierge To Help You Find the Perfect Model</h2>
-					<a href="/conceirge/" class="btn btn--tertiary">Take the Concierge Quiz</a>
+					<h2>Not sure? Allow Our E-bike Concierge Help You Find the Perfect Model</h2>
+					<a href="/concierge/" class="btn btn--tertiary">Take the Concierge Quiz</a>
 				</div>
 			</div>
 		</div>
